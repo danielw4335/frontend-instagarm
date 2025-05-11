@@ -3,13 +3,13 @@ export const SET_STORY = 'SET_STORY'
 export const REMOVE_STORY = 'REMOVE_STORY'
 export const ADD_STORY = 'ADD_STORY'
 export const UPDATE_STORY = 'UPDATE_STORY'
-export const ADD_STORY_MSG = 'ADD_STORY_MSG'
+export const ADD_STORY_COMMENT = 'ADD_STORY_COMMENT'
 export const SET_IS_LOADING = 'SET_IS_LOADING'
 
 const initialState = {
     stories: [],
     story: null,
-    isLoading: false, 
+    isLoading: false,
 }
 
 export function storyReducer(state = initialState, action) {
@@ -31,10 +31,14 @@ export function storyReducer(state = initialState, action) {
             newState = { ...state, stories: [...state.stories, action.story] }
             break
         case UPDATE_STORY:
-            stories = state.stories.map(story => (story._id === action.story._id) ? action.story : story)
-            newState = { ...state, stories }
+            stories = state.stories.map(story =>
+                story._id === action.story._id
+                    ? { ...story, ...action.story }
+                    : story
+            )
+            newState = { ...state, stories };
             break
-        case ADD_STORY_MSG:
+        case ADD_STORY_COMMENT:
             if (action.msg && state.story) {
                 newState = { ...state, story: { ...state.story, msgs: [...state.story.msgs || [], action.msg] } }
                 break
@@ -72,7 +76,7 @@ function unitTestReducer() {
     console.log('After SET_STORY:', state)
 
     const msg = { id: 'm' + parseInt('' + Math.random() * 100), txt: 'Some msg', by: { _id: 'u123', fullname: 'test' } }
-    state = storyReducer(state, { type: ADD_STORY_MSG, storyId: story1._id, msg })
-    console.log('After ADD_STORY_MSG:', state)
+    state = storyReducer(state, { type: ADD_STORY_COMMENT, storyId: story1._id, msg })
+    console.log('After ADD_STORY_COMMENT:', state)
 }
 

@@ -5,14 +5,14 @@ import { Stories } from '../../data/story'
 
 const STORAGE_KEY = 'story'
 
-export const storieservice = {
+export const storyservice = {
     query,
     getById,
     save,
     remove,
-    addStoryMsg
+    addComment
 }
-window.cs = storieservice
+window.cs = storyservice
 
 
 async function query() {
@@ -53,19 +53,12 @@ async function save(story) {
     return savedStory
 }
 
-async function addStoryMsg(storyId, txt) {
-    // Later, this is all done by the backend
+async function addComment(storyId, comment) {
     const story = await getById(storyId)
-
-    const msg = {
-        id: makeId(),
-        by: userService.getLoggedinUser(),
-        txt
-    }
-    story.msgs.push(msg)
+    if (!story.comments) story.comments = []
+    story.comments.push(comment)
     await storageService.put(STORAGE_KEY, story)
-
-    return msg
+    return story
 }
 
 async function createStories() {

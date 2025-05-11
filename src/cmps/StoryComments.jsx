@@ -1,18 +1,37 @@
 import ShowMoreText from 'react-show-more-text'
-import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useState } from 'react'
+import { addStoryComment } from '../store/actions/story.actions'
 
-export const StoryComments = ({ story, from }) => {
+export const StoryComments = ({ story }) => {
+    const [comment, setComment] = useState('')
+
     const { _id, txt, comments = [], likes } = story
-    // const [isComment, setIsComment] = useState(false)
-    // const [comment, setComment] = useState('')
 
+    async function onAddComment(ev) {
+        ev.preventDefault()
+        if (!comment.trim()) return
 
+        const newComment = {
+            id: Date.now(),
+            by: {
+                _id: 'u101',
+                fullname: 'Tal Cohen',
+                imgUrl: 'https://robohash.org/1?set=set5'
+            },
+            txt: comment
+        }
+
+        try {
+            await addStoryComment(_id, newComment) 
+            setComment('')
+        } catch (err) {
+            console.error('Failed to add comment:', err)
+        }
+    }
 
     return (
         <div className="story-comments">
-            {likes ? <p> {story.likes} likes</p> : ''}
+            {likes ? <p>{likes} likes</p> : ''}
 
             <ShowMoreText
                 lines={2}
@@ -20,15 +39,24 @@ export const StoryComments = ({ story, from }) => {
                 less=""
                 anchorClass="show-more-link"
                 expanded={false}
-                truncatedEndingComponent={"…"}
+                truncatedEndingComponent="…"
             >
                 <p>{txt}</p>
             </ShowMoreText>
+
             <button className='clear-button'>
                 <p>View all {comments.length} comments</p>
             </button>
-            <input type="text" placeholder="Add a comment..." />
+
+            <form onSubmit={onAddComment}>
+                <input
+                    type="text"
+                    placeholder="Add a comment..."
+                    value={comment}
+                    onChange={(e) => setComment(e.target.value)}
+                />
+                <button type="submit">Post</button>
+            </form>
         </div>
     )
 }
-

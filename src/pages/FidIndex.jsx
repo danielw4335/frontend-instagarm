@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import { loadStories, addStory, updateStory, removeStory, addStoryMsg } from '../store/actions/story.actions'
 
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
-import { storieservice } from '../services/story'
+import { storyservice } from '../services/story'
 import { userService } from '../services/user'
 
 import { StoryList } from '../cmps/StoryList'

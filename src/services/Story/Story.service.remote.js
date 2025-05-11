@@ -1,11 +1,12 @@
 import { httpService } from '../http.service'
 
-export const storieservice = {
+export const storyservice = {
     query,
     getById,
     save,
     remove,
-    addStoryMsg
+    addComment,
+    
 }
 
 async function query(filterBy = { txt: '', minSpeed: 0 }) {
@@ -30,6 +31,5 @@ async function save(story) {
 }
 
 async function addComment(storyId, comment) {
-    addStoryMsg
     return httpService.post(`story/${storyId}/comment`, comment)
 }
