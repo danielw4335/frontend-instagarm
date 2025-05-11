@@ -1,21 +1,25 @@
-import { storyService } from '../../services/story'
+import { storieservice } from '../../services/story'
 import { store } from '../store'
-import { ADD_STORY, REMOVE_STORY, SET_STORYS, SET_STORY, UPDATE_STORY, ADD_STORY_MSG } from '../reducers/story.reducer'
+import { ADD_STORY, REMOVE_STORY, SET_STORIES, SET_STORY, UPDATE_STORY, SET_IS_LOADING, ADD_STORY_MSG } from '../reducers/story.reducer'
 
-export async function loadStorys(filterBy) {
+export async function loadStories(filterBy) {
     try {
-        const storys = await storyService.query(filterBy)
-        console.log(' loadStorys storys:', storys)
-        store.dispatch(getCmdSetStorys(storys))
+        store.dispatch({ type: SET_IS_LOADING, isLoading: true })
+        const stories = await storieservice.query(filterBy)
+        console.log(' loadStories stories:', stories)
+        store.dispatch(getCmdSetStories(stories))
     } catch (err) {
-        console.log('Cannot load storys', err)
+        console.log('Cannot load stories', err)
         throw err
+    }
+    finally {
+        store.dispatch({ type: SET_IS_LOADING, isLoading: false })
     }
 }
 
 export async function loadStory(storyId) {
     try {
-        const story = await storyService.getById(storyId)
+        const story = await storieservice.getById(storyId)
         store.dispatch(getCmdSetStory(story))
     } catch (err) {
         console.log('Cannot load story', err)
@@ -23,10 +27,9 @@ export async function loadStory(storyId) {
     }
 }
 
-
 export async function removeStory(storyId) {
     try {
-        await storyService.remove(storyId)
+        await storieservice.remove(storyId)
         store.dispatch(getCmdRemoveStory(storyId))
     } catch (err) {
         console.log('Cannot remove story', err)
@@ -36,7 +39,7 @@ export async function removeStory(storyId) {
 
 export async function addStory(story) {
     try {
-        const savedStory = await storyService.save(story)
+        const savedStory = await storieservice.save(story)
         store.dispatch(getCmdAddStory(savedStory))
         return savedStory
     } catch (err) {
@@ -47,7 +50,7 @@ export async function addStory(story) {
 
 export async function updateStory(story) {
     try {
-        const savedStory = await storyService.save(story)
+        const savedStory = await storieservice.save(story)
         store.dispatch(getCmdUpdateStory(savedStory))
         return savedStory
     } catch (err) {
@@ -58,7 +61,7 @@ export async function updateStory(story) {
 
 export async function addStoryMsg(storyId, txt) {
     try {
-        const msg = await storyService.addStoryMsg(storyId, txt)
+        const msg = await storieservice.addStoryMsg(storyId, txt)
         store.dispatch(getCmdAddStoryMsg(msg))
         return msg
     } catch (err) {
@@ -68,10 +71,10 @@ export async function addStoryMsg(storyId, txt) {
 }
 
 // Command Creators:
-function getCmdSetStorys(storys) {
+function getCmdSetStories(stories) {
     return {
-        type: SET_STORYS,
-        storys
+        type: SET_STORIES,
+        stories
     }
 }
 function getCmdSetStory(story) {
@@ -107,8 +110,8 @@ function getCmdAddStoryMsg(msg) {
 
 // unitTestActions()
 async function unitTestActions() {
-    await loadStorys()
-    await addStory(storyService.getEmptyStory())
+    await loadStories()
+    await addStory(storieservice.getEmptyStory())
     await updateStory({
         _id: 'm1oC7',
         vendor: 'Story-Good',

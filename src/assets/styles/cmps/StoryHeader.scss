@@ -1,0 +1,27 @@
+.storyHeader-index {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0.8rem 1rem;
+
+  .user-img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    padding: 2.5px;
+    background: $gradient;
+  }
+
+  .username {
+    font-weight: 600;
+    font-size: 11px;
+    color: #262626;
+  }
+
+  .created-time {
+    font-size: 11px;
+    color: #8e8e8e;
+  }
+}

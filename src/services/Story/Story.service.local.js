@@ -1,26 +1,26 @@
 import { storageService } from '../async-storage.service'
 import { makeId, saveToStorage } from '../util.service'
 import { userService } from '../user'
-import { Storys } from '../../data/story'
+import { Stories } from '../../data/story'
 
 const STORAGE_KEY = 'story'
 
-export const storyService = {
+export const storieservice = {
     query,
     getById,
     save,
     remove,
     addStoryMsg
 }
-window.cs = storyService
+window.cs = storieservice
 
 
 async function query() {
-    let storys = await storageService.query(STORAGE_KEY)
-    if (!storys || !storys.length) {
-        storys = createStorys()
+    let stories = await storageService.query(STORAGE_KEY)
+    if (!stories || !stories.length) {
+        stories = createStories()
     }
-    return storys
+    return stories
 }
 
 function getById(storyId) {
@@ -68,8 +68,8 @@ async function addStoryMsg(storyId, txt) {
     return msg
 }
 
-async function createStorys() {
-        const defaultstorys = [...Storys] 
-       saveToStorage(STORAGE_KEY, defaultstorys)
-    return defaultstorys
+async function createStories() {
+        const defaultstories = [...Stories] 
+       saveToStorage(STORAGE_KEY, defaultstories)
+    return defaultstories
 }

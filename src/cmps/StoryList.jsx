@@ -1,21 +1,21 @@
 import { useEffect, useState } from 'react';
 import { StoryPreview } from './StoryPreview';
-import { loadStorys } from '../store/actions/story.actions';
+import { loadStories } from '../store/actions/story.actions';
 import { useSelector } from 'react-redux';
 
-export function StoryList() {
-    const { storys } = useSelector((storeState) => storeState.storyModule)
+export function StoryList({ from }) {
+    const { stories } = useSelector((storeState) => storeState.storyModule)
     // const { loggedinUser } = useSelector((storeState) => storeState.userModule)
+    const isLoading = useSelector(storeState => storeState.storyModule.isLoading)
 
-return (
-        <section>
-            {storys.length === 0 ? (
-                <p>No stories</p>
-            ) : (
-                storys.map(story => (
-                    <StoryPreview key={story._id} story={story} />
+    return (
+        <section className="story-list">
+            {!isLoading && from === 'index' ?
+                stories.map(story => (
+                    <StoryPreview key={story._id} story={story} from={from} />
                 ))
-            )}
+                : <div>Loading...</div>
+            }
         </section>
     )
 }

@@ -51,3 +51,37 @@ export function loadFromStorage(key) {
     const data = localStorage.getItem(key)
     return (data) ? JSON.parse(data) : undefined
 }
+
+export function getTimeFormat(unixSeconds) {
+    const timestamp = unixSeconds * 1000 
+    const now = Date.now()
+    const diffSec = Math.floor((now - timestamp) / 1000)
+
+    const minutes = Math.floor(diffSec / 60)
+    const hours = Math.floor(minutes / 60)
+    const days = Math.floor(hours / 24)
+    const weeks = Math.floor(days / 7)
+    const months = Math.floor(days / 30)
+    const years = Math.floor(months / 12)
+
+    if (diffSec < 60) return `${diffSec}s`
+    if (minutes < 60) return `${minutes}m`
+    if (hours < 24) return `${hours}h`
+    if (days < 7) return `${days}d`
+    if (weeks < 4) return `${weeks}w`
+
+    const date = new Date(timestamp)
+
+    if (years >= 1) {
+        return date.toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric'
+        })
+    }
+
+    return date.toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric'
+    })
+}

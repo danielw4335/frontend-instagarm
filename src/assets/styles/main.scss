@@ -25,17 +25,16 @@
 @import "pages/Chat";
 
 // Components
-@import "cmps/list";
-@import "cmps/preview";
 
 @import "cmps/AppHeader";
 @import "cmps/AppFooter";
 @import "cmps/UserMsg";
 
+@import "cmps/StoryActions";
 @import "cmps/StoryFilter";
 @import "cmps/ReviewEdit";
 @import "cmps/ReviewList";
 @import "cmps/ReviewPreview";
 @import "cmps/StoryList";
 @import "cmps/StoryPreview";
-@import "cmps/UserInfo";
+@import "cmps/StoryHeader";

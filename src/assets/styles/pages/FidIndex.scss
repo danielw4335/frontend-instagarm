@@ -1,4 +1,5 @@
 .fid-index {
- display: flex;
+ display: grid;
+ grid-template-columns: 1fr 470px 1fr;
 
 }

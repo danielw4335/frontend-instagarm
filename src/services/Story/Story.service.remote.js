@@ -1,6 +1,6 @@
 import { httpService } from '../http.service'
 
-export const storyService = {
+export const storieservice = {
     query,
     getById,
     save,

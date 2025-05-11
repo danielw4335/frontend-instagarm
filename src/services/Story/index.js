@@ -2,8 +2,8 @@ const { DEV, VITE_LOCAL } = import.meta.env
 
 import { getRandomIntInclusive, makeId } from '../util.service'
 
-import { storyService as local } from './Story.service.local'
-import { storyService as remote } from './Story.service.remote'
+import { storieservice as local } from './Story.service.local'
+import { storieservice as remote } from './Story.service.remote'
 
 function getEmptyStory() {
 	return {
@@ -24,9 +24,9 @@ function getDefaultFilter() {
 }
 
 const service = (VITE_LOCAL === 'true') ? local : remote
-export const storyService = { getEmptyStory, getDefaultFilter, ...service }
+export const storieservice = { getEmptyStory, getDefaultFilter, ...service }
 
 // Easy access to this service from the dev tools console
 // when using script - dev / dev:local
 
-if (DEV) window.storyService = storyService
+if (DEV) window.storieservice = storieservice
