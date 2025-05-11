@@ -29,7 +29,7 @@ async function save(story) {
     return savedStory
 }
 
-async function addStoryMsg(storyId, txt) {
-    const savedMsg = await httpService.post(`story/${storyId}/msg`, {txt})
-    return savedMsg
+async function addComment(storyId, comment) {
+    addStoryMsg
+    return httpService.post(`story/${storyId}/comment`, comment)
 }
