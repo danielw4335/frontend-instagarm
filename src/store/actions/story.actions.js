@@ -5,6 +5,7 @@ import { ADD_STORY, REMOVE_STORY, SET_STORYS, SET_STORY, UPDATE_STORY, ADD_STORY
 export async function loadStorys(filterBy) {
     try {
         const storys = await storyService.query(filterBy)
+        console.log(' loadStorys storys:', storys)
         store.dispatch(getCmdSetStorys(storys))
     } catch (err) {
         console.log('Cannot load storys', err)

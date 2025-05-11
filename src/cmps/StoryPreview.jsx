@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom'
+import { UserInfo } from './userInfo.jsx'
 
 export function StoryPreview({ story }) {
-    return <article className="preview">
-        <header>
-            <Link to={`/story/${story._id}`}>{story.vendor}</Link>
-        </header>
+    const { txt, imgUrl, by } = story
 
-        <p>Speed: <span>{story.speed.toLocaleString()} Km/h</span></p>
-        {story.owner && <p>Owner: <span>{story.owner.fullname}</span></p>}
-        
-    </article>
+
+    return (
+        <div className="story-preview">
+            <UserInfo key={by._id} user={by} />
+            <img className="story-img" src={imgUrl} alt="story" />
+        </div>
+    )
 }

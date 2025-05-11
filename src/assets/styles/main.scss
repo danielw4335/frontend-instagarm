@@ -17,7 +17,7 @@
 
 @import "pages/AboutUs";
 // @import "pages/HomePage";
-@import "pages/StoryIndex";
+@import "pages/FidIndex";
 @import "pages/ReviewIndex";
 @import "pages/UserDetails";
 @import "pages/TaskDetails";
@@ -36,5 +36,6 @@
 @import "cmps/ReviewEdit";
 @import "cmps/ReviewList";
 @import "cmps/ReviewPreview";
-// @import "cmps/StoryList";
-// @import "cmps/StoryPreview";
+@import "cmps/StoryList";
+@import "cmps/StoryPreview";
+@import "cmps/UserInfo";

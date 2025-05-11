@@ -1,7 +1,7 @@
-
 import { storageService } from '../async-storage.service'
-import { makeId } from '../util.service'
+import { makeId, saveToStorage } from '../util.service'
 import { userService } from '../user'
+import { Storys } from '../../data/story'
 
 const STORAGE_KEY = 'story'
 
@@ -15,27 +15,11 @@ export const storyService = {
 window.cs = storyService
 
 
-async function query(filterBy = { txt: '', minSpeed: 0 }) {
-    var storys = await storageService.query(STORAGE_KEY)
-    const { txt, minSpeed, sortField, sortDir } = filterBy
-
-    if (txt) {
-        const regex = new RegExp(filterBy.txt, 'i')
-        storys = storys.filter(story => regex.test(story.vendor) || regex.test(story.description))
+async function query() {
+    let storys = await storageService.query(STORAGE_KEY)
+    if (!storys || !storys.length) {
+        storys = createStorys()
     }
-    if (minSpeed) {
-        storys = storys.filter(story => story.speed >= minSpeed)
-    }
-    if(sortField === 'vendor'){
-        storys.sort((story1, story2) => 
-            story1[sortField].localeCompare(story2[sortField]) * +sortDir)
-    }
-    if(sortField === 'speed'){
-        storys.sort((story1, story2) => 
-            (story1[sortField] - story2[sortField]) * +sortDir)
-    }
-    
-    storys = storys.map(({ _id, vendor, speed, owner }) => ({ _id, vendor, speed, owner }))
     return storys
 }
 
@@ -82,4 +66,10 @@ async function addStoryMsg(storyId, txt) {
     await storageService.put(STORAGE_KEY, story)
 
     return msg
+}
+
+async function createStorys() {
+        const defaultstorys = [...Storys] 
+       saveToStorage(STORAGE_KEY, defaultstorys)
+    return defaultstorys
 }

@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router'
 
 import { HomePage } from './pages/HomePage'
 import { AboutUs, AboutTeam, AboutVision } from './pages/AboutUs'
-import { StoryIndex } from './pages/StoryIndex.jsx'
+import { FidIndex } from './pages/FidIndex.jsx'
 import { ReviewIndex } from './pages/ReviewIndex.jsx'
 import { AdminIndex } from './pages/AdminIndex.jsx'
 
@@ -30,7 +30,7 @@ export function RootCmp() {
                         <Route path="team" element={<AboutTeam />} />
                         <Route path="vision" element={<AboutVision />} />
                     </Route>
-                    <Route path="story" element={<StoryIndex />} />
+                    <Route path="story" element={<FidIndex />} />
                     {/* <Route path="story/:storyId" element={<StoryDetails />} /> */}
                     <Route path="user/:id" element={<UserDetails />} />
                     <Route path="review" element={<ReviewIndex />} />
