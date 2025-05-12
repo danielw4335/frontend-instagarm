@@ -1,0 +1,25 @@
+.story-comments {
+    margin: 0;
+    padding: 0;
+
+    .view-comments {
+        color: #737373;
+    }
+}
+
+.add-comment-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: rem(18px);
+
+    .add-comment-post {
+        color: #0095F6;
+        font-weight: 600;
+        display: none;
+    }
+
+    input:not(:placeholder-shown)+.add-comment-post {
+        display: block;
+    }
+}

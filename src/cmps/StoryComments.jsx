@@ -22,7 +22,7 @@ export const StoryComments = ({ story }) => {
         }
 
         try {
-            await addStoryComment(_id, newComment) 
+            await addStoryComment(_id, newComment)
             setComment('')
         } catch (err) {
             console.error('Failed to add comment:', err)
@@ -31,7 +31,7 @@ export const StoryComments = ({ story }) => {
 
     return (
         <div className="story-comments">
-            {likes ? <p>{likes} likes</p> : ''}
+            {likes > 0 && <p>{likes} likes</p>}
 
             <ShowMoreText
                 lines={2}
@@ -44,18 +44,18 @@ export const StoryComments = ({ story }) => {
                 <p>{txt}</p>
             </ShowMoreText>
 
-            <button className='clear-button'>
+            <button className='clear-button view-comments'>
                 <p>View all {comments.length} comments</p>
             </button>
 
-            <form onSubmit={onAddComment}>
+            <form className='add-comment-form' onSubmit={onAddComment}>
                 <input
                     type="text"
                     placeholder="Add a comment..."
                     value={comment}
                     onChange={(e) => setComment(e.target.value)}
                 />
-                <button type="submit">Post</button>
+                <button className='clear-button add-comment-post' type="submit" disabled={!comment.trim()}>Post</button>
             </form>
         </div>
     )
