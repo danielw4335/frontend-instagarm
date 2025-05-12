@@ -59,16 +59,16 @@ export async function updateStory(story) {
     }
 }
 
-export async function addStoryMsg(storyId, txt) {
-    try {
-        const msg = await storyservice.addStoryMsg(storyId, txt)
-        store.dispatch(getCmdAddStoryMsg(msg))
-        return msg
-    } catch (err) {
-        console.log('Cannot add story msg', err)
-        throw err
-    }
-}
+// export async function addStoryMsg(storyId, txt) {
+//     try {
+//         const msg = await storyservice.addStoryMsg(storyId, txt)
+//         store.dispatch(getCmdAddStoryMsg(msg))
+//         return msg
+//     } catch (err) {
+//         console.log('Cannot add story msg', err)
+//         throw err
+//     }
+// }
 
 export async function addStoryComment(storyId, comment) {
     try {

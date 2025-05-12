@@ -10,7 +10,9 @@ export const storyservice = {
     getById,
     save,
     remove,
-    addComment
+    addComment,
+    getEmptyStory,
+    update
 }
 window.cs = storyservice
 
@@ -27,9 +29,33 @@ function getById(storyId) {
     return storageService.get(STORAGE_KEY, storyId)
 }
 
+async function update({ _id, score }) {
+    const user = await storageService.get('user', _id)
+    user.score = score
+    await storageService.put('user', user)
+
+    // When admin updates other user's details, do not update loggedinUser
+    const loggedinUser = getLoggedinUser()
+    if (loggedinUser._id === user._id) saveLoggedinUser(user)
+
+    return user
+}
+
 async function remove(storyId) {
     // throw new Error('Nope')
     await storageService.remove(STORAGE_KEY, storyId)
+}
+
+function getEmptyStory() {
+    return {
+        vendor: '',
+        speed: 0,
+        imgUrl: '',
+        createdAt: Date.now(),
+        by: userService.getLoggedinUser(),
+        comments: [],
+        likes: [],
+    }
 }
 
 async function save(story) {

@@ -15,6 +15,7 @@ const initialState = {
     users: [],
     watchedUser : null
 }
+console.log(' initialState.user:', initialState.user)
 
 export function userReducer(state = initialState, action) {
     var newState = state

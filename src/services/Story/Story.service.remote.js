@@ -6,7 +6,7 @@ export const storyservice = {
     save,
     remove,
     addComment,
-    
+    getEmptyStory,
 }
 
 async function query(filterBy = { txt: '', minSpeed: 0 }) {
@@ -32,4 +32,17 @@ async function save(story) {
 
 async function addComment(storyId, comment) {
     return httpService.post(`story/${storyId}/comment`, comment)
+}
+
+
+function getEmptyStory() {
+    return {
+        vendor: '',
+        speed: 0,
+        imgUrl: '',
+        createdAt: Date.now(),
+        by: userService.getLoggedinUser(),
+        comments: [],
+        likes: [],
+    }
 }

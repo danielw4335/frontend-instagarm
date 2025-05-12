@@ -2,6 +2,7 @@ import { storageService } from '../async-storage.service'
 
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
 
+
 export const userService = {
     login,
     logout,
@@ -13,6 +14,32 @@ export const userService = {
     getLoggedinUser,
     saveLoggedinUser,
 }
+
+const demoUser = {
+	_id: 'u101',
+	username: 'Muko',
+	password: 'mukmuk',
+	fullname: 'Muki Muka',
+	imgUrl: 'http://some-img',
+
+	following: [
+		{
+			_id: 'u106',
+			fullname: 'Dob',
+			imgUrl: 'http://some-img',
+		},
+	],
+	followers: [
+		{
+			_id: 'u105',
+			fullname: 'Bob',
+			imgUrl: 'http://some-img',
+		},
+	],
+	likedStoryIds: [], 
+	savedStoryIds: [], 
+}
+console.log(demoUser)
 
 async function getUsers() {
     const users = await storageService.query('user')
@@ -66,16 +93,27 @@ function getLoggedinUser() {
 }
 
 function saveLoggedinUser(user) {
-	user = { 
-        _id: user._id, 
-        fullname: user.fullname, 
-        imgUrl: user.imgUrl, 
-        score: user.score, 
-        isAdmin: user.isAdmin 
-    }
+	// user = { 
+    //     _id: user._id, 
+    //     fullname: user.fullname, 
+    //     imgUrl: user.imgUrl, 
+    //     score: user.score, 
+    //     isAdmin: user.isAdmin 
+    // }
 	sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
 	return user
 }
+
+async function _demoUser() {
+    const users = await storageService.query('user')
+    const exists = users.some(u => u._id === demoUser._id)
+    if (!exists) {
+        await storageService.post('user', demoUser)
+    }
+    saveLoggedinUser(demoUser)
+}
+
+_demoUser()
 
 // To quickly create an admin user, uncomment the next line
 // _createAdmin()
@@ -91,3 +129,4 @@ async function _createAdmin() {
     const newUser = await storageService.post('user', userCred)
     console.log('newUser: ', newUser)
 }
+

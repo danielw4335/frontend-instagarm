@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 
-import { loadStories, addStory, updateStory, removeStory, addStoryMsg } from '../store/actions/story.actions'
+import { loadStories, addStory, updateStory, removeStory } from '../store/actions/story.actions'
 
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { storyservice } from '../services/story'
