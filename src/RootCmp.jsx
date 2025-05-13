@@ -7,11 +7,11 @@ import { FidIndex } from './pages/FidIndex.jsx'
 import { ReviewIndex } from './pages/ReviewIndex.jsx'
 import { AdminIndex } from './pages/AdminIndex.jsx'
 
-// import { StoryDetails } from './pages/StoryDetails'
 import { UserDetails } from './pages/UserDetails'
 
 // import { AppHeader } from './cmps/AppHeader'
 // import { AppFooter } from './cmps/AppFooter'
+import { StoryDetails } from './cmps/StoryDetails'
 import { UserMsg } from './cmps/UserMsg.jsx'
 import { SideNav } from './cmps/SideNav.jsx'
 import { BottomNav } from './cmps/BottomNav.jsx'
@@ -33,8 +33,8 @@ export function RootCmp() {
                         <Route path="vision" element={<AboutVision />} />
                     </Route>
                     <Route path="/" element={<FidIndex />} />
-                    <Route path="story" element={<FidIndex />} />
-                    {/* <Route path="story/:storyId" element={<StoryDetails />} /> */}
+                    <Route path="story/:storyId" element={<FidIndex />} />
+                    {/* <Route path="story" element={<FidIndex />} /> */}
                     <Route path="user/:id" element={<UserDetails />} />
                     <Route path="review" element={<ReviewIndex />} />
                     <Route path="admin" element={<AdminIndex />} />

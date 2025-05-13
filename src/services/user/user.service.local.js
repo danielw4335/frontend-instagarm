@@ -2,131 +2,91 @@ import { storageService } from '../async-storage.service'
 
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
 
-
 export const userService = {
-    login,
-    logout,
-    signup,
-    getUsers,
-    getById,
-    remove,
-    update,
-    getLoggedinUser,
-    saveLoggedinUser,
+  login,
+  logout,
+  signup,
+  getUsers,
+  getById,
+  remove,
+  update,
+  getLoggedinUser,
+  saveLoggedinUser,
 }
-
-const demoUser = {
-	_id: 'u101',
-	username: 'Muko',
-	password: 'mukmuk',
-	fullname: 'Muki Muka',
-	imgUrl: 'http://some-img',
-
-	following: [
-		{
-			_id: 'u106',
-			fullname: 'Dob',
-			imgUrl: 'http://some-img',
-		},
-	],
-	followers: [
-		{
-			_id: 'u105',
-			fullname: 'Bob',
-			imgUrl: 'http://some-img',
-		},
-	],
-	likedStoryIds: [], 
-	savedStoryIds: [], 
-}
-console.log(demoUser)
 
 async function getUsers() {
-    const users = await storageService.query('user')
-    return users.map(user => {
-        delete user.password
-        return user
-    })
+  const users = await storageService.query('user')
+  return users.map(user => {
+    delete user.password
+    return user
+  })
 }
 
 async function getById(userId) {
-    return await storageService.get('user', userId)
+  return await storageService.get('user', userId)
 }
 
 function remove(userId) {
-    return storageService.remove('user', userId)
+  return storageService.remove('user', userId)
 }
 
-async function update({ _id, score }) {
-    const user = await storageService.get('user', _id)
-    user.score = score
-    await storageService.put('user', user)
+async function update(userToUpdate) {
+  const user = await storageService.get('user', userToUpdate._id)
+  const updatedUser = { ...user, ...userToUpdate }
+  await storageService.put('user', updatedUser)
 
-	// When admin updates other user's details, do not update loggedinUser
-    const loggedinUser = getLoggedinUser()
-    if (loggedinUser._id === user._id) saveLoggedinUser(user)
+  const loggedinUser = getLoggedinUser()
+  if (loggedinUser && loggedinUser._id === updatedUser._id) {
+    saveLoggedinUser(updatedUser)
+  }
 
-    return user
+  return updatedUser
 }
 
 async function login(userCred) {
-    const users = await storageService.query('user')
-    const user = users.find(user => user.username === userCred.username)
+  const users = await storageService.query('user')
+  const user = users.find(user => user.username === userCred.username)
 
-    if (user) return saveLoggedinUser(user)
+  if (user) {
+    return saveLoggedinUser(user)
+  }
 }
 
 async function signup(userCred) {
-    if (!userCred.imgUrl) userCred.imgUrl = 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png'
-    userCred.score = 10000
+  if (!userCred.imgUrl) {
+    userCred.imgUrl = 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png'
+  }
 
-    const user = await storageService.post('user', userCred)
-    return saveLoggedinUser(user)
+  const user = await storageService.post('user', userCred)
+  return saveLoggedinUser(user)
 }
 
 async function logout() {
-    sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
+  sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
 }
 
 function getLoggedinUser() {
-    return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
+  return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
 }
 
 function saveLoggedinUser(user) {
-	// user = { 
-    //     _id: user._id, 
-    //     fullname: user.fullname, 
-    //     imgUrl: user.imgUrl, 
-    //     score: user.score, 
-    //     isAdmin: user.isAdmin 
-    // }
-	sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
-	return user
+  sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
+  return user
 }
 
-async function _demoUser() {
-    const users = await storageService.query('user')
-    const exists = users.some(u => u._id === demoUser._id)
-    if (!exists) {
-        await storageService.post('user', demoUser)
-    }
-    saveLoggedinUser(demoUser)
+if (!getLoggedinUser()) {
+  const demoUser = {
+    _id: 'u101',
+    username: 'demo',
+    password: 'demo',
+    fullname: 'Demo User',
+    imgUrl: 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png',
+    likedStoryIds: [],
+    savedStoryIds: [],
+    following: [],
+    followers: []
+  }
+
+  storageService.post('user', demoUser)
+  saveLoggedinUser(demoUser)
 }
-
-_demoUser()
-
-// To quickly create an admin user, uncomment the next line
-// _createAdmin()
-async function _createAdmin() {
-    const user = {
-        username: 'admin',
-        password: 'admin',
-        fullname: 'Mustafa Adminsky',
-        imgUrl: 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png',
-        score: 10000,
-    }
-
-    const newUser = await storageService.post('user', userCred)
-    console.log('newUser: ', newUser)
-}
-

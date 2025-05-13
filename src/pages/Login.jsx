@@ -15,7 +15,7 @@ export function Login() {
     }, [])
 
     async function loadUsers() {
-        const users = await userService.getUsers()
+        //! const users = await userService.getUsers()
         setUsers(users)
     }
 

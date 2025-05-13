@@ -1,94 +1,86 @@
 import { storageService } from '../async-storage.service'
-import { makeId, saveToStorage } from '../util.service'
+import { makeId } from '../util.service'
 import { userService } from '../user'
 import { Stories } from '../../data/story'
 
 const STORAGE_KEY = 'story'
 
 export const storyservice = {
-    query,
-    getById,
-    save,
-    remove,
-    addComment,
-    getEmptyStory,
-    update
+  query,
+  getById,
+  save,
+  remove,
+  addComment,
+  getEmptyStory,
+  update
 }
+
 window.cs = storyservice
 
-
 async function query() {
-    let stories = await storageService.query(STORAGE_KEY)
-    if (!stories || !stories.length) {
-        stories = createStories()
-    }
-    return stories
+  let stories = await storageService.query(STORAGE_KEY)
+  if (!stories || !stories.length) {
+    stories = await createStories()
+  }
+  return stories
 }
 
 function getById(storyId) {
-    return storageService.get(STORAGE_KEY, storyId)
+  return storageService.get(STORAGE_KEY, storyId)
 }
 
-async function update({ _id, score }) {
-    const user = await storageService.get('user', _id)
-    user.score = score
-    await storageService.put('user', user)
-
-    // When admin updates other user's details, do not update loggedinUser
-    const loggedinUser = getLoggedinUser()
-    if (loggedinUser._id === user._id) saveLoggedinUser(user)
-
-    return user
+async function update(storyToUpdate) {
+  const story = await storageService.get(STORAGE_KEY, storyToUpdate._id)
+  const updatedStory = { ...story, ...storyToUpdate }
+  await storageService.put(STORAGE_KEY, updatedStory)
+  return updatedStory
 }
 
 async function remove(storyId) {
-    // throw new Error('Nope')
-    await storageService.remove(STORAGE_KEY, storyId)
+  await storageService.remove(STORAGE_KEY, storyId)
 }
 
 function getEmptyStory() {
-    return {
-        vendor: '',
-        speed: 0,
-        imgUrl: '',
-        createdAt: Date.now(),
-        by: userService.getLoggedinUser(),
-        comments: [],
-        likes: [],
-    }
+  return {
+    txt: '',
+    imgUrl: '',
+    createdAt: Date.now(),
+    by: userService.getLoggedinUser(),
+    loc: null,
+    comments: [],
+    likedBy: [],
+    tags: []
+  }
 }
 
 async function save(story) {
-    var savedStory
-    if (story._id) {
-        const storyToSave = {
-            _id: story._id,
-            speed: story.speed
-        }
-        savedStory = await storageService.put(STORAGE_KEY, storyToSave)
-    } else {
-        const storyToSave = {
-            vendor: story.vendor,
-            speed: story.speed,
-            // Later, owner is set by the backend
-            owner: userService.getLoggedinUser(),
-            msgs: []
-        }
-        savedStory = await storageService.post(STORAGE_KEY, storyToSave)
-    }
-    return savedStory
+  const storyToSave = { ...story }
+
+  if (story._id) {
+    return await storageService.put(STORAGE_KEY, storyToSave)
+  } else {
+    storyToSave._id = makeId()
+    storyToSave.createdAt = Date.now()
+    storyToSave.by = userService.getLoggedinUser()
+    storyToSave.comments = []
+    storyToSave.likedBy = []
+    storyToSave.tags = []
+    return await storageService.post(STORAGE_KEY, storyToSave)
+  }
 }
 
 async function addComment(storyId, comment) {
-    const story = await getById(storyId)
-    if (!story.comments) story.comments = []
-    story.comments.push(comment)
-    await storageService.put(STORAGE_KEY, story)
-    return story
+  const story = await getById(storyId)
+  if (!story.comments) story.comments = []
+  story.comments.push(comment)
+  await storageService.put(STORAGE_KEY, story)
+  return story
 }
 
 async function createStories() {
-        const defaultstories = [...Stories] 
-       saveToStorage(STORAGE_KEY, defaultstories)
-    return defaultstories
+  const defaultStories = [...Stories]
+  for (const story of defaultStories) {
+    await storageService.post(STORAGE_KEY, story)
+  }
+  return defaultStories
 }

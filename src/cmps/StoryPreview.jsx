@@ -3,13 +3,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { StoryHeader } from './storyHeader.jsx'
 import { StoryActions } from './StoryActions.jsx'
 import { StoryComments } from './StoryComments.jsx'
-import { userService } from '../services/user'
+
 
 export function StoryPreview({ story, from }) {
     const { _id, txt, imgUrl, by, likes, createdAt, comments = [] } = story
-    const loggedInUser = userService.getLoggedinUser()
-
-    console.log(' StoryPreview loggedInUser:', loggedInUser)
+     const loggedInUser = useSelector((storeState) => storeState.userModule.user)
 
     return (
         from === 'index' ? (
@@ -30,7 +28,7 @@ export function StoryPreview({ story, from }) {
             //     <StoryHeader key={by._id} user={by} />
             //     <img className="story-img" src={imgUrl} alt="story" />
             // </Link>
-            <h1>no index</h1>
+            <h1>!!!no index!!!</h1>
         )
         // <div className="story-preview">
         //     <StoryHeader key={by._id} user={by} />

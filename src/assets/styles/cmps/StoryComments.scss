@@ -1,9 +1,11 @@
 .story-comments {
     margin: 0;
     padding: 0;
+    overflow: hidden;
 
     .view-comments {
         color: #737373;
+        background-color: transparent;
     }
 }
 
@@ -22,4 +24,6 @@
     input:not(:placeholder-shown)+.add-comment-post {
         display: block;
     }
+
+
 }

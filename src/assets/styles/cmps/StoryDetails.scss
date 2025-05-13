@@ -1,0 +1,102 @@
+.story-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.story-modal {
+    background-color: #fff;
+    width: 75.9vw;
+    height: 93vh;
+    margin-top: 8vh;
+    margin-bottom: 8vh;
+    display: flex;
+    overflow: hidden;
+
+    &-close {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        background: none;
+        border: none;
+        font-size: 1.1rem;
+        font-weight: 200;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    &-content {
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.story-media {
+    flex: 1;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+}
+
+.story-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    overflow-y: auto;
+
+    .story-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+    }
+
+    .story-comments {
+        flex: 1;
+        overflow-y: auto;
+        margin-bottom: 1rem;
+
+        p {
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+    }
+
+    .story-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+
+        button {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+
+            &.isLiked {
+                color: red;
+            }
+        }
+    }
+
+    .story-footer {
+        font-size: 0.85rem;
+        color: #888;
+        margin-top: auto;
+    }
+}

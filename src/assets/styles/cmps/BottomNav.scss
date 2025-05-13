@@ -11,6 +11,12 @@
   align-items: center;
   z-index: 100;
 
+   &.breakpoint-large ,
+    &.breakpoint-medium {
+  display: none;
+    }
+
+    
   .nav-section {
     display: flex;
     gap: rem(30px);
