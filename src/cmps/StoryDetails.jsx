@@ -20,7 +20,7 @@ export function StoryDetails({ story, onClose }) {
     const dispatch = useDispatch()
 
 
-    const [isLiked, setIsLiked] = useState(
+  const [isLiked, setIsLiked] = useState(
         loggedInUser?.likedStoryIds?.includes(story?._id)
     )
     const modalRef = useRef()
@@ -42,16 +42,17 @@ export function StoryDetails({ story, onClose }) {
     console.log(' StoryDetails users:', users)
 
     const { _id, txt, imgUrl, by, comments, likes, createdAt } = newStory
-
-    async function onToggleLike() {
-        if (!loggedInUser) return alert('You need to login first')
-
-        try {
+  
+  async function onToggleLike() {
+    if (!loggedInUser) return alert('You need to login first')
+    
+    try {
             await toggleLike(newStory, loggedInUser)
-        } catch (err) {
-            console.error('Failed to toggle like:', err)
-        }
+    } catch (err) {
+      console.error('Failed to toggle like:', err)
     }
+  }
+    if (!post) return null
 
     return (
         <main className="story-modal-overlay">

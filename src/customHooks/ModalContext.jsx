@@ -3,14 +3,18 @@ import { createContext, useContext, useState } from 'react'
 const ModalContext = createContext()
 
 export function ModalProvider({ children }) {
-  const [modalState, setModalState] = useState({ isOpen: false, storyId: null })
+  const [modalState, setModalState] = useState({
+    isOpen: false,
+    storyId: null,
+    modalType: null,
+  })
 
-  function open(storyId) {
-    setModalState({ isOpen: true, storyId })
+  function open(storyId, modalType) {
+    setModalState({ isOpen: true, storyId, modalType })
   }
 
   function close() {
-    setModalState({ isOpen: false, storyId: null })
+    setModalState({ isOpen: false, storyId: null, modalType: null })
   }
 
   return (

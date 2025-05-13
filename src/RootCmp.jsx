@@ -13,6 +13,7 @@ import { UserDetails } from './pages/UserDetails'
 
 // import { AppHeader } from './cmps/AppHeader'
 // import { AppFooter } from './cmps/AppFooter'
+
 import { StoryDetails } from './cmps/StoryDetails'
 import { UserMsg } from './cmps/UserMsg.jsx'
 import { SideNav } from './cmps/SideNav.jsx'
@@ -23,7 +24,6 @@ import { Signup } from './pages/Signup.jsx'
 
 export function RootCmp() {
     const { modalState, close } = useModal()
-    console.log(' RootCmp modalControl:', modalState)
 
     return (
         <div className="main-container">
@@ -31,7 +31,7 @@ export function RootCmp() {
             <SideNav />
             <BottomNav />
             {modalState.isOpen && (
-                <BasicModal storyId={modalState.storyId} onClose={close} />
+                <BasicModal type={modalState.modalType} storyId={modalState.storyId} onClose={close} />
             )}
             <main>
                 <Routes>
@@ -51,7 +51,7 @@ export function RootCmp() {
                     {/* <Route path="/reels" element={<AdminIndex />} /> */}
                     {/* <Route path="/messages" element={<AdminIndex />} /> */}
                     {/* <Route path="/Notifications" element={<AdminIndex />} /> */}
-                    {/* <Route path="/create" element={<AdminIndex />} /> */}
+                    {/* <Route path="/create" element={<UploadImg />} /> */}
                     {/* <Route path="/profile" element={<AdminIndex />} /> */}
                     <Route path="login" element={<LoginSignup />}>
                         <Route index element={<Login />} />

@@ -1,9 +1,8 @@
 import { storageService } from '../async-storage.service'
 import { Users } from '../../data/users'
-
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
-const STORAGE_KEY = 'user'
 
+const STORAGE_KEY = 'user'
 export const userService = {
     login,
     logout,
@@ -58,6 +57,11 @@ async function login(userCred) {
     const user = users.find(user => user.username === userCred.username)
 
     if (user) {
+        // Initialize likedStoryIds if not exists for existing users
+        if (!user.likedStoryIds) {
+            user.likedStoryIds = []
+            await storageService.put('user', user)
+        }
         return saveLoggedinUser(user)
     }
 }
@@ -80,8 +84,8 @@ function getLoggedinUser() {
 }
 
 function saveLoggedinUser(user) {
-    sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
-    return user
+	sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
+	return user
 }
 
 if (!getLoggedinUser()) {

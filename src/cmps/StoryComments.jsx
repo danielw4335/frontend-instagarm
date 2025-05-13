@@ -16,6 +16,11 @@ export const StoryComments = ({ story, from }) => {
         ev.preventDefault()
         if (!comment.trim() || !loggedInUser) return
 
+        if (!loggedInUser) {
+            alert('You must be logged in to comment')
+            return
+        }
+
         const newComment = {
             id: Date.now(),
             by: {
@@ -37,7 +42,6 @@ export const StoryComments = ({ story, from }) => {
     function onOpenModal() {
         navigate(`/story/${_id}`)
     }
-    console.log(from);
 
     return (
         <section className={`story-comments ${from}`}>
@@ -62,7 +66,7 @@ export const StoryComments = ({ story, from }) => {
                         </p>
                     </ShowMoreText>
 
-                    <button className="view-comments" onClick={onOpenModal}>
+                    <button className="view-comments " onClick={onOpenModal}>
                         View all {comments.length} comments
                     </button>
                 </>

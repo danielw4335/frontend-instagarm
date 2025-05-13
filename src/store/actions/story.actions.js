@@ -72,6 +72,7 @@ export async function addStoryComment(storyId, comment) {
 
 export async function toggleLike(story, user) {
     try {
+        // Update story with like
         const updatedStory = { ...story }
         if(!updatedStory.likes) updatedStory.likes = []
 
@@ -82,20 +83,65 @@ export async function toggleLike(story, user) {
         const savedStory = await storyservice.save(updatedStory)
         store.dispatch({ type: UPDATE_STORY, story: savedStory })
 
+        // Update user with liked story
         const updatedUser = { ...user }
         if(!updatedUser.likedStoryIds) updatedUser.likedStoryIds = []
 
         const storyIdxInUser = updatedUser.likedStoryIds.indexOf(story._id)
         if (storyIdxInUser === -1) updatedUser.likedStoryIds.push(story._id)
         else updatedUser.likedStoryIds.splice(storyIdxInUser, 1)
-
+        
         const savedUser = await userService.update(updatedUser)
         store.dispatch({ type: UPDATE_USER, user: savedUser })
-
+        
         return { updatedStory: savedStory, updatedUser: savedUser }
     } catch (err) {
         console.log('Cannot toggle like', err)
         throw err
+    }
+}
+
+// Command Creators:
+function getCmdSetStories(stories) {
+    return {
+        type: SET_STORIES,
+        stories
+    }
+}
+function getCmdSetStory(story) {
+    return {
+        type: SET_STORY,
+        story
+    }
+}
+function getCmdRemoveStory(storyId) {
+    return {
+        type: REMOVE_STORY,
+        storyId
+    }
+}
+function getCmdAddStory(story) {
+    return {
+        type: ADD_STORY,
+        story
+    }
+}
+function getCmdUpdateStory(story) {
+    return {
+        type: UPDATE_STORY,
+        story
+    }
+}
+function getCmdAddStoryMsg(msg) {
+    return {
+        type: ADD_STORY_COMMENT,
+        msg
+    }
+}
+function getCmdAddStoryComment(comment) {
+    return {
+        type: ADD_STORY_COMMENT,
+        comment
     }
 }
 
@@ -105,4 +151,5 @@ async function unitTestActions() {
     await addStory(storyservice.getEmptyStory())
     await updateStory({ _id: 'm1oC7', vendor: 'Story-Good' })
     await removeStory('m1oC7')
+    // TODO unit test addStoryMsg
 }

@@ -1,7 +1,15 @@
+import { useSelector } from 'react-redux'
 import { removeStory } from '../store/actions/story.actions'
 
-export function BasicModal({ storyId, onClose }) {
+export function BasicModal({ type ,storyId, onClose }) {
+  console.log(' BasicModal type:', type)
   if (!storyId) return null
+
+  const user = useSelector((storeState) => storeState.userModule.user)
+
+  function isMyStoryId(storyId, user) {
+    return user?.posts?.includes(storyId)
+  }
 
   async function onDelete() {
     try {
@@ -16,7 +24,10 @@ export function BasicModal({ storyId, onClose }) {
   return (
     <div className="modal-backdrop" onClick={onClose}>
       <div className="modal" onClick={(ev) => ev.stopPropagation()}>
-        <button className="modal-btn delete" onClick={onDelete}>Delete</button>
+
+        {isMyStoryId(storyId, user) && (
+          <button className="modal-btn delete" onClick={onDelete}>Delete</button>
+        )}
         <button className="modal-btn" onClick={onClose}>Cancel</button>
       </div>
     </div>

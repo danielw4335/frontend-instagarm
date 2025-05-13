@@ -10,6 +10,8 @@ export function StoryPreview({ story, from }) {
     const loggedInUser = useSelector((storeState) => storeState.userModule.user)
 
     const { _id, txt, imgUrl, by, likes, createdAt, comments = [] } = story
+    // const loggedInUser = useSelector((storeState) => storeState.userModule.loggedinUser)
+    console.log(' StoryPreview from:', from)
 
     return (
         from === 'index' ? (
@@ -18,6 +20,7 @@ export function StoryPreview({ story, from }) {
                 <img className="story-img" src={imgUrl} alt="story" />
                 <StoryActions loggedInUser={loggedInUser} story={story} from={from} />
                 <StoryComments story={story} from={from} />
+
                 <hr />
             </section>
         ) : (
@@ -37,4 +40,3 @@ export function StoryPreview({ story, from }) {
         // </div>
     )
 }
-

@@ -26,8 +26,9 @@
   top: 0;
   left: 0;
   height: 100vh;
-  width: rem(240px);
-  padding: rem(16px);
+  width: rem(244px);
+  padding-top: rem(30px);
+  padding-left: rem(20px);
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -37,7 +38,7 @@
     font-family: 'Pacifico', cursive;
     font-size: rem(22px);
     color: #262626;
-    margin-bottom: rem(24px);
+    margin-bottom: rem(45px);
     cursor: pointer;
   }
 
@@ -53,12 +54,12 @@
   .nav-section {
     display: flex;
     flex-direction: column;
-    gap: rem(12px);
+    gap: rem(24px);
     flex: 1;
   }
 
   .nav-label {
-    font-size: rem(14px);
+    font-size: rem(16px);
   }
 
   .nav-item {
@@ -99,6 +100,6 @@
   }
 
   .more {
-    margin-top: auto;
+    margin-bottom: rem(28px);
   }
 }

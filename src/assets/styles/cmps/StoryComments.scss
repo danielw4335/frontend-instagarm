@@ -7,10 +7,6 @@
         color: #737373;
         background-color: transparent;
     }
-
-}
-.story-comments .details{
-    color: #0095F6;
 }
 
 .add-comment-form {
@@ -29,6 +25,4 @@
     input:not(:placeholder-shown)+.add-comment-post {
         display: block;
     }
-
-
 }
