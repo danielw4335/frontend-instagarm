@@ -16,7 +16,7 @@ export function BasicModal({ storyId, onClose }) {
   return (
     <div className="modal-backdrop" onClick={onClose}>
       <div className="modal" onClick={(ev) => ev.stopPropagation()}>
-        <button className="modal-btn danger" onClick={onDelete}>Delete</button>
+        <button className="modal-btn delete" onClick={onDelete}>Delete</button>
         <button className="modal-btn" onClick={onClose}>Cancel</button>
       </div>
     </div>
