@@ -86,26 +86,3 @@ export async function logout() {
         throw err
     }
 }
-
-export async function loadUser(userId) {
-    try {
-        const user = await userService.getById(userId)
-        store.dispatch({ type: UPDATE_USER, user })
-        return user
-    } catch (err) {
-        showErrorMsg('Cannot load user')
-        console.log('Cannot load user', err)
-    }
-}
-
-export async function updateUser(userToUpdate) {
-    try {
-        const user = await userService.update(userToUpdate)
-        store.dispatch({ type: UPDATE_USER, user })
-        return user
-    } catch (err) {
-        showErrorMsg('Cannot update user')
-        console.log('Cannot update user', err)
-        throw err
-    }
-}

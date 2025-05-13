@@ -25,7 +25,7 @@
 @import "pages/Chat";
 
 // Components
-
+@import "cmps/BasicModal";
 @import "cmps/AppHeader";
 @import "cmps/AppFooter";
 @import "cmps/UserMsg";
@@ -43,3 +43,4 @@
 @import "cmps/StoryList";
 @import "cmps/StoryPreview";
 @import "cmps/StoryHeader";
+

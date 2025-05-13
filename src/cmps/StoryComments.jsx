@@ -45,11 +45,11 @@ export const StoryComments = ({ story, from }) => {
 
     return (
         <section className={`story-comments ${from}`}>
-            {/* 
- {from === 'details' && (
-)} */}
-
-            {likes?.length > 0 && <p>{likes.length} likes</p>}
+            {from === 'details' && (
+                <section className="story-comments-likes">
+                    {likes?.length > 0 && <p>{likes.length} likes</p>}
+                </section>
+            )}
             {from === 'index' && (
                 <>
 

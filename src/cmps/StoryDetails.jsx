@@ -17,11 +17,10 @@ export function StoryDetails({ story, onClose }) {
     const loggedInUser = useSelector(storeState => storeState.userModule.user)
     const users = useSelector(storeState => storeState.userModule.users)
     const newStory = useSelector((storeState) => storeState.storyModule.story)
-    const dispatch = useDispatch()
 
 
   const [isLiked, setIsLiked] = useState(
-        loggedInUser?.likedStoryIds?.includes(story?._id)
+        loggedInUser?.likedStoryIds?.includes(newStory?._id)
     )
     const modalRef = useRef()
     useClickOutsideClose(modalRef, onClose)
@@ -52,7 +51,7 @@ export function StoryDetails({ story, onClose }) {
       console.error('Failed to toggle like:', err)
     }
   }
-    if (!post) return null
+    if (!newStory) return null
 
     return (
         <main className="story-modal-overlay">
@@ -84,7 +83,8 @@ export function StoryDetails({ story, onClose }) {
                             ))}
                         </div>
 
-                        <div className="story-actions">
+                        <div className="story-footer">
+                        <div className="story-actions details">
                             <div className="left-actions">
                                 <button onClick={onToggleLike}>
                                     <FontAwesomeIcon icon={isLiked ? faHeartSolid : faHeart} className={isLiked ? 'isLiked' : ''} />
@@ -95,7 +95,6 @@ export function StoryDetails({ story, onClose }) {
                             <button className="save-btn"><FontAwesomeIcon icon={faBookmark} /></button>
                         </div>
 
-                        <div className="story-footer">
                             <StoryComments story={newStory} from={from} />
                         </div>
                     </div>

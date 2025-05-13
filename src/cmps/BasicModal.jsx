@@ -23,7 +23,7 @@ export function BasicModal({ type ,storyId, onClose }) {
 
   return (
     <div className="modal-backdrop" onClick={onClose}>
-      <div className="modal" onClick={(ev) => ev.stopPropagation()}>
+      <div className="modal-basic" onClick={(ev) => ev.stopPropagation()}>
 
         {isMyStoryId(storyId, user) && (
           <button className="modal-btn delete" onClick={onDelete}>Delete</button>
