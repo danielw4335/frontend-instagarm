@@ -10,7 +10,6 @@ export const StoryComments = ({ story, from }) => {
     const navigate = useNavigate()
 
     const { _id, txt, comments = [], likes } = story
-    console.log(' StoryComments likes:', likes)
 
     async function onAddComment(ev) {
         ev.preventDefault()

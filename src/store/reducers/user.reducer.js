@@ -9,9 +9,10 @@ const initialState = {
   user: userService.getLoggedinUser(),
   users: []
 }
+console.log(' initialState:', initialState)
 
 export function userReducer(state = initialState, action) {
-  let newState = state
+    let newState = state
 
   switch (action.type) {
     case SET_USER:

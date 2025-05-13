@@ -4,17 +4,20 @@ import { formatDistance } from 'date-fns'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faComment, faPaperPlane, faBookmark } from '@fortawesome/free-regular-svg-icons'
 import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons'
-import { loadStory, toggleLike } from '../store/actions/story.actions'
 import { useClickOutsideClose } from '../customHooks/useClickOutsideClose'
 
 import { StoryComments } from './StoryComments.jsx'
 import { StoryHeader } from './storyHeader.jsx'
+import { loadStory, toggleLike } from '../store/actions/story.actions'
+import { loadUsers } from '../store/actions/user.actions.js'
 
-export function StoryDetails({ story, comments = [], onClose }) {
+export function StoryDetails({ story, onClose }) {
     const from = 'details'
     const loggedInUser = useSelector(storeState => storeState.userModule.user)
+    const users = useSelector(storeState => storeState.userModule.users)
     const newStory = useSelector((storeState) => storeState.storyModule.story)
     const dispatch = useDispatch()
+    
     
     const [isLiked, setIsLiked] = useState(
         loggedInUser?.likedStoryIds?.includes(story?._id)
@@ -24,6 +27,7 @@ export function StoryDetails({ story, comments = [], onClose }) {
     
     useEffect(() => {
         loadStory(story._id)
+        loadUsers()
     }, [])
     
     useEffect(() => {
@@ -32,10 +36,11 @@ export function StoryDetails({ story, comments = [], onClose }) {
         }
     }, [loggedInUser, newStory])
     
-    if (!newStory) return <div>Loading...</div>
-    if (!story) return null
+    if (!newStory) return null
+    if (!users) return null
+    console.log(' StoryDetails users:', users)
 
-    const { _id, txt, imgUrl, by, likes, createdAt } = newStory
+    const { _id, txt, imgUrl, by, comments, likes, createdAt } = newStory
 
     async function onToggleLike() {
         if (!loggedInUser) return alert('You need to login first')
@@ -62,7 +67,7 @@ export function StoryDetails({ story, comments = [], onClose }) {
                             <StoryHeader key={by._id} from={from} user={by} createdAt={createdAt} />
                         </div>
                         <div className="story-comments">
-                            {newStory.comments?.map((comment, idx) => (
+                            {comments?.map((comment, idx) => (
                                 <p key={idx}>
                                     <strong>{comment.by?.fullname}</strong> {comment.txt}
                                 </p>

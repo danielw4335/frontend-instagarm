@@ -15,6 +15,7 @@ export const userService = {
 }
 
 function getUsers() {
+	console.log(' remote getUsers:', getUsers)
 	return httpService.get(`user`)
 }
 
