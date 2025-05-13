@@ -20,7 +20,10 @@ window.cs = userService
 
 async function getUsers() {
     let users = await storageService.query(STORAGE_KEY)
-    if (!users || !users.length) {
+    const isCorrupted = !Array.isArray(users) || users.some(u => !u._id || !u.username)
+
+    if (!users || !users.length || isCorrupted) {
+        localStorage.removeItem(STORAGE_KEY)
         users = await createUsers()
     }
     return users.map(user => {
@@ -109,12 +112,3 @@ async function createUsers() {
 
     return savedUsers
 }
-
-
-// async function createUsers() {
-//     const defaultUsers = [...Users]
-//     for (const user of defaultUsers) {
-//         await storageService.post(STORAGE_KEY, user)
-//     }
-//     return defaultUsers
-// }

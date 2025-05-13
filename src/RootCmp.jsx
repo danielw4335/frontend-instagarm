@@ -1,5 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router'
+import { useModal } from './customHooks/ModalContext.jsx'
+import { BasicModal } from './cmps/BasicModal.jsx'
 
 // import { HomePage } from './pages/HomePage'
 import { AboutUs, AboutTeam, AboutVision } from './pages/AboutUs'
@@ -20,11 +22,17 @@ import { Login } from './pages/Login.jsx'
 import { Signup } from './pages/Signup.jsx'
 
 export function RootCmp() {
+    const { modalState, close } = useModal()
+    console.log(' RootCmp modalControl:', modalState)
+
     return (
         <div className="main-container">
             <UserMsg />
             <SideNav />
             <BottomNav />
+            {modalState.isOpen && (
+                <BasicModal storyId={modalState.storyId} onClose={close} />
+            )}
             <main>
                 <Routes>
                     {/* <Route path="" element={<HomePage />} /> */}

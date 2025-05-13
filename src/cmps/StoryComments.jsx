@@ -9,7 +9,8 @@ export const StoryComments = ({ story, from }) => {
     const loggedInUser = useSelector((storeState) => storeState.userModule.user)
     const navigate = useNavigate()
 
-    const { _id, txt, comments = [], likes } = story
+    const { _id, txt, by, comments = [], likes } = story
+
 
     async function onAddComment(ev) {
         ev.preventDefault()
@@ -36,6 +37,7 @@ export const StoryComments = ({ story, from }) => {
     function onOpenModal() {
         navigate(`/story/${_id}`)
     }
+    console.log(from);
 
     return (
         <section className={`story-comments ${from}`}>
@@ -46,6 +48,7 @@ export const StoryComments = ({ story, from }) => {
             {likes?.length > 0 && <p>{likes.length} likes</p>}
             {from === 'index' && (
                 <>
+
                     <ShowMoreText
                         lines={2}
                         more="more"
@@ -54,7 +57,9 @@ export const StoryComments = ({ story, from }) => {
                         expanded={false}
                         truncatedEndingComponent="…"
                     >
-                        <p>{txt}</p>
+                        <p>
+                            <strong>{by.username}</strong> {txt}
+                        </p>
                     </ShowMoreText>
 
                     <button className="view-comments" onClick={onOpenModal}>

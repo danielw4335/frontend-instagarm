@@ -1,95 +1,112 @@
 export const Users = [
   {
     _id: 'u101',
-    username: 'user1',
+    username: 'daniel_w',
     password: 'pass1',
-    fullname: 'User 1 Fullname',
-    imgUrl: 'https://randomuser.me/api/portraits/women/31.jpg',
-    likedStoryIds: ['s103', 's102'],
-    savedStoryIds: [],
-    following: [],
-    followers: [],
-    posts: ['s105'],
+    fullname: 'Daniel',
+    imgUrl: 'https://randomuser.me/api/portraits/men/31.jpg',
+    likedStoryIds: ['s101', 's102', 's104'],
+    savedStoryIds: ['s102'],
+    following: ['u108', 'u102', 'u103'],
+    followers: ['u108', 'u1010', 'u103'],
+    posts: ['s101'],
     comments: [
       {
         storyId: 's103',
-        commentId: 'c1030',
-        txt: 'User user1 commenting on story s103'
+        commentId: 'c10',
+        txt: 'Love this vibe'
+      },
+      {
+        storyId: 's101',
+        commentId: 'c11',
+        txt: 'Absolutely stunning'
       }
     ]
   },
   {
     _id: 'u102',
-    username: 'user2',
+    username: 'noa_b',
     password: 'pass2',
-    fullname: 'User 2 Fullname',
-    imgUrl: 'https://randomuser.me/api/portraits/men/32.jpg',
-    likedStoryIds: ['s101', 's102', 's103', 's104'],
+    fullname: 'Noa',
+    imgUrl: 'https://randomuser.me/api/portraits/women/32.jpg',
+    likedStoryIds: ['s102', 's105'],
     savedStoryIds: [],
-    following: [],
-    followers: [],
-    posts: ['s101'],
-    comments: []
+    following: ['u106', 'u107', 'u101'],
+    followers: ['u1010', 'u109', 'u103'],
+    posts: ['s102'],
+    comments: [
+      {
+        storyId: 's101',
+        commentId: 'c20',
+        txt: 'So peaceful!'
+      }
+    ]
   },
   {
     _id: 'u103',
-    username: 'user3',
+    username: 'eli.cohen',
     password: 'pass3',
-    fullname: 'User 3 Fullname',
-    imgUrl: 'https://randomuser.me/api/portraits/women/33.jpg',
-    likedStoryIds: ['s102'],
-    savedStoryIds: [],
-    following: [],
-    followers: [],
-    posts: ['s102'],
-    comments: []
-  },
-  {
-    _id: 'u104',
-    username: 'user4',
-    password: 'pass4',
-    fullname: 'User 4 Fullname',
-    imgUrl: 'https://randomuser.me/api/portraits/men/34.jpg',
-    likedStoryIds: ['s101', 's105'],
-    savedStoryIds: [],
-    following: [],
-    followers: [],
+    fullname: 'Eli',
+    imgUrl: 'https://randomuser.me/api/portraits/men/33.jpg',
+    likedStoryIds: ['s104', 's105', 's102'],
+    savedStoryIds: ['s103'],
+    following: ['u105', 'u106', 'u107'],
+    followers: ['u106', 'u104', 'u105'],
     posts: ['s103'],
     comments: [
       {
-        storyId: 's102',
-        commentId: 'c1020',
-        txt: 'User user4 commenting on story s102'
+        storyId: 's103',
+        commentId: 'c30',
+        txt: 'Where is this?'
       },
       {
         storyId: 's104',
-        commentId: 'c1040',
-        txt: 'User user4 commenting on story s104'
-      },
+        commentId: 'c31',
+        txt: 'So peaceful!'
+      }
+    ]
+  },
+  {
+    _id: 'u104',
+    username: 'yael_k',
+    password: 'pass4',
+    fullname: 'Yael',
+    imgUrl: 'https://randomuser.me/api/portraits/women/34.jpg',
+    likedStoryIds: ['s104'],
+    savedStoryIds: ['s103'],
+    following: ['u102', 'u105', 'u108'],
+    followers: ['u102', 'u109', 'u103'],
+    posts: ['s104'],
+    comments: [
       {
-        storyId: 's105',
-        commentId: 'c1050',
-        txt: 'User user4 commenting on story s105'
+        storyId: 's102',
+        commentId: 'c40',
+        txt: 'Looks awesome'
       }
     ]
   },
   {
     _id: 'u105',
-    username: 'user5',
+    username: 'amit.aviv',
     password: 'pass5',
-    fullname: 'User 5 Fullname',
-    imgUrl: 'https://randomuser.me/api/portraits/women/35.jpg',
-    likedStoryIds: ['s101'],
-    savedStoryIds: [],
-    following: [],
-    followers: [],
-    posts: ['s104'],
+    fullname: 'Amit',
+    imgUrl: 'https://randomuser.me/api/portraits/men/35.jpg',
+    likedStoryIds: ['s103'],
+    savedStoryIds: ['s102'],
+    following: ['u102', 'u109', 'u108'],
+    followers: ['u108', 'u107', 'u104'],
+    posts: ['s105'],
     comments: [
       {
+        storyId: 's102',
+        commentId: 'c50',
+        txt: 'Dream location'
+      },
+      {
         storyId: 's101',
-        commentId: 'c1010',
-        txt: 'User user5 commenting on story s101'
+        commentId: 'c51',
+        txt: 'Amazing shot!'
       }
     ]
-  }
+  },
 ]

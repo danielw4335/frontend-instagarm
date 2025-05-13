@@ -1,102 +1,147 @@
 export const Stories = [
   {
     _id: 's101',
-    txt: 'This is story text number 1',
+    txt: 'Photo 1 from our last adventure!',
     imgUrl: 'https://picsum.photos/470/300?random=101',
-    createdAt: 1707264000000,
+    createdAt: 1700100000000,
     by: {
-      _id: 'u102',
-      fullname: 'User 2 Fullname',
-      userName: 'user2',
-      imgUrl: 'https://randomuser.me/api/portraits/men/32.jpg'
+      _id: 'u101',
+      username: 'daniel_w',
+      fullname: 'Daniel',
+      imgUrl: 'https://randomuser.me/api/portraits/men/31.jpg'
     },
     comments: [
       {
-        id: 'c1010',
-        by: { _id: 'u105', fullname: 'User 5 Fullname' },
-        txt: 'User user5 commenting on story s101'
+        id: 'c10',
+        by: {
+          _id: 'u1010',
+          username: 'lior.photo',
+          fullname: 'Lior',
+          imgUrl: 'https://randomuser.me/api/portraits/women/40.jpg'
+        },
+        txt: 'Love this!'
+      },
+      {
+        id: 'c11',
+        by: {
+          _id: 'u105',
+          username: 'amit.aviv',
+          fullname: 'Amit',
+          imgUrl: 'https://randomuser.me/api/portraits/men/35.jpg'
+        },
+        txt: 'Wow 😍'
       }
     ],
-    likes: ['u102', 'u104', 'u101']
+    likes: ['u105', 'u107', 'u109', 'u103', 'u104', 'u108']
   },
   {
     _id: 's102',
-    txt: 'This is story text number 2',
+    txt: 'Photo 2 from our last adventure!',
     imgUrl: 'https://picsum.photos/470/300?random=102',
-    createdAt: 1738886400000,
+    createdAt: 1700200000000,
     by: {
-      _id: 'u103',
-      fullname: 'User 3 Fullname',
-      userName: 'user3',
-      imgUrl: 'https://randomuser.me/api/portraits/women/33.jpg'
+      _id: 'u102',
+      username: 'noa_b',
+      fullname: 'Noa',
+      imgUrl: 'https://randomuser.me/api/portraits/women/32.jpg'
     },
     comments: [
       {
-        id: 'c1020',
-        by: { _id: 'u104', fullname: 'User 4 Fullname' },
-        txt: 'User user4 commenting on story s102'
+        id: 'c20',
+        by: {
+          _id: 'u109',
+          username: 'tomer.build',
+          fullname: 'Tomer',
+          imgUrl: 'https://randomuser.me/api/portraits/men/39.jpg'
+        },
+        txt: 'So peaceful!'
+      },
+      {
+        id: 'c21',
+        by: {
+          _id: 'u102',
+          username: 'noa_b',
+          fullname: 'Noa',
+          imgUrl: 'https://randomuser.me/api/portraits/women/32.jpg'
+        },
+        txt: 'Love this!'
       }
     ],
-    likes: ['u103', 'u102']
+    likes: ['u1010', 'u107', 'u102', 'u105', 'u101', 'u109']
   },
   {
     _id: 's103',
-    txt: 'This is story text number 3',
+    txt: 'Photo 3 from our last adventure!',
     imgUrl: 'https://picsum.photos/470/300?random=103',
-    createdAt: 1715212800000,
+    createdAt: 1700300000000,
     by: {
-      _id: 'u104',
-      fullname: 'User 4 Fullname',
-      userName: 'user4',
-      imgUrl: 'https://randomuser.me/api/portraits/men/34.jpg'
+      _id: 'u103',
+      username: 'eli.cohen',
+      fullname: 'Eli',
+      imgUrl: 'https://randomuser.me/api/portraits/men/33.jpg'
     },
     comments: [
       {
-        id: 'c1030',
-        by: { _id: 'u101', fullname: 'User 1 Fullname' },
-        txt: 'User user1 commenting on story s103'
+        id: 'c30',
+        by: {
+          _id: 'u102',
+          username: 'noa_b',
+          fullname: 'Noa',
+          imgUrl: 'https://randomuser.me/api/portraits/women/32.jpg'
+        },
+        txt: 'Amazing shot!'
       }
     ],
-    likes: ['u102', 'u101']
+    likes: ['u109', 'u105', 'u102']
   },
   {
     _id: 's104',
-    txt: 'This is story text number 4',
+    txt: 'Photo 4 from our last adventure!',
     imgUrl: 'https://picsum.photos/470/300?random=104',
-    createdAt: 1735257600000,
+    createdAt: 1700400000000,
     by: {
-      _id: 'u105',
-      fullname: 'User 5 Fullname',
-      userName: 'user5',
-      imgUrl: 'https://randomuser.me/api/portraits/women/35.jpg'
+      _id: 'u104',
+      username: 'yael_k',
+      fullname: 'Yael',
+      imgUrl: 'https://randomuser.me/api/portraits/women/34.jpg'
     },
     comments: [
       {
-        id: 'c1040',
-        by: { _id: 'u104', fullname: 'User 4 Fullname' },
-        txt: 'User user4 commenting on story s104'
+        id: 'c40',
+        by: {
+          _id: 'u104',
+          username: 'yael_k',
+          fullname: 'Yael',
+          imgUrl: 'https://randomuser.me/api/portraits/women/34.jpg'
+        },
+        txt: 'So peaceful!'
       }
     ],
-    likes: ['u102']
+    likes: ['u109', 'u106', 'u108', 'u1010']
   },
   {
     _id: 's105',
-    txt: 'This is story text number 5',
+    txt: 'Photo 5 from our last adventure!',
     imgUrl: 'https://picsum.photos/470/300?random=105',
-    createdAt: 1728259200000,
+    createdAt: 1700500000000,
     by: {
-      _id: 'u101',
-      fullname: 'User 1 Fullname',
-      userName: 'user1',
-      imgUrl: 'https://randomuser.me/api/portraits/women/31.jpg'
+      _id: 'u105',
+      username: 'amit.aviv',
+      fullname: 'Amit',
+      imgUrl: 'https://randomuser.me/api/portraits/men/35.jpg'
     },
     comments: [
       {
-        id: 'c1050',
-        by: { _id: 'u104', fullname: 'User 4 Fullname' },
-        txt: 'User user4 commenting on story s105'
+        id: 'c50',
+        by: {
+          _id: 'u103',
+          username: 'eli.cohen',
+          fullname: 'Eli',
+          imgUrl: 'https://randomuser.me/api/portraits/men/33.jpg'
+        },
+        txt: 'Absolutely stunning'
       }
     ],
-    likes: ['u104']
+    likes: ['u104', 'u108', 'u103', 'u105', 'u102']
   }
 ]

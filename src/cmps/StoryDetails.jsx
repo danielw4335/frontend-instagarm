@@ -8,6 +8,7 @@ import { useClickOutsideClose } from '../customHooks/useClickOutsideClose'
 
 import { StoryComments } from './StoryComments.jsx'
 import { StoryHeader } from './storyHeader.jsx'
+import { PostMainText } from './PostMainText.jsx'
 import { loadStory, toggleLike } from '../store/actions/story.actions'
 import { loadUsers } from '../store/actions/user.actions.js'
 
@@ -17,25 +18,25 @@ export function StoryDetails({ story, onClose }) {
     const users = useSelector(storeState => storeState.userModule.users)
     const newStory = useSelector((storeState) => storeState.storyModule.story)
     const dispatch = useDispatch()
-    
-    
+
+
     const [isLiked, setIsLiked] = useState(
         loggedInUser?.likedStoryIds?.includes(story?._id)
     )
     const modalRef = useRef()
     useClickOutsideClose(modalRef, onClose)
-    
+
     useEffect(() => {
         loadStory(story._id)
         loadUsers()
     }, [])
-    
+
     useEffect(() => {
         if (loggedInUser && newStory) {
             setIsLiked(loggedInUser.likedStoryIds?.includes(newStory._id))
         }
     }, [loggedInUser, newStory])
-    
+
     if (!newStory) return null
     if (!users) return null
     console.log(' StoryDetails users:', users)
@@ -67,10 +68,18 @@ export function StoryDetails({ story, onClose }) {
                             <StoryHeader key={by._id} from={from} user={by} createdAt={createdAt} />
                         </div>
                         <div className="story-comments">
+                            <PostMainText story={newStory} />
                             {comments?.map((comment, idx) => (
-                                <p key={idx}>
-                                    <strong>{comment.by?.fullname}</strong> {comment.txt}
-                                </p>
+                                <div key={idx} className="comment-preview">
+                                    <img className="user-img" src={comment.by.imgUrl} alt="user" />
+                                    <div className="comment-content">
+                                        <p><strong>{comment.by.username}</strong> {comment.txt}</p>
+                                        <div className="comment-meta">
+                                            <span>{comment.createdAt} 5h </span>
+                                            <span>{comment.likes?.length || 0} likes</span>
+                                        </div>
+                                    </div>
+                                </div>
                             ))}
                         </div>
 

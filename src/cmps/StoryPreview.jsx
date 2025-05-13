@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { StoryHeader } from './storyHeader.jsx'
 import { StoryActions } from './StoryActions.jsx'
 import { StoryComments } from './StoryComments.jsx'
+import { BasicModal } from './BasicModal.jsx'
 
 
 export function StoryPreview({ story, from }) {
@@ -13,7 +14,7 @@ export function StoryPreview({ story, from }) {
     return (
         from === 'index' ? (
             <section className="story-preview">
-                <StoryHeader key={by._id} from={from} user={by} createdAt={createdAt} />
+                <StoryHeader key={by._id} from={from} _id={_id} user={by} createdAt={createdAt} />
                 <img className="story-img" src={imgUrl} alt="story" />
                 <StoryActions loggedInUser={loggedInUser} story={story} from={from} />
                 <StoryComments story={story} from={from} />
