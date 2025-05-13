@@ -54,15 +54,11 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 0.4rem;
     overflow-y: auto;
 
     .story-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         margin-bottom: 0.5rem;
-        font-weight: bold;
     }
 
     .story-comments {

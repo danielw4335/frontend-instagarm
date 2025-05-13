@@ -1,40 +1,51 @@
-import { useRef, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useEffect, useRef, useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { formatDistance } from 'date-fns'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faComment, faPaperPlane, faBookmark } from '@fortawesome/free-regular-svg-icons'
 import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons'
-import { toggleLike } from '../store/actions/story.actions'
+import { loadStory, toggleLike } from '../store/actions/story.actions'
 import { useClickOutsideClose } from '../customHooks/useClickOutsideClose'
 
-function formatTimeAgo(date) {
-    return formatDistance(new Date(date), new Date(), { addSuffix: true })
-}
+import { StoryComments } from './StoryComments.jsx'
+import { StoryHeader } from './storyHeader.jsx'
 
 export function StoryDetails({ story, comments = [], onClose }) {
+    const from = 'details'
     const loggedInUser = useSelector(storeState => storeState.userModule.user)
+    const newStory = useSelector((storeState) => storeState.storyModule.story)
+    const dispatch = useDispatch()
+    
     const [isLiked, setIsLiked] = useState(
         loggedInUser?.likedStoryIds?.includes(story?._id)
     )
     const modalRef = useRef()
     useClickOutsideClose(modalRef, onClose)
+    
+    useEffect(() => {
+        loadStory(story._id)
+    }, [])
+    
+    useEffect(() => {
+        if (loggedInUser && newStory) {
+            setIsLiked(loggedInUser.likedStoryIds?.includes(newStory._id))
+        }
+    }, [loggedInUser, newStory])
+    
+    if (!newStory) return <div>Loading...</div>
+    if (!story) return null
+
+    const { _id, txt, imgUrl, by, likes, createdAt } = newStory
 
     async function onToggleLike() {
         if (!loggedInUser) return alert('You need to login first')
 
         try {
-            if (!loggedInUser.likedStoryIds) {
-                loggedInUser.likedStoryIds = []
-            }
-
-            await toggleLike(story, loggedInUser)
-            setIsLiked(prev => !prev)
+            await toggleLike(newStory, loggedInUser)
         } catch (err) {
             console.error('Failed to toggle like:', err)
         }
     }
-
-    if (!story) return null
 
     return (
         <main className="story-modal-overlay">
@@ -43,19 +54,17 @@ export function StoryDetails({ story, comments = [], onClose }) {
 
                 <div className="story-modal-content">
                     <div className="story-media">
-                        <img src={story.imgUrl} alt="story" />
+                        <img src={newStory.imgUrl} alt="story" />
                     </div>
 
                     <div className="story-details">
                         <div className="story-header">
-                            <p>@{story.username}</p>
-                            <p>{story.description}</p>
+                            <StoryHeader key={by._id} from={from} user={by} createdAt={createdAt} />
                         </div>
-
                         <div className="story-comments">
-                            {comments.map((comment, idx) => (
+                            {newStory.comments?.map((comment, idx) => (
                                 <p key={idx}>
-                                    <strong>{comment.by?.fullname || 'Unknown'}</strong> {comment.txt}
+                                    <strong>{comment.by?.fullname}</strong> {comment.txt}
                                 </p>
                             ))}
                         </div>
@@ -72,7 +81,7 @@ export function StoryDetails({ story, comments = [], onClose }) {
                         </div>
 
                         <div className="story-footer">
-                            <p>{formatTimeAgo(story.createdAt)} · {story.likes?.length || 0} likes</p>
+                            <StoryComments story={newStory} from={from} />
                         </div>
                     </div>
                 </div>

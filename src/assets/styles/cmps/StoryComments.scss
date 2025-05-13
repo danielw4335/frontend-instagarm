@@ -7,6 +7,10 @@
         color: #737373;
         background-color: transparent;
     }
+
+}
+.story-comments .details{
+    color: #0095F6;
 }
 
 .add-comment-form {
@@ -14,6 +18,7 @@
     align-items: center;
     justify-content: space-between;
     height: rem(18px);
+    overflow: hidden;
 
     .add-comment-post {
         color: #0095F6;
