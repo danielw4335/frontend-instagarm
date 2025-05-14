@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router';
 import { useScreenBreakpoint } from '../customHooks/useScreenBreakpoint'
 import defaultUser from '../assets/img/defaultUser.png';
+import { useModal } from '../customHooks/ModalContext';
 import {
     Home,
     Search,
@@ -11,7 +12,7 @@ import {
 export function BottomNav() {
     const breakpoint = useScreenBreakpoint()
     const navigate = useNavigate()
-
+const { open } = useModal()
 
     return (
         <section className={`bottom-nav breakpoint-${breakpoint}`}>
@@ -24,7 +25,7 @@ export function BottomNav() {
                     <Search />
                 </div>
 
-                <div className="nav-item" onClick={() => navigate('/create')}>
+                <div className="nav-item" onClick={() => open( null, 'upload' )}>
                     <PlusSquare />
                 </div>
 

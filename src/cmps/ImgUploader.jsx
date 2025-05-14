@@ -21,7 +21,7 @@ export function ImgUploader({ onUploaded = null }) {
     onDrop,
     accept: { 'image/*': [] },//?only img
     multiple: false,//?only one
-    noClick: true, 
+    noClick: true,
     noKeyboard: true
   })
 
@@ -30,10 +30,10 @@ export function ImgUploader({ onUploaded = null }) {
       <input {...getInputProps()} />
 
       {imgData?.url && <img src={imgData.url} alt="Uploaded" style={{ maxWidth: '200px' }} />}
+      <img src="/src/assets/SVG/uploadMedia.svg" className='upload-media-svg'/>
+      <span>{isUploading ? 'Uploading...' : 'Drag photos and videos here'}</span>
 
-      <p>{isUploading ? 'Uploading...' : 'Drag photos and videos here'}</p>
-
-      <button type="button" onClick={open} disabled={isUploading}>
+      <button className='upload-img-btn' type="button" onClick={open} disabled={isUploading}>
         {imgData?.url ? 'Upload Another Image' : 'Select from computer'}
       </button>
     </div>

@@ -14,12 +14,12 @@ export const Users = [
       {
         storyId: 's103',
         commentId: 'c10',
-        txt: 'Love this vibe'
+        txt: 'Love this vibe Love this vibe Love this vibe Love this vibe Love this vibe Love this vibe'
       },
       {
         storyId: 's101',
         commentId: 'c11',
-        txt: 'Absolutely stunning'
+        txt: 'Absolutely stunning Absolutely stunning vibe Love this vibe Love this vibe'
       }
     ]
   },
@@ -38,7 +38,7 @@ export const Users = [
       {
         storyId: 's101',
         commentId: 'c20',
-        txt: 'So peaceful!'
+        txt: 'Absolutely stunning Absolutely stunning vibe Love this vibe Love this vibe!'
       }
     ]
   },
@@ -62,7 +62,7 @@ export const Users = [
       {
         storyId: 's104',
         commentId: 'c31',
-        txt: 'So peaceful!'
+        txt: 'Absolutely stunning Absolutely stunning vibe Love this vibe Love this vibe!'
       }
     ]
   },
@@ -81,7 +81,7 @@ export const Users = [
       {
         storyId: 's102',
         commentId: 'c40',
-        txt: 'Looks awesome'
+        txt: 'Absolutely stunning Absolutely stunning vibe Love this vibe Love this vibe'
       }
     ]
   },
@@ -100,12 +100,12 @@ export const Users = [
       {
         storyId: 's102',
         commentId: 'c50',
-        txt: 'Dream location'
+        txt: 'Absolutely stunning Absolutely stunning vibe Love this vibe Love this vibe'
       },
       {
         storyId: 's101',
         commentId: 'c51',
-        txt: 'Amazing shot!'
+        txt: 'Amazing shot fposdjvoi isjdvi uihiu ihjiuohoiu j  iuhiuohiu ouuoihuihiu h iyuhuih!'
       }
     ]
   },

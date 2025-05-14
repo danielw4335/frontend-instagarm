@@ -9,6 +9,24 @@
       align-items: center;
     }
 
+    p{
+      border-bottom:1px solid #dbdbdb ;
+    }
+
+    .upload-media-svg{
+      margin: 50px auto 20px;
+  
+    }
+
+    .upload-img-btn{
+      background-color: #0095f6;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 8px 5px;
+      border-radius: 8px;
+    }
+
     .modal-upload {
       width: 300px;
       height: 331px;

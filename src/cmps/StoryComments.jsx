@@ -60,9 +60,7 @@ export const StoryComments = ({ story, from }) => {
                             expanded={false}
                             truncatedEndingComponent="…"
                         >
-                            <p>
                                 <span className="user-txt-span">{txt}</span>
-                            </p>
                         </ShowMoreText>
                     </div>
 

@@ -1,7 +1,7 @@
 export const Stories = [
   {
     _id: 's101',
-    txt: 'Photo 1 from our last adventure!',
+    txt: 'Photo 1 from our last adventure our last adventure our last adventure our  last adventure our last adventure our last adventure our last adventure  last adventure our last adventure our last adventure our last adventure last adventure our  last adventure!',
     imgUrl: 'https://picsum.photos/470/300?random=101',
     createdAt: 1700100000000,
     by: {
@@ -36,7 +36,7 @@ export const Stories = [
   },
   {
     _id: 's102',
-    txt: 'Photo 2 from our last adventure!',
+    txt: 'Photo 2 from our last adventure our last adventure our last adventure our  last adventure our last adventure our last adventure our last adventure  last adventure our last adventure our last adventure our last adventure last adventure our  last adventure!',
     imgUrl: 'https://picsum.photos/470/300?random=102',
     createdAt: 1700200000000,
     by: {
@@ -71,7 +71,7 @@ export const Stories = [
   },
   {
     _id: 's103',
-    txt: 'Photo 3 from our last adventure!',
+    txt: 'Photo 3 from our last adventure our last adventure our last adventure our  last adventure our last adventure our last adventure our last adventure  last adventure our last adventure our last adventure our last adventure last adventure our  last adventure!',
     imgUrl: 'https://picsum.photos/470/300?random=103',
     createdAt: 1700300000000,
     by: {
@@ -96,7 +96,7 @@ export const Stories = [
   },
   {
     _id: 's104',
-    txt: 'Photo 4 from our last adventure!',
+    txt: 'Photo 4 from our last adventure our last adventure our last adventure our  last adventure our last adventure our last adventure our last adventure  last adventure our last adventure our last adventure our last adventure last adventure our  last adventure!',
     imgUrl: 'https://picsum.photos/470/300?random=104',
     createdAt: 1700400000000,
     by: {
@@ -121,7 +121,7 @@ export const Stories = [
   },
   {
     _id: 's105',
-    txt: 'Photo 5 from our last adventure!',
+    txt: 'Photo 5 from our last adventure our last adventure our last adventure our  last adventure our last adventure our last adventure our last adventure  last adventure our last adventure our last adventure our last adventure last adventure our  last adventure!',
     imgUrl: 'https://picsum.photos/470/300?random=105',
     createdAt: 1700500000000,
     by: {
