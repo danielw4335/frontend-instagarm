@@ -15,11 +15,12 @@ import {
 } from 'lucide-react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { useModal } from '../customHooks/ModalContext';
 
 export function SideNav() {
     const breakpoint = useScreenBreakpoint()
     const navigate = useNavigate()
-
+const { open } = useModal()
 
     return (
         <section className={`side-nav breakpoint-${breakpoint}`}>
@@ -63,7 +64,7 @@ export function SideNav() {
                     <span className="nav-label">Notifications</span>
                 </div>
 
-                <div className="nav-item" onClick={() => navigate('/create')}>
+                <div className="nav-item" onClick={() => open( null, 'upload' )}>
                     <PlusSquare />
                     <span className="nav-label">Create</span>
                 </div>

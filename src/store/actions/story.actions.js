@@ -37,7 +37,11 @@ export async function removeStory(storyId) {
     }
 }
 
-export async function addStory(story) {
+export async function addStory(imgUrl) {
+    const story = storyservice.getEmptyStory()
+    story.imgUrl = imgUrl
+    console.log(' addStory story:', story)
+    
     try {
         const savedStory = await storyservice.save(story)
         store.dispatch({ type: ADD_STORY, story: savedStory })

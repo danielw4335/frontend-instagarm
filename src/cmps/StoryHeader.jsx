@@ -3,7 +3,6 @@ import { getTimeFormat } from '../services/util.service'
 import { useModal } from '../customHooks/ModalContext.jsx'
 
 export function StoryHeader({ from, _id, user, createdAt }) {
-    console.log(' StoryHeader from:', from)
 
     const { open } = useModal()
     const { username, imgUrl } = user

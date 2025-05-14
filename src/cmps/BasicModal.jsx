@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import { removeStory } from '../store/actions/story.actions'
+import { addStory, removeStory } from '../store/actions/story.actions'
 import { ImgUploader } from '../cmps/ImgUploader'
 import { useState } from 'react'
 import { useModal } from '../customHooks/ModalContext'
@@ -7,17 +7,33 @@ import { useModal } from '../customHooks/ModalContext'
 export function BasicModal({ type, storyId, onClose }) {
   const { setType } = useModal()
   console.log(' BasicModal type:', type)
-  if (!storyId) return null
   const user = useSelector((storeState) => storeState.userModule.user)
+  const story = useSelector((storeState) => storeState.storyModule.story)
+  // console.log(' BasicModal story:', story)
+  // console.log(' BasicModal user:', user)
   const [imgUrl, setImgUrl] = useState(null)
 
 
   function isMyStoryId(storyId, user) {
-    return user?.posts?.includes(storyId)
+    user?.posts?.includes(storyId)
+    // console.log(' isMyStoryId storyId:', storyId)
+    // console.log(' isMyStoryId user?.posts:', user)
+    return true
+    // return user?.posts?.includes(storyId)
   }
 
-function onClickUploaded(url) {
+function onClickUploaded() {
 setType('createStory')
+}
+
+async function createStory() {
+  try {
+    await addStory( imgUrl )
+  } catch (err) {
+    console.error('Failed to create story', err)
+  } finally {
+    onClose()
+  }
 }
 
   async function onDelete() {
@@ -30,9 +46,11 @@ setType('createStory')
     }
   }
 
+  // console.log(' BasicModal user:', user)
+  // console.log(' BasicModal storyId:', storyId)
   return (
     <main className='modal-container'>
-      {type === 'g' && (
+      {type === 'options' && (
         <div className="modal-backdrop" onClick={onClose}>
           <div className="modal-basic" onClick={(ev) => ev.stopPropagation()}>
 
@@ -45,7 +63,7 @@ setType('createStory')
       )}
 
 
-      {type === 'options' && (
+      {type === 'upload' && (
         <div className="modal-backdrop-upload" onClick={onClose}>
           <div className="modal-upload" onClick={(ev) => ev.stopPropagation()}>
             <p className="modal-title">Create new post</p>
@@ -57,7 +75,7 @@ setType('createStory')
             {imgUrl && (
               <div className="preview-phase">
                 <img src={imgUrl} className="uploaded-preview" />
-                <button className="modal-btn next" onClick={() => onClickUploaded(imgUrl)}>
+                <button className="modal-btn next" onClick={() => onClickUploaded()}>
                   Next
                 </button>
               </div>
@@ -67,11 +85,10 @@ setType('createStory')
       )}
 
       {type === 'createStory' && (
-        <div className="modal-backdrop-upload" onClick={onClose}>
+        <div className="modal-backdrop" onClick={onClose}>
           <div className="modal-upload" onClick={(ev) => ev.stopPropagation()}>
-            <p className="modal-title">Write a caption</p>
-            <textarea placeholder="What's on your mind?" />
-            <button className="modal-btn" onClick={() => alert('Post created!')}>Post</button>
+          <img src={imgUrl} className="uploaded-preview" />
+            <button className="modal-btn" onClick={() => createStory()}>Share</button>
           </div>
         </div>
       )}

@@ -11,7 +11,6 @@ export function StoryPreview({ story, from }) {
 
     const { _id, txt, imgUrl, by, likes, createdAt, comments = [] } = story
     // const loggedInUser = useSelector((storeState) => storeState.userModule.loggedinUser)
-    console.log(' StoryPreview from:', from)
 
     return (
         from === 'index' ? (
