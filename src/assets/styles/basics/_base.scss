@@ -7,6 +7,13 @@ html {
     // color: $clr2;
 }
 
+hr {
+    height: 1px;
+    border: none;
+    border-top: solid 1px #dbdbdb;
+    width: 100%;
+}
+
 body {
     max-width: 1024px;
     margin: 0 auto;
@@ -26,7 +33,7 @@ h6 {
 }
 
 .clear-button {
-    all: unset; 
+    all: unset;
     cursor: pointer;
 }
 

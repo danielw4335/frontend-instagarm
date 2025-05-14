@@ -56,7 +56,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 0.4rem;
+    padding: rem(6px) rem(8px);
     overflow-y: auto;
 
     .story-header {
@@ -113,7 +113,6 @@
         justify-content: space-between;
         align-items: center;
         margin-bottom: 0.5rem;
-        border-top: 1px solid rgb(239, 239, 239);
 
 
         button {
@@ -129,8 +128,13 @@
     }
 
     .story-footer {
+        hr:nth-child(1) {
+            border-top: solid 1px #efefef;
+        }
+
         font-size: 0.85rem;
         color: #888;
         margin-top: auto;
+        padding: 0 em(5px);
     }
 }

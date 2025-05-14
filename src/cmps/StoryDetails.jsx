@@ -89,6 +89,7 @@ export function StoryDetails({ story, onClose }) {
                         </div>
 
                         <div className="story-footer">
+                            <hr /> 
                         <div className="story-actions details">
                             <div className="left-actions">
                                 <button onClick={onToggleLike}>

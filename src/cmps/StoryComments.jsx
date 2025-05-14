@@ -3,13 +3,14 @@ import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { addStoryComment } from '../store/actions/story.actions'
 import { useNavigate } from 'react-router-dom'
+import { getTimeFormat } from '../services/util.service'
 
 export const StoryComments = ({ story, from }) => {
     const [comment, setComment] = useState('')
     const loggedInUser = useSelector((storeState) => storeState.userModule.user)
     const navigate = useNavigate()
 
-    const { _id, txt, by, comments = [], likes } = story
+    const { _id, txt, by, createdAt, comments = [], likes } = story
 
 
     async function onAddComment(ev) {
@@ -43,32 +44,41 @@ export const StoryComments = ({ story, from }) => {
     function onOpenModal() {
         navigate(`/story/${_id}`)
     }
+    const timeAgo = getTimeFormat(createdAt)
 
     return (
-                <section className={`story-comments ${from}`}>
+        <section className={`story-comments ${from}`}>
             <section className="story-comments-likes">
                 {likes?.length > 0 && <p>{likes.length} likes</p>}
-            </section>
-            {from === 'index' && (
-                <>
-                    <div className='user-comment'>
-                        <ShowMoreText
-                            lines={2}
-                            more="more"
-                            less=""
-                            anchorClass="show-more-link"
-                            expanded={false}
-                            truncatedEndingComponent="…"
-                        >
-                            <a className="user-name-span">{by.username}</a> <span className="user-txt-span">{txt}</span>
-                        </ShowMoreText>
-                    </div>
 
-                    <button className="view-comments " onClick={onOpenModal}>
-                        View all {comments.length} comments
-                    </button>
-                </>
-            )}
+                {from === 'details' && (<>
+                    <p>{timeAgo}</p>
+                    <hr />
+                </>)}
+
+            </section>
+            {
+                from === 'index' && (
+                    <>
+                        <div className='user-comment'>
+                            <ShowMoreText
+                                lines={2}
+                                more="more"
+                                less=""
+                                anchorClass="show-more-link"
+                                expanded={false}
+                                truncatedEndingComponent="…"
+                            >
+                                <a className="user-name-span">{by.username}</a> <span className="user-txt-span">{txt}</span>
+                            </ShowMoreText>
+                        </div>
+
+                        <button className="view-comments " onClick={onOpenModal}>
+                            View all {comments.length} comments
+                        </button>
+                    </>
+                )
+            }
             <form className='add-comment-form' onSubmit={onAddComment}>
                 <input
                     type="text"
@@ -78,6 +88,6 @@ export const StoryComments = ({ story, from }) => {
                 />
                 <button className='clear-button add-comment-post' type="submit" disabled={!comment.trim()}>Post</button>
             </form>
-        </section>
+        </section >
     )
 }
