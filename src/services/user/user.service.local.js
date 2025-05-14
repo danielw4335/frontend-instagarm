@@ -95,7 +95,7 @@ if (!getLoggedinUser()) {
         username: 'demo',
         password: 'demo',
         fullname: 'Demo User',
-        imgUrl: 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png',
+        imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
         likedStoryIds: [],
         savedStoryIds: [],
         following: [],

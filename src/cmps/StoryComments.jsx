@@ -87,7 +87,10 @@ export const StoryComments = ({ story, from }) => {
                     value={comment}
                     onChange={(e) => setComment(e.target.value)}
                 />
-                <button className={`clear-button add-comment-post ${from === 'index' ? 'comment-index' : ''} ${comment.trim() ? '' : 'disabled'}`} type="submit" disabled={!comment.trim()}>Post</button>
+                <button className={`clear-button add-comment-post ${from === 'index' ? 'comment-index' : ''} 
+                ${comment.trim() ? '' : 'disabled'}`} type="submit" disabled={!comment.trim()}>
+                    Post
+                </button>
                 <EmojiPickerWrapper onEmojiSelect={(emoji) => setComment(prev => prev + emoji)} />
             </form>
         </section >

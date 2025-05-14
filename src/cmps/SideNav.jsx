@@ -79,7 +79,7 @@ export function SideNav() {
 
                 {console.log('loggedInUser:', loggedInUser)}
                 <NavLink to={'/u/lbc5U'} className="nav-item">
-                    <img src={defaultUser} alt="Profile" className="profile-img" />
+                    <img src={loggedInUser.imgUrl || defaultUser} alt="Profile" className="profile-img" />
                     <span className="nav-label">Profile</span>
                 </NavLink>
 
