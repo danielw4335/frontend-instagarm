@@ -69,7 +69,10 @@ async function createStory() {
             <p className="modal-title">Create new post</p>
 
             {!imgUrl && (
-              <ImgUploader onUploaded={(url) => setImgUrl(url)} />
+              <ImgUploader onUploaded={(url) => {
+                setImgUrl(url)
+              setType('createStory')
+              }}/>
             )}
 
             {imgUrl && (
@@ -86,9 +89,10 @@ async function createStory() {
 
       {type === 'createStory' && (
         <div className="modal-backdrop" onClick={onClose}>
-          <div className="modal-upload" onClick={(ev) => ev.stopPropagation()}>
+          <div className="modal-create" onClick={(ev) => ev.stopPropagation()}>
+            <h4 className='modal-create-title'>Crop</h4>
+          <button className="modal-create-btn" onClick={() => createStory()}>Next</button>
           <img src={imgUrl} className="uploaded-preview" />
-            <button className="modal-btn" onClick={() => createStory()}>Share</button>
           </div>
         </div>
       )}

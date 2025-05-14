@@ -1,32 +1,41 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
+import { useDropzone } from 'react-dropzone'
 import { uploadService } from '../services/upload.service'
 
 export function ImgUploader({ onUploaded = null }) {
-  const [imgData, setImgData] = useState({
-    imgUrl: null,
-    height: 500,
-    width: 500,
-  })
+  const [imgData, setImgData] = useState(null)
   const [isUploading, setIsUploading] = useState(false)
 
-  async function uploadImg(ev) {
+  const onDrop = useCallback(async (acceptedFiles) => {
+    const file = acceptedFiles[0]
+    if (!file) return
+
     setIsUploading(true)
-    const { secure_url, height, width } = await uploadService.uploadImg(ev)
-    setImgData({ imgUrl: secure_url, width, height })
+    const { secure_url, height, width } = await uploadService.uploadImg({ target: { files: [file] } })
+    setImgData({ url: secure_url, width, height })
     setIsUploading(false)
     onUploaded && onUploaded(secure_url)
-  }
+  }, [onUploaded])
 
-  function getUploadLabel() {
-    if (imgData.imgUrl) return 'Upload Another?'
-    return isUploading ? 'Uploading....' : 'Upload Image'
-  }
+  const { getRootProps, getInputProps, open, isDragActive } = useDropzone({
+    onDrop,
+    accept: { 'image/*': [] },//?only img
+    multiple: false,//?only one
+    noClick: true, 
+    noKeyboard: true
+  })
 
   return (
-    <div className="upload-preview">
-      {imgData.imgUrl && <img src={imgData.imgUrl} style={{ maxWidth: '200px', float: 'right' }} />}
-      {/* <label htmlFor="imgUpload">{getUploadLabel()}</label> */}
-      <input type="file" onChange={uploadImg} accept="img/*" id="imgUpload" />
+    <div className={`upload-preview ${isDragActive ? 'drag-over' : ''}`} {...getRootProps()}>
+      <input {...getInputProps()} />
+
+      {imgData?.url && <img src={imgData.url} alt="Uploaded" style={{ maxWidth: '200px' }} />}
+
+      <p>{isUploading ? 'Uploading...' : 'Drag photos and videos here'}</p>
+
+      <button type="button" onClick={open} disabled={isUploading}>
+        {imgData?.url ? 'Upload Another Image' : 'Select from computer'}
+      </button>
     </div>
   )
 }
