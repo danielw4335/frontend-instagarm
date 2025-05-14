@@ -45,26 +45,26 @@ export const StoryComments = ({ story, from }) => {
 
     return (
         <section className={`story-comments ${from}`}>
-            {from === 'details' && (
-                <section className="story-comments-likes">
-                    {likes?.length > 0 && <p>{likes.length} likes</p>}
-                </section>
-            )}
+            <section className="story-comments-likes">
+                {likes?.length > 0 && <p>{likes.length} likes</p>}
+            </section>
             {from === 'index' && (
                 <>
-
-                    <ShowMoreText
-                        lines={2}
-                        more="more"
-                        less=""
-                        anchorClass="show-more-link"
-                        expanded={false}
-                        truncatedEndingComponent="…"
-                    >
-                        <p>
-                            <strong>{by.username}</strong> {txt}
-                        </p>
-                    </ShowMoreText>
+                    <div className='user-comment'>
+                        <span className="user-name-span">{by.username}</span>
+                        <ShowMoreText
+                            lines={2}
+                            more="more"
+                            less=""
+                            anchorClass="show-more-link"
+                            expanded={false}
+                            truncatedEndingComponent="…"
+                        >
+                            <p>
+                                <span className="user-txt-span">{txt}</span>
+                            </p>
+                        </ShowMoreText>
+                    </div>
 
                     <button className="view-comments " onClick={onOpenModal}>
                         View all {comments.length} comments

@@ -2,15 +2,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.6rem 1rem;
+  padding: 0;
+  padding-top: 0.8rem;
 
   button {
     background: none;
     border: none;
     cursor: pointer;
     padding: 0;
-    margin-right: 12px;
-    font-size: 20px;
+    margin: 0;
+    margin-right: 18px;
+    font-size: 23px;
     color: #262626;
 
     &:hover {
@@ -18,7 +20,7 @@
     }
 
     &:last-child {
-      margin-right: 0;
+      margin-right: 2px
     }
     
     .isLiked {
@@ -29,8 +31,12 @@
   .left-actions {
     display: flex;
     align-items: center;
-  }
 
+    // button{
+    //   margin-left: 0;
+    // }
+  }
+  
   .save-btn {
     margin-left: auto;
   }

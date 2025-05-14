@@ -4,7 +4,29 @@
 
     .view-comments {
         color: #737373;
+        padding-left: 0;
+        margin-left: 0;
+        margin-bottom: 3px;
         background-color: transparent;
+    }
+
+        .story-comments-likes{
+        font-weight: 500;
+
+        p {
+            margin-top: 8px;
+
+        }
+        
+    }
+}
+
+.user-comment{
+    display: flex;
+
+    .user-name-span{
+        margin-right: 8px;
+font-weight: 500;
     }
 }
 
