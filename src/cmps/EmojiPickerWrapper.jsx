@@ -9,7 +9,7 @@ export function EmojiPickerWrapper({ onEmojiSelect }) {
   }
 
   return (
-    <div className="emoji-wrapper">
+    <section className="emoji-wrapper">
       <button
         className="emoji-btn"
         onClick={() => setIsOpen(prev => !prev)}
@@ -29,6 +29,6 @@ export function EmojiPickerWrapper({ onEmojiSelect }) {
           />
         </div>
       )}
-    </div>
+    </section>
   )
 }

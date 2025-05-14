@@ -39,12 +39,14 @@
         height: rem(24px);
         overflow: hidden;
         // padding: 10px;
-
+        
+        
         .add-comment-post {
             color: #0095F6;
             font-weight: 600;
             opacity: 0.2;
         }
+        .comment-index {opacity: 0;}
 
         input {
             margin: 0;
