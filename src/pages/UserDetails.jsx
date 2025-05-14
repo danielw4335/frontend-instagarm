@@ -33,13 +33,13 @@ export function UserDetails() {
   return (
     <section className="user-details">
       <h1>User Details</h1>
-      {user && <div>
+      {/* {user && <div>
         <h3>
           {user.fullname}
         </h3>
         <img src={user.imgUrl} style={{ width: '100px' }} />
         <pre> {JSON.stringify(user, null, 2)} </pre>
-      </div>}
+      </div>} */}
     </section>
   )
 }

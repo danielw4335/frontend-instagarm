@@ -1,7 +1,9 @@
 import { useNavigate } from 'react-router';
 import { useScreenBreakpoint } from '../customHooks/useScreenBreakpoint'
 import defaultUser from '../assets/img/defaultUser.png';
-// import { iconhomeactive } from '../assets/SVG/icon-home-active.svg';
+// import { ReactComponent as HomeActive } from '../assets/SVG/icon-home-active.svg';
+
+
 
 import {
     Home,
@@ -23,71 +25,70 @@ export function SideNav() {
     const breakpoint = useScreenBreakpoint()
     const navigate = useNavigate()
     const { open } = useModal()
-      const loggedInUser = useSelector(storeState => storeState.userModule.user)
-    console.log(' loggedInUser:', loggedInUser)
-    
+    const loggedInUser = useSelector(storeState => storeState.userModule.user)
+    console.log(' loggedInUser:', loggedInUser._id)
+
     //todo    <NavLink to="/" className="nav-item">
     //todo        2 svg</ svg>
     //todo     </NavLink>
-    
+
     return (
         <section className={`side-nav breakpoint-${breakpoint}`}>
             <div className="logo-text" onClick={() => navigate('/')}>Instagram</div>
             <div className="logo-icon" onClick={() => navigate('/')}>
                 <FontAwesomeIcon icon={faInstagram} />
             </div>
-
-            <div className="nav-section" onClick={() => navigate('/')}>
-                <div className="nav-item">
+            {/* <HomeActive style={{ color: 'black', width: 24, height: 24 }} /> */}
+            <div className="nav-section" >
+                <NavLink to={'/'} className="nav-item">
                     <Home />
                     <span className="nav-label">Home</span>
-                </div>
+                </NavLink>
 
-                <div className="nav-item" onClick={() => navigate('/search')}>
+                <NavLink to={'/search'} className="nav-item">
                     <Search />
                     <span className="nav-label">Search</span>
-                </div>
+                </NavLink>
 
-                <div className="nav-item" onClick={() => navigate('/explore')}>
+                <NavLink to={'/explore'} className="nav-item">
                     <Compass />
                     <span className="nav-label">Explore</span>
-                </div>
+                </NavLink>
 
-                <div className="nav-item" onClick={() => navigate('/reels')}>
+                <NavLink to={'/reels'} className="nav-item">
                     <Clapperboard />
                     <span className="nav-label">Reels</span>
-                </div>
+                </NavLink>
 
-                <div className="nav-item" onClick={() => navigate('/messages')}>
+                <NavLink to={'/messages'} className="nav-item">
                     <MessageCircle />
                     <span className="nav-label">Messages</span>
-                </div>
+                </NavLink>
 
-                <div className="nav-item">
-                    <div className="notif-icon" onClick={() => navigate('/Notifications')}>
-                        <Heart />
-                        <span className="notif-dot" />
-                    </div>
+                <NavLink to={'/notifications'} className="nav-item">
+                    <Heart />
+                    <span className="notif-dot" />
                     <span className="nav-label">Notifications</span>
-                </div>
+                </NavLink>
+             
 
                 <div className="nav-item" onClick={() => open(null, 'upload')}>
                     <PlusSquare />
                     <span className="nav-label">Create</span>
                 </div>
 
-
-                <NavLink to={`/u/${loggedInUser._id}`} className="nav-item">
+                {console.log('loggedInUser:', loggedInUser)}
+                <NavLink to={'/u/lbc5U'} className="nav-item">
                     <img src={defaultUser} alt="Profile" className="profile-img" />
                     <span className="nav-label">Profile</span>
                 </NavLink>
 
             </div>
 
-            <div className="nav-item more">
+            <NavLink className="nav-item more">
                 <Menu />
                 <span className="nav-label">More</span>
-            </div>
+            </NavLink>
         </section>
     )
 }
