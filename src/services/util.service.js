@@ -51,9 +51,8 @@ export function loadFromStorage(key) {
     const data = localStorage.getItem(key)
     return (data) ? JSON.parse(data) : undefined
 }
-
-export function getTimeFormat(unixSeconds) {
-    const timestamp = unixSeconds * 1000 
+export function getTimeFormat(unixMs) {
+    const timestamp = unixMs
     const now = Date.now()
     const diffSec = Math.floor((now - timestamp) / 1000)
 
