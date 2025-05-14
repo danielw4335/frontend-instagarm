@@ -17,16 +17,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { useModal } from '../customHooks/ModalContext';
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export function SideNav() {
     const breakpoint = useScreenBreakpoint()
     const navigate = useNavigate()
     const { open } = useModal()
-
+      const loggedInUser = useSelector(storeState => storeState.userModule.user)
+    console.log(' loggedInUser:', loggedInUser)
+    
     //todo    <NavLink to="/" className="nav-item">
     //todo        2 svg</ svg>
     //todo     </NavLink>
-
+    
     return (
         <section className={`side-nav breakpoint-${breakpoint}`}>
             <div className="logo-text" onClick={() => navigate('/')}>Instagram</div>
@@ -74,7 +77,7 @@ export function SideNav() {
                 </div>
 
 
-                <NavLink to="/u/:id" className="nav-item">
+                <NavLink to={`/u/${loggedInUser._id}`} className="nav-item">
                     <img src={defaultUser} alt="Profile" className="profile-img" />
                     <span className="nav-label">Profile</span>
                 </NavLink>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-label="Close" role="img">
+  <title>Close</title>
+  <polyline points="20.643 3.357 12 12 3.353 20.647" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+  <line x1="20.649" y1="20.649" x2="3.354" y2="3.354" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+</svg>
