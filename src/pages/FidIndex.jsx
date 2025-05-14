@@ -28,6 +28,7 @@ export function FidIndex() {
 
   function onCloseModal() {
     navigate('/')
+    setSelectedStory(null)
   }
 
   return (

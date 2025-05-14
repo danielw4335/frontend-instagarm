@@ -88,6 +88,7 @@ function saveLoggedinUser(user) {
 	return user
 }
 
+//!demo user
 if (!getLoggedinUser()) {
     const demoUser = {
         _id: 'u101',

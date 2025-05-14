@@ -25,6 +25,7 @@ export const StoryComments = ({ story, from }) => {
             id: Date.now(),
             by: {
                 _id: loggedInUser._id,
+                username: loggedInUser.username,
                 fullname: loggedInUser.fullname,
                 imgUrl: loggedInUser.imgUrl || 'https://robohash.org/1?set=set5'
             },
@@ -44,14 +45,13 @@ export const StoryComments = ({ story, from }) => {
     }
 
     return (
-        <section className={`story-comments ${from}`}>
+                <section className={`story-comments ${from}`}>
             <section className="story-comments-likes">
                 {likes?.length > 0 && <p>{likes.length} likes</p>}
             </section>
             {from === 'index' && (
                 <>
                     <div className='user-comment'>
-                        <span className="user-name-span">{by.username}</span>
                         <ShowMoreText
                             lines={2}
                             more="more"
@@ -60,7 +60,7 @@ export const StoryComments = ({ story, from }) => {
                             expanded={false}
                             truncatedEndingComponent="…"
                         >
-                                <span className="user-txt-span">{txt}</span>
+                            <a className="user-name-span">{by.username}</a> <span className="user-txt-span">{txt}</span>
                         </ShowMoreText>
                     </div>
 

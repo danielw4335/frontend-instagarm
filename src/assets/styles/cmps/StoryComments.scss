@@ -10,40 +10,49 @@
         background-color: transparent;
     }
 
-        .story-comments-likes{
+    .story-comments-likes {
         font-weight: 500;
 
         p {
             margin-top: 8px;
 
         }
-        
-    }
-}
 
-.user-comment{
-    display: flex;
-
-    .user-name-span{
-        margin-right: 8px;
-font-weight: 500;
-    }
-}
-
-.add-comment-form {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: rem(18px);
-    overflow: hidden;
-
-    .add-comment-post {
-        color: #0095F6;
-        font-weight: 600;
-        display: none;
     }
 
-    input:not(:placeholder-shown)+.add-comment-post {
-        display: block;
+
+    .user-comment {
+        display: flex;
+
+        .user-name-span {
+            margin-right: 8px;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+    }
+
+    .add-comment-form {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: rem(24px);
+        overflow: hidden;
+        // padding: 10px;
+
+        .add-comment-post {
+            color: #0095F6;
+            font-weight: 600;
+            opacity: 0.2;
+        }
+
+        input {
+            margin: 0;
+            // margin-top: 20px;
+        }
+
+        input:not(:placeholder-shown)+.add-comment-post {
+            opacity: 1;
+        }
     }
 }

@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router';
 import { useScreenBreakpoint } from '../customHooks/useScreenBreakpoint'
 import defaultUser from '../assets/img/defaultUser.png';
-
+// import { iconhomeactive } from '../assets/SVG/icon-home-active.svg';
 
 import {
     Home,
@@ -16,20 +16,24 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { useModal } from '../customHooks/ModalContext';
+import { NavLink } from 'react-router-dom';
 
 export function SideNav() {
     const breakpoint = useScreenBreakpoint()
     const navigate = useNavigate()
-const { open } = useModal()
+    const { open } = useModal()
+
+    //todo    <NavLink to="/" className="nav-item">
+    //todo        2 svg</ svg>
+    //todo     </NavLink>
 
     return (
         <section className={`side-nav breakpoint-${breakpoint}`}>
-            <div className={`logo-text`} onClick={() => navigate('/')}>Instagram</div>
-            
-            <div className={`logo-icon`} onClick={() => navigate('/')}>
+            <div className="logo-text" onClick={() => navigate('/')}>Instagram</div>
+            <div className="logo-icon" onClick={() => navigate('/')}>
                 <FontAwesomeIcon icon={faInstagram} />
             </div>
-               
+
             <div className="nav-section" onClick={() => navigate('/')}>
                 <div className="nav-item">
                     <Home />
@@ -64,15 +68,17 @@ const { open } = useModal()
                     <span className="nav-label">Notifications</span>
                 </div>
 
-                <div className="nav-item" onClick={() => open( null, 'upload' )}>
+                <div className="nav-item" onClick={() => open(null, 'upload')}>
                     <PlusSquare />
                     <span className="nav-label">Create</span>
                 </div>
 
-                <div className="nav-item" onClick={() => navigate('/profile')}>
+
+                <NavLink to="/u/:id" className="nav-item">
                     <img src={defaultUser} alt="Profile" className="profile-img" />
                     <span className="nav-label">Profile</span>
-                </div>
+                </NavLink>
+
             </div>
 
             <div className="nav-item more">

@@ -18,6 +18,9 @@ export function StoryDetails({ story, onClose }) {
     const users = useSelector(storeState => storeState.userModule.users)
     const newStory = useSelector((storeState) => storeState.storyModule.story)
 
+//     useEffect(() => {
+//     setSelectedStory(null)
+//! }, [onClose])
 
   const [isLiked, setIsLiked] = useState(
         loggedInUser?.likedStoryIds?.includes(newStory?._id)
@@ -76,7 +79,9 @@ export function StoryDetails({ story, onClose }) {
                                         <p><strong>{comment.by.username}</strong> {comment.txt}</p>
                                         <div className="comment-meta">
                                             <span>{comment.createdAt} 5h </span>
-                                            <span>{comment.likes?.length || 0} likes</span>
+                                            {comment.likes?.length > 0 && (
+                                                <span>{comment.likes.length} likes</span>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
