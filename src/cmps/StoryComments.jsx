@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import { addStoryComment } from '../store/actions/story.actions'
 import { useNavigate } from 'react-router-dom'
 import { getTimeFormat } from '../services/util.service'
+import { EmojiPickerWrapper } from './EmojiPickerWrapper'
 
 export const StoryComments = ({ story, from }) => {
     const [comment, setComment] = useState('')
@@ -88,6 +89,7 @@ export const StoryComments = ({ story, from }) => {
                 />
                 <button className='clear-button add-comment-post' type="submit" disabled={!comment.trim()}>Post</button>
             </form>
+            <EmojiPickerWrapper onEmojiSelect={(emoji) => setText(prev => prev + emoji)} />
         </section >
     )
 }
