@@ -17,8 +17,12 @@ export function ModalProvider({ children }) {
     setModalState({ isOpen: false, storyId: null, modalType: null })
   }
 
+function setType(modalType) {
+  setModalState(prev => ({ ...prev, modalType }))
+}
+
   return (
-    <ModalContext.Provider value={{ modalState, open, close }}>
+<ModalContext.Provider value={{ modalState, open, close, setType }}>
       {children}
     </ModalContext.Provider>
   )
