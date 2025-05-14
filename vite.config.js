@@ -5,6 +5,9 @@ import svgr from 'vite-plugin-svgr'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), svgr()],
+  define: {
+    global: 'window' 
+  },
 	build: {
 		outDir: '../backend/public',
 		emptyOutDir: true,

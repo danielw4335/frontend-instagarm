@@ -1,22 +1,31 @@
 import { useState } from 'react'
 import EmojiPicker from 'emoji-picker-react'
 
-export function EmojiPickerWrapper({ onEmojiClick }) {
-  const [showPicker, setShowPicker] = useState(false)
+export function EmojiPickerWrapper({ onEmojiSelect }) {
+  const [isOpen, setIsOpen] = useState(false)
+
+  function handleEmojiClick(event, emojiObject) {
+    onEmojiSelect(emojiObject.emoji)
+  }
 
   return (
     <div className="emoji-wrapper">
-      <button onClick={() => setShowPicker(prev => !prev)}>😀</button>
-      {showPicker && (
+      <button
+        className="emoji-btn"
+        onClick={() => setIsOpen(prev => !prev)}
+        title="Emoji Picker"
+      >
+        🙂
+      </button>
+
+      {isOpen && (
         <div className="emoji-popup">
           <EmojiPicker
+            onEmojiClick={handleEmojiClick}
             disableSearchBar
-            disableSkinTonePicker
+            disableAutoFocus
+            skinTonesDisabled
             native
-            onEmojiClick={(event, emojiObject) => {
-              onEmojiClick(emojiObject.emoji)
-              setShowPicker(false)
-            }}
           />
         </div>
       )}

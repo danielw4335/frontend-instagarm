@@ -1,0 +1,38 @@
+.emoji-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.emoji-btn {
+  font-size: 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.emoji-group[data-name="recently_used"] {
+  display: none !important;
+}
+
+.emoji-picker-react .emoji-group:before  {
+  display: none !important;
+}
+
+.emoji-categories{
+display: none !important;
+}
+
+.emoji-popup {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  z-index: 1000;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  max-height: 360px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}

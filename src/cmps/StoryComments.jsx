@@ -89,7 +89,7 @@ export const StoryComments = ({ story, from }) => {
                 />
                 <button className='clear-button add-comment-post' type="submit" disabled={!comment.trim()}>Post</button>
             </form>
-            <EmojiPickerWrapper onEmojiSelect={(emoji) => setText(prev => prev + emoji)} />
+                <EmojiPickerWrapper onEmojiSelect={(emoji) => setComment(prev => prev + emoji)} />
         </section >
     )
 }
