@@ -5,48 +5,24 @@ import { useState } from 'react'
 import { useModal } from '../customHooks/ModalContext'
 import { StoryHeader } from './StoryHeader'
 import { LocationInput } from './LocationInput'
+import { HeaderModal } from './headerModal'
 
 export function BasicModal({ type, storyId, onClose }) {
   const { setType } = useModal()
-  console.log(' BasicModal type:', type)
   const user = useSelector((storeState) => storeState.userModule.user)
-  const story = useSelector((storeState) => storeState.storyModule.story)
-  // console.log(' BasicModal story:', story)
-  // console.log(' BasicModal user:', user)
-  const [newStory, setNewStory] = useState(
-    {
-      "imgUrl": '',
-      "txt": '',
-      "by": user,
-    })
-  console.log(' BasicModal newStory:', newStory)
+
+  const [newStory, setNewStory] = useState({
+    imgUrl: '',
+    txt: '',
+    by: user,
+    loc: null
+  })
 
   function isMyStoryId(storyId, user) {
+    //!dev! return user?.posts?.includes(storyId)
     user?.posts?.includes(storyId)
     return true
   }
-
-  function onClickUploaded() {
-    setType('cropStory')
-  }
-
-  async function createStory() {
-    try {
-      await addStory(newStory)
-    } catch (err) {
-      console.error('Failed to create story', err)
-    } finally {
-      onClose()
-    }
-  }
-
-//  return {
-//         txt: '',
-//         imgUrl: '',
-//         createdAt: Date.now(),
-//         by: userService.getLoggedinUser(),
-//         loc: null,
-//     }
 
   async function onDelete() {
     try {
@@ -58,88 +34,102 @@ export function BasicModal({ type, storyId, onClose }) {
     }
   }
 
+function safetyClose() {
+  if (confirm('Are you sure you want to close?')) {
+    onClose()
+  }
+  
+}
+
+  async function createStory() {
+    try {
+      await addStory(newStory)
+    } catch (err) {
+      console.error('Failed to create story', err)
+    } finally {
+      onClose()
+    }
+  }
+
+  if (type === 'options') {
+    return (
+      <div className="modal-backdrop" onClick={onClose}>
+        <div className="modal-basic" onClick={(ev) => ev.stopPropagation()}>
+          {isMyStoryId(storyId, user) && (
+            <button className="modal-btn delete" onClick={onDelete}>Delete</button>
+          )}
+          <button className="modal-btn" onClick={onClose}>Cancel</button>
+        </div>
+      </div>
+    )
+  }
+
   return (
-    <main className='modal-container'>
-      {type === 'options' && (
-        <div className="modal-backdrop" onClick={onClose}>
-          <div className="modal-basic" onClick={(ev) => ev.stopPropagation()}>
-
-            {isMyStoryId(storyId, user) && (
-              <button className="modal-btn delete" onClick={onDelete}>Delete</button>
-            )}
-            <button className="modal-btn" onClick={onClose}>Cancel</button>
+    <div className="modal-backdrop" onClick={onClose}>
+      <main className="modal-main">
+        <section onClick={(ev) => ev.stopPropagation()} className="modal-inner">
+          <div className="main-header-modal-create">
+            <HeaderModal setType={setType} safetyClose={safetyClose} createStory={createStory} type={type} />
           </div>
-        </div>
-      )}
 
+          {type === 'upload' && (
+            <div className="modal-upload">
+              {!newStory.imgUrl && (
+                <ImgUploader onUploaded={(url) => {
+                  setNewStory(prev => ({ ...prev, imgUrl: url }))
+                  setType('cropStory')
+                }} />
+              )}
 
-      {type === 'upload' && (
-        <div className="modal-backdrop-upload" onClick={onClose}>
-          <div className="modal-upload" onClick={(ev) => ev.stopPropagation()}>
-            <p className="modal-title">Create new post</p>
+              {newStory.imgUrl && (
+                <div className="preview-phase">
+                  <img src={newStory.imgUrl} className="uploaded-preview" />
+                  <button className="modal-btn next" onClick={() => setType('cropStory')}>
+                    Next
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
 
-            {!newStory.imgUrl && (
-              <ImgUploader onUploaded={(url) => {
-                setNewStory(prev => ({ ...prev, imgUrl: url }))
-                setType('cropStory')
+          {type === 'cropStory' && (
+            <div className="modal-crop">
+              <h4 className='modal-crop-title'>Crop</h4>
+              <img src={newStory.imgUrl} className="crop-preview" />
+            </div>
+          )}
+
+          {type === 'editStory' && (
+            <div className="modal-edit">
+              <h4 className='modal-edit-title'>Edit</h4>
+              <img src={newStory.imgUrl} className="edit-preview" />
+            </div>
+          )}
+
+          {type === 'createStory' && (
+            <div className="modal-create-post">
+              <div className="left-side">
+                {/* <img src={newStory.imgUrl} className="create-preview" /> */}
+                <img src="https://res.cloudinary.com/vanilla-test-images/image/upload/v1747338393/bgufj3duwiwl3vqlru2j.png" className="create-preview" />
+              </div>
+              <div className="right-side">
+                <div className="user-bar">
+                  <StoryHeader from={'modalCreat'} user={user} createdAt={0} />
+                </div>
+                <textarea
+                  className="create-story-input"
+                  maxLength={2200}
+                  value={newStory.txt}
+                  onChange={({ target }) => setNewStory(prev => ({ ...prev, txt: target.value }))}
+                ></textarea>
+              </div>
+              <LocationInput onPlaceSelected={(place) => {
+                setNewStory(prev => ({ ...prev, loc: place }))
               }} />
-            )}
-
-            {newStory.imgUrl && (
-              <div className="preview-phase">
-                <img src={newStory.imgUrl} className="uploaded-preview" />
-                <button className="modal-btn next" onClick={() => onClickUploaded()}>
-                  Next
-                </button>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
-
-      {type === 'cropStory' && (
-        <div className="modal-backdrop" onClick={onClose}>
-          <div className="modal-crop" onClick={(ev) => ev.stopPropagation()}>
-            <h4 className='modal-crop-title'>Crop</h4>
-            <button className="modal-crop-btn" onClick={() => setType('editStory')}>Next</button>
-            <img src={newStory.imgUrl} className="crop-preview" />
-          </div>
-        </div>
-      )}
-      {type === 'editStory' && (
-        <div className="modal-backdrop" onClick={onClose}>
-          <div className="modal-edit" onClick={(ev) => ev.stopPropagation()}>
-            <h4 className='modal-edit-title'>Edit</h4>
-            <button className="modal-edit-btn" onClick={() => setType('createStory')}>Next</button>
-            <img src={newStory.imgUrl} className="edit-preview" />
-          </div>
-        </div>
-      )}
-      {type === 'createStory' && (
-        <div className="modal-backdrop" onClick={onClose}>
-          <div className="modal-create-post" onClick={(ev) => ev.stopPropagation()}>
-            <div className="left-side">
-              <img src={newStory.imgUrl} className="create-preview" />
             </div>
-            <div className="right-side">
-              <button className="btn-post clear-button" onClick={() => createStory()}>Share</button>
-              <h4 className="modal-title">Create new post</h4>
-              <div className="user-bar">
-                <StoryHeader from={'modalCreat'} user={user} createdAt={0} />
-              </div>
-              <textarea
-                className="create-story-input"
-                maxLength={2200}
-                value={newStory.txt}
-                onChange={({ target }) => setNewStory(prev => ({ ...prev, txt: target.value }))}
-              ></textarea>
-            </div>
-            <LocationInput onPlaceSelected={(place) => {
-              setNewStory(prev => ({ ...prev, loc: place }))
-            }} />
-          </div>
-        </div>
-      )}
-    </main>
+          )}
+        </section>
+      </main>
+    </div>
   )
 }

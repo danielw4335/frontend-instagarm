@@ -74,7 +74,8 @@ export function SideNav() {
                     <span className="nav-label">Notifications</span>
                 </NavLink>
 
-                <div className="nav-item" onClick={() => open(null, 'upload')}>
+                {/* <div className="nav-item" onClick={() => open(null, 'upload')}> */}
+                <div className="nav-item" onClick={() => open(null, 'createStory')}>
                     <CreateOutline className="icon-outline"/>
                     <span className="nav-label">Create</span>
                 </div>
