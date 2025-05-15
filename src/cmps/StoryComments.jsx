@@ -5,9 +5,13 @@ import { addStoryComment } from '../store/actions/story.actions'
 import { useNavigate } from 'react-router-dom'
 import { getTimeFormat } from '../services/util.service'
 import { EmojiPickerWrapper } from './EmojiPickerWrapper'
+import { setIsDetails } from '../store/actions/story.actions'
 
-export const StoryComments = ({ story, from, setIsDetails }) => {
+
+export const StoryComments = ({ story, from }) => {
     const [comment, setComment] = useState('')
+        const isDetails = useSelector(storeState => storeState.storyModule.isDetails)
+        // const isIndex = useSelector(storeState => storeState.storyModule.isIndex)
     const loggedInUser = useSelector((storeState) => storeState.userModule.user)
     const navigate = useNavigate()
 
@@ -53,7 +57,7 @@ export const StoryComments = ({ story, from, setIsDetails }) => {
             <section className="story-comments-likes">
                 {likes?.length > 0 && <p>{likes.length} likes</p>}
 
-                {from === 'details' && (<>
+                {isDetails && (<>
                     <p>{timeAgo}</p>
                     <hr />
                 </>)}

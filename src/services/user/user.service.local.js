@@ -95,7 +95,7 @@ if (!getLoggedinUser()) {
         username: 'demo',
         password: 'demo',
         fullname: 'Demo User',
-        imgUrl: 'https://randomuser.me/api/portraits/men/25.jpg',
+        imgUrl: 'https://randomuser.me/api/portraits/men/28.jpg',
         likedStoryIds: [],
         savedStoryIds: [],
         following: [],

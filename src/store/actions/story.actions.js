@@ -1,6 +1,6 @@
 import { storyservice } from '../../services/story'
 import { store } from '../store'
-import { ADD_STORY, REMOVE_STORY, SET_STORIES, SET_STORY, UPDATE_STORY, SET_IS_LOADING, ADD_STORY_COMMENT } from '../reducers/story.reducer'
+import { ADD_STORY, REMOVE_STORY, SET_STORIES, SET_STORY, UPDATE_STORY, SET_IS_LOADING, ADD_STORY_COMMENT, SET_INDEX, SET_DETAILS } from '../reducers/story.reducer'
 import { UPDATE_USER } from '../reducers/user.reducer'
 import { userService } from '../../services/user'
 
@@ -23,6 +23,23 @@ export async function loadStory(storyId) {
         store.dispatch({ type: SET_STORY, story })
     } catch (err) {
         console.log('Cannot load story', err)
+        throw err
+    }
+}
+
+export async function setIsDetails(isDetails) {
+    try {
+        store.dispatch({ type: SET_DETAILS, isDetails })
+    } catch (err) {
+        console.log('Cannot set details', err)
+        throw err
+    }
+}
+export async function setIsIndex(isIndex) {
+    try {
+        store.dispatch({ type: SET_INDEX, isIndex })
+    } catch (err) {
+        console.log('Cannot set index', err)
         throw err
     }
 }

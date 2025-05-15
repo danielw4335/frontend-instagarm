@@ -5,11 +5,15 @@ export const ADD_STORY = 'ADD_STORY'
 export const UPDATE_STORY = 'UPDATE_STORY'
 export const ADD_STORY_COMMENT = 'ADD_STORY_COMMENT'
 export const SET_IS_LOADING = 'SET_IS_LOADING'
+export const SET_DETAILS = 'SET_DETAILS'
+export const SET_INDEX = 'SET_INDEX'
 
 const initialState = {
     stories: [],
     story: null,
     isLoading: false,
+    isDetails: false,
+    isIndex: true,
 }
 
 export function storyReducer(state = initialState, action) {
@@ -38,6 +42,12 @@ export function storyReducer(state = initialState, action) {
                     : story
             )
             newState = { ...state, stories };
+            break
+        case SET_DETAILS:
+            newState = { ...state, isDetails: action.isDetails }
+            break
+        case SET_INDEX:
+            newState = { ...state, isIndex: action.isIndex }
             break
         case ADD_STORY_COMMENT:
             if (action.comment && state.story) {

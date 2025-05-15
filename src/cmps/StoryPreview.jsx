@@ -6,8 +6,9 @@ import { StoryComments } from './StoryComments.jsx'
 import { BasicModal } from './BasicModal.jsx'
 
 
-export function StoryPreview({ story, from, setIsDetails }) {
+export function StoryPreview({ story, from }) {
     const loggedInUser = useSelector((storeState) => storeState.userModule.user)
+    // const isIndex = useSelector((storeState) => storeState.storyModule.isIndex)
 
     const { _id, txt, imgUrl, by, likes, createdAt, comments = [] } = story
     // const loggedInUser = useSelector((storeState) => storeState.userModule.loggedinUser)
@@ -17,7 +18,7 @@ export function StoryPreview({ story, from, setIsDetails }) {
                 <StoryHeader key={by._id} from={from} _id={_id} user={by} createdAt={createdAt} />
                 <img className="story-img" src={imgUrl} alt="story" />
                 <StoryActions loggedInUser={loggedInUser} story={story} from={from} />
-                <StoryComments story={story} from={from} setIsDetails={setIsDetails} />
+                <StoryComments story={story} from={from}  />
 
                 <hr />
             </section>

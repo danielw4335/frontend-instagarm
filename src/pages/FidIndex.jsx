@@ -5,6 +5,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { loadStories } from '../store/actions/story.actions'
 import { StoryList } from '../cmps/StoryList'
 import { StoryDetails } from '../cmps/StoryDetails'
+import { setIsDetails } from '../store/actions/story.actions'
 
 export function FidIndex() {
   const stories = useSelector(storeState => storeState.storyModule.stories)
@@ -29,6 +30,7 @@ export function FidIndex() {
   function onCloseModal() {
     navigate('/')
     setSelectedStory(null)
+    setIsDetails(false)
   }
 
   return (
