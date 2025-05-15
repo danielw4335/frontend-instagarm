@@ -1,17 +1,20 @@
 .side-nav {
+
   position: fixed;
+  margin: 0;
   top: 0;
   left: 0;
   height: 100vh;
   width: em(279px);
   padding: em(13px);
-  // padding-top: 35px;
-  margin-left: em(14.5px);
-  margin-top: em(34px);
+  padding-top: em(47px);
+  padding-left: em(28px);
+  // margin-top: em(34px);
   background-color: #fff;
   display: flex;
   flex-direction: column;
   border-right: 1px solid #dbd9d9;
+  // background-color: rgb(175, 32, 32);
 
   .icon-active {
     display: none;
@@ -31,22 +34,24 @@
     }
   }
 
+  // .icon-outline,
+  // .icon-active {
+  //   width: em(40px);
+  //   height: em(40px);
+  // }
+  //////////////////////////////!
+  &.breakpoint-medium {
+    width: em(86px);
+    // background-color: aqua;
+    padding-top: em(41.8px);
+      padding-left: em(29px);
     // .icon-outline,
     // .icon-active {
     //   width: em(40px);
     //   height: em(40px);
     // }
-  //////////////////////////////!
-  &.breakpoint-medium {
-    width: em(86.5px);
 
-    .icon-outline,
-    .icon-active {
-      width: em(40px);
-      height: em(40px);
-    }
-
-    padding-left: em(19px);
+    // padding-left: em(19px);
     // padding: em(14px);
     // font-size: rem(22px);
 
@@ -54,6 +59,28 @@
     //   margin-top: em(32px);
     //   gap: em(6px);
     // }
+
+    .logo-icon {
+      // font-size: 1.375rem;
+      margin-bottom: em(14px);
+      // cursor: pointer;
+      // padding-left: em(8px);
+      // padding-top: em(2px);
+    }
+
+    .nav-section {
+      // margin-top: em(46.5px);
+      // display: flex;
+      // flex-direction: column;
+      gap: em(36.4px);
+      // flex: 1;
+
+    }
+
+    .more {
+      margin-top: auto;
+      margin-bottom: 21px;
+    }
 
     .nav-label,
     .logo-text {
@@ -70,14 +97,6 @@
 
     // margin-left: em(10.4px);
     cursor: pointer;
-  }
-
-  .logo-icon {
-    font-size: 1.375rem;
-    margin-top: em(8.5px);
-    cursor: pointer;
-    padding-left: em(8px);
-    padding-top: em(2px);
   }
 
   .nav-section {
@@ -103,11 +122,11 @@
     }
   }
 
-// .logo-wordmark {
-//   width: em(100px)!important;
-//   height: em(100px)!important;
-//   color: red($color: #b01c1c);
-// }
+  // .logo-wordmark {
+  //   width: em(100px)!important;
+  //   height: em(100px)!important;
+  //   color: red($color: #b01c1c);
+  // }
 
   .nav-item {
     display: flex;
@@ -153,6 +172,7 @@
   }
 
   .more {
-    margin-bottom: em(58px);
+    margin-top: auto;
+    margin-bottom: em(28.5px);
   }
 }
