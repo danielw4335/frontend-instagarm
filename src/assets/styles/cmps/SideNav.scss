@@ -3,10 +3,11 @@
   top: 0;
   left: 0;
   height: 100vh;
-  width: rem(254px);
+  width: em(279px);
   padding: em(13px);
-  padding-right: em(19px);
-  padding-top: em(40px);
+  // padding-top: 35px;
+  margin-left: em(14.5px);
+  margin-top: em(34px);
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -30,14 +31,19 @@
     }
   }
 
+    // .icon-outline,
+    // .icon-active {
+    //   width: em(40px);
+    //   height: em(40px);
+    // }
   //////////////////////////////!
   &.breakpoint-medium {
     width: em(86.5px);
 
     .icon-outline,
     .icon-active {
-      // width: em(50px);
-      // height: em(50px);
+      width: em(40px);
+      height: em(40px);
     }
 
     padding-left: em(19px);
@@ -62,23 +68,23 @@
   .logo-text {
     font-size: em(27px);
 
-    margin-left: em(10.4px);
+    // margin-left: em(10.4px);
     cursor: pointer;
   }
 
   .logo-icon {
     font-size: 1.375rem;
-    margin-bottom: em(8.5px);
+    margin-top: em(8.5px);
     cursor: pointer;
     padding-left: em(8px);
     padding-top: em(2px);
   }
 
   .nav-section {
-    margin-top: em(32px);
+    margin-top: em(46.5px);
     display: flex;
     flex-direction: column;
-    gap: em(8.6px);
+    gap: em(36.5px);
     flex: 1;
 
   }
@@ -107,10 +113,10 @@
     display: flex;
     align-items: center;
     width: 100%;
-    padding: em(15px) em(12px);
+    // padding: em(15px) em(12px);
     border-radius: 0.5rem;
     font-size: 0.875rem;
-    gap: rem(16.7px);
+    gap: rem(15.35px);
     // box-sizing: border-box;
     transition: background-color 0.2s;
     cursor: pointer;
@@ -147,6 +153,6 @@
   }
 
   .more {
-    // margin-bottom: em(0px);
+    margin-bottom: em(58px);
   }
 }
