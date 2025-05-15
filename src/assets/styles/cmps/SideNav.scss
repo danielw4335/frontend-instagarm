@@ -6,7 +6,7 @@
   height: 100vh;
   width: em(279px);
   padding-top: 8px;
-  padding-bottom: 20px;
+  padding-bottom: 21.5px;
   padding-left: 12px;
   padding-right: 12px;
   background-color: #fff;
@@ -62,12 +62,13 @@
   }
 
   .logo-text {
-    font-size: em(27px);
+    padding: 32px 12px 27px 12px;
+    // font-size: em(0px);
     cursor: pointer;
   }
 
   .nav-section {
-    margin-top: em(46.5px);
+    // margin-top: em(46.5px);
     display: flex;
     flex-direction: column;
     // gap: em(36.5px);
@@ -93,7 +94,7 @@
     align-items: center;
     // width: 100%;
     border-radius: 0.5rem;
-    font-size: 0.875rem;
+    // font-size: 0.875rem;
     padding: 12px;
     margin: 4px 0;
     // gap: rem(15.35px);
@@ -132,6 +133,6 @@
   }
 
   .more {
-
+// padding: 12px;
   }
 }
