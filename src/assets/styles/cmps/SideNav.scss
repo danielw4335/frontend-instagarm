@@ -1,80 +1,85 @@
 .side-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 15.25rem;
+  padding-top: 1.875rem;
+  padding-left: 1.25rem;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #dbd9d9;
+
+  .icon-active {
+    display: none;
+  }
+  .nav-item.active .icon-active {
+    display: inline;
+  }
+  .nav-item.active .icon-outline {
+    display: none;
+  }
+
   &.breakpoint-large {
     .logo-icon {
       display: none;
     }
-    // background-color: rgb(34, 116, 238);
   }
 
   &.breakpoint-medium {
-    // background-color: rgb(238, 34, 34);
-    width: 71px;
+    width: 4.44rem;
 
     .nav-label,
     .logo-text {
       display: none;
     }
-
   }
 
   &.breakpoint-mobile {
     display: none;
   }
 
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: rem(244px);
-  padding-top: rem(30px);
-  padding-left: rem(20px);
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  border-right: 1px solid #dbd9d9;
-
   .logo-text {
     font-family: 'Pacifico', cursive;
-    font-size: rem(22px);
+    font-size: 1.375rem;
     color: #262626;
-    margin-bottom: rem(45px);
+    margin-bottom: 2.8125rem;
     cursor: pointer;
   }
 
   .logo-icon {
-    font-size: 22px;
+    font-size: 1.375rem;
     color: #262626;
-    margin-bottom: rem(28px);
+    margin-bottom: 1.75rem;
     cursor: pointer;
     padding-left: 6px;
-
   }
 
   .nav-section {
     display: flex;
     flex-direction: column;
-    gap: rem(24px);
+    gap: 1.5rem;
     flex: 1;
   }
 
   .nav-label {
-    font-size: rem(16px);
+    font-size: 1rem;
   }
 
   .nav-item {
     display: flex;
     align-items: center;
-    gap: rem(16px);
-    padding: rem(4px);
-    border-radius: rem(8px);
-    font-size: rem(14px);
+    gap: 1rem;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
     cursor: pointer;
     transition: background-color 0.2s;
 
     .profile-img {
-      width: rem(24px);
-      height: rem(24px);
+      width: 1.5rem;
+      height: 1.5rem;
       border-radius: 50%;
       object-fit: cover;
     }
@@ -91,8 +96,8 @@
         position: absolute;
         top: -2px;
         right: -2px;
-        width: rem(8px);
-        height: rem(8px);
+        width: 0.5rem;
+        height: 0.5rem;
         background-color: red;
         border-radius: 50%;
       }
@@ -100,6 +105,6 @@
   }
 
   .more {
-    margin-bottom: rem(28px);
+    margin-bottom: 1.75rem;
   }
 }

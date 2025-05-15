@@ -1,28 +1,62 @@
-export { ReactComponent as Camera } from './icon-camera.svg';
-export { ReactComponent as Close } from './icon-close.svg';
-export { ReactComponent as CommentOutline } from './icon-comment-outline.svg';
-export { ReactComponent as Emoji } from './icon-emoji.svg';
-export { ReactComponent as ExploreActive } from './icon-explore-active.svg';
-export { ReactComponent as ExploreOutline } from './icon-explore-outline.svg';
-export { ReactComponent as GridOutline } from './icon-grid-outline.svg';
-export { ReactComponent as HomeActive } from './icon-home-active.svg';
-export { ReactComponent as HomeOutline } from './icon-home-outline.svg';
-export { ReactComponent as LogoInstagram } from './logo-instagram.svg';
-export { ReactComponent as LogoInstagramWordmark } from './logo-instagram-wordmark.svg';
-export { ReactComponent as MessengerActive } from './icon-messenger-active.svg';
-export { ReactComponent as MessengerOutline } from './icon-messenger-outline.svg';
-export { ReactComponent as MoreOptions } from './icon-more-options.svg';
-export { ReactComponent as NewPostOutline } from './icon-new-post-outline.svg';
-export { ReactComponent as NotificationsActive } from './icon-notifications-active.svg';
-export { ReactComponent as NotificationsOutline } from './icon-notifications-outline.svg';
-export { ReactComponent as OptionsOutline } from './icon-options-outline.svg';
-export { ReactComponent as ReelsActive } from './icon-reels-active.svg';
-export { ReactComponent as ReelsOutline } from './icon-reels-outline.svg';
-export { ReactComponent as SaveActive } from './icon-save-active.svg';
-export { ReactComponent as SaveOutline } from './icon-save-outline.svg';
-export { ReactComponent as SearchActive } from './icon-search-active.svg';
-export { ReactComponent as SearchOutline } from './icon-search-outline.svg';
-export { ReactComponent as SettingsActive } from './icon-settings-active.svg';
-export { ReactComponent as SettingsOutline } from './icon-settings-outline.svg';
-export { ReactComponent as ShareOutline } from './icon-share-outline.svg';
-export { ReactComponent as TaggedOutline } from './icon-tagged-outline.svg';
+import ImportedCamera from './icon-camera.svg?react';
+import ImportedClose from './icon-close.svg?react';
+import ImportedCommentOutline from './icon-comment-outline.svg?react';
+import ImportedEmoji from './icon-emoji.svg?react';
+import ImportedExploreActive from './icon-explore-active.svg?react';
+import ImportedExploreOutline from './icon-explore-outline.svg?react';
+import ImportedGridOutline from './icon-grid-outline.svg?react';
+import ImportedHomeActive from './icon-home-active.svg?react';
+import ImportedHomeOutline from './icon-home-outline.svg?react';
+import ImportedLogoInstagram from './icon-logo-instagram.svg?react';
+import ImportedLogoInstagramWordmark from './icon-logo-instagram-wordmark.svg?react';
+import ImportedMessengerActive from './icon-messenger-active.svg?react';
+import ImportedMessengerOutline from './icon-messenger-outline.svg?react';
+import ImportedMoreOptionsOutline from './icon-more-options.svg?react';
+import ImportedMoreOptionsActive from './icon-more-options-active.svg?react';
+import ImportedNewPostOutline from './icon-new-post-outline.svg?react';
+import ImportedNotificationsActive from './icon-notifications-active.svg?react';
+import ImportedNotificationsOutline from './icon-notifications-outline.svg?react';
+import ImportedReelsActive from './icon-reels-active.svg?react';
+import ImportedReelsOutline from './icon-reels-outline.svg?react';
+import ImportedSaveActive from './icon-save-active.svg?react';
+import ImportedSaveOutline from './icon-save-outline.svg?react';
+import ImportedSearchActive from './icon-search-active.svg?react';
+import ImportedSearchOutline from './icon-search-outline.svg?react';
+import ImportedCreateOutline from './icon-create-outline.svg?react';
+// import ImportedSettingsActive from './icon-settings-active.svg?react';
+import ImportedSettingsOutline from './icon-settings-outline.svg?react';
+import ImportedShareOutline from './icon-share-outline.svg?react';
+import ImportedTaggedOutline from './icon-tagged-outline.svg?react';
+
+export {
+  ImportedCamera as Camera,
+  ImportedClose as Close,
+  ImportedCommentOutline as CommentOutline,
+  ImportedEmoji as Emoji,
+  ImportedExploreActive as ExploreActive,
+  ImportedExploreOutline as ExploreOutline,
+  ImportedGridOutline as GridOutline,
+  ImportedHomeActive as HomeActive,
+  ImportedHomeOutline as HomeOutline,
+  ImportedLogoInstagram as LogoInstagram,
+  ImportedLogoInstagramWordmark as LogoInstagramWordmark,
+  ImportedMessengerActive as MessengerActive,
+  ImportedMessengerOutline as MessengerOutline,
+  ImportedMoreOptionsOutline as MoreOptionsOutline,
+  ImportedMoreOptionsActive as MoreOptionsActive,
+  ImportedNewPostOutline as NewPostOutline,
+  ImportedNotificationsActive as NotificationsActive,
+  ImportedNotificationsOutline as NotificationsOutline,
+//   ImportedOptionsOutline as OptionsOutline,
+  ImportedCreateOutline as CreateOutline,
+  ImportedReelsActive as ReelsActive,
+  ImportedReelsOutline as ReelsOutline,
+  ImportedSaveActive as SaveActive,
+  ImportedSaveOutline as SaveOutline,
+  ImportedSearchActive as SearchActive,
+  ImportedSearchOutline as SearchOutline,
+//   ImportedSettingsActive as SettingsActive,
+  ImportedSettingsOutline as SettingsOutline,
+  ImportedShareOutline as ShareOutline,
+  ImportedTaggedOutline as TaggedOutline,
+}

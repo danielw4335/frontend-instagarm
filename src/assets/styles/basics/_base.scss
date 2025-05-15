@@ -2,6 +2,19 @@
     box-sizing: border-box;
 }
 
+.nav-item {
+  all: unset;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  color: inherit;
+}
+
+.nav-item .logo-icon .logo-text .icon-outline {
+ color: #000000;
+}
+
 html {
     // line-height: 1.6;
     // color: $clr2;
