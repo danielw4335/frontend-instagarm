@@ -33,7 +33,7 @@ export function SideNav() {
                 <LogoInstagramWordmark className="nav-label logo-wordmark" />
             </div>
             <div className="logo-icon" onClick={() => navigate('/')}>
-                <LogoInstagram />
+                <LogoInstagram className="logo-icon-svg" />
             </div>
 
             <div className="nav-section">

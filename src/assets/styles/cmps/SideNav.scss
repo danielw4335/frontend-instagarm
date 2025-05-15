@@ -1,4 +1,42 @@
 .side-nav {
+  
+&.breakpoint-medium {
+    font-size: 14.2px;
+    .icon-outline,
+    .icon-active {
+      width: em(24px);
+      height: em(24px);
+    }
+    
+    .logo-icon-svg {
+      width: em(25px);
+      height: em(25px);
+    }
+
+    padding: 8px 12px 20px 12px;
+    width: em(76.8px);
+
+  .nav-item {
+    padding: 10.5px 0 10.5px 11.5px;
+  }
+    .logo-icon {
+       padding: 25px 20px 14px 10.8px;
+      width: 48px;
+      height: 84px;
+    }
+
+    .nav-section {
+    }
+
+    .more {
+    }
+
+    .nav-label,
+    .logo-text {
+      display: none;
+    }
+  }
+
   position: fixed;
   margin: 0;
   top: 0;
@@ -31,31 +69,8 @@
       display: none;
     }
   }
-
-  &.breakpoint-medium {
-    width: em(86px);
-    padding-top: em(41.8px);
-    padding-left: em(29px);
-
-    .logo-icon {
-      margin-bottom: em(14px);
-    }
-
-    .nav-section {
-      gap: em(36.4px);
-
-    }
-
-    .more {
-      margin-top: auto;
-      margin-bottom: 21px;
-    }
-
-    .nav-label,
-    .logo-text {
-      display: none;
-    }
-  }
+  
+  
 
   &.breakpoint-mobile {
     display: none;
@@ -68,10 +83,8 @@
   }
 
   .nav-section {
-    // margin-top: em(46.5px);
     display: flex;
     flex-direction: column;
-    // gap: em(36.5px);
     flex: 1;
   }
 
