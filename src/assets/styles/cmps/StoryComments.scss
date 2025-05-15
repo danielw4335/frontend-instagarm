@@ -37,9 +37,8 @@
         align-items: center;
         justify-content: space-between;
         height: rem(24px);
-        overflow: hidden;
         // padding: 10px;
-        
+        position: relative;
         
         .add-comment-post {
             color: #0095F6;

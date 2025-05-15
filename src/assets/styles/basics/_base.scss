@@ -9,10 +9,25 @@
   gap: 1rem;
   cursor: pointer;
   color: inherit;
+
+  &:hover {
+   text-decoration: none;
+  }
+  
 }
 
 .nav-item .logo-icon .logo-text .icon-outline {
  color: #000000;
+}
+
+    // .icon-outline,
+    // .icon-active {
+    //   width: em(28px)!important;
+    //   height: em(28px)!important;;
+    // }
+
+.none-scroll{
+    overflow: hidden;
 }
 
 html {

@@ -70,12 +70,12 @@ export function SideNav() {
                 <NavLink to="/notifications" className="nav-item">
                     <NotificationsOutline className="icon-outline" />
                     <NotificationsActive className="icon-active" />
-                    <span className="notif-dot" />
+                    {/* <span className="notif-dot" /> */}
                     <span className="nav-label">Notifications</span>
                 </NavLink>
 
                 <div className="nav-item" onClick={() => open(null, 'upload')}>
-                    <CreateOutline />
+                    <CreateOutline className="icon-outline"/>
                     <span className="nav-label">Create</span>
                 </div>
 
@@ -87,9 +87,10 @@ export function SideNav() {
                     />
                     <span className="nav-label">Profile</span>
                 </NavLink>
+
             </div>
 
-            <NavLink to="#" className="nav-item more">
+            <NavLink to="/more" className="nav-item more">
                 <MoreOptionsOutline className="icon-outline" />
                 <MoreOptionsActive className="icon-active" />
                 <span className="nav-label">More</span>

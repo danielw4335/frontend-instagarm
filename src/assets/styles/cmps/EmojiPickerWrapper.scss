@@ -1,5 +1,4 @@
 .emoji-wrapper {
-  // position: relative;
   display: inline-block;
   
   .emoji-btn {
@@ -24,7 +23,6 @@
   .emoji-popup {
     position: absolute;
     bottom: 40px;
-    left: 0;
     z-index: 1011;
     background: white;
     border: 1px solid #ccc;

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import { getTimeFormat } from '../services/util.service'
 import { EmojiPickerWrapper } from './EmojiPickerWrapper'
 
-export const StoryComments = ({ story, from }) => {
+export const StoryComments = ({ story, from, setIsDetails }) => {
     const [comment, setComment] = useState('')
     const loggedInUser = useSelector((storeState) => storeState.userModule.user)
     const navigate = useNavigate()
@@ -44,6 +44,7 @@ export const StoryComments = ({ story, from }) => {
 
     function onOpenModal() {
         navigate(`/story/${_id}`)
+        setIsDetails(true)
     }
     const timeAgo = getTimeFormat(createdAt)
 
@@ -74,7 +75,7 @@ export const StoryComments = ({ story, from }) => {
                             </ShowMoreText>
                         </div>
 
-                        <button className="view-comments " onClick={onOpenModal}>
+                        <button className="view-comments "  onClick={onOpenModal}>
                             View all {comments.length} comments
                         </button>
                     </>
