@@ -13,14 +13,15 @@ import { RootCmp } from './RootCmp'
 import './assets/styles/main.scss'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
+
 root.render(
-	<Provider store={store}>
-		<Router>
-			<ModalProvider>
-				<RootCmp />
-			</ModalProvider>
-		</Router>
-	</Provider>
+		<Provider store={store}>
+			<Router>
+				<ModalProvider>
+					<RootCmp />
+				</ModalProvider>
+			</Router>
+		</Provider>
 )
 
 // If you want your app to work offline and load faster, you can change
