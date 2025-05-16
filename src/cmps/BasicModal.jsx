@@ -109,8 +109,8 @@ function safetyClose() {
           {type === 'createStory' && (
             <div className="modal-create-post">
               <div className="left-side">
-                {/* <img src={newStory.imgUrl} className="create-preview" /> */}
-                <img src="https://res.cloudinary.com/vanilla-test-images/image/upload/v1747338393/bgufj3duwiwl3vqlru2j.png" className="create-preview" />
+                <img src={newStory.imgUrl} className="create-preview" />
+                {/* <img src="https://res.cloudinary.com/vanilla-test-images/image/upload/v1747338393/bgufj3duwiwl3vqlru2j.png" className="create-preview" /> */}
               </div>
               <div className="right-side">
                 <div className="user-bar">

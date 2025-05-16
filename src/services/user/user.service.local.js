@@ -2,7 +2,7 @@ import { storageService } from '../async-storage.service'
 import { Users } from '../../data/users'
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
 
-const STORAGE_KEY = 'user'
+const STORAGE_KEY = 'users'
 export const userService = {
     login,
     logout,
