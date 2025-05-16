@@ -39,11 +39,11 @@ export const Stories = [
     txt: 'Photo 2 from our last adventure our last adventure our last adventure our  last adventure our last adventure our last adventure our last adventure  last adventure our last adventure our last adventure our last adventure last adventure our  last adventure!',
     imgUrl: 'https://picsum.photos/470/300?random=102',
     createdAt: 1700200000000,
-    by: {
-      _id: 'u102',
-      username: 'noa_b',
-      fullname: 'Noa',
-      imgUrl: 'https://randomuser.me/api/portraits/women/32.jpg'
+   by: {
+      _id: 'u101',
+      username: 'daniel_w',
+      fullname: 'Daniel',
+      imgUrl: 'https://randomuser.me/api/portraits/men/31.jpg'
     },
     comments: [
       {

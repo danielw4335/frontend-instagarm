@@ -16,11 +16,13 @@ export const storyservice = {
 }
 window.cs = storyservice
 
-
-async function query() {
+async function query(filterBy = {}) {
     let stories = await storageService.query(STORAGE_KEY)
     if (!stories || !stories.length) {
         stories = createStories()
+    }
+    if (filterBy.user){
+        stories = stories.filter(story => story.by._id === filterBy.user)
     }
     return stories
 }
