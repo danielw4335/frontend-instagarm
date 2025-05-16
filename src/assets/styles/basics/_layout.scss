@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1rem 1fr 1rem;
 
-    > * {
+    >* {
         grid-column: 2;
 
         &.full {
@@ -31,4 +31,3 @@
     //         minmax(20px, 1fr);
     // }
 }
-
