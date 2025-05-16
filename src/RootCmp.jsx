@@ -44,6 +44,7 @@ export function RootCmp() {
                     <Route path="story/:storyId" element={<FidIndex />} />
                     {/* <Route path="story" element={<FidIndex />} /> */}
                     <Route path="u/:id" element={<UserDetails />} />
+                    <Route path="u/d/:id" element={<StoryDetails />} />
                     <Route path="review" element={<ReviewIndex />} />
                     <Route path="admin" element={<AdminIndex />} />
                     {/* <Route path="/search" element={<AdminIndex />} /> */}

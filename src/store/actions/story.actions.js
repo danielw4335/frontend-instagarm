@@ -29,12 +29,14 @@ export async function loadStory(storyId) {
 
 export async function setIsDetails(isDetails) {
     try {
+        console.log(' setIsDetails isDetails:', isDetails)
         store.dispatch({ type: SET_DETAILS, isDetails })
     } catch (err) {
         console.log('Cannot set details', err)
         throw err
     }
 }
+
 export async function setIsIndex(isIndex) {
     try {
         store.dispatch({ type: SET_INDEX, isIndex })

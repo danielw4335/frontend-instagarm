@@ -5,32 +5,53 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faComment, faPaperPlane, faBookmark } from '@fortawesome/free-regular-svg-icons'
 import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons'
 import { useClickOutsideClose } from '../customHooks/useClickOutsideClose'
+import { useParams, useNavigate } from 'react-router-dom'
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+
 
 import { StoryComments } from './StoryComments.jsx'
 import { StoryHeader } from './storyHeader.jsx'
 import { PostMainText } from './PostMainText.jsx'
-import { loadStory, toggleLike } from '../store/actions/story.actions'
+import { loadStories, loadStory, toggleLike } from '../store/actions/story.actions'
 import { loadUsers } from '../store/actions/user.actions.js'
 
-export function StoryDetails({ story, onClose }) {
+export function StoryDetails({ story, setSelectedStory, nav }) {
     const from = 'details'
     const loggedInUser = useSelector(storeState => storeState.userModule.user)
     const users = useSelector(storeState => storeState.userModule.users)
     const newStory = useSelector((storeState) => storeState.storyModule.story)
+    const [isModalOpen, setIsModalOpen] = useState(null)
+    const navigate = useNavigate()
 
-//     useEffect(() => {
-//     setSelectedStory(null)
-//! }, [onClose])
+    function onClose() {
+        setIsModalOpen(false)
+        navigate(nav)
+        setSelectedStory(null)
+    }
 
-  const [isLiked, setIsLiked] = useState(
+    const [isLiked, setIsLiked] = useState(
         loggedInUser?.likedStoryIds?.includes(newStory?._id)
     )
     const modalRef = useRef()
     useClickOutsideClose(modalRef, onClose)
 
     useEffect(() => {
+        const target = document.querySelector('body')
+        if (isModalOpen) {
+            disableBodyScroll(target)
+        } else {
+            enableBodyScroll(target)
+        }
+        return () => {
+            enableBodyScroll(target)
+        }
+    }, [isModalOpen])
+
+    useEffect(() => {
         loadStory(story._id)
+        // loadStories(stories)
         loadUsers()
+        setIsModalOpen(true)
     }, [])
 
     useEffect(() => {
@@ -44,16 +65,16 @@ export function StoryDetails({ story, onClose }) {
     console.log(' StoryDetails users:', users)
 
     const { _id, txt, imgUrl, by, comments, likes, createdAt } = newStory
-  
-  async function onToggleLike() {
-    if (!loggedInUser) return alert('You need to login first')
-    
-    try {
+
+    async function onToggleLike() {
+        if (!loggedInUser) return alert('You need to login first')
+
+        try {
             await toggleLike(newStory, loggedInUser)
-    } catch (err) {
-      console.error('Failed to toggle like:', err)
+        } catch (err) {
+            console.error('Failed to toggle like:', err)
+        }
     }
-  }
     if (!newStory) return null
 
     return (
@@ -89,17 +110,17 @@ export function StoryDetails({ story, onClose }) {
                         </div>
 
                         <div className="story-footer">
-                            <hr /> 
-                        <div className="story-actions details">
-                            <div className="left-actions">
-                                <button onClick={onToggleLike}>
-                                    <FontAwesomeIcon icon={isLiked ? faHeartSolid : faHeart} className={isLiked ? 'isLiked' : ''} />
-                                </button>
-                                <button><FontAwesomeIcon icon={faComment} /></button>
-                                <button><FontAwesomeIcon icon={faPaperPlane} /></button>
+                            <hr />
+                            <div className="story-actions details">
+                                <div className="left-actions">
+                                    <button onClick={onToggleLike}>
+                                        <FontAwesomeIcon icon={isLiked ? faHeartSolid : faHeart} className={isLiked ? 'isLiked' : ''} />
+                                    </button>
+                                    <button><FontAwesomeIcon icon={faComment} /></button>
+                                    <button><FontAwesomeIcon icon={faPaperPlane} /></button>
+                                </div>
+                                <button className="save-btn"><FontAwesomeIcon icon={faBookmark} /></button>
                             </div>
-                            <button className="save-btn"><FontAwesomeIcon icon={faBookmark} /></button>
-                        </div>
 
                             <StoryComments story={newStory} from={from} />
                         </div>

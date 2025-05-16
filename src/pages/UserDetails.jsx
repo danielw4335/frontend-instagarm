@@ -36,7 +36,7 @@ export function UserDetails() {
 
   console.log(' {stories.map stories:', stories)
   function onOpenModal(_id) {
-      navigate(`/story/${_id}`)
+      navigate(`/u/d/${_id}`)
       // setIsDetails(true)
   }
   // function onUserUpdate(user) {
@@ -47,6 +47,11 @@ export function UserDetails() {
   if (!user) return <div className='loading'>Loading...</div>
   return (
     <main className="user-details">
+      ////todo {/* Add details */}
+      {/* {selectedStory && (
+            <StoryDetails story={selectedStory} setSelectedStory={setSelectedStory} nav={'/'} />
+          )} */}
+      ////todo {/* Add details */}
       <section className="user-details-container">
         <img className="user-details-img" src={user.imgUrl} />
         <section className="user-details-main">

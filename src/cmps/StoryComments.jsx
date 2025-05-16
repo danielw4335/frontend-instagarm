@@ -1,7 +1,7 @@
 import ShowMoreText from 'react-show-more-text'
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
-import { addStoryComment } from '../store/actions/story.actions'
+import { addStoryComment, loadStory } from '../store/actions/story.actions'
 import { useNavigate } from 'react-router-dom'
 import { getTimeFormat } from '../services/util.service'
 import { EmojiPickerWrapper } from './EmojiPickerWrapper'
@@ -40,6 +40,7 @@ export const StoryComments = ({ story, from }) => {
 
         try {
             await addStoryComment(_id, newComment)
+            await loadStory(story._id)
             setComment('')
         } catch (err) {
             console.error('Failed to add comment:', err)
@@ -48,7 +49,7 @@ export const StoryComments = ({ story, from }) => {
 
     function onOpenModal() {
         navigate(`/story/${_id}`)
-        setIsDetails(true)
+        setIsDetails({ story: story, from: 'index'})
     }
     const timeAgo = getTimeFormat(createdAt)
 
