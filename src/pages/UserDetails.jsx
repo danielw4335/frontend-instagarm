@@ -7,6 +7,7 @@ import { showSuccessMsg } from '../services/event-bus.service'
 import { StoryDetails } from '../cmps/StoryDetails'
 import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from '../services/socket.service'
 import { loadStories, setIsDetails } from '../store/actions/story.actions'
+import { updateUser } from '../store/actions/user.actions'
 
 export function UserDetails() {
 
@@ -16,9 +17,11 @@ export function UserDetails() {
   const stories = useSelector(storeState => storeState.storyModule.stories)
   const [filterBy, setFilterBy] = useState({})
   const [selectedStory, setSelectedStory] = useState(null)
+  const [isLoadingFollow, setIsLoadingFollow] = useState(false)
   const user = users.find(user => user._id === params.id)
   const isAdmin = (user?._id === loggedInUser?._id)
    const navigate = useNavigate()
+  const isFollowing = loggedInUser?.following?.includes(user?._id)
 
 //!! יש _id מוזר לא מובן מאיפה מגיע
 
@@ -38,15 +41,44 @@ export function UserDetails() {
     setFilterBy({ user: params.id })
   }, [])
   
-  console.log(' {stories.map stories:', stories)
   function onOpenModal(_id) {
-      navigate(`/u/d/${_id}`)
-      setSelectedStory(stories.find(story => story._id === _id))
+    setSelectedStory(stories.find(story => story._id === _id))
+    navigate(`/u/d/${_id}`)
   }
-  // function onUserUpdate(user) {
-  //   showSuccessMsg(`This user ${user.fullname} just got updated from socket`)
-  //   store.dispatch({ type: UPDATE_USER, user })
-  // }
+
+  async function onFollow() {
+    if (!loggedInUser || !user) return
+    setIsLoadingFollow(true)
+    if (isFollowing) {
+      const updatedLoggedInUser = {
+        ...loggedInUser,
+        following: loggedInUser.following.filter(id => id !== user._id)
+      }
+      const updatedUser = {
+        ...user,
+        followers: user.followers.filter(id => id !== loggedInUser._id)
+      }
+      await updateUser(updatedLoggedInUser)
+      await updateUser(updatedUser)
+    } else {
+      const updatedLoggedInUser = {
+        ...loggedInUser,
+        following: loggedInUser.following.includes(user._id)
+          ? loggedInUser.following
+          : [...(loggedInUser.following || []), user._id]
+      }
+      const updatedUser = {
+        ...user,
+        followers: user.followers.includes(loggedInUser._id)
+          ? user.followers
+          : [...(user.followers || []), loggedInUser._id]
+      }
+      await updateUser(updatedLoggedInUser)
+      await updateUser(updatedUser)
+      setIsLoadingFollow(false)
+    }
+  }
+
 
   if (!user) return <div className='loading'>Loading...</div>
   return (
@@ -69,7 +101,9 @@ export function UserDetails() {
             )}
             {!isAdmin && (
               <>
-                <button className="btn-user-header edit">Follow</button>
+                <button className="btn-user-header edit" onClick={onFollow} disabled={isLoadingFollow}>
+                  {isLoadingFollow ? 'Loading...' : (isFollowing ? 'Unfollow' : 'Follow')}
+                </button>
                 <button className="btn-user-header archive">Message</button>
                 <button className="user-details-settings">...</button>
               </>

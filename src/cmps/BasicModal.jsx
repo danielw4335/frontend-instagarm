@@ -116,12 +116,14 @@ function safetyClose() {
                 <div className="user-bar">
                   <StoryHeader from={'modalCreat'} user={user} createdAt={0} />
                 </div>
-                <textarea
+                <input
                   className="create-story-input"
+                  type="text"
                   maxLength={2200}
+                  name="txt"
                   value={newStory.txt}
-                  onChange={({ target }) => setNewStory(prev => ({ ...prev, txt: target.value }))}
-                ></textarea>
+                  onChange={e => setNewStory(prev => ({ ...prev, txt: e.target.value }))}
+                />
               </div>
               <LocationInput onPlaceSelected={(place) => {
                 setNewStory(prev => ({ ...prev, loc: place }))
