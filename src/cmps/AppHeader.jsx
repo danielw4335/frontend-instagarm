@@ -3,46 +3,42 @@ import { useNavigate } from 'react-router'
 import { useSelector } from 'react-redux'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { logout } from '../store/actions/user.actions'
+import {
+	MessengerOutline,
+	NotificationsOutline,
+	LogoInstagramWordmark,
+} from '../assets/SVG/icons'
 
 export function AppHeader() {
 	const user = useSelector(storeState => storeState.userModule.user)
 	const navigate = useNavigate()
 
-	async function onLogout() {
-		try {
-			await logout()
-			navigate('/')
-			showSuccessMsg(`Bye now`)
-		} catch (err) {
-			showErrorMsg('Cannot logout')
-		}
-	}
+	// async function onLogout() {
+	// 	try {
+	// 		await logout()
+	// 		navigate('/')
+	// 		showSuccessMsg(`Bye now`)
+	// 	} catch (err) {
+	// 		showErrorMsg('Cannot logout')
+	// 	}
+	// }
 
 	return (
 		<header className="app-header full">
-			<nav>
-				<NavLink to="/" className="logo">
-					Instagram
+			<div className="logo-text">
+				<LogoInstagramWordmark className="nav-label logo-wordmark" />
+			</div>
+
+			<section className='nav-section'>
+				<NavLink to="/notifications" className="nav-item">
+					<NotificationsOutline className="nav-icon" />
 				</NavLink>
-				<NavLink to="about">About</NavLink>
-				<NavLink to="story">Stories</NavLink>
-				<NavLink to="chat">Chat</NavLink>
-				<NavLink to="review">Review</NavLink>
 
-                {user?.isAdmin && <NavLink to="/admin">Admin</NavLink>}
+				<NavLink to="/messages" className="nav-item">
+					<MessengerOutline className="nav-icon" />
+				</NavLink>
+			</section>
 
-				{!user && <NavLink to="login" className="login-link">Login</NavLink>}
-				{user && (
-					<div className="user-info">
-						<Link to={`user/${user._id}`}>
-							{/* {user.imgUrl && <img src={user.imgUrl} />} */}
-							{user.fullname}
-						</Link>
-						{/* <span className="score">{user.score?.toLocaleString()}</span> */}
-						<button onClick={onLogout}>logout</button>
-					</div>
-				)}
-			</nav>
 		</header>
 	)
 }

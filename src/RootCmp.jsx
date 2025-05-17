@@ -11,7 +11,7 @@ import { AdminIndex } from './pages/AdminIndex.jsx'
 
 import { UserDetails } from './pages/UserDetails'
 
-// import { AppHeader } from './cmps/AppHeader'
+import { AppHeader } from './cmps/AppHeader'
 // import { AppFooter } from './cmps/AppFooter'
 
 import { StoryDetails } from './cmps/StoryDetails'
@@ -27,6 +27,7 @@ export function RootCmp() {
 
     return (
         <div className="main-container">
+            <AppHeader />
             <UserMsg />
             <SideNav />
             <BottomNav />
