@@ -37,7 +37,6 @@
         align-items: center;
         justify-content: space-between;
         height: rem(24px);
-        // padding: 10px;
         position: relative;
         
         .add-comment-post {
@@ -49,7 +48,6 @@
 
         input {
             margin: 0;
-            // margin-top: 20px;
         }
 
         input:not(:placeholder-shown)+.add-comment-post {

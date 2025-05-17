@@ -19,8 +19,8 @@ export function ImgUploader({ onUploaded = null }) {
 
   const { getRootProps, getInputProps, open, isDragActive } = useDropzone({
     onDrop,
-    accept: { 'image/*': [] },//?only img
-    multiple: false,//?only one
+    accept: { 'image/*': [] },////only img
+    multiple: false,////only one
     noClick: true,
     noKeyboard: true
   })

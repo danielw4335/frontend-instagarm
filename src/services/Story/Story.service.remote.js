@@ -34,11 +34,9 @@ async function addComment(storyId, comment) {
     return httpService.post(`story/${storyId}/comment`, comment)
 }
 
-
 function getEmptyStory() {
     return {
-        vendor: '',
-        speed: 0,
+        txt: '',
         imgUrl: '',
         createdAt: Date.now(),
         by: userService.getLoggedinUser(),

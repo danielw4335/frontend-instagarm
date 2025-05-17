@@ -1,4 +1,3 @@
-import { Edit } from "lucide-react"
 
 export function HeaderModal({ type, setType, safetyClose, createStory }) {
     console.log(' HeaderModal type:', type)

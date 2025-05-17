@@ -16,6 +16,9 @@ import { loadStories, loadStory, toggleLike } from '../store/actions/story.actio
 import { loadUsers } from '../store/actions/user.actions.js'
 
 export function StoryDetails({ story, setSelectedStory, nav }) {
+    console.log(' StoryDetails setSelectedStory:', setSelectedStory)
+    console.log(' StoryDetails story:', story)
+    
     const from = 'details'
     const loggedInUser = useSelector(storeState => storeState.userModule.user)
     const users = useSelector(storeState => storeState.userModule.users)
@@ -42,18 +45,21 @@ export function StoryDetails({ story, setSelectedStory, nav }) {
         } else {
             enableBodyScroll(target)
         }
+        
         return () => {
             enableBodyScroll(target)
         }
     }, [isModalOpen])
-
+    
     useEffect(() => {
-        loadStory(story._id)
+        if (story?._id) {
+            loadStory(story._id)
+        }
         // loadStories(stories)
         loadUsers()
         setIsModalOpen(true)
-    }, [])
-
+    }, [story])
+    
     useEffect(() => {
         if (loggedInUser && newStory) {
             setIsLiked(loggedInUser.likedStoryIds?.includes(newStory._id))
@@ -64,7 +70,7 @@ export function StoryDetails({ story, setSelectedStory, nav }) {
     if (!users) return null
     console.log(' StoryDetails users:', users)
 
-    const { _id, txt, imgUrl, by, comments, likes, createdAt } = newStory
+    const { _id, txt, imgUrl, by, comments, likes, createdAt } = newStory || {}
 
     async function onToggleLike() {
         if (!loggedInUser) return alert('You need to login first')
@@ -75,21 +81,19 @@ export function StoryDetails({ story, setSelectedStory, nav }) {
             console.error('Failed to toggle like:', err)
         }
     }
-    if (!newStory) return null
 
     return (
         <main className="story-modal-overlay">
             <section className="story-modal" ref={modalRef}>
                 <button className="story-modal-close" onClick={onClose}>X</button>
 
-                <div className="story-modal-content">
-                    <div className="story-media">
-                        <img src={newStory.imgUrl} alt="story" />
+                <div className="story-modal-content">                    <div className="story-media">
+                        {newStory?.imgUrl && <img src={newStory.imgUrl} alt="story" />}
                     </div>
 
                     <div className="story-details">
                         <div className="story-header">
-                            <StoryHeader key={by._id} from={from} user={by} createdAt={createdAt} />
+                            {by && <StoryHeader key={by._id} from={from} user={by} createdAt={createdAt} />}
                         </div>
                         <div className="story-comments">
                             <PostMainText story={newStory} />

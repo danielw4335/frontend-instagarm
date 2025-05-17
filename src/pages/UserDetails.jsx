@@ -4,6 +4,7 @@ import {  NavLink, useNavigate, useParams } from 'react-router-dom'
 import { loadUsers } from '../store/actions/user.actions'
 import { store } from '../store/store'
 import { showSuccessMsg } from '../services/event-bus.service'
+import { StoryDetails } from '../cmps/StoryDetails'
 import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from '../services/socket.service'
 import { loadStories, setIsDetails } from '../store/actions/story.actions'
 
@@ -14,6 +15,7 @@ export function UserDetails() {
   const loggedInUser = useSelector(storeState => storeState.userModule.user)
   const stories = useSelector(storeState => storeState.storyModule.stories)
   const [filterBy, setFilterBy] = useState({})
+  const [selectedStory, setSelectedStory] = useState(null)
   const user = users.find(u => u._id === params.id)
   const isAdmin = (user?._id === loggedInUser?._id)
    const navigate = useNavigate()
@@ -33,11 +35,11 @@ export function UserDetails() {
   useEffect(() => {
     setFilterBy({ user: params.id })
   }, [])
-
+  
   console.log(' {stories.map stories:', stories)
   function onOpenModal(_id) {
       navigate(`/u/d/${_id}`)
-      // setIsDetails(true)
+      setSelectedStory(stories.find(story => story._id === _id))
   }
   // function onUserUpdate(user) {
   //   showSuccessMsg(`This user ${user.fullname} just got updated from socket`)
@@ -47,11 +49,10 @@ export function UserDetails() {
   if (!user) return <div className='loading'>Loading...</div>
   return (
     <main className="user-details">
-      ////todo {/* Add details */}
-      {/* {selectedStory && (
-            <StoryDetails story={selectedStory} setSelectedStory={setSelectedStory} nav={'/'} />
-          )} */}
-      ////todo {/* Add details */}
+
+      {selectedStory && (
+            <StoryDetails story={selectedStory} setSelectedStory={setSelectedStory} nav={'/u'} />
+          )}
       <section className="user-details-container">
         <img className="user-details-img" src={user.imgUrl} />
         <section className="user-details-main">

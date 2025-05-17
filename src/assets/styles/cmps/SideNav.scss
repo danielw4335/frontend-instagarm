@@ -105,12 +105,9 @@
   .nav-item {
     display: flex;
     align-items: center;
-    // width: 100%;
     border-radius: 0.5rem;
-    // font-size: 0.875rem;
     padding: 12px;
     margin: 4px 0;
-    // gap: rem(15.35px);
     transition: background-color 0.2s;
     cursor: pointer;
 
@@ -146,6 +143,5 @@
   }
 
   .more {
-// padding: 12px;
   }
 }
