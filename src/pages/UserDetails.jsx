@@ -20,6 +20,8 @@ export function UserDetails() {
   const isAdmin = (user?._id === loggedInUser?._id)
    const navigate = useNavigate()
 
+//!! יש _id מוזר לא מובן מאיפה מגיע
+
   console.log(' useEffect params.id:', params.id)
   useEffect(() => {
     loadUsers()
@@ -51,7 +53,7 @@ export function UserDetails() {
     <main className="user-details">
 
       {selectedStory && (
-            <StoryDetails story={selectedStory} setSelectedStory={setSelectedStory} nav={'/u'} />
+            <StoryDetails  key={selectedStory._id} story={selectedStory} setSelectedStory={setSelectedStory} nav={'/u'} />
           )}
       <section className="user-details-container">
         <img className="user-details-img" src={user.imgUrl} />

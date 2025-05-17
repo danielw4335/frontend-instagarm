@@ -29,7 +29,7 @@ export function FidIndex() {
     <section className="fid-index">
       <StoryList stories={stories} from="index" />
       {selectedStory && (
-        <StoryDetails story={selectedStory} setSelectedStory={setSelectedStory} nav={'/'} />
+        <StoryDetails  key={selectedStory._id} story={selectedStory} setSelectedStory={setSelectedStory} nav={'/'} />
       )}
     </section>
   )
