@@ -16,7 +16,7 @@ export function UserDetails() {
   const stories = useSelector(storeState => storeState.storyModule.stories)
   const [filterBy, setFilterBy] = useState({})
   const [selectedStory, setSelectedStory] = useState(null)
-  const user = users.find(u => u._id === params.id)
+  const user = users.find(user => user._id === params.id)
   const isAdmin = (user?._id === loggedInUser?._id)
    const navigate = useNavigate()
 
@@ -60,9 +60,20 @@ export function UserDetails() {
         <section className="user-details-main">
           <div className="user-details-header">
             <span className="user-details-username">{user.username}</span>
-            <button className="btn-user-header edit">Edit profile</button>
-            <button className="btn-user-header archive">View archive</button>
-            <button className="user-details-settings">⚙️</button>
+            {isAdmin && (
+              <>
+                <button className="btn-user-header edit">Edit profile</button>
+                <button className="btn-user-header archive">View archive</button>
+                <button className="user-details-settings">⚙️</button>
+              </>
+            )}
+            {!isAdmin && (
+              <>
+                <button className="btn-user-header edit">Follow</button>
+                <button className="btn-user-header archive">Message</button>
+                <button className="user-details-settings">...</button>
+              </>
+            )}
           </div>
           <div className="user-details-info">
             <span><b>{user.posts.length}</b> posts</span>
