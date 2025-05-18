@@ -1,44 +1,6 @@
 .side-nav {
-  z-index: 10;
-  
-&.breakpoint-medium {
-    font-size: 14.2px;
-    .icon-outline,
-    .icon-active {
-      width: em(24px);
-      height: em(24px);
-    }
-    
-    .logo-icon-svg {
-      width: em(25px);
-      height: em(25px);
-    }
-
-    padding: 8px 12px 20px 12px;
-    width: em(76.8px);
-
-  .nav-item {
-    padding: 10.5px 0 10.5px 11.5px;
-  }
-    .logo-icon {
-       padding: 25px 20px 14px 10.8px;
-      width: 48px;
-      height: 84px;
-    }
-
-    .nav-section {
-    }
-
-    .more {
-    }
-
-    .nav-label,
-    .logo-text {
-      display: none;
-    }
-  }
-
-  position: fixed;
+  // z-index: 10;
+  // position: fixed;
   margin: 0;
   top: 0;
   left: 0;
@@ -53,6 +15,44 @@
   flex-direction: column;
   border-right: 1px solid #dbd9d9;
 
+  &.breakpoint-medium {
+    font-size: 14.2px;
+
+    .icon-outline,
+    .icon-active {
+      width: em(24px);
+      height: em(24px);
+    }
+
+    .logo-icon-svg {
+      width: em(25px);
+      height: em(25px);
+    }
+
+    padding: 8px 12px 20px 12px;
+    width: em(76.8px);
+
+    .nav-item {
+      padding: 10.5px 0 10.5px 11.5px;
+    }
+
+    .logo-icon {
+      padding: 25px 20px 14px 10.8px;
+      width: 48px;
+      height: 84px;
+    }
+
+    .nav-section {}
+
+    .more {}
+
+    .nav-label,
+    .logo-text {
+      display: none;
+    }
+  }
+
+
   .icon-active {
     display: none;
   }
@@ -65,13 +65,9 @@
     display: none;
   }
 
-  &.breakpoint-large {
-    .logo-icon {
-      display: none;
-    }
+  .logo-icon {
+    display: none;
   }
-  
-  
 
   &.breakpoint-mobile {
     display: none;
@@ -143,6 +139,5 @@
     }
   }
 
-  .more {
-  }
+  .more {}
 }

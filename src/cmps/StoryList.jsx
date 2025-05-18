@@ -10,13 +10,13 @@ export function StoryList({ stories, from }) {
 
 
     return (
-        <section className={"story-list"}>
+        <div className={"story-list"}>
             {!isLoading && from === 'index' ?
                 stories.map(story => (
                     <StoryPreview key={story._id} story={story} from={from} />
                 ))
                 : <div>Loading...</div>
             }
-        </section>
+        </div>
     )
 }

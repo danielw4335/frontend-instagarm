@@ -43,11 +43,12 @@ export function RootCmp() {
 	}
 
 	return (
-		<div className="main-container">
+		<section className="section-layout">
 			<AppHeader />
 			<UserMsg />
+
 			<SideNav />
-			<BottomNav />
+			<main className="main-layout">
 			{modalState.isOpen && (
 				<BasicModal
 					type={modalState.modalType}
@@ -55,7 +56,6 @@ export function RootCmp() {
 					onClose={close}
 				/>
 			)}
-			<main>
 				<Routes>
 					{/* <Route path="" element={<HomePage />} /> */}
 					<Route path="about" element={<AboutUs />}>
@@ -87,7 +87,7 @@ export function RootCmp() {
 					</Route>
 				</Routes>
 			</main>
-			{/* <AppFooter /> */}
-		</div>
+			<BottomNav />
+		</section>
 	)
 }

@@ -1,15 +1,26 @@
-.main-container {
-//  display: grid;
-//  grid-template-columns: 0.58fr 470px 1fr;
+.section-layout {
+    display: grid;
+    grid-template-columns: auto 1fr;
 
-    // >* {
-    //     grid-column: 2;
+    >* {
+        &.full {
+            grid-column: 1 / -1;
+        }
+    }
 
-    //     &.full {
-    //         grid-column: 1 / -1;
-    //     }
-    // }
+    .main-layout {
+        display: grid;
+        grid-template-columns: minmax(20px, 1fr) minmax(auto, 470px) minmax(20px, 1fr);
 
+        &>* {
+            grid-column: 2;
+        }
+
+        @include for-mobile-layout {
+            grid-template-columns: minmax(1fr, 65px) minmax(auto, 470px) minmax(1fr, 65px);
+            grid-column: 1 / -1;
+        }
+    }
 
     // @include for-narrow-layout {
     //     grid-template-columns: 

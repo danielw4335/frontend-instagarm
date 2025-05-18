@@ -1,5 +1,7 @@
-@media (max-width: 770px) {
-    .app-header {
+// @media (max-width: 760px) {
+.app-header {
+    display: none;
+    @include for-mobile-layout {
         display: flex;
         height: em(53px);
         border-bottom: 1px solid black;
@@ -20,8 +22,6 @@
     }
 }
 
-@media (min-width: 770px) {
-    .app-header {
-        display: none;
-    }
-}
+
+// @media (min-width: 760px) {
+.app-header {}

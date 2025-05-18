@@ -53,7 +53,7 @@ function safetyClose() {
 
   if (type === 'options') {
     return (
-      <div className="modal-backdrop" onClick={onClose}>
+      <div className="modal-backdrop full" onClick={onClose}>
         <div className="modal-basic" onClick={(ev) => ev.stopPropagation()}>
           {isMyStoryId(storyId, user) && (
             <button className="modal-btn delete" onClick={onDelete}>Delete</button>

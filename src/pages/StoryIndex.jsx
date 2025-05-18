@@ -12,8 +12,6 @@ export function StoryIndex() {
   const stories = useSelector(storeState => storeState.storyModule.stories)
 
   return (
-    <section className="fid-index">
       <StoryList stories={stories} from="index" />
-    </section>
   )
 }

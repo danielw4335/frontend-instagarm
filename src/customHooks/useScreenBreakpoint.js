@@ -11,9 +11,9 @@ export function useScreenBreakpoint() {
 
     function getBreakpoint() {
         const width = window.innerWidth
-        if (width < 770) return 'mobile'
-        if (width < 1265) return 'medium'
-        if (width > 1265) return 'large'
+        if (width < 800) return 'mobile'
+        if (width < 1260) return 'medium'
+        if (width > 1260) return 'large'
     }
     return breakpoint
 }

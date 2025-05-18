@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { StoryHeader } from './storyHeader.jsx'
+import { StoryHeader } from './StoryHeader.jsx'
 import { StoryActions } from './StoryActions.jsx'
 import { StoryComments } from './StoryComments.jsx'
 import { BasicModal } from './BasicModal.jsx'
