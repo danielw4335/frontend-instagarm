@@ -5,7 +5,7 @@ import { ReviewPreview } from './ReviewPreview.jsx'
 export function ReviewList({ reviews, onRemoveReview }) {
     
     function shouldShowActionBtns(review) {
-        const user = userService.getLoggedInUser()
+        const user = userService.getLoggedinUser()
         
         if (!user) return false
         if (user.isAdmin) return true

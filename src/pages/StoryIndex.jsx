@@ -10,29 +10,6 @@ import { loadUser, loadUsers, login } from '../store/actions/user.actions'
 
 export function StoryIndex() {
   const stories = useSelector(storeState => storeState.storyModule.stories)
-  const [selectedStory, setSelectedStory] = useState(null)
-  const { storyId } = useParams()
-  const credUser = {
-    _id: 'u101',
-    username: 'danielwallache',
-    password: 'pass1',
-  }
-
-  useEffect(() => {
-    loadStories()
-    loadUsers()
-    login(credUser)
-    // loadUser(credUser._id)
-  }, [])
-
-  useEffect(() => {
-    if (storyId && stories.length) {
-      const story = stories.find(story => story._id === storyId)
-      setSelectedStory(story || null)
-    } else {
-      setSelectedStory(null)
-    }
-  }, [storyId, stories])
 
   return (
     <section className="fid-index">

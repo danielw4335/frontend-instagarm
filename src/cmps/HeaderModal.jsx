@@ -4,13 +4,11 @@ export function HeaderModal({ type, setType, safetyClose, createStory }) {
 
     return (
         <main className={`header-modal-create ${type}`}>
-
-      
-                {type === 'upload' && (
-                    <>
-                        <span className="modal-title crop">Create new post</span>
-                    </>
-                )}
+            {type === 'upload' && (
+                <>
+                    <span className="modal-title crop">Create new post</span>
+                </>
+            )}
             {type === 'cropStory' && (
                 <>
                     <button className="btn-back clear-button" onClick={() => safetyClose}>Back</button>

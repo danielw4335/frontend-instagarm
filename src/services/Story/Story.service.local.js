@@ -48,7 +48,7 @@ function getEmptyStory() {
         txt: '',
         imgUrl: '',
         createdAt: Date.now(),
-        by: userService.getLoggedInUser(),
+        by: userService.getLoggedinUser(),
         loc: null,
         comments: [],
         likedBy: [],
@@ -64,7 +64,7 @@ async function save(story) {
     } else {
         storyToSave._id = makeId()
         storyToSave.createdAt = Date.now()
-        storyToSave.by = userService.getLoggedInUser()
+        storyToSave.by = userService.getLoggedinUser()
         storyToSave.comments = []
         storyToSave.likedBy = []
         storyToSave.tags = []

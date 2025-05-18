@@ -9,6 +9,7 @@ export async function loadStories(filterBy) {
         store.dispatch({ type: SET_IS_LOADING, isLoading: true })
         const stories = await storyservice.query(filterBy)
         store.dispatch({ type: SET_STORIES, stories })
+		console.log('Actions loadStories stories:', stories)
     } catch (err) {
         console.log('Cannot load stories', err)
         throw err
