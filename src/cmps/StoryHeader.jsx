@@ -28,7 +28,7 @@ export function StoryHeader({ from, _id, user, createdAt }) {
                 {from === 'modalCreat' && (
                     <div className="storyHeader-modal-creat">
                         <img className="user-img" src={imgUrl} alt="user" />
-                        <span className="username">{user.username}</span>
+                        <span className="username">{user.username} || daniel</span>
                     </div>
                 )}
             </div>
