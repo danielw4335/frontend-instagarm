@@ -95,8 +95,8 @@ export function UserDetails() {
           </div>
           <div className="user-details-info">
             <span><b>{user.posts?.length}</b> posts</span>
-            <span><b>{user.followers.length}</b> followers</span>
-            <span><b>{user.following.length}</b> following</span>
+            <span><b>{user.followers?.length}</b> followers</span>
+            <span><b>{user.following?.length}</b> following</span>
           </div>
           <div className="user-details-bio">
             <p>{user.fullname}</p>

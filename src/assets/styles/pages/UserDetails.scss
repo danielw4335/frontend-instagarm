@@ -1,8 +1,13 @@
 .user-details {
-    margin-left: 45px;
-    padding: em(30px) em(20px) 0;
+    display: grid;
+    grid-template-columns: 1fr 935px .5fr;
+    // margin-left: 45px;
+    // padding: em(30px) em(20px) 0;
     position: relative;
 
+    &>* {
+        grid-column: 2;
+    }
 
     .user-details-container {
         padding: -10px;
@@ -145,8 +150,8 @@
         font-size: em(14px);
         gap: em(70px);
         border-top: 1px solid #efefef;
-padding-top: em(9.8px);
-padding-bottom: em(14px);
+        padding-top: em(9.8px);
+        padding-bottom: em(14px);
 
         a {
             padding: 8px 12px;
