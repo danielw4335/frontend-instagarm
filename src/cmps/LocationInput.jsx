@@ -17,7 +17,7 @@ export function LocationInput({ onPlaceSelected }) {
       })
 
       if (containerRef.current) {
-        containerRef.current.innerHTML = ''
+        containerRef.current.innerHTML = 'Add location'
         containerRef.current.appendChild(autocompleteEl)
       }
     }, 100)

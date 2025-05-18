@@ -27,10 +27,12 @@ export function ImgUploader({ onUploaded = null }) {
 
   return (
     <div className={`upload-preview ${isDragActive ? 'drag-over' : ''}`} {...getRootProps()}>
+      <span className="modal-title crop">Create new post</span>
+      <hr />
       <input {...getInputProps()} />
 
       {imgData?.url && <img src={imgData.url} alt="Uploaded" style={{ maxWidth: '200px' }} />}
-      <img src="/src/assets/SVG/uploadMedia.svg" className='upload-media-svg'/>
+      <img src="/src/assets/SVG/uploadMedia.svg" className='upload-media-svg' />
       <span>{isUploading ? 'Uploading...' : 'Drag photos and videos here'}</span>
 
       <button className='upload-img-btn' type="button" onClick={open} disabled={isUploading}>

@@ -34,12 +34,12 @@ export function BasicModal({ type, storyId, onClose }) {
     }
   }
 
-function safetyClose() {
-  if (confirm('Are you sure you want to close?')) {
-    onClose()
+  function safetyClose() {
+    if (confirm('Are you sure you want to close?')) {
+      onClose()
+    }
+
   }
-  
-}
 
   async function createStory() {
     try {
@@ -53,7 +53,7 @@ function safetyClose() {
 
   if (type === 'options') {
     return (
-      <div className="modal-backdrop full" onClick={onClose}>
+      <div className="modal-backdrop" onClick={onClose}>
         <div className="modal-basic" onClick={(ev) => ev.stopPropagation()}>
           {isMyStoryId(storyId, user) && (
             <button className="modal-btn delete" onClick={onDelete}>Delete</button>
@@ -64,21 +64,19 @@ function safetyClose() {
     )
   }
 
-  return (
-    <div className="modal-backdrop" onClick={onClose}>
-      <main className="modal-main">
-        <section onClick={(ev) => ev.stopPropagation()} className="modal-inner">
-          <div className="main-header-modal-create">
-            <HeaderModal setType={setType} safetyClose={safetyClose} createStory={createStory} type={type} />
-          </div>
-
+  if (type !== 'options') {
+    return (
+      <div className="modal-backdrop" onClick={onClose}>
+        <main className="modal-main" onClick={(ev) => ev.stopPropagation()}>
           {type === 'upload' && (
             <div className="modal-upload">
               {!newStory.imgUrl && (
-                <ImgUploader onUploaded={(url) => {
-                  setNewStory(prev => ({ ...prev, imgUrl: url }))
-                  setType('cropStory')
-                }} />
+                <>
+                  <ImgUploader onUploaded={(url) => {
+                    setNewStory(prev => ({ ...prev, imgUrl: url }))
+                    setType('cropStory')
+                  }} />
+                </>
               )}
 
               {newStory.imgUrl && (
@@ -94,27 +92,41 @@ function safetyClose() {
 
           {type === 'cropStory' && (
             <div className="modal-crop">
-              <h4 className='modal-crop-title'>Crop</h4>
+              <div className='header-modal'>
+                <button className="btn-back clear-button" onClick={() => safetyClose}>Back</button>
+                <span className="modal-title crop">Crop</span>
+                <button className="btn-next clear-button" onClick={() => setType('editStory')}>Next</button>
+              </div>
               <img src={newStory.imgUrl} className="crop-preview" />
             </div>
           )}
 
           {type === 'editStory' && (
             <div className="modal-edit">
-              <h4 className='modal-edit-title'>Edit</h4>
+              <div className='header-modal'>
+                <button className="btn-back clear-button" onClick={() => setType('cropStory')}>Back</button>
+                <span className="modal-title edit">Edit</span>
+                <button className="btn-next clear-button" onClick={() => setType('createStory')}>Next</button>
+              </div>
               <img src={newStory.imgUrl} className="edit-preview" />
             </div>
           )}
 
           {type === 'createStory' && (
             <div className="modal-create-post">
+              <div className='header-modal'>
+                <button className="btn-post clear-button" onClick={() => setType('editStory')}>Back</button>
+                <span className="modal-title create">Create new post</span>
+                <button className="btn-Share clear-button" onClick={() => createStory()}>Share</button>
+              </div>
               <div className="left-side">
                 <img src={newStory.imgUrl} className="create-preview" />
                 {/* <img src="https://res.cloudinary.com/vanilla-test-images/image/upload/v1747338393/bgufj3duwiwl3vqlru2j.png" className="create-preview" /> */}
               </div>
               <div className="right-side">
                 <div className="user-bar">
-                  <StoryHeader from={'modalCreat'} user={user} createdAt={0} />
+                  <img className="user-img" src={user.imgUrl} alt="user" />
+                  <span className="username">{user.username}</span>
                 </div>
                 <input
                   className="create-story-input"
@@ -124,14 +136,15 @@ function safetyClose() {
                   value={newStory.txt}
                   onChange={e => setNewStory(prev => ({ ...prev, txt: e.target.value }))}
                 />
+                <hr />
+                <LocationInput onPlaceSelected={(place) => {
+                  setNewStory(prev => ({ ...prev, loc: place }))
+                }} />
               </div>
-              <LocationInput onPlaceSelected={(place) => {
-                setNewStory(prev => ({ ...prev, loc: place }))
-              }} />
             </div>
           )}
-        </section>
-      </main>
-    </div>
-  )
+        </main>
+      </div>
+    )
+  }
 }

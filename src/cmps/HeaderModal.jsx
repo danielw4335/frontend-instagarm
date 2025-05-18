@@ -6,7 +6,6 @@ export function HeaderModal({ type, setType, safetyClose, createStory }) {
         <main className={`header-modal-create ${type}`}>
             {type === 'upload' && (
                 <>
-                    <span className="modal-title crop">Create new post</span>
                 </>
             )}
             {type === 'cropStory' && (
