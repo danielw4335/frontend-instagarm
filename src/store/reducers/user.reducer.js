@@ -1,12 +1,14 @@
 import { userService } from '../../services/user'
 
 export const SET_USER = 'SET_USER'
+export const SET_LOGGEDIN_USER = 'SET_LOGGEDIN_USER'
 export const REMOVE_USER = 'REMOVE_USER'
 export const SET_USERS = 'SET_USERS'
 export const UPDATE_USER = 'UPDATE_USER'
 
 const initialState = {
-    user: userService.getLoggedinUser(),
+    user: {},
+    loggedinUser: userService.getLoggedinUser(),
     users: []
 }
 console.log(' initialState.user:', initialState.user)
@@ -17,6 +19,9 @@ export function userReducer(state = initialState, action) {
   switch (action.type) {
     case SET_USER:
             newState = { ...state, user: action.user }
+            break
+    case SET_LOGGEDIN_USER:
+            newState = { ...state, loggedinUser: action.user }
             break
         case REMOVE_USER:
             newState = {

@@ -23,7 +23,7 @@ export function SideNav() {
     const breakpoint = useScreenBreakpoint()
     const navigate = useNavigate()
     const { open } = useModal()
-    const loggedInUser = useSelector(storeState => storeState.userModule.user)
+    const loggedInUser = useSelector(storeState => storeState.userModule.loggedInUser)
 
 
 

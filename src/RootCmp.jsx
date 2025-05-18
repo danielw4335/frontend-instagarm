@@ -5,16 +5,16 @@ import { BasicModal } from './cmps/BasicModal.jsx'
 
 // import { HomePage } from './pages/HomePage'
 import { AboutUs, AboutTeam, AboutVision } from './pages/AboutUs'
-import { FidIndex } from './pages/FidIndex.jsx'
+import { StoryIndex } from './pages/StoryIndex.jsx'
 import { ReviewIndex } from './pages/ReviewIndex.jsx'
-import { AdminIndex } from './pages/AdminIndex.jsx'
+// import { AdminIndex } from './pages/AdminIndex.jsx'
 
 import { UserDetails } from './pages/UserDetails'
 
 import { AppHeader } from './cmps/AppHeader'
 // import { AppFooter } from './cmps/AppFooter'
 
-import { StoryDetails } from './cmps/StoryDetails'
+import { StoryDetails } from './cmps/StoryDetails.jsx'
 import { UserMsg } from './cmps/UserMsg.jsx'
 import { SideNav } from './cmps/SideNav.jsx'
 import { BottomNav } from './cmps/BottomNav.jsx'
@@ -41,13 +41,15 @@ export function RootCmp() {
                         <Route path="team" element={<AboutTeam />} />
                         <Route path="vision" element={<AboutVision />} />
                     </Route>
-                    <Route path="/" element={<FidIndex />} />
-                    <Route path="story/:storyId" element={<FidIndex />} />
-                    {/* <Route path="story" element={<FidIndex />} /> */}
-                    <Route path="u/:id" element={<UserDetails />} />
-                    <Route path="u/d/:id" element={<UserDetails />} />
+                    <Route path="/" element={<StoryIndex />} />
+                    {/* <Route path="story/:storyId" element={<StoryIndex />} /> */}
+                    <Route path="/:storyId" element={<StoryDetails />} />
+                    <Route path="/u/:userId/:storyId" element={<StoryDetails />} />
+                    {/* <Route path="story" element={<StoryIndex />} /> */}
+                    <Route path="/u/:userId" element={<UserDetails />} />
+                    {/* <Route path="u/d/:id" element={<UserDetails />} /> */}
                     <Route path="review" element={<ReviewIndex />} />
-                    <Route path="admin" element={<AdminIndex />} />
+                    {/* <Route path="admin" element={<AdminIndex />} /> */}
                     {/* <Route path="/search" element={<AdminIndex />} /> */}
                     {/* <Route path="/explore" element={<AdminIndex />} /> */}
                     {/* <Route path="/reels" element={<AdminIndex />} /> */}

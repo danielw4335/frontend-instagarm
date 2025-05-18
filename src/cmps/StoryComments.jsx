@@ -12,7 +12,7 @@ export const StoryComments = ({ story, from }) => {
     const [comment, setComment] = useState('')
         const isDetails = useSelector(storeState => storeState.storyModule.isDetails)
         // const isIndex = useSelector(storeState => storeState.storyModule.isIndex)
-    const loggedInUser = useSelector((storeState) => storeState.userModule.user)
+    const loggedInUser = useSelector((storeState) => storeState.userModule.loggedInUser)
     const navigate = useNavigate()
 
     const { _id, txt, by, createdAt, comments = [], likes } = story
@@ -48,7 +48,7 @@ export const StoryComments = ({ story, from }) => {
     }
 
     function onOpenModal() {
-        navigate(`/story/${_id}`)
+        navigate(`/${_id}`)
         setIsDetails({ story: story, from: 'index'})
     }
     const timeAgo = getTimeFormat(createdAt)

@@ -15,21 +15,21 @@ import { PostMainText } from './PostMainText.jsx'
 import { loadStories, loadStory, toggleLike } from '../store/actions/story.actions'
 import { loadUsers } from '../store/actions/user.actions.js'
 
-export function StoryDetails({ story, setSelectedStory, nav }) {
-    console.log(' StoryDetails setSelectedStory:', setSelectedStory)
-    console.log(' StoryDetails story:', story)
-    
-    const from = 'details'
-    const loggedInUser = useSelector(storeState => storeState.userModule.user)
-    const users = useSelector(storeState => storeState.userModule.users)
-    const newStory = useSelector((storeState) => storeState.storyModule.story)
-    const [isModalOpen, setIsModalOpen] = useState(null)
-    const navigate = useNavigate()
+
+export function StoryDetails() {
+      const params = useParams()
+      console.log(' StoryDetails params:', params)
+      const loggedInUser = useSelector(storeState => storeState.userModule.loggedInUser)
+      const newStory = useSelector((storeState) => storeState.storyModule.story)
+      const [isModalOpen, setIsModalOpen] = useState(null)
+      const [isFromIndex, setIsFromIndex] = useState(null)
+      const navigate = useNavigate()
+      const from = 'details'
 
     function onClose() {
         setIsModalOpen(false)
-        navigate(nav)
-        setSelectedStory(null)
+        // navigate(nav)
+        // setSelectedStory(null)
     }
 
     const [isLiked, setIsLiked] = useState(
@@ -52,13 +52,14 @@ export function StoryDetails({ story, setSelectedStory, nav }) {
     }, [isModalOpen])
     
     useEffect(() => {
-        if (story?._id) {
-            loadStory(story._id)
+        if (params) {
+            loadStory(params.storyId)
+            if(!params.userId) setIsFromIndex(true)
+
         }
-        // loadStories(stories)
         loadUsers()
         setIsModalOpen(true)
-    }, [story])
+    }, [params])
     
     useEffect(() => {
         if (loggedInUser && newStory) {
@@ -67,8 +68,6 @@ export function StoryDetails({ story, setSelectedStory, nav }) {
     }, [loggedInUser, newStory])
 
     if (!newStory) return null
-    if (!users) return null
-    console.log(' StoryDetails users:', users)
 
     const { _id, txt, imgUrl, by, comments, likes, createdAt } = newStory || {}
 

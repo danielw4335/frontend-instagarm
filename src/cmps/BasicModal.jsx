@@ -9,7 +9,7 @@ import { HeaderModal } from './headerModal'
 
 export function BasicModal({ type, storyId, onClose }) {
   const { setType } = useModal()
-  const user = useSelector((storeState) => storeState.userModule.user)
+  const user = useSelector((storeState) => storeState.userModule.loggedInUser)
 
   const [newStory, setNewStory] = useState({
     imgUrl: '',

@@ -5,15 +5,22 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { loadStories } from '../store/actions/story.actions'
 import { StoryList } from '../cmps/StoryList'
 import { StoryDetails } from '../cmps/StoryDetails'
+import { loadUsers, login } from '../store/actions/user.actions'
 
-export function FidIndex() {
+
+export function StoryIndex() {
   const stories = useSelector(storeState => storeState.storyModule.stories)
   const [selectedStory, setSelectedStory] = useState(null)
-
   const { storyId } = useParams()
+  const credUser = {
+      username: 'danielwallache',
+      password: 'pass1',
+    } 
 
   useEffect(() => {
     loadStories()
+    loadUsers()
+    login(credUser)
   }, [])
 
   useEffect(() => {
@@ -28,9 +35,6 @@ export function FidIndex() {
   return (
     <section className="fid-index">
       <StoryList stories={stories} from="index" />
-      {selectedStory && (
-        <StoryDetails  key={selectedStory._id} story={selectedStory} setSelectedStory={setSelectedStory} nav={'/'} />
-      )}
     </section>
   )
 }

@@ -3,7 +3,6 @@ import { StoryPreview } from './StoryPreview';
 import { useSelector } from 'react-redux';
 
 export function StoryList({ stories, from }) {
-    // const { loggedinUser } = useSelector((storeState) => storeState.userModule)
     const isLoading = useSelector(storeState => storeState.storyModule.isLoading)
 
     

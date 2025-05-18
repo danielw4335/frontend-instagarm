@@ -7,11 +7,10 @@ import { BasicModal } from './BasicModal.jsx'
 
 
 export function StoryPreview({ story, from }) {
-    const loggedInUser = useSelector((storeState) => storeState.userModule.user)
+    const loggedInUser = useSelector((storeState) => storeState.userModule.loggedInUser)
     // const isIndex = useSelector((storeState) => storeState.storyModule.isIndex)
 
     const { _id, txt, imgUrl, by, likes, createdAt, comments = [] } = story
-    // const loggedInUser = useSelector((storeState) => storeState.userModule.loggedinUser)
     return (
         from === 'index' && (
             <section className="story-preview">

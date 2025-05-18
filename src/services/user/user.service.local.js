@@ -79,7 +79,7 @@ function getLoggedinUser() {
 function saveLoggedinUser(user) {
     const userStr = JSON.stringify(user)
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, userStr)
-    localStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, userStr)
+    // localStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, userStr)
     return user
 }
 
@@ -92,21 +92,22 @@ async function createUsers() {
     }
     return savedUsers
 }
-initUsersAndLoginFirst()
-async function initUsersAndLoginFirst() {
-    let users
-    try {
-        users = await storageService.query(STORAGE_KEY)
-    } catch {
-        users = null
-    }
-    if (!users || !users.length) {
-        for (const user of Users) {
-            await storageService.post(STORAGE_KEY, user)
-        }
-        users = await storageService.query(STORAGE_KEY)
-    }
-    if (!getLoggedinUser() && users && users.length) {
-        saveLoggedinUser(users[0])
-    }
-}
+
+// initUsersAndLoginFirst()
+// async function initUsersAndLoginFirst() {
+//     let users
+//     try {
+//         users = await storageService.query(STORAGE_KEY)
+//     } catch {
+//         users = null
+//     }
+//     if (!users || !users.length) {
+//         for (const user of Users) {
+//             await storageService.post(STORAGE_KEY, user)
+//         }
+//         users = await storageService.query(STORAGE_KEY)
+//     }
+//     if (!getLoggedinUser() && users && users.length) {
+//         saveLoggedinUser(users[0])
+//     }
+// }
