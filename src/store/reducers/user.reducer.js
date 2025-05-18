@@ -8,7 +8,7 @@ export const UPDATE_USER = 'UPDATE_USER'
 
 const initialState = {
     user: {},
-    loggedinUser: userService.getLoggedinUser(),
+    loggedInUser: userService.getLoggedInUser(),
     users: []
 }
 console.log(' initialState.user:', initialState.user)
@@ -21,7 +21,7 @@ export function userReducer(state = initialState, action) {
             newState = { ...state, user: action.user }
             break
     case SET_LOGGEDIN_USER:
-            newState = { ...state, loggedinUser: action.user }
+            newState = { ...state, loggediInUser: action.user }
             break
         case REMOVE_USER:
             newState = {

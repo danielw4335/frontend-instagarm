@@ -39,7 +39,7 @@ function getEmptyStory() {
         txt: '',
         imgUrl: '',
         createdAt: Date.now(),
-        by: userService.getLoggedinUser(),
+        by: userService.getLoggedInUser(),
         comments: [],
         likes: [],
     }
