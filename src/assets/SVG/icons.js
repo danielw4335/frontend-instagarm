@@ -2,6 +2,7 @@ import ImportedCamera from './icon-camera.svg?react';
 import ImportedClose from './icon-close.svg?react';
 import ImportedCommentOutline from './icon-comment-outline.svg?react';
 import ImportedEmoji from './icon-emoji.svg?react';
+import ImportedBigEmoji from './icon-big-emoji.svg?react';
 import ImportedExploreActive from './icon-explore-active.svg?react';
 import ImportedExploreOutline from './icon-explore-outline.svg?react';
 import ImportedGridOutline from './icon-grid-outline.svg?react';
@@ -27,12 +28,19 @@ import ImportedCreateOutline from './icon-create-outline.svg?react';
 import ImportedSettingsOutline from './icon-settings-outline.svg?react';
 import ImportedShareOutline from './icon-share-outline.svg?react';
 import ImportedTaggedOutline from './icon-tagged-outline.svg?react';
+import ImportedTreeDots from './icon-three-dots.svg?react';
+import ImportedCommentBubble from './icon-comment-bubble.svg?react';
+import ImportedBack from './icon-back.svg?react';
 
 export {
   ImportedCamera as Camera,
+  ImportedBack as Back,
+  ImportedCommentBubble as CommentBubble,
+  ImportedTreeDots as TreeDots,
   ImportedClose as Close,
   ImportedCommentOutline as CommentOutline,
   ImportedEmoji as Emoji,
+  ImportedBigEmoji as BigEmoji,
   ImportedExploreActive as ExploreActive,
   ImportedExploreOutline as ExploreOutline,
   ImportedGridOutline as GridOutline,

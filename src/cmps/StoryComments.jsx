@@ -87,6 +87,7 @@ export const StoryComments = ({ story, from }) => {
                 )
             }
             <form className='add-comment-form' onSubmit={onAddComment}>
+                { from !== 'index' && <EmojiPickerWrapper from={from} onEmojiSelect={(emoji) => setComment(prev => prev + emoji)} /> }
                 <input
                     type="text"
                     placeholder="Add a comment..."
@@ -97,7 +98,7 @@ export const StoryComments = ({ story, from }) => {
                 ${comment.trim() ? '' : 'disabled'}`} type="submit" disabled={!comment.trim()}>
                     Post
                 </button>
-                <EmojiPickerWrapper onEmojiSelect={(emoji) => setComment(prev => prev + emoji)} />
+            { from === 'index' && <EmojiPickerWrapper onEmojiSelect={(emoji) => setComment(prev => prev + emoji)} /> }
             </form>
         </section >
     )

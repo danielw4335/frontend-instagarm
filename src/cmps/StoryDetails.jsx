@@ -21,6 +21,9 @@ import {
 	loadStory,
 	toggleLike,
 } from '../store/actions/story.actions'
+import {
+    Close,
+} from '../assets/SVG/icons'
 
 export function StoryDetails() {
 	const params = useParams()
@@ -85,7 +88,7 @@ export function StoryDetails() {
 		<main className="story-modal-overlay">
 			<section className="story-modal" ref={modalRef}>
 				<button className="story-modal-close" onClick={onClose}>
-					X
+					<Close />
 				</button>
 
 				<div className="story-modal-content">

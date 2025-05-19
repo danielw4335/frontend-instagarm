@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux'
 import { NavLink, useNavigate, useParams } from 'react-router-dom'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { updateUser, loadUser } from '../store/actions/user.actions'
+import { CommentBubble, GridOutline, ReelsOutline, SaveOutline, SettingsOutline, TaggedOutline } from '../assets/SVG/icons'
+import { useModal } from '../customHooks/ModalContext'
 // import {
 // 	socketService,
 // 	SOCKET_EVENT_USER_UPDATED,
@@ -17,17 +19,16 @@ export function UserDetails() {
 	const loggedInUser = useSelector((storeState) => storeState.userModule.loggedInUser)
 	const [user, setUser] = useState(null)
 	const [userStories, setUserStories] = useState(null)
-	let isAdmin
+	const isAdmin = user?._id === loggedInUser?._id
+    const { open } = useModal()
+
 	let isFollowing
-	// const [selectedStory, setSelectedStory] = useState(null)
-	// const [filterBy, setFilterBy] = useState({})
 	const [isLoadingFollow, setIsLoadingFollow] = useState(false)
 
 	useEffect(() => {
 		onLoadUser(userId)
-		// isAdmin = user._id === loggedInUser._id
 		// isFollowing = loggedInUser.following.includes(user._id)
-		
+
 		// socketService.emit(SOCKET_EMIT_USER_WATCH, params.userId)
 		// socketService.on(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
 		// return () => {
@@ -40,10 +41,8 @@ export function UserDetails() {
 			const user = await loadUser(userId)
 			setUser(user)
 			setUserStories(user.stories || [])
-			showSuccessMsg('User loaded successfully')
 		} catch (err) {
 			console.log('User not found', err)
-			showErrorMsg('User not found')
 		}
 	}
 
@@ -89,6 +88,7 @@ export function UserDetails() {
 	}
 
 	if (!user) return <div className="loading">Loading...</div>
+	console.log(' UserDetails isAdmin:', isAdmin)
 	return (
 		<main className="user-details">
 			<section className="user-details-container">
@@ -107,7 +107,7 @@ export function UserDetails() {
 									View archive
 								</button>
 								<button className="user-details-settings">
-									⚙️
+									<SettingsOutline className="icon-settings" onClick={() => open( user._id, 'options' )}/>
 								</button>
 							</>
 						)}
@@ -121,8 +121,8 @@ export function UserDetails() {
 									{isLoadingFollow
 										? 'Loading...'
 										: isFollowing
-										? 'Unfollow'
-										: 'Follow'}
+											? 'Unfollow'
+											: 'Follow'}
 								</button>
 								<button className="btn-user-header archive">
 									Message
@@ -152,10 +152,10 @@ export function UserDetails() {
 			</section>
 
 			<div className="user-details-btn-area">
-				<NavLink to={`/u/${user._id}`}>posts</NavLink>
-				<NavLink to={`/u/${user._id}/reels/`}>reels</NavLink>
-				<NavLink to={`/u/${user._id}/saved/`}>saved</NavLink>
-				<NavLink to={`/u/${user._id}/tagged/`}>tagged</NavLink>
+				<NavLink to={`/u/${user._id}`}><GridOutline className="icon" /> posts</NavLink>
+				<NavLink to={`/u/${user._id}/reels/`}><ReelsOutline className="icon" /> reels</NavLink>
+				<NavLink to={`/u/${user._id}/saved/`}><SaveOutline className="icon" /> saved</NavLink>
+				<NavLink to={`/u/${user._id}/tagged/`}><TaggedOutline className="icon" /> tagged</NavLink>
 			</div>
 			<div className="user-details-grid">
 				{stories.map((story) => {
@@ -165,7 +165,7 @@ export function UserDetails() {
 							key={story._id}
 							onClick={() => onOpenModal(story._id)}
 						>
-							<p className="hover">💬{story.comments.length}</p>
+							<p className="hover"><CommentBubble className="icon comment" />{story.comments.length}</p>
 							<img src={story.imgUrl} />
 						</div>
 					)

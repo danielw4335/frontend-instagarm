@@ -1,7 +1,12 @@
 import { useState, useRef, useEffect } from 'react'
 import EmojiPicker from 'emoji-picker-react'
 
-export function EmojiPickerWrapper({ onEmojiSelect }) {
+import {
+  BigEmoji,
+    Emoji
+} from '../assets/SVG/icons'
+
+export function EmojiPickerWrapper({ from ,onEmojiSelect }) {
   const [isOpen, setIsOpen] = useState(false)
   const emojiWrapperRef = useRef(null)
 
@@ -36,7 +41,7 @@ export function EmojiPickerWrapper({ onEmojiSelect }) {
         }}
         title="Emoji Picker"
       >
-        🙂
+       {from === 'index' ? <Emoji/> : <BigEmoji />} 
       </button>
 
       {isOpen && (

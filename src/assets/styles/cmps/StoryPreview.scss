@@ -9,6 +9,16 @@
         border-radius: 8px;
     }
 
+    .emoji-btn{
+
+        // font-size: 5px;
+       color: #737373;
+
+       &:hover {
+          opacity: 0.4;
+       }
+    }
+
 }
 
 .story-comments strong {

@@ -48,7 +48,7 @@ export function RootCmp() {
 			<UserMsg />
 
 			<SideNav />
-			<main className="main-layout">
+			{/* <main> */}
 			{modalState.isOpen && (
 				<BasicModal
 					type={modalState.modalType}
@@ -86,7 +86,7 @@ export function RootCmp() {
 						<Route path="signup" element={<Signup />} />
 					</Route>
 				</Routes>
-			</main>
+			{/* </main> */}
 			<BottomNav />
 		</section>
 	)

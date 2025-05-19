@@ -19,6 +19,17 @@
   align-items: center;
   flex-direction: column;
 
+.btn-next{
+  color: #0095f6;
+  font-weight: 500;
+  
+  &:hover{
+    color: #00376b;
+  }
+  &:active{
+    opacity: 0.5;
+  }
+}
 
   .modal-basic {
     background-color: #fff;

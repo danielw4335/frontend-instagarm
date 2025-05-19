@@ -1,9 +1,7 @@
 .user-details {
-    display: grid;
-    grid-template-columns: 1fr 935px .5fr;
-    // margin-left: 65px;
-    padding: em(34px) em(0px) em(0px) em(170px);
-    // position: relative;
+    padding: 30px 20px 0 20px;
+    margin: 0 auto;
+    max-width: 935px;
 
     &>* {
         grid-column: 2;
@@ -15,6 +13,11 @@
         grid-template-columns: 1fr 2.02fr;
         margin-bottom: em(251px);
 
+
+        .icon{
+            background-color: aqua;
+            color:  black;
+        }
         .user-details-img {
             grid-row: 1 / span 3;
             width: 150px;
@@ -32,6 +35,13 @@
             flex-direction: column;
             justify-content: flex-start;
             color: rgb(0, 0, 0);
+
+            .icon-settings {
+                width: 25px;
+                height: 25px;
+                margin-left: auto;
+                color: #000;
+            }
 
             .user-details-header {
                 display: flex;
@@ -51,7 +61,6 @@
                     background: rgb(239, 239, 239);
                     color: rgb(0, 0, 0);
                     border-radius: 8px;
-                    font-size: rem(14px);
                     font-weight: 550;
                     height: em(36px);
                     padding: em(6px) em(16px);
@@ -107,23 +116,26 @@
 
 
     .user-details-btn-area {
-        margin-left: em(18.5px);
+        // margin-left: em(18.5px);
         display: flex;
         justify-content: center;
         text-transform: uppercase;
         align-items: center;
         font-weight: 600;
-        letter-spacing: .8px;
-        font-size: em(14px);
-        gap: em(71px);
-        border-top: 1px solid #efefef;
+        letter-spacing: 1px;
+        font-size: 12px;
+        gap: 40px;
+        border-top: 1px solid #dbdbdb;
         padding-top: em(9.8px);
         padding-bottom: em(14px);
 
         a {
+            display: flex;
+            align-items: center;
             padding: 8px 12px;
             color: #7f7f7f;
             text-decoration: none;
+            gap: 5px;
             position: relative;
 
             &.active {
@@ -133,7 +145,7 @@
             &.active::after {
                 content: "";
                 position: absolute;
-                top: -9.5px;
+                top: -9px;
                 left: 50%;
                 transform: translateX(-50%);
                 width: 60%;
@@ -142,10 +154,15 @@
                 border-radius: 1.5px;
             }
         }
+
+        .icon {
+            height: em(16px);
+            width: em(16px);
+        }
     }
 
     .user-details-grid {
-// padding-left: em(40px);
+        // padding-left: em(40px);
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 4px;

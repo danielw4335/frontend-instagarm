@@ -6,6 +6,7 @@ import { useModal } from '../customHooks/ModalContext'
 import { StoryHeader } from './StoryHeader'
 import { LocationInput } from './LocationInput'
 import { HeaderModal } from './headerModal'
+import { Back } from '../assets/SVG/icons'
 
 export function BasicModal({ type, storyId, onClose }) {
   const { setType } = useModal()
@@ -93,7 +94,7 @@ export function BasicModal({ type, storyId, onClose }) {
           {type === 'cropStory' && (
             <div className="modal-crop">
               <div className='header-modal'>
-                <button className="btn-back clear-button" onClick={() => safetyClose}>Back</button>
+                <button className="btn-back clear-button" onClick={() => safetyClose}><Back /></button>
                 <span className="modal-title crop">Crop</span>
                 <button className="btn-next clear-button" onClick={() => setType('editStory')}>Next</button>
               </div>
@@ -104,7 +105,7 @@ export function BasicModal({ type, storyId, onClose }) {
           {type === 'editStory' && (
             <div className="modal-edit">
               <div className='header-modal'>
-                <button className="btn-back clear-button" onClick={() => setType('cropStory')}>Back</button>
+                <button className="btn-back clear-button" onClick={() => setType('cropStory')}><Back /></button>
                 <span className="modal-title edit">Edit</span>
                 <button className="btn-next clear-button" onClick={() => setType('createStory')}>Next</button>
               </div>
@@ -115,9 +116,9 @@ export function BasicModal({ type, storyId, onClose }) {
           {type === 'createStory' && (
             <div className="modal-create-post">
               <div className='header-modal'>
-                <button className="btn-post clear-button" onClick={() => setType('editStory')}>Back</button>
+                <button className="btn-post clear-button" onClick={() => setType('editStory')}><Back /></button>
                 <span className="modal-title create">Create new post</span>
-                <button className="btn-Share clear-button" onClick={() => createStory()}>Share</button>
+                <button className="btn-Share btn-next clear-button" onClick={() => createStory()}>Share</button>
               </div>
               <div className="left-side">
                 <img src={newStory.imgUrl} className="create-preview" />
