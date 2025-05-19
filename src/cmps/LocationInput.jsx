@@ -1,27 +1,33 @@
-import { useEffect, useRef } from 'react'
+import { useRef, useEffect } from 'react'
+import { Location } from '../assets/SVG/icons'
 
-export function LocationInput({ onPlaceSelected }) {
-  const containerRef = useRef(null)
+export function LocationInput({ value, onChange, onPlaceSelected }) {
+  const inputRef = useRef(null)
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (!window.google?.maps?.places?.PlaceAutocompleteElement) return
+    if (!window.google?.maps?.places?.Autocomplete) return
 
-      clearInterval(interval)
+    const autocomplete = new window.google.maps.places.Autocomplete(inputRef.current)
+    autocomplete.addListener('place_changed', () => {
+      const place = autocomplete.getPlace()
+      if (place) onPlaceSelected(place)
+    })
 
-      const autocompleteEl = new google.maps.places.PlaceAutocompleteElement()
-
-      autocompleteEl.addEventListener('gmp-placeautocomplete-placechange', () => {
-        const place = autocompleteEl.getPlace()
-        if (place) onPlaceSelected(place)
-      })
-
-      if (containerRef.current) {
-        containerRef.current.innerHTML = 'Add location'
-        containerRef.current.appendChild(autocompleteEl)
-      }
-    }, 100)
+    return () => {
+      window.google.maps.event.clearInstanceListeners(autocomplete)
+    }
   }, [])
 
-  return <div ref={containerRef} className="location-input-wrapper" />
+  return (
+    <div className="location-input-wrapper">
+      <input
+        ref={inputRef}
+        className="location-input"
+        placeholder="Add location"
+        value={value || ''}
+        onChange={onChange}
+      />
+      {/* <Location /> */}
+    </div>
+  )
 }

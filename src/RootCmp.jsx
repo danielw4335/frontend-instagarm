@@ -23,9 +23,13 @@ import { Login } from './pages/Login.jsx'
 import { Signup } from './pages/Signup.jsx'
 import { loadUsers, login } from './store/actions/user.actions.js'
 import { loadStories } from './store/actions/story.actions.js'
+import { StoriesBar } from './cmps/StoriesBar.jsx'
+import { useSelector } from 'react-redux'
+
 
 export function RootCmp() {
 	const { modalState, close } = useModal()
+	const stories = useSelector(storeState => storeState.storyModule.stories)
 	const loggedinUser = {
 		_id: 'u101',
 		username: 'danielwallache',
@@ -46,7 +50,7 @@ export function RootCmp() {
 		<section className="section-layout">
 			<AppHeader />
 			<UserMsg />
-
+			{/* <StoriesBar items={stories} /> */}
 			<SideNav />
 			{/* <main> */}
 			{modalState.isOpen && (
@@ -56,36 +60,36 @@ export function RootCmp() {
 					onClose={close}
 				/>
 			)}
-				<Routes>
-					{/* <Route path="" element={<HomePage />} /> */}
-					<Route path="about" element={<AboutUs />}>
-						<Route path="team" element={<AboutTeam />} />
-						<Route path="vision" element={<AboutVision />} />
-					</Route>
-					<Route path="/" element={<StoryIndex />} />
-					{/* <Route path="story/:storyId" element={<StoryIndex />} /> */}
-					<Route path="/:storyId" element={<StoryDetails />} />
-					<Route
-						path="/u/:userId/:storyId"
-						element={<StoryDetails />}
-					/>
-					{/* <Route path="story" element={<StoryIndex />} /> */}
-					<Route path="/u/:userId" element={<UserDetails />} />
-					{/* <Route path="u/d/:id" element={<UserDetails />} /> */}
-					<Route path="review" element={<ReviewIndex />} />
-					{/* <Route path="admin" element={<AdminIndex />} /> */}
-					{/* <Route path="/search" element={<AdminIndex />} /> */}
-					{/* <Route path="/explore" element={<AdminIndex />} /> */}
-					{/* <Route path="/reels" element={<AdminIndex />} /> */}
-					{/* <Route path="/messages" element={<AdminIndex />} /> */}
-					{/* <Route path="/Notifications" element={<AdminIndex />} /> */}
-					{/* <Route path="/create" element={<UploadImg />} /> */}
-					{/* <Route path="/profile" element={<AdminIndex />} /> */}
-					<Route path="login" element={<LoginSignup />}>
-						<Route index element={<Login />} />
-						<Route path="signup" element={<Signup />} />
-					</Route>
-				</Routes>
+			<Routes>
+				{/* <Route path="" element={<HomePage />} /> */}
+				<Route path="about" element={<AboutUs />}>
+					<Route path="team" element={<AboutTeam />} />
+					<Route path="vision" element={<AboutVision />} />
+				</Route>
+				<Route path="/" element={<StoryIndex />} />
+				{/* <Route path="story/:storyId" element={<StoryIndex />} /> */}
+				<Route path="/:storyId" element={<StoryDetails />} />
+				<Route
+					path="/u/:userId/:storyId"
+					element={<StoryDetails />}
+				/>
+				{/* <Route path="story" element={<StoryIndex />} /> */}
+				<Route path="/u/:userId" element={<UserDetails />} />
+				{/* <Route path="u/d/:id" element={<UserDetails />} /> */}
+				<Route path="review" element={<ReviewIndex />} />
+				{/* <Route path="admin" element={<AdminIndex />} /> */}
+				{/* <Route path="/search" element={<AdminIndex />} /> */}
+				{/* <Route path="/explore" element={<AdminIndex />} /> */}
+				{/* <Route path="/reels" element={<AdminIndex />} /> */}
+				{/* <Route path="/messages" element={<AdminIndex />} /> */}
+				{/* <Route path="/Notifications" element={<AdminIndex />} /> */}
+				{/* <Route path="/create" element={<UploadImg />} /> */}
+				{/* <Route path="/profile" element={<AdminIndex />} /> */}
+				<Route path="login" element={<LoginSignup />}>
+					<Route index element={<Login />} />
+					<Route path="signup" element={<Signup />} />
+				</Route>
+			</Routes>
 			{/* </main> */}
 			<BottomNav />
 		</section>

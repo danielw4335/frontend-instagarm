@@ -6,7 +6,10 @@ import { useModal } from '../customHooks/ModalContext'
 import { StoryHeader } from './StoryHeader'
 import { LocationInput } from './LocationInput'
 import { HeaderModal } from './headerModal'
-import { Back } from '../assets/SVG/icons'
+import { AddCollaborators, Back } from '../assets/SVG/icons'
+import EmojiPicker from 'emoji-picker-react'
+import { EmojiPickerWrapper } from './EmojiPickerWrapper'
+import { ChevronDown } from 'lucide-react'
 
 export function BasicModal({ type, storyId, onClose }) {
   const { setType } = useModal()
@@ -129,18 +132,39 @@ export function BasicModal({ type, storyId, onClose }) {
                   <img className="user-img" src={user.imgUrl} alt="user" />
                   <span className="username">{user.username}</span>
                 </div>
-                <input
+                <textarea
                   className="create-story-input"
-                  type="text"
                   maxLength={2200}
                   name="txt"
                   value={newStory.txt}
                   onChange={e => setNewStory(prev => ({ ...prev, txt: e.target.value }))}
                 />
+                <EmojiPickerWrapper
+                  onEmojiSelect={(emoji) =>
+                    setNewStory(prev => ({ ...prev, txt: prev.txt + emoji }))
+                  }
+                />
                 <hr />
-                <LocationInput onPlaceSelected={(place) => {
-                  setNewStory(prev => ({ ...prev, loc: place }))
-                }} />
+                <LocationInput
+                  value={newStory.loc}
+                  onChange={e => setNewStory(prev => ({ ...prev, loc: e.target.value }))}
+                  onPlaceSelected={place => setNewStory(prev => ({ ...prev, loc: place.formatted_address }))}
+                />
+                <div className="form-section">
+                  <div className="input-row">
+                    <input className="styled-input" placeholder="Add collaborators" disabled />
+                    <AddCollaborators className="input-icon" />
+                  </div>
+                  <div className="input-row">
+                    <input className="styled-input" placeholder="Accessibility" disabled />
+                    <ChevronDown className="input-icon" />
+                  </div>
+                  <div className="input-row">
+                    <input className="styled-input" placeholder="Advance settings" disabled />
+                    <ChevronDown className="input-icon" />
+                  </div>
+                </div>
+                <hr />
               </div>
             </div>
           )}

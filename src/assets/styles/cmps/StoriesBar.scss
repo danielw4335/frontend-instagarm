@@ -1,16 +1,18 @@
 .stories-bar-wrapper {
-width: 100%;
-padding-left: 50px;
-  position: fixed;
+  grid-column: 2;
+  width: 100%;
+  // padding-left: 50px;
+  position: relative;
   max-width: 80vw;
-margin-bottom: 120px;
+  // height: 100px;
 }
 
 .stories-bar {
   display: flex;
   align-items: center;
-  padding-left: 6px;
-  padding-right: 6px;
+  margin: 20px 0;
+  // padding-left: 6px;
+  // padding-right: 6px;
 }
 
 .story-carousel-item {
@@ -55,20 +57,53 @@ margin-bottom: 120px;
   }
 }
 
+.stories-bar-wrapper {
+  margin: 10px 0;
+  z-index: 1;
+}
+
+.react-multiple-carousel__arrow::before {
+  font-size: 14px;
+  color: rgb(255 255 255 / 60%);
+  z-index: 1;
+  margin: 0px;
+
+}
+
+.react-multiple-carousel__arrow {
+    min-width: 16px;
+    min-height: 18px;
+}
+
+.react-multiple-carousel__arrow--left {
+    top: calc(10% + 1px);
+}
+
+.react-multiple-carousel__arrow--right {
+    top: calc(10% + 1px);
+}
+
 @media (max-width: 600px) {
   .stories-bar-wrapper {
     padding-left: 0;
     padding-right: 0;
   }
+
   .story-item,
   .story-carousel-item {
     width: 68px;
   }
+
   .story-gradient {
     width: 52px;
     height: 52px;
-    .story-img { width: 44px; height: 44px; }
+
+    .story-img {
+      width: 44px;
+      height: 44px;
+    }
   }
+
   .story-username {
     font-size: 12px;
   }

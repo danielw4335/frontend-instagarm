@@ -1,17 +1,18 @@
 .section-layout {
     display: grid;
     grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
 
     >* {
         &.full {
             grid-column: 1 / -1;
-            background-color: red;
+            // background-color: red;
         }
     }
 
     .main-story-layout {
         display: grid;
-        grid-template-columns: minmax(20px, 1fr) minmax(auto, 470px) minmax(20px, 1fr);
+        grid-template-columns: minmax(20px, 1fr) minmax(auto, 630px) minmax(20px, 1fr);
         
         @include for-mobile-layout {
             grid-template-columns: minmax(1fr, 65px) minmax(auto, 470px) minmax(1fr, 65px);

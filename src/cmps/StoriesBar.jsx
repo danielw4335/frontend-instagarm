@@ -3,10 +3,11 @@ import "react-multi-carousel/lib/styles.css"
 
 export function StoriesBar({ items }) {
     const responsive = {
-        large: { breakpoint: { max: 4000, min: 1200 }, items: 11, slidesToSlide: 4 },
-        medium: { breakpoint: { max: 1200, min: 900 }, items: 10, slidesToSlide: 4 },
+        large: { breakpoint: { max: 4000, min: 1200 }, items: 10, slidesToSlide: 4 },
+        medium: { breakpoint: { max: 1200, min: 900 }, items: 9, slidesToSlide: 4 },
         small: { breakpoint: { max: 900, min: 600 }, items: 8, slidesToSlide: 2 },
-        mobile: { breakpoint: { max: 600, min: 0 }, items: 6, slidesToSlide: 1 },
+        mobile: { breakpoint: { max: 600, min: 400 }, items: 4, slidesToSlide: 1 },
+        smallMobile: { breakpoint: { max: 400, min: 200 }, items: 3, slidesToSlide: 1 },
     }
 
     return (
