@@ -3,6 +3,7 @@ import { createContext, useContext, useState } from 'react'
 const ModalContext = createContext()
 
 export function ModalProvider({ children }) {
+  console.log('onClose called!');
   const [modalState, setModalState] = useState({
     isOpen: false,
     storyId: null,

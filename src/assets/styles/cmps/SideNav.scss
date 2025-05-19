@@ -65,10 +65,12 @@
     display: none;
   }
 
-  .logo-icon {
-    display: none;
+  
+  &.breakpoint-large {
+    .logo-icon {
+      display: none;
+    }
   }
-
   &.breakpoint-mobile {
     display: none;
   }

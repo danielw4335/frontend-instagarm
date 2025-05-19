@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Routes, Route } from 'react-router'
 import { useModal } from './customHooks/ModalContext.jsx'
 import { BasicModal } from './cmps/BasicModal.jsx'
-
+import { Explore } from './pages/Explore.jsx'
 // import { HomePage } from './pages/HomePage'
 import { AboutUs, AboutTeam, AboutVision } from './pages/AboutUs'
 import { StoryIndex } from './pages/StoryIndex.jsx'
@@ -79,7 +79,7 @@ export function RootCmp() {
 				<Route path="review" element={<ReviewIndex />} />
 				{/* <Route path="admin" element={<AdminIndex />} /> */}
 				{/* <Route path="/search" element={<AdminIndex />} /> */}
-				{/* <Route path="/explore" element={<AdminIndex />} /> */}
+				<Route path="/explore" element={<Explore />} />
 				{/* <Route path="/reels" element={<AdminIndex />} /> */}
 				{/* <Route path="/messages" element={<AdminIndex />} /> */}
 				{/* <Route path="/Notifications" element={<AdminIndex />} /> */}

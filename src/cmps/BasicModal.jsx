@@ -6,7 +6,7 @@ import { useModal } from '../customHooks/ModalContext'
 import { StoryHeader } from './StoryHeader'
 import { LocationInput } from './LocationInput'
 import { HeaderModal } from './headerModal'
-import { AddCollaborators, Back } from '../assets/SVG/icons'
+import { AddCollaborators, Back, Close } from '../assets/SVG/icons'
 import EmojiPicker from 'emoji-picker-react'
 import { EmojiPickerWrapper } from './EmojiPickerWrapper'
 import { ChevronDown } from 'lucide-react'
@@ -67,10 +67,10 @@ export function BasicModal({ type, storyId, onClose }) {
       </div>
     )
   }
-
   if (type !== 'options') {
     return (
       <div className="modal-backdrop" onClick={onClose}>
+        <button className="close-back clear-button" onClick={onClose}><Close /></button>
         <main className="modal-main" onClick={(ev) => ev.stopPropagation()}>
           {type === 'upload' && (
             <div className="modal-upload">

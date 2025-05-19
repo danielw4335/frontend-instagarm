@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { NavLink, useNavigate, useParams } from 'react-router-dom'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { updateUser, loadUser } from '../store/actions/user.actions'
-import { CommentBubble, GridOutline, ReelsOutline, SaveOutline, SettingsOutline, TaggedOutline } from '../assets/SVG/icons'
+import { CommentBubble, CommentOutline, GridOutline, NotificationsActive, ReelsOutline, SaveOutline, SettingsOutline, TaggedOutline } from '../assets/SVG/icons'
 import { useModal } from '../customHooks/ModalContext'
 // import {
 // 	socketService,
@@ -20,7 +20,7 @@ export function UserDetails() {
 	const [user, setUser] = useState(null)
 	const [userStories, setUserStories] = useState(null)
 	const isAdmin = user?._id === loggedInUser?._id
-    const { open } = useModal()
+	const { open } = useModal()
 
 	let isFollowing
 	const [isLoadingFollow, setIsLoadingFollow] = useState(false)
@@ -107,7 +107,7 @@ export function UserDetails() {
 									View archive
 								</button>
 								<button className="user-details-settings">
-									<SettingsOutline className="icon-settings" onClick={() => open( user._id, 'options' )}/>
+									<SettingsOutline className="icon-settings" onClick={() => open(user._id, 'options')} />
 								</button>
 							</>
 						)}
@@ -165,7 +165,16 @@ export function UserDetails() {
 							key={story._id}
 							onClick={() => onOpenModal(story._id)}
 						>
-							<p className="hover"><CommentBubble className="icon comment" />{story.comments.length}</p>
+							<div className="hover-icons">
+								<div className="icon-with-count">
+									<CommentOutline className="icon comment" />
+									<span>{story.comments.length}</span>
+								</div>
+								<div className="icon-with-count">
+									<NotificationsActive className="icon notif" />
+									<span>{story.likes?.length || 0}</span>
+								</div>
+							</div>
 							<img src={story.imgUrl} />
 						</div>
 					)
