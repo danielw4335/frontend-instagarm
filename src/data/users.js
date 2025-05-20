@@ -1,9 +1,9 @@
 export const Users = [
-  {
+  {		
     _id: 'u101',
-    username: 'danielwallache',
-    password: 'pass1',
-    fullname: 'Daniel Wallache',
+   username: 'daniel_335',
+   	password: '1234',
+   fullname: 'daniel wallach',
     bio: 'Full-stack developer. Love photography and hiking.',
     imgUrl: 'https://randomuser.me/api/portraits/men/31.jpg',
     likedStoryIds: ['s102','s103','s105','s106','s108','s112','s115','s121','s124'],
