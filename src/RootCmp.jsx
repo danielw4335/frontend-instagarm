@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router'
 import { useModal } from './customHooks/ModalContext.jsx'
 import { BasicModal } from './cmps/BasicModal.jsx'
 import { Explore } from './pages/Explore.jsx'
-// import { HomePage } from './pages/HomePage'
+import { Messenger } from './pages/Messenger'
 import { AboutUs, AboutTeam, AboutVision } from './pages/AboutUs'
 import { StoryIndex } from './pages/StoryIndex.jsx'
 import { ReviewIndex } from './pages/ReviewIndex.jsx'
@@ -83,7 +83,7 @@ export function RootCmp() {
 				{/* <Route path="/search" element={<AdminIndex />} /> */}
 				<Route path="/explore" element={<Explore />} />
 				{/* <Route path="/reels" element={<AdminIndex />} /> */}
-				{/* <Route path="/messages" element={<AdminIndex />} /> */}
+				<Route path="/messenger" element={<Messenger />} />
 				{/* <Route path="/Notifications" element={<AdminIndex />} /> */}
 				{/* <Route path="/create" element={<UploadImg />} /> */}
 				{/* <Route path="/profile" element={<AdminIndex />} /> */}

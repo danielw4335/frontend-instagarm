@@ -61,7 +61,7 @@ export function SideNav() {
                     <span className="nav-label">Reels</span>
                 </NavLink>
 
-                <NavLink to="/Messenger" className="nav-item">
+                <NavLink to="/messenger" className="nav-item">
                     <MessengerOutline className="icon-outline" />
                     <MessengerActive className="icon-active" />
                     <span className="nav-label">Messages</span>
