@@ -85,10 +85,8 @@ export function RootCmp() {
 				{/* <Route path="/Notifications" element={<AdminIndex />} /> */}
 				{/* <Route path="/create" element={<UploadImg />} /> */}
 				{/* <Route path="/profile" element={<AdminIndex />} /> */}
-				<Route path="login" element={<LoginSignup />}>
-					<Route index element={<Login />} />
-					<Route path="signup" element={<Signup />} />
-				</Route>
+					<Route path="/login" element={<Login />} />
+					<Route path="/signup" element={<Signup />} />
 			</Routes>
 			{/* </main> */}
 			<BottomNav />

@@ -9,7 +9,7 @@ export const storyservice = {
     getEmptyStory,
 }
 
-async function query(filterBy = { txt: '', minSpeed: 0 }) {
+async function query(filterBy = { txt: '' }) {
     return httpService.get(`story`, filterBy)
 }
 
@@ -21,7 +21,7 @@ async function remove(storyId) {
     return httpService.delete(`story/${storyId}`)
 }
 async function save(story) {
-    var savedStory
+    let savedStory
     if (story._id) {
         savedStory = await httpService.put(`story/${story._id}`, story)
     } else {

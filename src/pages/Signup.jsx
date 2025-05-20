@@ -1,17 +1,16 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
-
 import { signup } from '../store/actions/user.actions'
-
-import { ImgUploader } from '../cmps/ImgUploader'
 import { userService } from '../services/user'
+
+import { NavLink } from 'react-router-dom'
 
 export function Signup() {
     const [credentials, setCredentials] = useState(userService.getEmptyUser())
     const navigate = useNavigate()
 
     function clearState() {
-        setCredentials({ username: '', password: '', fullname: '', imgUrl: '' })
+        setCredentials({ username: '', password: '', fullname: '' })
     }
 
     function handleChange(ev) {
@@ -21,7 +20,7 @@ export function Signup() {
         const value = ev.target.value
         setCredentials({ ...credentials, [field]: value })
     }
-    
+
     async function onSignup(ev = null) {
         if (ev) ev.preventDefault()
 
@@ -31,38 +30,48 @@ export function Signup() {
         navigate('/')
     }
 
-    function onUploaded(imgUrl) {
-        setCredentials({ ...credentials, imgUrl })
-    }
-
     return (
-        <form className="signup-form" onSubmit={onSignup}>
-            <input
-                type="text"
-                name="fullname"
-                value={credentials.fullname}
-                placeholder="Fullname"
-                onChange={handleChange}
-                required
-            />
-            <input
-                type="text"
-                name="username"
-                value={credentials.username}
-                placeholder="Username"
-                onChange={handleChange}
-                required
-            />
-            <input
-                type="password"
-                name="password"
-                value={credentials.password}
-                placeholder="Password"
-                onChange={handleChange}
-                required
-            />
-            <ImgUploader onUploaded={onUploaded} />
-            <button>Signup</button>
-        </form>
+
+        <div className="signup-main-container">
+            <div className="signup-container">
+                <h1 className="icon-logo">Instagram</h1>
+                <p className="signup-title">
+                    Sign up to see photos and videos<br />from your friends.
+                </p>
+                <button className="facebook-signup-btn">
+                    <span className="fb-icon">🎞️</span> Log in with Facebook
+                </button>
+                <div className="or-container">
+                    <div className="line"></div>
+                    <span className="or-text">OR</span>
+                    <div className="line"></div>
+                </div>
+                <form className="signup-form">
+                    <input type="text" name="email"
+                        required placeholder="Mobile Number or Email" className="signup-input" />
+                    <input type="password" name="password" onChange={handleChange}
+                        required placeholder="Password" className="signup-input" />
+                    <input type="text" name="fullname" onChange={handleChange}
+                        required placeholder="Full Name" className="signup-input" />
+                    <input type="text" name="username" onChange={handleChange}
+                        required placeholder="Username" className="signup-input" />
+                    <p className="signup-info">
+                        People who use our service may have uploaded your contact information to Instagram.
+                        <a href="" className="signup-link">Learn More</a>
+                    </p>
+                    <p className="signup-terms">
+                        By signing up, you agree to our
+                        <a href="" className="signup-link">Terms</a>,&nbsp;
+                        <a href="" className="signup-link">Privacy Policy</a> and&nbsp;
+                        <a href="" className="signup-link">Cookies Policy</a>.
+                    </p>
+                    <button className="signup-btn" type="submit">Sign up</button>
+                </form>
+            </div>
+            <div className="login-box">
+                Have an account?
+                <NavLink to="/login" className="login-link">Log in</NavLink>
+            </div>
+        </div>
     )
 }

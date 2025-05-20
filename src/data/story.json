@@ -1,0 +1,1756 @@
+{
+    "stories": [
+        {
+            "_id": "s201",
+            "txt": "Just published my latest findings on mitigating particulate emissions from earthmoving operations using real-time equipment monitoring. Small adjustments, big air quality improvements! #ConstructionEmissions #CleanAir #SustainableConstruction #ResearchImpact #ConTech",
+            "imgUrl": "https://source.unsplash.com/600x800/?construction,excavator,airQuality,research&sig=101",
+            "createdAt": 1747843200000,
+            "by": {
+                "_id": "u105",
+                "username": "ArochoGHG",
+                "fullname": "Dr. Ingrid Arocho, Construction Emissions Analyst",
+                "imgUrl": "https://source.unsplash.com/200x300/?researcher,woman,environment,university&sig=5"
+            },
+            "loc": {
+                "lat": 44.5646,
+                "lng": -123.2620,
+                "name": "Corvallis, OR, USA"
+            },
+            "comments": [
+                {
+                    "id": "c301",
+                    "by": {
+                        "_id": "u116",
+                        "username": "TimberAnja",
+                        "fullname": "Anja Schmidt, Sustainable Timber Engineer",
+                        "imgUrl": "https://source.unsplash.com/200x300/?engineer,woman,timber,forest&sig=16"
+                    },
+                    "txt": "Fascinating work, Dr. Arocho! Could this monitoring also help optimize fuel consumption?",
+                    "likedBy": [
+                        {
+                            "_id": "u101",
+                            "username": "QuantumMatLena"
+                        }
+                    ]
+                },
+                {
+                    "id": "c302",
+                    "by": {
+                        "_id": "u103",
+                        "username": "CircularFatima",
+                        "fullname": "Fatima Al-Jamil, Circular Economy Strategist",
+                        "imgUrl": "https://source.unsplash.com/200x300/?professional,woman,sustainability,urban&sig=3"
+                    },
+                    "txt": "Great to see such focus on emissions reduction! Every bit helps towards circularity goals.",
+                    "likedBy": []
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u101",
+                    "username": "QuantumMatLena",
+                    "fullname": "Dr. Lena Hanson, Quantum Materials Researcher",
+                    "imgUrl": "https://source.unsplash.com/200x300/?scientist,woman,lab,futuristic&sig=1"
+                },
+                {
+                    "_id": "u113",
+                    "username": "ModularCarlos",
+                    "fullname": "Carlos Silva, Modular Construction Logistics Expert",
+                    "imgUrl": "https://source.unsplash.com/200x300/?logistics,man,construction,modular&sig=13"
+                },
+                {
+                    "_id": "u120",
+                    "username": "HumaneKwame",
+                    "fullname": "Kwame Adebayo, ConTech for Humanitarian Shelters Innovator",
+                    "imgUrl": "https://source.unsplash.com/200x300/?innovator,man,african,humanitarian&sig=20"
+                }
+            ],
+            "tags": [
+                "ConstructionEmissions",
+                "CleanAir",
+                "SustainableConstruction",
+                "ResearchImpact",
+                "ConTech"
+            ]
+        },
+        {
+            "_id": "s202",
+            "txt": "Excited to announce Berlin's new pilot program for mandatory material passports on all public building projects! A huge step for #CircularEconomy in construction. Our team at Madaster is ready to support. #MaterialPassport #ZeroWaste #SustainableBerlin #ConTechEU",
+            "imgUrl": "https://source.unsplash.com/600x800/?berlin,construction,sustainability,document&sig=102",
+            "createdAt": 1747756800000,
+            "by": {
+                "_id": "u103",
+                "username": "CircularFatima",
+                "fullname": "Fatima Al-Jamil, Circular Economy Strategist",
+                "imgUrl": "https://source.unsplash.com/200x300/?professional,woman,sustainability,urban&sig=3"
+            },
+            "loc": {
+                "lat": 52.5200,
+                "lng": 13.4050,
+                "name": "Berlin, Germany"
+            },
+            "comments": [
+                {
+                    "id": "c303",
+                    "by": {
+                        "_id": "u130",
+                        "username": "WasteUpLaura",
+                        "fullname": "Laura Petrova, Industrial Waste Upcycling Innovator",
+                        "imgUrl": "https://source.unsplash.com/200x300/?innovator,woman,recycling,industrial&sig=30"
+                    },
+                    "txt": "This is fantastic news, Fatima! Material passports are key to unlocking true circularity. Rotterdam is watching closely!",
+                    "likedBy": [
+                        {
+                            "_id": "u109",
+                            "username": "MycoSam"
+                        }
+                    ]
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u105",
+                    "username": "ArochoGHG",
+                    "fullname": "Dr. Ingrid Arocho, Construction Emissions Analyst",
+                    "imgUrl": "https://source.unsplash.com/200x300/?researcher,woman,environment,university&sig=5"
+                },
+                {
+                    "_id": "u121",
+                    "username": "LEEDProOlivia",
+                    "fullname": "Olivia Green, LEED v5 Consultant & Auditor",
+                    "imgUrl": "https://source.unsplash.com/200x300/?consultant,woman,greenBuilding,professional&sig=21"
+                }
+            ],
+            "tags": [
+                "CircularEconomy",
+                "MaterialPassport",
+                "ZeroWaste",
+                "SustainableBerlin",
+                "ConTechEU"
+            ]
+        },
+        {
+            "_id": "s203",
+            "txt": "Our latest mycelium insulation panels just passed stringent fire resistance tests! Growing building materials that are safe, sustainable, and effective. Next up: scaling production for our Amsterdam pilot project. #Mycelium #Biofabrication #SustainableInsulation #GreenBuilding #CircularEconomy",
+            "imgUrl": "https://source.unsplash.com/600x800/?mycelium,insulation,lab,sustainable&sig=103",
+            "createdAt": 1747670400000,
+            "by": {
+                "_id": "u109",
+                "username": "MycoSam",
+                "fullname": "Sam Chen, Mycelium Bio-fabrication Architect",
+                "imgUrl": "https://source.unsplash.com/200x300/?architect,man,sustainable,organic&sig=9"
+            },
+            "loc": {
+                "lat": 52.3676,
+                "lng": 4.9041,
+                "name": "Amsterdam, Netherlands"
+            },
+            "comments": [
+                {
+                    "id": "c304",
+                    "by": {
+                        "_id": "u116",
+                        "username": "TimberAnja",
+                        "fullname": "Anja Schmidt, Sustainable Timber Engineer",
+                        "imgUrl": "https://source.unsplash.com/200x300/?engineer,woman,timber,forest&sig=16"
+                    },
+                    "txt": "Incredible, Sam! How does the R-value compare to traditional insulation materials?",
+                    "likedBy": [
+                        {
+                            "_id": "u123",
+                            "username": "NanoPriya"
+                        }
+                    ]
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u103",
+                    "username": "CircularFatima",
+                    "fullname": "Fatima Al-Jamil, Circular Economy Strategist",
+                    "imgUrl": "https://source.unsplash.com/200x300/?professional,woman,sustainability,urban&sig=3"
+                },
+                {
+                    "_id": "u130",
+                    "username": "WasteUpLaura",
+                    "fullname": "Laura Petrova, Industrial Waste Upcycling Innovator",
+                    "imgUrl": "https://source.unsplash.com/200x300/?innovator,woman,recycling,industrial&sig=30"
+                }
+            ],
+            "tags": [
+                "Mycelium",
+                "Biofabrication",
+                "SustainableInsulation",
+                "GreenBuilding",
+                "CircularEconomy"
+            ]
+        },
+        {
+            "_id": "s204",
+            "txt": "Just wrapped up a PtD workshop for MEP engineers focusing on solar installations. Designing out hazards before they reach the site is non-negotiable. Great discussions on integrating safety into BIM models from day one! #PreventionThroughDesign #PtD #SolarSafety #MEP #ConstructionSafety",
+            "imgUrl": "https://source.unsplash.com/600x800/?solarPanel,installation,safety,blueprint&sig=104",
+            "createdAt": 1747584000000,
+            "by": {
+                "_id": "u107",
+                "username": "SafetyByDesignJG",
+                "fullname": "John G. SafetyByDesign, PtD Consultant",
+                "imgUrl": "https://source.unsplash.com/200x300/?consultant,man,construction,safetyHardHat&sig=7"
+            },
+            "loc": {
+                "lat": 47.6062,
+                "lng": -122.3321,
+                "name": "Seattle, WA, USA"
+            },
+            "comments": [
+                {
+                    "id": "c305",
+                    "by": {
+                        "_id": "u106",
+                        "username": "LouisAI_Safety",
+                        "fullname": "Joseph Louis Fan, AI & Automation Safety Lead",
+                        "imgUrl": "https://source.unsplash.com/200x300/?engineer,man,safety,tech&sig=6"
+                    },
+                    "txt": "Excellent initiative, John! Integrating PtD into BIM is where the real leverage is for proactive safety.",
+                    "likedBy": []
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u129",
+                    "username": "BIMDevVikram",
+                    "fullname": "Vikram Singh, Construction Software Developer",
+                    "imgUrl": "https://source.unsplash.com/200x300/?developer,man,indian,software&sig=29"
+                },
+                {
+                    "_id": "u117",
+                    "username": "ExoLiam",
+                    "fullname": "Liam O'Connell, Exoskeleton Adoption Specialist",
+                    "imgUrl": "https://source.unsplash.com/200x300/?worker,man,exoskeleton,constructionSite&sig=17"
+                }
+            ],
+            "tags": [
+                "PreventionThroughDesign",
+                "PtD",
+                "SolarSafety",
+                "MEP",
+                "ConstructionSafety"
+            ]
+        },
+        {
+            "_id": "s205",
+            "txt": "Our latest quantum simulation of a novel titanium-graphene alloy shows incredible potential for lightweight, high-strength structural components. The predicted stress tolerance is 200% higher than current aerospace-grade alloys! #QuantumComputing #MaterialScience #AlloyDesign #FutureMaterials #ConTech",
+            "imgUrl": "https://source.unsplash.com/600x800/?quantum,simulation,abstract,materials&sig=105",
+            "createdAt": 1747497600000,
+            "by": {
+                "_id": "u101",
+                "username": "QuantumMatLena",
+                "fullname": "Dr. Lena Hanson, Quantum Materials Researcher",
+                "imgUrl": "https://source.unsplash.com/200x300/?scientist,woman,lab,futuristic&sig=1"
+            },
+            "loc": {
+                "lat": 42.3601,
+                "lng": -71.0589,
+                "name": "Boston, MA, USA"
+            },
+            "comments": [
+                {
+                    "id": "c306",
+                    "by": {
+                        "_id": "u123",
+                        "username": "NanoPriya",
+                        "fullname": "Dr. Priya Sharma, Advanced Materials Scientist",
+                        "imgUrl": "https://source.unsplash.com/200x300/?scientist,woman,indian,microscope&sig=23"
+                    },
+                    "txt": "Groundbreaking work, Lena! Can't wait to see how this scales from simulation to lab synthesis.",
+                    "likedBy": [
+                        {
+                            "_id": "u104",
+                            "username": "4DPrintKenji"
+                        }
+                    ]
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u108",
+                    "username": "GeoMaria",
+                    "fullname": "Maria Rossi, Geopolymer Concrete Specialist",
+                    "imgUrl": "https://source.unsplash.com/200x300/?engineer,woman,concrete,industrial&sig=8"
+                },
+                {
+                    "_id": "u127",
+                    "username": "FutureEthan",
+                    "fullname": "Dr. Ethan Bellwether, ConTech Futurist & Speculative Designer",
+                    "imgUrl": "https://source.unsplash.com/200x300/?futurist,man,visionary,abstract&sig=27"
+                }
+            ],
+            "tags": [
+                "QuantumComputing",
+                "MaterialScience",
+                "AlloyDesign",
+                "FutureMaterials",
+                "ConTech"
+            ]
+        },
+        {
+            "_id": "s206",
+            "txt": "Successfully deployed our latest gen 3D printed emergency shelters in a mock disaster drill in collaboration with local NGOs. Printed with 80% recycled PET and locally sourced earth mix. Assembly time under 6 hours per unit! #HumanitarianTech #3DPrinting #DisasterRelief #ShelterTech #InnovationForGood",
+            "imgUrl": "https://source.unsplash.com/600x800/?3dprinting,shelter,humanitarian,africa&sig=106",
+            "createdAt": 1747411200000,
+            "by": {
+                "_id": "u120",
+                "username": "HumaneKwame",
+                "fullname": "Kwame Adebayo, ConTech for Humanitarian Shelters Innovator",
+                "imgUrl": "https://source.unsplash.com/200x300/?innovator,man,african,humanitarian&sig=20"
+            },
+            "loc": {
+                "lat": -1.2921,
+                "lng": 36.8219,
+                "name": "Nairobi, Kenya"
+            },
+            "comments": [
+                {
+                    "id": "c307",
+                    "by": {
+                        "_id": "u126",
+                        "username": "3DAffordGabi",
+                        "fullname": "Gabriela Fernandez, 3D Printed Affordable Housing Advocate",
+                        "imgUrl": "https://source.unsplash.com/200x300/?activist,woman,latina,housing&sig=26"
+                    },
+                    "txt": "Inspiring work, Kwame! The use of recycled PET is particularly impressive. We need more solutions like this globally.",
+                    "likedBy": [
+                        {
+                            "_id": "u102",
+                            "username": "BioRoboRajiv"
+                        }
+                    ]
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u103",
+                    "username": "CircularFatima",
+                    "fullname": "Fatima Al-Jamil, Circular Economy Strategist",
+                    "imgUrl": "https://source.unsplash.com/200x300/?professional,woman,sustainability,urban&sig=3"
+                },
+                {
+                    "_id": "u130",
+                    "username": "WasteUpLaura",
+                    "fullname": "Laura Petrova, Industrial Waste Upcycling Innovator",
+                    "imgUrl": "https://source.unsplash.com/200x300/?innovator,woman,recycling,industrial&sig=30"
+                }
+            ],
+            "tags": [
+                "HumanitarianTech",
+                "3DPrinting",
+                "DisasterRelief",
+                "ShelterTech",
+                "InnovationForGood"
+            ]
+        },
+        {
+            "_id": "s207",
+            "txt": "Piloting our new AR-based welding simulator with apprentices this week. Realistic haptic feedback and real-time error analysis are game-changers for skill acquisition. So much safer and more cost-effective than traditional training! #AR #WeldingTraining #SkilledTrades #ConTechEd #ImmersiveLearning",
+            "imgUrl": "https://source.unsplash.com/600x800/?welding,augmentedReality,training,construction&sig=107",
+            "createdAt": 1747324800000,
+            "by": {
+                "_id": "u111",
+                "username": "ARVRBen",
+                "fullname": "Ben Carter, AR/VR Training Developer for Trades",
+                "imgUrl": "https://source.unsplash.com/200x300/?developer,man,vr,glasses&sig=11"
+            },
+            "loc": {
+                "lat": 51.5072,
+                "lng": 0.1276,
+                "name": "London, UK"
+            },
+            "comments": [
+                {
+                    "id": "c308",
+                    "by": {
+                        "_id": "u117",
+                        "username": "ExoLiam",
+                        "fullname": "Liam O'Connell, Exoskeleton Adoption Specialist",
+                        "imgUrl": "https://source.unsplash.com/200x300/?worker,man,exoskeleton,constructionSite&sig=17"
+                    },
+                    "txt": "This is brilliant, Ben! Could see AR being used for exoskeleton operation training too. The haptics must make a huge difference.",
+                    "likedBy": []
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u106",
+                    "username": "LouisAI_Safety",
+                    "fullname": "Joseph Louis Fan, AI & Automation Safety Lead",
+                    "imgUrl": "https://source.unsplash.com/200x300/?engineer,man,safety,tech&sig=6"
+                },
+                {
+                    "_id": "u124",
+                    "username": "RoboMakr",
+                    "fullname": "Marcus 'Makr' Robinson, Robotics Integration Engineer",
+                    "imgUrl": "https://source.unsplash.com/200x300/?engineer,man,robot,construction&sig=24"
+                }
+            ],
+            "tags": [
+                "AR",
+                "WeldingTraining",
+                "SkilledTrades",
+                "ConTechEd",
+                "ImmersiveLearning"
+            ]
+        },
+        {
+            "_id": "s208",
+            "txt": "Our adaptive facade prototype, printed with shape-memory polymers, is now responding dynamically to real-time solar gain data here in Tokyo. Watching it self-adjust throughout the day is mesmerizing! #4DPrinting #AdaptiveFacade #SmartMaterials #SustainableArchitecture #FutureBuildings",
+            "imgUrl": "https://source.unsplash.com/600x800/?futuristic,architecture,facade,dynamic&sig=108",
+            "createdAt": 1747238400000,
+            "by": {
+                "_id": "u104",
+                "username": "4DPrintKenji",
+                "fullname": "Kenji Tanaka, 4D Printing Architect",
+                "imgUrl": "https://source.unsplash.com/200x300/?architect,man,japanese,modern&sig=4"
+            },
+            "loc": {
+                "lat": 35.6895,
+                "lng": 139.6917,
+                "name": "Tokyo, Japan"
+            },
+            "comments": [
+                {
+                    "id": "c309",
+                    "by": {
+                        "_id": "u127",
+                        "username": "FutureEthan",
+                        "fullname": "Dr. Ethan Bellwether, ConTech Futurist & Speculative Designer",
+                        "imgUrl": "https://source.unsplash.com/200x300/?futurist,man,visionary,abstract&sig=27"
+                    },
+                    "txt": "This is exactly the kind of responsive architecture I've been writing about, Kenji! What stimuli are you primarily using for activation?",
+                    "likedBy": [
+                        {
+                            "_id": "u101",
+                            "username": "QuantumMatLena"
+                        }
+                    ]
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u109",
+                    "username": "MycoSam",
+                    "fullname": "Sam Chen, Mycelium Bio-fabrication Architect",
+                    "imgUrl": "https://source.unsplash.com/200x300/?architect,man,sustainable,organic&sig=9"
+                },
+                {
+                    "_id": "u114",
+                    "username": "SmartCitySofia",
+                    "fullname": "Sofia Bauer, Smart City Infrastructure Planner",
+                    "imgUrl": "https://source.unsplash.com/200x300/?urbanPlanner,woman,cityscape,modern&sig=14"
+                }
+            ],
+            "tags": [
+                "4DPrinting",
+                "AdaptiveFacade",
+                "SmartMaterials",
+                "SustainableArchitecture",
+                "FutureBuildings"
+            ]
+        },
+        {
+            "_id": "s209",
+            "txt": "Just overcame a major logistical hurdle for a 150-unit modular housing project in Manaus. Re-routed delivery of 50 modules via river barge due to road washouts. Adaptive logistics is key in challenging terrains! #ModularConstruction #Logistics #SupplyChain #ConTechLatam #ProblemSolving",
+            "imgUrl": "https://source.unsplash.com/600x800/?modular,construction,logistics,brazil,river&sig=109",
+            "createdAt": 1747152000000,
+            "by": {
+                "_id": "u113",
+                "username": "ModularCarlos",
+                "fullname": "Carlos Silva, Modular Construction Logistics Expert",
+                "imgUrl": "https://source.unsplash.com/200x300/?logistics,man,construction,modular&sig=13"
+            },
+            "loc": {
+                "lat": -3.1190,
+                "lng": -60.0217,
+                "name": "Manaus, Brazil"
+            },
+            "comments": [],
+            "likedBy": [
+                {
+                    "_id": "u105",
+                    "username": "ArochoGHG",
+                    "fullname": "Dr. Ingrid Arocho, Construction Emissions Analyst",
+                    "imgUrl": "https://source.unsplash.com/200x300/?researcher,woman,environment,university&sig=5"
+                }
+            ],
+            "tags": [
+                "ModularConstruction",
+                "Logistics",
+                "SupplyChain",
+                "ConTechLatam",
+                "ProblemSolving"
+            ]
+        },
+        {
+            "_id": "s210",
+            "txt": "Our ant-inspired swarm robots just successfully navigated a simulated collapsed structure, mapping voids and identifying potential survivor locations. The decentralized coordination algorithm performed flawlessly. Huge potential for disaster recovery! #SwarmRobotics #BioRobotics #DisasterTech #AI #AutonomousSystems",
+            "imgUrl": "https://source.unsplash.com/600x800/?robot,swarm,disaster,searchAndRescue&sig=110",
+            "createdAt": 1747065600000,
+            "by": {
+                "_id": "u102",
+                "username": "BioRoboRajiv",
+                "fullname": "Rajiv Patel, Bio-Robotics Engineer",
+                "imgUrl": "https://source.unsplash.com/200x300/?engineer,man,robotics,asian&sig=2"
+            },
+            "loc": {
+                "lat": 1.3521,
+                "lng": 103.8198,
+                "name": "Singapore"
+            },
+            "comments": [
+                {
+                    "id": "c310",
+                    "by": {
+                        "_id": "u120",
+                        "username": "HumaneKwame",
+                        "fullname": "Kwame Adebayo, ConTech for Humanitarian Shelters Innovator",
+                        "imgUrl": "https://source.unsplash.com/200x300/?innovator,man,african,humanitarian&sig=20"
+                    },
+                    "txt": "This is incredible, Rajiv! The speed of mapping could save so many lives. Are they equipped for debris removal too?",
+                    "likedBy": [
+                        {
+                            "_id": "u106",
+                            "username": "LouisAI_Safety"
+                        }
+                    ]
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u111",
+                    "username": "ARVRBen",
+                    "fullname": "Ben Carter, AR/VR Training Developer for Trades",
+                    "imgUrl": "https://source.unsplash.com/200x300/?developer,man,vr,glasses&sig=11"
+                },
+                {
+                    "_id": "u128",
+                    "username": "ConTechChloe",
+                    "fullname": "Chloe Davis, ConTech Journalist & Podcaster",
+                    "imgUrl": "https://source.unsplash.com/200x300/?journalist,woman,podcast,microphone&sig=28"
+                }
+            ],
+            "tags": [
+                "SwarmRobotics",
+                "BioRobotics",
+                "DisasterTech",
+                "AI",
+                "AutonomousSystems"
+            ]
+        },
+        {
+            "_id": "s211",
+            "txt": "Reviewing proposals for integrating city-wide digital twin data with our new climate resilience modeling for Zurich. The goal is real-time scenario planning for flood and heatwave events. Data ethics and security are paramount. #SmartCity #DigitalTwin #ClimateResilience #UrbanPlanning #DataEthics",
+            "imgUrl": "https://source.unsplash.com/600x800/?zurich,cityscape,digital,futuristic&sig=111",
+            "createdAt": 1746979200000,
+            "by": {
+                "_id": "u114",
+                "username": "SmartCitySofia",
+                "fullname": "Sofia Bauer, Smart City Infrastructure Planner",
+                "imgUrl": "https://source.unsplash.com/200x300/?urbanPlanner,woman,cityscape,modern&sig=14"
+            },
+            "loc": {
+                "lat": 47.3769,
+                "lng": 8.5417,
+                "name": "Zurich, Switzerland"
+            },
+            "comments": [
+                {
+                    "id": "c311",
+                    "by": {
+                        "_id": "u122",
+                        "username": "DigitalTwinAhmed",
+                        "fullname": "Ahmed Al Mansouri, Digital Twin Project Lead",
+                        "imgUrl": "https://source.unsplash.com/200x300/?engineer,man,middleEastern,digital&sig=22"
+                    },
+                    "txt": "Crucial work, Sofia. We're facing similar data integration challenges in Abu Dhabi. Standardized APIs are a must.",
+                    "likedBy": [
+                        {
+                            "_id": "u112",
+                            "username": "AIEthicsEve"
+                        }
+                    ]
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u104",
+                    "username": "4DPrintKenji",
+                    "fullname": "Kenji Tanaka, 4D Printing Architect",
+                    "imgUrl": "https://source.unsplash.com/200x300/?architect,man,japanese,modern&sig=4"
+                }
+            ],
+            "tags": [
+                "SmartCity",
+                "DigitalTwin",
+                "ClimateResilience",
+                "UrbanPlanning",
+                "DataEthics"
+            ]
+        },
+        {
+            "_id": "s212",
+            "txt": "Thrilled to share that our geopolymer concrete, utilizing 70% fly ash, has exceeded 100-year lifecycle projections in the new coastal defense project near Naples. Exceptional resistance to sulphate and chloride attack. #GeopolymerConcrete #SustainableInfrastructure #CircularEconomy #Durability #CivilEngineering",
+            "imgUrl": "https://source.unsplash.com/600x800/?concrete,coastal,defense,italy,construction&sig=112",
+            "createdAt": 1746892800000,
+            "by": {
+                "_id": "u108",
+                "username": "GeoMaria",
+                "fullname": "Maria Rossi, Geopolymer Concrete Specialist",
+                "imgUrl": "https://source.unsplash.com/200x300/?engineer,woman,concrete,industrial&sig=8"
+            },
+            "loc": {
+                "lat": 40.8518,
+                "lng": 14.2681,
+                "name": "Naples, Italy"
+            },
+            "comments": [
+                {
+                    "id": "c312",
+                    "by": {
+                        "_id": "u101",
+                        "username": "QuantumMatLena",
+                        "fullname": "Dr. Lena Hanson, Quantum Materials Researcher",
+                        "imgUrl": "https://source.unsplash.com/200x300/?scientist,woman,lab,futuristic&sig=1"
+                    },
+                    "txt": "Amazing results, Maria! The reduced carbon footprint combined with such longevity is exactly what the industry needs.",
+                    "likedBy": []
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u116",
+                    "username": "TimberAnja",
+                    "fullname": "Anja Schmidt, Sustainable Timber Engineer",
+                    "imgUrl": "https://source.unsplash.com/200x300/?engineer,woman,timber,forest&sig=16"
+                },
+                {
+                    "_id": "u130",
+                    "username": "WasteUpLaura",
+                    "fullname": "Laura Petrova, Industrial Waste Upcycling Innovator",
+                    "imgUrl": "https://source.unsplash.com/200x300/?innovator,woman,recycling,industrial&sig=30"
+                }
+            ],
+            "tags": [
+                "GeopolymerConcrete",
+                "SustainableInfrastructure",
+                "CircularEconomy",
+                "Durability",
+                "CivilEngineering"
+            ]
+        },
+        {
+            "_id": "s213",
+            "txt": "Just completed a LEED v5 audit for a new commercial tower in Chicago. The focus on operational carbon projections and resilience assessments is really pushing designs to be more future-proof. #LEEDv5 #GreenBuilding #Decarbonization #ResilientDesign #SustainabilityConsulting",
+            "imgUrl": "https://source.unsplash.com/600x800/?chicago,skyscraper,greenBuilding,leed&sig=113",
+            "createdAt": 1746806400000,
+            "by": {
+                "_id": "u121",
+                "username": "LEEDProOlivia",
+                "fullname": "Olivia Green, LEED v5 Consultant & Auditor",
+                "imgUrl": "https://source.unsplash.com/200x300/?consultant,woman,greenBuilding,professional&sig=21"
+            },
+            "loc": {
+                "lat": 41.8781,
+                "lng": -87.6298,
+                "name": "Chicago, IL, USA"
+            },
+            "comments": [],
+            "likedBy": [
+                {
+                    "_id": "u103",
+                    "username": "CircularFatima",
+                    "fullname": "Fatima Al-Jamil, Circular Economy Strategist",
+                    "imgUrl": "https://source.unsplash.com/200x300/?professional,woman,sustainability,urban&sig=3"
+                },
+                {
+                    "_id": "u114",
+                    "username": "SmartCitySofia",
+                    "fullname": "Sofia Bauer, Smart City Infrastructure Planner",
+                    "imgUrl": "https://source.unsplash.com/200x300/?urbanPlanner,woman,cityscape,modern&sig=14"
+                }
+            ],
+            "tags": [
+                "LEEDv5",
+                "GreenBuilding",
+                "Decarbonization",
+                "ResilientDesign",
+                "SustainabilityConsulting"
+            ]
+        },
+        {
+            "_id": "s214",
+            "txt": "Presenting my research on the seismic performance of multi-story mass timber (CLT) structures at the World Conference on Timber Engineering. Engineered wood offers incredible resilience if designed correctly for specific regional risks. #MassTimber #CLT #SeismicDesign #SustainableStructures #WCTE2025",
+            "imgUrl": "https://source.unsplash.com/600x800/?timber,construction,earthquake,engineering&sig=114",
+            "createdAt": 1746720000000,
+            "by": {
+                "_id": "u116",
+                "username": "TimberAnja",
+                "fullname": "Anja Schmidt, Sustainable Timber Engineer",
+                "imgUrl": "https://source.unsplash.com/200x300/?engineer,woman,timber,forest&sig=16"
+            },
+            "loc": {
+                "lat": 48.0000,
+                "lng": 7.8500,
+                "name": "Freiburg, Germany (Presenting at a Global Conference)"
+            },
+            "comments": [
+                {
+                    "id": "c313",
+                    "by": {
+                        "_id": "u105",
+                        "username": "ArochoGHG",
+                        "fullname": "Dr. Ingrid Arocho, Construction Emissions Analyst",
+                        "imgUrl": "https://source.unsplash.com/200x300/?researcher,woman,environment,university&sig=5"
+                    },
+                    "txt": "Important work, Anja! The intersection of sustainability and resilience is critical. How are you addressing material sourcing for EWPs?",
+                    "likedBy": []
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u107",
+                    "username": "SafetyByDesignJG",
+                    "fullname": "John G. SafetyByDesign, PtD Consultant",
+                    "imgUrl": "https://source.unsplash.com/200x300/?consultant,man,construction,safetyHardHat&sig=7"
+                }
+            ],
+            "tags": [
+                "MassTimber",
+                "CLT",
+                "SeismicDesign",
+                "SustainableStructures",
+                "WCTE2025"
+            ]
+        },
+        {
+            "_id": "s215",
+            "txt": "Inspecting a demolition site in Berlin that's aiming for 95% material reuse via our material passport system. It's amazing to see components tagged for deconstruction and direct reuse in new projects. #CircularEconomy #UrbanMining #Deconstruction #MaterialPassport #Sustainability",
+            "imgUrl": "https://source.unsplash.com/600x800/?demolition,recycling,construction,urban&sig=115",
+            "createdAt": 1746633600000,
+            "by": {
+                "_id": "u103",
+                "username": "CircularFatima",
+                "fullname": "Fatima Al-Jamil, Circular Economy Strategist",
+                "imgUrl": "https://source.unsplash.com/200x300/?professional,woman,sustainability,urban&sig=3"
+            },
+            "loc": {
+                "lat": 52.5200,
+                "lng": 13.4050,
+                "name": "Berlin, Germany"
+            },
+            "comments": [
+                {
+                    "id": "c314",
+                    "by": {
+                        "_id": "u130",
+                        "username": "WasteUpLaura",
+                        "fullname": "Laura Petrova, Industrial Waste Upcycling Innovator",
+                        "imgUrl": "https://source.unsplash.com/200x300/?innovator,woman,recycling,industrial&sig=30"
+                    },
+                    "txt": "Leading the way, Fatima! That 95% target is ambitious and inspiring.",
+                    "likedBy": [
+                        {
+                            "_id": "u109",
+                            "username": "MycoSam"
+                        }
+                    ]
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u108",
+                    "username": "GeoMaria",
+                    "fullname": "Maria Rossi, Geopolymer Concrete Specialist",
+                    "imgUrl": "https://source.unsplash.com/200x300/?engineer,woman,concrete,industrial&sig=8"
+                }
+            ],
+            "tags": [
+                "CircularEconomy",
+                "UrbanMining",
+                "Deconstruction",
+                "MaterialPassport",
+                "Sustainability"
+            ]
+        },
+        {
+            "_id": "s216",
+            "txt": "The debate on AI's role in creative design processes is heating up. While generative AI offers incredible speed, how do we ensure ethical considerations and avoid algorithmic bias that could perpetuate existing inequalities in our built environment? #AIEthics #GenerativeDesign #ResponsibleAI #FutureOfArchitecture #ConTechDebate",
+            "imgUrl": "https://source.unsplash.com/600x800/?ai,ethics,architecture,debate&sig=116",
+            "createdAt": 1746547200000,
+            "by": {
+                "_id": "u112",
+                "username": "AIEthicsEve",
+                "fullname": "Dr. Evelyn Reed, AI Ethics in ConTech Advocate",
+                "imgUrl": "https://source.unsplash.com/200x300/?professor,woman,ethics,tech&sig=12"
+            },
+            "loc": {
+                "lat": 37.7749,
+                "lng": -122.4194,
+                "name": "San Francisco, CA, USA"
+            },
+            "comments": [
+                {
+                    "id": "c315",
+                    "by": {
+                        "_id": "u101",
+                        "username": "QuantumMatLena",
+                        "fullname": "Dr. Lena Hanson, Quantum Materials Researcher",
+                        "imgUrl": "https://source.unsplash.com/200x300/?scientist,woman,lab,futuristic&sig=1"
+                    },
+                    "txt": "A critical discussion, Evelyn. The training data for these models is key. We need diverse datasets to mitigate bias.",
+                    "likedBy": []
+                },
+                {
+                    "id": "c316",
+                    "by": {
+                        "_id": "u127",
+                        "username": "FutureEthan",
+                        "fullname": "Dr. Ethan Bellwether, ConTech Futurist & Speculative Designer",
+                        "imgUrl": "https://source.unsplash.com/200x300/?futurist,man,visionary,abstract&sig=27"
+                    },
+                    "txt": "Indeed. The 'black box' nature of some AI is a concern. Transparency and explainability are vital for ethical adoption.",
+                    "likedBy": [
+                        {
+                            "_id": "u104",
+                            "username": "4DPrintKenji"
+                        }
+                    ]
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u114",
+                    "username": "SmartCitySofia",
+                    "fullname": "Sofia Bauer, Smart City Infrastructure Planner",
+                    "imgUrl": "https://source.unsplash.com/200x300/?urbanPlanner,woman,cityscape,modern&sig=14"
+                },
+                {
+                    "_id": "u128",
+                    "username": "ConTechChloe",
+                    "fullname": "Chloe Davis, ConTech Journalist & Podcaster",
+                    "imgUrl": "https://source.unsplash.com/200x300/?journalist,woman,podcast,microphone&sig=28"
+                }
+            ],
+            "tags": [
+                "AIEthics",
+                "GenerativeDesign",
+                "ResponsibleAI",
+                "FutureOfArchitecture",
+                "ConTechDebate"
+            ]
+        },
+        {
+            "_id": "s217",
+            "txt": "Our IoT-driven HVAC optimization in a Seoul commercial tower has cut energy consumption by 18% in Q1! Real-time sensor data adjusting airflow and temperature based on occupancy and predictive weather patterns. #IoT #SmartBuildings #EnergyEfficiency #HVAC #BuildingAutomation",
+            "imgUrl": "https://source.unsplash.com/600x800/?seoul,smartBuilding,hvac,iot,sensors&sig=117",
+            "createdAt": 1746460800000,
+            "by": {
+                "_id": "u125",
+                "username": "IoTYuki",
+                "fullname": "Yuki Watanabe, IoT & Smart Building Analyst",
+                "imgUrl": "https://source.unsplash.com/200x300/?analyst,woman,korean,smartHome&sig=25"
+            },
+            "loc": {
+                "lat": 37.5665,
+                "lng": 126.9780,
+                "name": "Seoul, South Korea"
+            },
+            "comments": [],
+            "likedBy": [
+                {
+                    "_id": "u115",
+                    "username": "DataSciDave",
+                    "fullname": "David Miller, Construction Data Scientist",
+                    "imgUrl": "https://source.unsplash.com/200x300/?dataScientist,man,analytics,urban&sig=15"
+                }
+            ],
+            "tags": [
+                "IoT",
+                "SmartBuildings",
+                "EnergyEfficiency",
+                "HVAC",
+                "BuildingAutomation"
+            ]
+        },
+        {
+            "_id": "s218",
+            "txt": "New paper accepted in 'Automation in Construction'! We demonstrate a novel machine learning model using ambient audio signals from construction sites to identify high-risk activities for proactive safety interventions. #AIinConstruction #ConstructionSafety #MachineLearning #ActivityRecognition #Research",
+            "imgUrl": "https://source.unsplash.com/600x800/?construction,site,ai,soundwaves,safety&sig=118",
+            "createdAt": 1746374400000,
+            "by": {
+                "_id": "u106",
+                "username": "LouisAI_Safety",
+                "fullname": "Joseph Louis Fan, AI & Automation Safety Lead",
+                "imgUrl": "https://source.unsplash.com/200x300/?engineer,man,safety,tech&sig=6"
+            },
+            "loc": {
+                "lat": 45.5152,
+                "lng": -122.6784,
+                "name": "Portland, OR, USA"
+            },
+            "comments": [
+                {
+                    "id": "c317",
+                    "by": {
+                        "_id": "u107",
+                        "username": "SafetyByDesignJG",
+                        "fullname": "John G. SafetyByDesign, PtD Consultant",
+                        "imgUrl": "https://source.unsplash.com/200x300/?consultant,man,construction,safetyHardHat&sig=7"
+                    },
+                    "txt": "Congratulations, Joseph! Audio analytics for safety is a fascinating frontier. Eager to read it.",
+                    "likedBy": []
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u118",
+                    "username": "AISchedChen",
+                    "fullname": "Chen Zhao, AI Predictive Scheduling PM",
+                    "imgUrl": "https://source.unsplash.com/200x300/?projectManager,man,asian,office&sig=18"
+                },
+                {
+                    "_id": "u124",
+                    "username": "RoboMakr",
+                    "fullname": "Marcus 'Makr' Robinson, Robotics Integration Engineer",
+                    "imgUrl": "https://source.unsplash.com/200x300/?engineer,man,robot,construction&sig=24"
+                }
+            ],
+            "tags": [
+                "AIinConstruction",
+                "ConstructionSafety",
+                "MachineLearning",
+                "ActivityRecognition",
+                "Research"
+            ]
+        },
+        {
+            "_id": "s219",
+            "txt": "Our AI predictive scheduling platform helped a Shanghai metro extension project cut 3 weeks off its critical path by dynamically reallocating resources based on real-time progress data and potential disruption forecasts. #AI #ProjectManagement #ConstructionScheduling #MegaProjects #Efficiency",
+            "imgUrl": "https://source.unsplash.com/600x800/?shanghai,metro,construction,ai,schedule&sig=119",
+            "createdAt": 1746288000000,
+            "by": {
+                "_id": "u118",
+                "username": "AISchedChen",
+                "fullname": "Chen Zhao, AI Predictive Scheduling PM",
+                "imgUrl": "https://source.unsplash.com/200x300/?projectManager,man,asian,office&sig=18"
+            },
+            "loc": {
+                "lat": 31.2304,
+                "lng": 121.4737,
+                "name": "Shanghai, China"
+            },
+            "comments": [],
+            "likedBy": [
+                {
+                    "_id": "u113",
+                    "username": "ModularCarlos",
+                    "fullname": "Carlos Silva, Modular Construction Logistics Expert",
+                    "imgUrl": "https://source.unsplash.com/200x300/?logistics,man,construction,modular&sig=13"
+                }
+            ],
+            "tags": [
+                "AI",
+                "ProjectManagement",
+                "ConstructionScheduling",
+                "MegaProjects",
+                "Efficiency"
+            ]
+        },
+        {
+            "_id": "s220",
+            "txt": "Fascinating insights from the 'Future Build' podcast discussion on the lessons from Flux's journey. The point about understanding the *actual buyer* vs. the enthusiastic user really resonated with my experience in ConTech. #ConTechStartups #Innovation #IndustryDynamics #Monetization #Podcast",
+            "imgUrl": "https://source.unsplash.com/600x800/?podcast,microphone,tech,startup,discussion&sig=120",
+            "createdAt": 1746201600000,
+            "by": {
+                "_id": "u128",
+                "username": "ConTechChloe",
+                "fullname": "Chloe Davis, ConTech Journalist & Podcaster",
+                "imgUrl": "https://source.unsplash.com/200x300/?journalist,woman,podcast,microphone&sig=28"
+            },
+            "loc": {
+                "lat": 51.5072,
+                "lng": 0.1276,
+                "name": "London, UK"
+            },
+            "comments": [
+                {
+                    "id": "c318",
+                    "by": {
+                        "_id": "u112",
+                        "username": "AIEthicsEve",
+                        "fullname": "Dr. Evelyn Reed, AI Ethics in ConTech Advocate",
+                        "imgUrl": "https://source.unsplash.com/200x300/?professor,woman,ethics,tech&sig=12"
+                    },
+                    "txt": "So true, Chloe! We see similar challenges in academic tech transfer. Great episode!",
+                    "likedBy": []
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u102",
+                    "username": "BioRoboRajiv",
+                    "fullname": "Rajiv Patel, Bio-Robotics Engineer",
+                    "imgUrl": "https://source.unsplash.com/200x300/?engineer,man,robotics,asian&sig=2"
+                }
+            ],
+            "tags": [
+                "ConTechStartups",
+                "Innovation",
+                "IndustryDynamics",
+                "Monetization",
+                "Podcast"
+            ]
+        },
+        {
+            "_id": "s221",
+            "txt": "Initial field study results on our passive exoskeleton for overhead work show a 25% reduction in shoulder muscle fatigue for electricians. Still, some adoption challenges around comfort and perceived encumbrance. Iterating the design now! #Exoskeletons #Ergonomics #WorkerWellbeing #ConstructionTech #SkilledTrades",
+            "imgUrl": "https://source.unsplash.com/600x800/?exoskeleton,construction,worker,ergonomics&sig=121",
+            "createdAt": 1746115200000,
+            "by": {
+                "_id": "u117",
+                "username": "ExoLiam",
+                "fullname": "Liam O'Connell, Exoskeleton Adoption Specialist",
+                "imgUrl": "https://source.unsplash.com/200x300/?worker,man,exoskeleton,constructionSite&sig=17"
+            },
+            "loc": {
+                "lat": 53.3498,
+                "lng": -6.2603,
+                "name": "Dublin, Ireland"
+            },
+            "comments": [
+                {
+                    "id": "c319",
+                    "by": {
+                        "_id": "u107",
+                        "username": "SafetyByDesignJG",
+                        "fullname": "John G. SafetyByDesign, PtD Consultant",
+                        "imgUrl": "https://source.unsplash.com/200x300/?consultant,man,construction,safetyHardHat&sig=7"
+                    },
+                    "txt": "Great to see quantitative data, Liam. Comfort is definitely key for widespread adoption of exos.",
+                    "likedBy": [
+                        {
+                            "_id": "u124",
+                            "username": "RoboMakr"
+                        }
+                    ]
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u106",
+                    "username": "LouisAI_Safety",
+                    "fullname": "Joseph Louis Fan, AI & Automation Safety Lead",
+                    "imgUrl": "https://source.unsplash.com/200x300/?engineer,man,safety,tech&sig=6"
+                }
+            ],
+            "tags": [
+                "Exoskeletons",
+                "Ergonomics",
+                "WorkerWellbeing",
+                "ConstructionTech",
+                "SkilledTrades"
+            ]
+        },
+        {
+            "_id": "s222",
+            "txt": "Exploring the use of hydrogels in 4D printed building skins that can passively regulate humidity by absorbing and releasing moisture in response to ambient conditions. Could drastically reduce HVAC loads in certain climates. #4DPrinting #SmartMaterials #Hydrogels #PassiveDesign #SustainableBuildings",
+            "imgUrl": "https://source.unsplash.com/600x800/?hydrogel,material,architecture,futuristic,transparent&sig=122",
+            "createdAt": 1746028800000,
+            "by": {
+                "_id": "u104",
+                "username": "4DPrintKenji",
+                "fullname": "Kenji Tanaka, 4D Printing Architect",
+                "imgUrl": "https://source.unsplash.com/200x300/?architect,man,japanese,modern&sig=4"
+            },
+            "loc": {
+                "lat": 35.6895,
+                "lng": 139.6917,
+                "name": "Tokyo, Japan"
+            },
+            "comments": [
+                {
+                    "id": "c320",
+                    "by": {
+                        "_id": "u123",
+                        "username": "NanoPriya",
+                        "fullname": "Dr. Priya Sharma, Advanced Materials Scientist",
+                        "imgUrl": "https://source.unsplash.com/200x300/?scientist,woman,indian,microscope&sig=23"
+                    },
+                    "txt": "Fascinating application, Kenji! What's the lifecycle durability of these hydrogel-infused components?",
+                    "likedBy": []
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u101",
+                    "username": "QuantumMatLena",
+                    "fullname": "Dr. Lena Hanson, Quantum Materials Researcher",
+                    "imgUrl": "https://source.unsplash.com/200x300/?scientist,woman,lab,futuristic&sig=1"
+                },
+                {
+                    "_id": "u109",
+                    "username": "MycoSam",
+                    "fullname": "Sam Chen, Mycelium Bio-fabrication Architect",
+                    "imgUrl": "https://source.unsplash.com/200x300/?architect,man,sustainable,organic&sig=9"
+                }
+            ],
+            "tags": [
+                "4DPrinting",
+                "SmartMaterials",
+                "Hydrogels",
+                "PassiveDesign",
+                "SustainableBuildings"
+            ]
+        },
+        {
+            "_id": "s223",
+            "txt": "Our city-scale digital twin of Abu Dhabi's utility network just helped preemptively identify three critical water main stress points, scheduling preventative maintenance and avoiding potential major disruptions. The power of real-time data! #DigitalTwin #SmartInfrastructure #PredictiveMaintenance #UrbanTech #AbuDhabi",
+            "imgUrl": "https://source.unsplash.com/600x800/?abudhabi,digitalTwin,city,infrastructure,data&sig=123",
+            "createdAt": 1745942400000,
+            "by": {
+                "_id": "u122",
+                "username": "DigitalTwinAhmed",
+                "fullname": "Ahmed Al Mansouri, Digital Twin Project Lead",
+                "imgUrl": "https://source.unsplash.com/200x300/?engineer,man,middleEastern,digital&sig=22"
+            },
+            "loc": {
+                "lat": 24.4539,
+                "lng": 54.3773,
+                "name": "Abu Dhabi, UAE"
+            },
+            "comments": [
+                {
+                    "id": "c321",
+                    "by": {
+                        "_id": "u114",
+                        "username": "SmartCitySofia",
+                        "fullname": "Sofia Bauer, Smart City Infrastructure Planner",
+                        "imgUrl": "https://source.unsplash.com/200x300/?urbanPlanner,woman,cityscape,modern&sig=14"
+                    },
+                    "txt": "Impressive, Ahmed! What are your strategies for managing data security and privacy at such a scale?",
+                    "likedBy": [
+                        {
+                            "_id": "u115",
+                            "username": "DataSciDave"
+                        }
+                    ]
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u110",
+                    "username": "DronePilotAisha",
+                    "fullname": "Aisha Khan, Drone Operations Manager",
+                    "imgUrl": "https://source.unsplash.com/200x300/?woman,drone,pilot,urban&sig=10"
+                }
+            ],
+            "tags": [
+                "DigitalTwin",
+                "SmartInfrastructure",
+                "PredictiveMaintenance",
+                "UrbanTech",
+                "AbuDhabi"
+            ]
+        },
+        {
+            "_id": "s224",
+            "txt": "Day on site with the Hadrian X in Austin. We've optimized the mortar feed system and are seeing a consistent 950+ bricks laid per hour on this multi-unit residential build. The precision is just incredible. #RoboticsInConstruction #HadrianX #Automation #ConstructionTech #FutureofBuilding",
+            "imgUrl": "https://source.unsplash.com/600x800/?robot,bricklaying,construction,site,automation&sig=124",
+            "createdAt": 1745856000000,
+            "by": {
+                "_id": "u124",
+                "username": "RoboMakr",
+                "fullname": "Marcus 'Makr' Robinson, Robotics Integration Engineer",
+                "imgUrl": "https://source.unsplash.com/200x300/?engineer,man,robot,construction&sig=24"
+            },
+            "loc": {
+                "lat": 30.2672,
+                "lng": -97.7431,
+                "name": "Austin, TX, USA"
+            },
+            "comments": [
+                {
+                    "id": "c322",
+                    "by": {
+                        "_id": "u106",
+                        "username": "LouisAI_Safety",
+                        "fullname": "Joseph Louis Fan, AI & Automation Safety Lead",
+                        "imgUrl": "https://source.unsplash.com/200x300/?engineer,man,safety,tech&sig=6"
+                    },
+                    "txt": "Solid numbers, Marcus! How are you handling safety protocols around the robotic work envelope with other trades on site?",
+                    "likedBy": []
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u117",
+                    "username": "ExoLiam",
+                    "fullname": "Liam O'Connell, Exoskeleton Adoption Specialist",
+                    "imgUrl": "https://source.unsplash.com/200x300/?worker,man,exoskeleton,constructionSite&sig=17"
+                }
+            ],
+            "tags": [
+                "RoboticsInConstruction",
+                "HadrianX",
+                "Automation",
+                "ConstructionTech",
+                "FutureofBuilding"
+            ]
+        },
+        {
+            "_id": "s225",
+            "txt": "Successfully completed a full BVLOS facade inspection of the Burj Khalifa using our new multi-sensor drone platform. Navigating Dubai's busy airspace requires meticulous planning & adherence to CAAS & GCAA guidelines. The 3D thermal data is pristine! #DroneInspection #BVLOS #FacadeMaintenance #SmartCityDXB #HighRise",
+            "imgUrl": "https://source.unsplash.com/600x800/?dubai,burjkhalifa,drone,inspection,cityscape&sig=125",
+            "createdAt": 1745769600000,
+            "by": {
+                "_id": "u110",
+                "username": "DronePilotAisha",
+                "fullname": "Aisha Khan, Drone Operations Manager",
+                "imgUrl": "https://source.unsplash.com/200x300/?woman,drone,pilot,urban&sig=10"
+            },
+            "loc": {
+                "lat": 25.1972,
+                "lng": 55.2744,
+                "name": "Dubai, UAE"
+            },
+            "comments": [
+                {
+                    "id": "c323",
+                    "by": {
+                        "_id": "u122",
+                        "username": "DigitalTwinAhmed",
+                        "fullname": "Ahmed Al Mansouri, Digital Twin Project Lead",
+                        "imgUrl": "https://source.unsplash.com/200x300/?engineer,man,middleEastern,digital&sig=22"
+                    },
+                    "txt": "Incredible achievement, Aisha! That thermal data will be invaluable for their digital twin.",
+                    "likedBy": [
+                        {
+                            "_id": "u115",
+                            "username": "DataSciDave"
+                        }
+                    ]
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u102",
+                    "username": "BioRoboRajiv",
+                    "fullname": "Rajiv Patel, Bio-Robotics Engineer",
+                    "imgUrl": "https://source.unsplash.com/200x300/?engineer,man,robotics,asian&sig=2"
+                }
+            ],
+            "tags": [
+                "DroneInspection",
+                "BVLOS",
+                "FacadeMaintenance",
+                "SmartCityDXB",
+                "HighRise"
+            ]
+        },
+        {
+            "_id": "s226",
+            "txt": "Partnered with a local cooperative in Oaxaca to 3D print a series of homes using a mix of local earth and recycled plastic. Seeing the community involved in the design and printing process is what makes this work so rewarding. #3DPrintedHomes #AffordableHousing #CommunityLed #SustainableLiving #ConTechSocialImpact",
+            "imgUrl": "https://source.unsplash.com/600x800/?3dprinting,housing,community,mexico,sustainable&sig=126",
+            "createdAt": 1745683200000,
+            "by": {
+                "_id": "u126",
+                "username": "3DAffordGabi",
+                "fullname": "Gabriela Fernandez, 3D Printed Affordable Housing Advocate",
+                "imgUrl": "https://source.unsplash.com/200x300/?activist,woman,latina,housing&sig=26"
+            },
+            "loc": {
+                "lat": 17.0732,
+                "lng": -96.7266,
+                "name": "Oaxaca, Mexico"
+            },
+            "comments": [
+                {
+                    "id": "c324",
+                    "by": {
+                        "_id": "u120",
+                        "username": "HumaneKwame",
+                        "fullname": "Kwame Adebayo, ConTech for Humanitarian Shelters Innovator",
+                        "imgUrl": "https://source.unsplash.com/200x300/?innovator,man,african,humanitarian&sig=20"
+                    },
+                    "txt": "Maravilloso, Gabriela! Community involvement is so crucial for the success and adoption of these projects.",
+                    "likedBy": []
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u103",
+                    "username": "CircularFatima",
+                    "fullname": "Fatima Al-Jamil, Circular Economy Strategist",
+                    "imgUrl": "https://source.unsplash.com/200x300/?professional,woman,sustainability,urban&sig=3"
+                },
+                {
+                    "_id": "u130",
+                    "username": "WasteUpLaura",
+                    "fullname": "Laura Petrova, Industrial Waste Upcycling Innovator",
+                    "imgUrl": "https://source.unsplash.com/200x300/?innovator,woman,recycling,industrial&sig=30"
+                }
+            ],
+            "tags": [
+                "3DPrintedHomes",
+                "AffordableHousing",
+                "CommunityLed",
+                "SustainableLiving",
+                "ConTechSocialImpact"
+            ]
+        },
+        {
+            "_id": "s227",
+            "txt": "Using AR to overlay original blueprints onto the eroding facade of Notre Dame. This allows our restoration team to visualize missing elements with pinpoint accuracy and plan interventions non-invasively. #AR #HeritageRestoration #NotreDame #DigitalArchaeology #ConTechFrance",
+            "imgUrl": "https://source.unsplash.com/600x800/?paris,notreDame,augmentedReality,restoration,architecture&sig=127",
+            "createdAt": 1745596800000,
+            "by": {
+                "_id": "u119",
+                "username": "AR_HeritageIsa",
+                "fullname": "Isabelle Moreau, AR for Historical Preservation Architect",
+                "imgUrl": "https://source.unsplash.com/200x300/?architect,woman,historicBuilding,tablet&sig=19"
+            },
+            "loc": {
+                "lat": 48.8530,
+                "lng": 2.3499,
+                "name": "Paris, France"
+            },
+            "comments": [
+                {
+                    "id": "c325",
+                    "by": {
+                        "_id": "u111",
+                        "username": "ARVRBen",
+                        "fullname": "Ben Carter, AR/VR Training Developer for Trades",
+                        "imgUrl": "https://source.unsplash.com/200x300/?developer,man,vr,glasses&sig=11"
+                    },
+                    "txt": "Magnifique, Isabelle! AR is perfect for this kind of delicate work. The precision must be incredible.",
+                    "likedBy": [
+                        {
+                            "_id": "u104",
+                            "username": "4DPrintKenji"
+                        }
+                    ]
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u107",
+                    "username": "SafetyByDesignJG",
+                    "fullname": "John G. SafetyByDesign, PtD Consultant",
+                    "imgUrl": "https://source.unsplash.com/200x300/?consultant,man,construction,safetyHardHat&sig=7"
+                }
+            ],
+            "tags": [
+                "AR",
+                "HeritageRestoration",
+                "NotreDame",
+                "DigitalArchaeology",
+                "ConTechFrance"
+            ]
+        },
+        {
+            "_id": "s228",
+            "txt": "Just deployed a new anomaly detection model for the Brooklyn Bridge's structural health monitoring system. It's now flagging subtle vibration pattern shifts that could indicate early-stage cable fatigue. #PredictiveMaintenance #DataScience #SHM #BridgeEngineering #IoT",
+            "imgUrl": "https://source.unsplash.com/600x800/?brooklynBridge,data,sensors,engineering,night&sig=128",
+            "createdAt": 1745510400000,
+            "by": {
+                "_id": "u115",
+                "username": "DataSciDave",
+                "fullname": "David Miller, Construction Data Scientist",
+                "imgUrl": "https://source.unsplash.com/200x300/?dataScientist,man,analytics,urban&sig=15"
+            },
+            "loc": {
+                "lat": 40.7061,
+                "lng": -73.9969,
+                "name": "New York, NY, USA"
+            },
+            "comments": [],
+            "likedBy": [
+                {
+                    "_id": "u101",
+                    "username": "QuantumMatLena",
+                    "fullname": "Dr. Lena Hanson, Quantum Materials Researcher",
+                    "imgUrl": "https://source.unsplash.com/200x300/?scientist,woman,lab,futuristic&sig=1"
+                },
+                {
+                    "_id": "u125",
+                    "username": "IoTYuki",
+                    "fullname": "Yuki Watanabe, IoT & Smart Building Analyst",
+                    "imgUrl": "https://source.unsplash.com/200x300/?analyst,woman,korean,smartHome&sig=25"
+                }
+            ],
+            "tags": [
+                "PredictiveMaintenance",
+                "DataScience",
+                "SHM",
+                "BridgeEngineering",
+                "IoT"
+            ]
+        },
+        {
+            "_id": "s229",
+            "txt": "Our lab's latest breakthrough: a self-healing nanocomposite for asphalt that incorporates carbon nanotubes to enhance conductivity for microwave-induced healing. Promising results in fatigue crack repair! #Nanotechnology #SelfHealingMaterials #RoadTech #MaterialScience #Innovation",
+            "imgUrl": "https://source.unsplash.com/600x800/?nanotechnology,asphalt,road,lab,healing&sig=129",
+            "createdAt": 1745424000000,
+            "by": {
+                "_id": "u123",
+                "username": "NanoPriya",
+                "fullname": "Dr. Priya Sharma, Advanced Materials Scientist",
+                "imgUrl": "https://source.unsplash.com/200x300/?scientist,woman,indian,microscope&sig=23"
+            },
+            "loc": {
+                "lat": 12.9716,
+                "lng": 77.5946,
+                "name": "Bangalore, India"
+            },
+            "comments": [
+                {
+                    "id": "c326",
+                    "by": {
+                        "_id": "u108",
+                        "username": "GeoMaria",
+                        "fullname": "Maria Rossi, Geopolymer Concrete Specialist",
+                        "imgUrl": "https://source.unsplash.com/200x300/?engineer,woman,concrete,industrial&sig=8"
+                    },
+                    "txt": "Very exciting, Priya! Microwave-induced healing is a clever approach for targeted repair.",
+                    "likedBy": []
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u101",
+                    "username": "QuantumMatLena",
+                    "fullname": "Dr. Lena Hanson, Quantum Materials Researcher",
+                    "imgUrl": "https://source.unsplash.com/200x300/?scientist,woman,lab,futuristic&sig=1"
+                }
+            ],
+            "tags": [
+                "Nanotechnology",
+                "SelfHealingMaterials",
+                "RoadTech",
+                "MaterialScience",
+                "Innovation"
+            ]
+        },
+        {
+            "_id": "s230",
+            "txt": "What if future buildings could self-assemble from programmable materials delivered as a 'seed packet'? Exploring the intersection of material science, robotics, and AI for truly autonomous construction. #ConTechFutures #ProgrammableMatter #SelfAssembly #Moonshot #SpeculativeDesign",
+            "imgUrl": "https://source.unsplash.com/600x800/?futuristic,architecture,abstract,selfAssembly,seeds&sig=130",
+            "createdAt": 1745337600000,
+            "by": {
+                "_id": "u127",
+                "username": "FutureEthan",
+                "fullname": "Dr. Ethan Bellwether, ConTech Futurist & Speculative Designer",
+                "imgUrl": "https://source.unsplash.com/200x300/?futurist,man,visionary,abstract&sig=27"
+            },
+            "loc": {
+                "lat": 0,
+                "lng": 0,
+                "name": "The Near Future"
+            },
+            "comments": [
+                {
+                    "id": "c327",
+                    "by": {
+                        "_id": "u104",
+                        "username": "4DPrintKenji",
+                        "fullname": "Kenji Tanaka, 4D Printing Architect",
+                        "imgUrl": "https://source.unsplash.com/200x300/?architect,man,japanese,modern&sig=4"
+                    },
+                    "txt": "A fascinating thought, Ethan! The material programming would be incredibly complex. What kind of actuators are you envisioning?",
+                    "likedBy": [
+                        {
+                            "_id": "u101",
+                            "username": "QuantumMatLena"
+                        }
+                    ]
+                },
+                {
+                    "id": "c328",
+                    "by": {
+                        "_id": "u102",
+                        "username": "BioRoboRajiv",
+                        "fullname": "Rajiv Patel, Bio-Robotics Engineer",
+                        "imgUrl": "https://source.unsplash.com/200x300/?engineer,man,robotics,asian&sig=2"
+                    },
+                    "txt": "Sounds like a macro version of biological morphogenesis! The energy source for assembly would be a key challenge.",
+                    "likedBy": []
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u109",
+                    "username": "MycoSam",
+                    "fullname": "Sam Chen, Mycelium Bio-fabrication Architect",
+                    "imgUrl": "https://source.unsplash.com/200x300/?architect,man,sustainable,organic&sig=9"
+                },
+                {
+                    "_id": "u128",
+                    "username": "ConTechChloe",
+                    "fullname": "Chloe Davis, ConTech Journalist & Podcaster",
+                    "imgUrl": "https://source.unsplash.com/200x300/?journalist,woman,podcast,microphone&sig=28"
+                }
+            ],
+            "tags": [
+                "ConTechFutures",
+                "ProgrammableMatter",
+                "SelfAssembly",
+                "Moonshot",
+                "SpeculativeDesign"
+            ]
+        },
+        {
+            "_id": "s231",
+            "txt": "The MIT Tata Center project on 'Low-Cost, Low-Carbon Structural Components for Housing in India' is making strides. Our computational optimization methods are achieving up to 30% material reduction in precast concrete beams without compromising strength. Huge implications for affordable & sustainable housing! #MIT #TataCenter #AffordableHousing #SustainableConstruction #StructuralOptimization",
+            "imgUrl": "https://source.unsplash.com/600x800/?india,housing,construction,concrete,sustainable&sig=131",
+            "createdAt": 1745251200000,
+            "by": {
+                "_id": "u101",
+                "username": "QuantumMatLena",
+                "fullname": "Dr. Lena Hanson, Quantum Materials Researcher",
+                "imgUrl": "https://source.unsplash.com/200x300/?scientist,woman,lab,futuristic&sig=1"
+            },
+            "loc": {
+                "lat": 42.3601,
+                "lng": -71.0589,
+                "name": "Boston, MA, USA (MIT)"
+            },
+            "comments": [
+                {
+                    "id": "c329",
+                    "by": {
+                        "_id": "u126",
+                        "username": "3DAffordGabi",
+                        "fullname": "Gabriela Fernandez, 3D Printed Affordable Housing Advocate",
+                        "imgUrl": "https://source.unsplash.com/200x300/?activist,woman,latina,housing&sig=26"
+                    },
+                    "txt": "This is fantastic, Lena! Material reduction is key for affordability. Are these designs open-source or licensable for global south adoption?",
+                    "likedBy": []
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u120",
+                    "username": "HumaneKwame",
+                    "fullname": "Kwame Adebayo, ConTech for Humanitarian Shelters Innovator",
+                    "imgUrl": "https://source.unsplash.com/200x300/?innovator,man,african,humanitarian&sig=20"
+                },
+                {
+                    "_id": "u129",
+                    "username": "BIMDevVikram",
+                    "fullname": "Vikram Singh, Construction Software Developer",
+                    "imgUrl": "https://source.unsplash.com/200x300/?developer,man,indian,software&sig=29"
+                }
+            ],
+            "tags": [
+                "MIT",
+                "TataCenter",
+                "AffordableHousing",
+                "SustainableConstruction",
+                "StructuralOptimization"
+            ]
+        },
+        {
+            "_id": "s232",
+            "txt": "Working on a new open-source IFC toolkit to improve data exchange between structural analysis software and robotic fabrication platforms. Interoperability is still a major pain point in digital construction! #BIM #OpenSource #IFC #Interoperability #RoboticFabrication",
+            "imgUrl": "https://source.unsplash.com/600x800/?software,code,bim,robot,3dmodel&sig=132",
+            "createdAt": 1745164800000,
+            "by": {
+                "_id": "u129",
+                "username": "BIMDevVikram",
+                "fullname": "Vikram Singh, Construction Software Developer",
+                "imgUrl": "https://source.unsplash.com/200x300/?developer,man,indian,software&sig=29"
+            },
+            "loc": {
+                "lat": 18.5204,
+                "lng": 73.8567,
+                "name": "Pune, India"
+            },
+            "comments": [
+                {
+                    "id": "c330",
+                    "by": {
+                        "_id": "u124",
+                        "username": "RoboMakr",
+                        "fullname": "Marcus 'Makr' Robinson, Robotics Integration Engineer",
+                        "imgUrl": "https://source.unsplash.com/200x300/?engineer,man,robot,construction&sig=24"
+                    },
+                    "txt": "Much needed, Vikram! Smooth data flow to fabrication robots is a constant battle. Keep us posted!",
+                    "likedBy": [
+                        {
+                            "_id": "u118",
+                            "username": "AISchedChen"
+                        }
+                    ]
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u107",
+                    "username": "SafetyByDesignJG",
+                    "fullname": "John G. SafetyByDesign, PtD Consultant",
+                    "imgUrl": "https://source.unsplash.com/200x300/?consultant,man,construction,safetyHardHat&sig=7"
+                }
+            ],
+            "tags": [
+                "BIM",
+                "OpenSource",
+                "IFC",
+                "Interoperability",
+                "RoboticFabrication"
+            ]
+        },
+        {
+            "_id": "s233",
+            "txt": "Reviewing the draft NORA PtD Checklist for Struck-by Hazards in Roadway Work Zones. Some excellent points, but also considering how new sensor tech could automate some of these checks. #PtD #WorkZoneSafety #RoadConstruction #SafetyTech #NIOSH",
+            "imgUrl": "https://source.unsplash.com/600x800/?road,construction,safetyVest,checklist,sensor&sig=133",
+            "createdAt": 1745078400000,
+            "by": {
+                "_id": "u107",
+                "username": "SafetyByDesignJG",
+                "fullname": "John G. SafetyByDesign, PtD Consultant",
+                "imgUrl": "https://source.unsplash.com/200x300/?consultant,man,construction,safetyHardHat&sig=7"
+            },
+            "loc": {
+                "lat": 47.6062,
+                "lng": -122.3321,
+                "name": "Seattle, WA, USA"
+            },
+            "comments": [],
+            "likedBy": [
+                {
+                    "_id": "u106",
+                    "username": "LouisAI_Safety",
+                    "fullname": "Joseph Louis Fan, AI & Automation Safety Lead",
+                    "imgUrl": "https://source.unsplash.com/200x300/?engineer,man,safety,tech&sig=6"
+                },
+                {
+                    "_id": "u115",
+                    "username": "DataSciDave",
+                    "fullname": "David Miller, Construction Data Scientist",
+                    "imgUrl": "https://source.unsplash.com/200x300/?dataScientist,man,analytics,urban&sig=15"
+                }
+            ],
+            "tags": [
+                "PtD",
+                "WorkZoneSafety",
+                "RoadConstruction",
+                "SafetyTech",
+                "NIOSH"
+            ]
+        },
+        {
+            "_id": "s234",
+            "txt": "Just interviewed Dr. Ethan Bellwether for 'The Future Build' podcast about speculative ConTech and self-healing cities. Mind-bending stuff! Episode drops next week. What 'moonshot' construction tech are you most excited about? #ConTechPodcast #FutureofConstruction #SpeculativeDesign #Innovation #SmartCities",
+            "imgUrl": "https://source.unsplash.com/600x800/?podcast,futuristic,city,interview,audio&sig=134",
+            "createdAt": 1744992000000,
+            "by": {
+                "_id": "u128",
+                "username": "ConTechChloe",
+                "fullname": "Chloe Davis, ConTech Journalist & Podcaster",
+                "imgUrl": "https://source.unsplash.com/200x300/?journalist,woman,podcast,microphone&sig=28"
+            },
+            "loc": {
+                "lat": 51.5072,
+                "lng": 0.1276,
+                "name": "London, UK"
+            },
+            "comments": [
+                {
+                    "id": "c331",
+                    "by": {
+                        "_id": "u127",
+                        "username": "FutureEthan",
+                        "fullname": "Dr. Ethan Bellwether, ConTech Futurist & Speculative Designer",
+                        "imgUrl": "https://source.unsplash.com/200x300/?futurist,man,visionary,abstract&sig=27"
+                    },
+                    "txt": "Was a pleasure, Chloe! Always fun to explore the far frontiers of what's possible in the built environment.",
+                    "likedBy": [
+                        {
+                            "_id": "u104",
+                            "username": "4DPrintKenji"
+                        }
+                    ]
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u101",
+                    "username": "QuantumMatLena",
+                    "fullname": "Dr. Lena Hanson, Quantum Materials Researcher",
+                    "imgUrl": "https://source.unsplash.com/200x300/?scientist,woman,lab,futuristic&sig=1"
+                },
+                {
+                    "_id": "u112",
+                    "username": "AIEthicsEve",
+                    "fullname": "Dr. Evelyn Reed, AI Ethics in ConTech Advocate",
+                    "imgUrl": "https://source.unsplash.com/200x300/?professor,woman,ethics,tech&sig=12"
+                }
+            ],
+            "tags": [
+                "ConTechPodcast",
+                "FutureofConstruction",
+                "SpeculativeDesign",
+                "Innovation",
+                "SmartCities"
+            ]
+        },
+        {
+            "_id": "s235",
+            "txt": "Our new Rotterdam facility is now processing 50 tons of mixed demolition waste daily, upcycling it into certified geopolymer aggregate and printable construction paste. Closing the loop, one ton at a time! #WasteUpcycling #CircularEconomy #Geopolymer #SustainableMaterials #ConTechNL",
+            "imgUrl": "https://source.unsplash.com/600x800/?recycling,plant,industrial,construction,waste&sig=135",
+            "createdAt": 1744905600000,
+            "by": {
+                "_id": "u130",
+                "username": "WasteUpLaura",
+                "fullname": "Laura Petrova, Industrial Waste Upcycling Innovator",
+                "imgUrl": "https://source.unsplash.com/200x300/?innovator,woman,recycling,industrial&sig=30"
+            },
+            "loc": {
+                "lat": 51.9244,
+                "lng": 4.4777,
+                "name": "Rotterdam, Netherlands"
+            },
+            "comments": [
+                {
+                    "id": "c332",
+                    "by": {
+                        "_id": "u103",
+                        "username": "CircularFatima",
+                        "fullname": "Fatima Al-Jamil, Circular Economy Strategist",
+                        "imgUrl": "https://source.unsplash.com/200x300/?professional,woman,sustainability,urban&sig=3"
+                    },
+                    "txt": "Amazing capacity, Laura! This is exactly what's needed to scale up circularity in practice.",
+                    "likedBy": [
+                        {
+                            "_id": "u108",
+                            "username": "GeoMaria"
+                        }
+                    ]
+                }
+            ],
+            "likedBy": [
+                {
+                    "_id": "u121",
+                    "username": "LEEDProOlivia",
+                    "fullname": "Olivia Green, LEED v5 Consultant & Auditor",
+                    "imgUrl": "https://source.unsplash.com/200x300/?consultant,woman,greenBuilding,professional&sig=21"
+                }
+            ],
+            "tags": [
+                "WasteUpcycling",
+                "CircularEconomy",
+                "Geopolymer",
+                "SustainableMaterials",
+                "ConTechNL"
+            ]
+        }
+    ]
+}

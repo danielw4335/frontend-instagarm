@@ -222,7 +222,7 @@
     max-width: min(calc(67vw - 372px), 855px);
     min-width: 348px;
 
-    max-height: min(calc(100vw - 372px), 855px);
+    max-height: min(calc(100vw - 372px), 600px);
     min-height: min(calc(100vw - 372px), 400px);
 
     text-align: center;
@@ -301,3 +301,5 @@
         }
     }
 }
+
+// <img draggable="false" height="100%" width="100%" alt="Spinner placeholder" class="xl1xv1r" referrerpolicy="origin-when-cross-origin" src="https://static.cdninstagram.com/rsrc.php/v4/y4/r/ShFi4iY4Fd9.gif">

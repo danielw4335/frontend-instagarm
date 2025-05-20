@@ -5,12 +5,6 @@ const { DEV, VITE_LOCAL } = import.meta.env
 import { storyservice as local } from './story.service.local'
 import { storyservice as remote } from './story.service.remote'
 
-function getEmptyStory() {
-    return {
-        _id: '',
-    }
-}
-
 function getDefaultFilter() {
     return {
         txt: '',

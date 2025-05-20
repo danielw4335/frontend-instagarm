@@ -1,0 +1,110 @@
+.login-page {
+	min-width: 100vw;
+	margin: 32px auto 0 0;
+	display: flex;
+	flex-direction: row;
+	flex-grow: 1;
+	justify-content: center;
+	align-items: stretch;
+	
+	.login-right {
+		width: 320px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		
+		
+		.login-form {
+			// margin: 0;
+			width: 100%;
+			border-radius: 8px;
+			// padding: 36px 36px 18px 36px;
+			display: flex;
+			flex-direction: column;
+			// gap: 10px;
+		}
+
+		.login-input {
+			width: 100%;
+			padding: 9px 8px;
+			font-size: 16px;
+			background: #fafafa;
+			border: 1px solid #dbdbdb;
+			border-radius: 3px;
+			margin-bottom: 0px;
+		}
+
+		.login-btn {
+			background: #4cb5f9;
+			color: #fff;
+			border: none;
+			border-radius: 7px;
+			font-size: 16px;
+			font-weight: 600;
+			padding: 8px 0;
+			margin: 14px 0;
+		}
+
+		.or-container {
+			display: flex;
+			align-items: center;
+			margin: 10px 0 10px 0;
+			gap: 14px;
+		}
+
+		.line {
+			flex: 1;
+			height: 1px;
+			background: #dbdbdb;
+		}
+
+		.or-text {
+			color: #8e8e8e;
+			font-size: 13px;
+			font-weight: 600;
+		}
+
+		.facebook-btn {
+			background: none;
+			border: none;
+			color: #3579ea;
+			font-size: 15px;
+			font-weight: 600;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 6px;
+			cursor: pointer;
+			margin-top: 2px;
+			margin-bottom: 1px;
+		}
+
+		.fb-icon {
+			font-size: 18px;
+		}
+
+		.forgot-link {
+			color: #00376b;
+			text-align: center;
+			font-size: 13px;
+			margin: 10px 0 0 0;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		.signup-container {
+			width: 100%;
+			margin-top: 28px;
+			padding: 18px 0;
+			text-align: center;
+			font-size: 14px;
+		}
+
+		.signup-link {
+			color: #0095f6;
+			font-weight: 600;
+			text-decoration: none;
+			margin-left: 5px;
+		}
+	}
+}

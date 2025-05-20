@@ -29,7 +29,7 @@ export function SideNav() {
 
     return (
         <nav className={`side-nav breakpoint-${breakpoint}`}>
-            <div className="logo-text" onClick={() => navigate('/')}>
+            <div className="logo-text" onClick={() => navigate('/login')}>
                 <LogoInstagramWordmark className="nav-label logo-wordmark" />
             </div>
             <div className="logo-icon" onClick={() => navigate('/')}>
