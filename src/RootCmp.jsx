@@ -6,7 +6,7 @@ import { Explore } from './pages/Explore.jsx'
 import { Messenger } from './pages/Messenger'
 import { AboutUs, AboutTeam, AboutVision } from './pages/AboutUs'
 import { StoryIndex } from './pages/StoryIndex.jsx'
-import { ReviewIndex } from './pages/ReviewIndex.jsx'
+import { ChatIndex } from './pages/ChatIndex.jsx'
 // import { AdminIndex } from './pages/AdminIndex.jsx'
 
 import { UserDetails } from './pages/UserDetails'
@@ -78,7 +78,7 @@ export function RootCmp() {
 				{/* <Route path="story" element={<StoryIndex />} /> */}
 				<Route path="/u/:userId" element={<UserDetails />} />
 				{/* <Route path="u/d/:id" element={<UserDetails />} /> */}
-				<Route path="review" element={<ReviewIndex />} />
+				<Route path="chat" element={<ChatIndex />} />
 				{/* <Route path="admin" element={<AdminIndex />} /> */}
 				{/* <Route path="/search" element={<AdminIndex />} /> */}
 				<Route path="/explore" element={<Explore />} />

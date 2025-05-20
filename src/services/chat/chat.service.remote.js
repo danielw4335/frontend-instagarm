@@ -1,6 +1,6 @@
 import { httpService } from '../http.service'
 
-export const reviewService = {
+export const chatService = {
 	add,
 	query,
 	remove,
@@ -8,13 +8,13 @@ export const reviewService = {
 
 function query(filterBy) {
 	var queryStr = !filterBy ? '' : `?name=${filterBy.name}&sort=anaAref`
-	return httpService.get(`review${queryStr}`)
+	return httpService.get(`chat${queryStr}`)
 }
 
-async function remove(reviewId) {
-	await httpService.delete(`review/${reviewId}`)
+async function remove(chatId) {
+	await httpService.delete(`chat/${chatId}`)
 }
 
 async function add({ txt, aboutUserId }) {
-	return await httpService.post(`review`, { txt, aboutUserId })
+	return await httpService.post(`chat`, { txt, aboutUserId })
 }

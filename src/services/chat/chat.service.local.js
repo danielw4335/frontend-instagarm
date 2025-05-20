@@ -1,23 +1,23 @@
 import { storageService } from '../async-storage.service'
 import { userService } from '../user'
 
-export const reviewService = {
+export const chatService = {
 	add,
 	query,
 	remove,
 }
 
 function query(filterBy) {
-	return storageService.query('review')
+	return storageService.query('chat')
 }
 
-async function remove(reviewId) {
-	await storageService.remove('review', reviewId)
+async function remove(chatId) {
+	await storageService.remove('chat', chatId)
 }
 
 async function add({ txt, aboutUserId }) {
 	const aboutUser = await userService.getById(aboutUserId)
-	const reviewToAdd = {
+	const chatToAdd = {
 		txt,
 		byUser: userService.getLoggedinUser(),
 		aboutUser: {
@@ -27,9 +27,9 @@ async function add({ txt, aboutUserId }) {
 		},
 	}
 
-	reviewToAdd.byUser.score += 10
-	await userService.update(reviewToAdd.byUser)
+	chatToAdd.byUser.score += 10
+	await userService.update(chatToAdd.byUser)
 
-	const addedReview = await storageService.post('review', reviewToAdd)
-	return addedReview
+	const addedChat = await storageService.post('chat', chatToAdd)
+	return addedChat
 }

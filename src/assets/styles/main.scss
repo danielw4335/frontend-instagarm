@@ -19,7 +19,7 @@
 @import "pages/AboutUs";
 // @import "pages/HomePage";
 @import "pages/StoryIndex";
-@import "pages/ReviewIndex";
+@import "pages/ChatIndex";
 @import "pages/UserDetails";
 @import "pages/Explore";
 @import "pages/Login";
@@ -44,9 +44,9 @@
 @import "cmps/StoryComments";
 @import "cmps/StoryActions";
 @import "cmps/StoryFilter";
-@import "cmps/ReviewEdit";
-@import "cmps/ReviewList";
-@import "cmps/ReviewPreview";
+@import "cmps/ChatEdit";
+@import "cmps/ChatList";
+@import "cmps/ChatPreview";
 @import "cmps/StoryList";
 @import "cmps/StoryPreview";
 @import "cmps/StoryHeader";
