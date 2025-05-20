@@ -15,7 +15,7 @@ export const StoryComments = ({ story, from }) => {
     const loggedInUser = useSelector((storeState) => storeState.userModule.loggedInUser)
     const navigate = useNavigate()
 
-    const { _id, txt, by, createdAt, comments = [], likes } = story
+    const { _id, txt, by, createdAt, comments = [], likedBy } = story
 
 
     async function onAddComment(ev) {
@@ -55,8 +55,8 @@ export const StoryComments = ({ story, from }) => {
 
     return (
         <section className={`story-comments ${from}`}>
-            <section className="story-comments-likes">
-                {likes?.length > 0 && <p>{likes.length} likes</p>}
+            <section className="story-comments-likedBy">
+                {likedBy?.length > 0 && <p>{likedBy.length} likedBy</p>}
 
                 {isDetails && (<>
                     <p>{timeAgo}</p>

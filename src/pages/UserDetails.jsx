@@ -172,7 +172,7 @@ export function UserDetails() {
 								</div>
 								<div className="icon-with-count">
 									<NotificationsActive className="icon notif" />
-									<span>{story.likes?.length || 0}</span>
+									<span>{story.likedBy?.length || 0}</span>
 								</div>
 							</div>
 							<img src={story.imgUrl} />

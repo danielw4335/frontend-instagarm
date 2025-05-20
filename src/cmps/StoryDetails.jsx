@@ -72,7 +72,7 @@ export function StoryDetails() {
 
 	if (!newStory) return null
 
-	const { _id, txt, imgUrl, by, comments, likes, createdAt } = newStory || {}
+	const { _id, txt, imgUrl, by, comments, likedBy, createdAt } = newStory || {}
 
 	async function onToggleLike() {
 		if (!loggedInUser) return alert('You need to login first')
@@ -127,9 +127,9 @@ export function StoryDetails() {
 										</p>
 										<div className="comment-meta">
 											<span>{comment.createdAt} 5h </span>
-											{comment.likes?.length > 0 && (
+											{comment.likedBy?.length > 0 && (
 												<span>
-													{comment.likes.length} likes
+													{comment.likedBy.length} likedBy
 												</span>
 											)}
 										</div>

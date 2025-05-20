@@ -31,10 +31,11 @@ export function RootCmp() {
 	const { modalState, close } = useModal()
 	const stories = useSelector(storeState => storeState.storyModule.stories)
 	const loggedinUser = {
-		username: 'daniel_dw',
-		fullname: 'Daniel',
+		username: 'daniel_335',
+		fullname: 'daniel wallach',
 		password: '1234',
 	}
+
 
 	useEffect(() => {
 		onLoad()
@@ -44,6 +45,7 @@ export function RootCmp() {
 		await loadUsers()
 		await loadStories()
 		await login(loggedinUser)
+		// await signup(loggedinUser)
 	}
 
 	return (

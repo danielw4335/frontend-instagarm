@@ -94,36 +94,55 @@ export async function addStoryComment(storyId, comment) {
     }
 }
 
-export async function toggleLike(story, user) {
+export async function toggleLike(story, user, isLiked) {
+    console.log(' toggleLike isLiked:', isLiked)
+    console.log(' toggleLike user:', user)
+    console.log(' toggleLike story:', story)
     try {
-        // Update story with like
+        // ! Update story
         const updatedStory = { ...story }
-        if(!updatedStory.likes) updatedStory.likes = []
+        if (!updatedStory.likedBy) updatedStory.likedBy = []
 
-        const userIdxInStory = updatedStory.likes.indexOf(user._id)
-        if (userIdxInStory === -1) updatedStory.likes.push(user._id)
-        else updatedStory.likes.splice(userIdxInStory, 1)
+        const userIdxInStory = updatedStory.likedBy.findIndex(u => u._id === user._id)
+        const alreadyLiked = userIdxInStory !== -1
+
+        if (isLiked && !alreadyLiked) {
+            updatedStory.likedBy.push({
+                _id: user._id,
+                username: user.username,
+                fullname: user.fullname,
+                imgUrl: user.imgUrl
+            })
+        } else if (!isLiked && alreadyLiked) {
+            updatedStory.likedBy.splice(userIdxInStory, 1)
+        }
 
         const savedStory = await storyservice.save(updatedStory)
         store.dispatch({ type: UPDATE_STORY, story: savedStory })
 
-        // Update user with liked story
+        // ! Update user
         const updatedUser = { ...user }
-        if(!updatedUser.likedStoryIds) updatedUser.likedStoryIds = []
+        if (!updatedUser.likedStoryIds) updatedUser.likedStoryIds = []
 
         const storyIdxInUser = updatedUser.likedStoryIds.indexOf(story._id)
-        if (storyIdxInUser === -1) updatedUser.likedStoryIds.push(story._id)
-        else updatedUser.likedStoryIds.splice(storyIdxInUser, 1)
-        
+        const userAlreadyLiked = storyIdxInUser !== -1
+
+        if (isLiked && !userAlreadyLiked) {
+            updatedUser.likedStoryIds.push(story._id)
+        } else if (!isLiked && userAlreadyLiked) {
+            updatedUser.likedStoryIds.splice(storyIdxInUser, 1)
+        }
+
         const savedUser = await userService.update(updatedUser)
         store.dispatch({ type: UPDATE_USER, user: savedUser })
-        
+
         return { updatedStory: savedStory, updatedUser: savedUser }
     } catch (err) {
         console.log('Cannot toggle like', err)
         throw err
     }
 }
+
 
 // Command Creators:
 function getCmdSetStories(stories) {

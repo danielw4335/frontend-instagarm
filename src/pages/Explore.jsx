@@ -27,7 +27,7 @@ const navigate = useNavigate()
               </div>
               <div className="icon-with-count">
                 <NotificationsActive className="icon like" />
-                <span>{story?.likes?.length}</span>
+                <span>{story?.likedBy?.length}</span>
               </div>
             </div>
             <img src={story.imgUrl} alt="" />

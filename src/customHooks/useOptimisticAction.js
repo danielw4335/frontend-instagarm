@@ -5,15 +5,17 @@ export function useOptimisticAction(initialValue, asyncAction) {
 
   async function toggle() {
     const prevValue = value
-    setValue(!value)
+    const newValue = !value
+    setValue(newValue)
 
     try {
-      await asyncAction(!value)
+      await asyncAction(newValue)
     } catch (err) {
       console.error('Action failed:', err)
       setValue(prevValue)
     }
   }
 
-  return [value, toggle]
+  return [value, toggle, setValue]
 }
+

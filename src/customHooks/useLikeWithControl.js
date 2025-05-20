@@ -6,9 +6,9 @@ import { useHeartbeatOnHover } from './useHeartbeatOnHover'
 export function useLikeWithControl(loggedInUser, story, animationDelay = 2500) {
   const [wasClicked, setWasClicked] = useState(false)
 
-  const [isLiked, onToggleLike] = useOptimisticAction(
+  const [isLiked, onToggleLike, setIsLiked] = useOptimisticAction(
     loggedInUser?.likedStoryIds?.includes(story._id),
-    () => toggleLike(story, loggedInUser)
+    (newVal) => toggleLike(story, loggedInUser, newVal)
   )
 
   const prevLikedRef = useRef(isLiked)
@@ -16,6 +16,10 @@ export function useLikeWithControl(loggedInUser, story, animationDelay = 2500) {
   useEffect(() => {
     prevLikedRef.current = isLiked
   }, [isLiked])
+
+  useEffect(() => {
+    setIsLiked(loggedInUser?.likedStoryIds?.includes(story._id))
+  }, [story._id, loggedInUser?._id])
 
   const { ref, onMouseLeave } = useHeartbeatOnHover(
     !isLiked && !wasClicked

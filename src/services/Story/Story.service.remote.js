@@ -41,6 +41,6 @@ function getEmptyStory() {
         createdAt: Date.now(),
         by: userService.getLoggedinUser(),
         comments: [],
-        likes: [],
+        likedBy: [],
     }
 }

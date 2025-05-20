@@ -10,7 +10,7 @@ export function StoryPreview({ story, from }) {
     const loggedInUser = useSelector((storeState) => storeState.userModule.loggedInUser)
     // const isIndex = useSelector((storeState) => storeState.storyModule.isIndex)
 
-    const { _id, txt, imgUrl, by, likes, createdAt, comments = [] } = story
+    const { _id, txt, imgUrl, by, likedBy, createdAt, comments = [] } = story
     return (
         from === 'index' && (
             <section className="story-preview">
