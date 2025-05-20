@@ -1,0 +1,1615 @@
+{
+  "stories": [
+    {
+      "_id": "s201",
+      "txt": "First full-scale use of robotic arms for rebar installation at the Tel Aviv Smart Hub site. Unbelievable precision and speed! #Robotics #Rebar #SmartConstruction #Israel",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727136/u4gt6lekabkycnu9qt80.jpg",
+      "createdAt": 1713302400000,
+      "by": {
+        "_id": "u105",
+        "username": "site_robotics",
+        "fullname": "Moshe Friedman, Robotics Lead",
+        "imgUrl": "https://randomuser.me/api/portraits/men/12.jpg"
+      },
+      "loc": {
+        "lat": 32.0853,
+        "lng": 34.7818,
+        "name": "Tel Aviv, Israel"
+      },
+      "comments": [
+        {
+          "id": "c20101",
+          "by": {
+            "_id": "u101",
+            "username": "contech_guru",
+            "fullname": "Ariella Goldstein, BIM Specialist",
+            "imgUrl": "https://randomuser.me/api/portraits/women/42.jpg"
+          },
+          "txt": "Amazing work! Did you encounter any on-site integration issues?",
+          "likedBy": [
+            {
+              "_id": "u110",
+              "username": "bim_master"
+            },
+            {
+              "_id": "u107",
+              "username": "smartcitydev"
+            }
+          ]
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u101",
+          "username": "contech_guru",
+          "fullname": "Ariella Goldstein, BIM Specialist",
+          "imgUrl": "https://randomuser.me/api/portraits/women/42.jpg"
+        },
+        {
+          "_id": "u107",
+          "username": "smartcitydev",
+          "fullname": "Omar Al-Farsi, Urban Innovation Strategist",
+          "imgUrl": "https://randomuser.me/api/portraits/men/54.jpg"
+        }
+      ],
+      "tags": [
+        "Robotics",
+        "Rebar",
+        "SmartConstruction",
+        "Israel"
+      ]
+    },
+    {
+      "_id": "s202",
+      "txt": "We completed our first zero-energy commercial building with solar glass and smart insulation. Proud of the team's efforts! #ZeroEnergy #GreenBuilding #Sustainability",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727136/by9vxxvlkfdhzg9xqf6p.jpg",
+      "createdAt": 1712236800000,
+      "by": {
+        "_id": "u108",
+        "username": "energy_efficient",
+        "fullname": "Priya Kapoor, Renewable Energy Engineer",
+        "imgUrl": "https://randomuser.me/api/portraits/women/88.jpg"
+      },
+      "loc": {
+        "lat": 19.076,
+        "lng": 72.8777,
+        "name": "Mumbai, India"
+      },
+      "comments": [
+        {
+          "id": "c20201",
+          "by": {
+            "_id": "u106",
+            "username": "drone_mapper",
+            "fullname": "Amanda Hall, Drone Mapping Specialist",
+            "imgUrl": "https://randomuser.me/api/portraits/women/65.jpg"
+          },
+          "txt": "Solar glass is the future. Is the building fully off-grid?",
+          "likedBy": [
+            {
+              "_id": "u105",
+              "username": "site_robotics"
+            }
+          ]
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u103",
+          "username": "sustain_struct",
+          "fullname": "Chen Lee, Sustainability Consultant",
+          "imgUrl": "https://randomuser.me/api/portraits/women/19.jpg"
+        }
+      ],
+      "tags": [
+        "ZeroEnergy",
+        "GreenBuilding",
+        "Sustainability",
+        "SolarGlass"
+      ]
+    },
+    {
+      "_id": "s203",
+      "txt": "Drone-based site surveying is revolutionizing our workflows—capturing topography and progress in real time. #DroneSurvey #AerialMapping #ConstructionTech",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727137/htcamzzulkktubyulpsc.jpg",
+      "createdAt": 1710614400000,
+      "by": {
+        "_id": "u106",
+        "username": "drone_mapper",
+        "fullname": "Amanda Hall, Drone Mapping Specialist",
+        "imgUrl": "https://randomuser.me/api/portraits/women/65.jpg"
+      },
+      "loc": {
+        "lat": 41.8781,
+        "lng": -87.6298,
+        "name": "Chicago, USA"
+      },
+      "comments": [
+        {
+          "id": "c20301",
+          "by": {
+            "_id": "u101",
+            "username": "contech_guru",
+            "fullname": "Ariella Goldstein, BIM Specialist",
+            "imgUrl": "https://randomuser.me/api/portraits/women/42.jpg"
+          },
+          "txt": "How often do you fly drone surveys per project?",
+          "likedBy": [
+            {
+              "_id": "u110",
+              "username": "bim_master"
+            }
+          ]
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u105",
+          "username": "site_robotics",
+          "fullname": "Moshe Friedman, Robotics Lead",
+          "imgUrl": "https://randomuser.me/api/portraits/men/12.jpg"
+        }
+      ],
+      "tags": [
+        "DroneSurvey",
+        "AerialMapping",
+        "ConstructionTech"
+      ]
+    },
+    {
+      "_id": "s204",
+      "txt": "Prefab modules arrived today—assembly will take just 48 hours for a full apartment level! Modular is the future. #ModularConstruction #Prefab #Innovation",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727140/gu4hq6xrmpuvigievmtn.jpg",
+      "createdAt": 1709683200000,
+      "by": {
+        "_id": "u104",
+        "username": "modular_queen",
+        "fullname": "Elena Weiss, Modular Construction PM",
+        "imgUrl": "https://randomuser.me/api/portraits/women/21.jpg"
+      },
+      "loc": {
+        "lat": 52.52,
+        "lng": 13.405,
+        "name": "Berlin, Germany"
+      },
+      "comments": [
+        {
+          "id": "c20401",
+          "by": {
+            "_id": "u108",
+            "username": "energy_efficient",
+            "fullname": "Priya Kapoor, Renewable Energy Engineer",
+            "imgUrl": "https://randomuser.me/api/portraits/women/88.jpg"
+          },
+          "txt": "How do you coordinate the delivery logistics?",
+          "likedBy": []
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u106",
+          "username": "drone_mapper",
+          "fullname": "Amanda Hall, Drone Mapping Specialist",
+          "imgUrl": "https://randomuser.me/api/portraits/women/65.jpg"
+        }
+      ],
+      "tags": [
+        "ModularConstruction",
+        "Prefab",
+        "Innovation"
+      ]
+    },
+    {
+      "_id": "s205",
+      "txt": "Upgraded our carbon analysis software—live dashboards now show real-time emissions for every project. Game changer for sustainability teams! #CarbonAnalysis #ConstructionTech #Sustainability",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727142/nwzdi23ajmeu2nmaaq5k.jpg",
+      "createdAt": 1708396800000,
+      "by": {
+        "_id": "u112",
+        "username": "carbon_counter",
+        "fullname": "Julia Nguyen, Carbon Analyst",
+        "imgUrl": "https://randomuser.me/api/portraits/women/52.jpg"
+      },
+      "loc": {
+        "lat": -37.8136,
+        "lng": 144.9631,
+        "name": "Melbourne, Australia"
+      },
+      "comments": [
+        {
+          "id": "c20501",
+          "by": {
+            "_id": "u103",
+            "username": "sustain_struct",
+            "fullname": "Chen Lee, Sustainability Consultant",
+            "imgUrl": "https://randomuser.me/api/portraits/women/19.jpg"
+          },
+          "txt": "Does it work with legacy systems?",
+          "likedBy": [
+            {
+              "_id": "u101",
+              "username": "contech_guru"
+            }
+          ]
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u101",
+          "username": "contech_guru",
+          "fullname": "Ariella Goldstein, BIM Specialist",
+          "imgUrl": "https://randomuser.me/api/portraits/women/42.jpg"
+        }
+      ],
+      "tags": [
+        "CarbonAnalysis",
+        "ConstructionTech",
+        "Sustainability"
+      ]
+    },
+    {
+      "_id": "s206",
+      "txt": "Integrating AI-driven quality checks at every site stage—reducing manual errors and delays. The future is data-driven! #AI #QualityControl #SmartBuilding",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727144/jsmpjebvsgexsvpf5v6x.jpg",
+      "createdAt": 1707014400000,
+      "by": {
+        "_id": "u102",
+        "username": "ai_builds",
+        "fullname": "Dror Cohen, AI Integration Lead",
+        "imgUrl": "https://randomuser.me/api/portraits/men/23.jpg"
+      },
+      "loc": {
+        "lat": 32.0853,
+        "lng": 34.7818,
+        "name": "Tel Aviv, Israel"
+      },
+      "comments": [
+        {
+          "id": "c20601",
+          "by": {
+            "_id": "u110",
+            "username": "bim_master",
+            "fullname": "Kate Brooks, BIM Coordinator",
+            "imgUrl": "https://randomuser.me/api/portraits/women/35.jpg"
+          },
+          "txt": "How accurate is the AI compared to human review?",
+          "likedBy": []
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u104",
+          "username": "modular_queen",
+          "fullname": "Elena Weiss, Modular Construction PM",
+          "imgUrl": "https://randomuser.me/api/portraits/women/21.jpg"
+        }
+      ],
+      "tags": [
+        "AI",
+        "QualityControl",
+        "SmartBuilding"
+      ]
+    },
+    {
+      "_id": "s207",
+      "txt": "Augmented Reality walkthroughs are a new standard for project visualization with clients—saves weeks in approvals! #AR #Visualization #ConstructionTech",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727146/kkteapjdacdd8xef1g5q.jpg",
+      "createdAt": 1705718400000,
+      "by": {
+        "_id": "u113",
+        "username": "ar_visuals",
+        "fullname": "David Kim, AR Specialist",
+        "imgUrl": "https://randomuser.me/api/portraits/men/45.jpg"
+      },
+      "loc": {
+        "lat": 35.6895,
+        "lng": 139.6917,
+        "name": "Tokyo, Japan"
+      },
+      "comments": [
+        {
+          "id": "c20701",
+          "by": {
+            "_id": "u109",
+            "username": "urban_innovator",
+            "fullname": "Sara Stein, Smart City Planner",
+            "imgUrl": "https://randomuser.me/api/portraits/women/44.jpg"
+          },
+          "txt": "Clients can finally 'see' the space before it's built. So powerful!",
+          "likedBy": []
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u108",
+          "username": "energy_efficient",
+          "fullname": "Priya Kapoor, Renewable Energy Engineer",
+          "imgUrl": "https://randomuser.me/api/portraits/women/88.jpg"
+        }
+      ],
+      "tags": [
+        "AR",
+        "Visualization",
+        "ConstructionTech"
+      ]
+    },
+    {
+      "_id": "s208",
+      "txt": "On-site 3D printing for modular wall panels—speeding up timelines while reducing waste by 40%. #3DPrinting #Sustainability #Modular",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727149/h8kouiie3ybqgcakgzxp.jpg",
+      "createdAt": 1704729600000,
+      "by": {
+        "_id": "u104",
+        "username": "modular_queen",
+        "fullname": "Elena Weiss, Modular Construction PM",
+        "imgUrl": "https://randomuser.me/api/portraits/women/21.jpg"
+      },
+      "loc": {
+        "lat": 48.8566,
+        "lng": 2.3522,
+        "name": "Paris, France"
+      },
+      "comments": [
+        {
+          "id": "c20801",
+          "by": {
+            "_id": "u111",
+            "username": "smart_safety",
+            "fullname": "Lior Adler, Site Safety Manager",
+            "imgUrl": "https://randomuser.me/api/portraits/men/49.jpg"
+          },
+          "txt": "What materials do you use for 3D printing on site?",
+          "likedBy": [
+            {
+              "_id": "u105",
+              "username": "site_robotics"
+            }
+          ]
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u105",
+          "username": "site_robotics",
+          "fullname": "Moshe Friedman, Robotics Lead",
+          "imgUrl": "https://randomuser.me/api/portraits/men/12.jpg"
+        }
+      ],
+      "tags": [
+        "3DPrinting",
+        "Sustainability",
+        "Modular"
+      ]
+    },
+    {
+      "_id": "s209",
+      "txt": "We’re piloting exoskeleton suits for workers—early results show 25% less fatigue and fewer injuries! #Exoskeleton #Safety #WearableTech",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727153/znrcozdpaio0csskhgmv.jpg",
+      "createdAt": 1703558400000,
+      "by": {
+        "_id": "u111",
+        "username": "smart_safety",
+        "fullname": "Lior Adler, Site Safety Manager",
+        "imgUrl": "https://randomuser.me/api/portraits/men/49.jpg"
+      },
+      "loc": {
+        "lat": 40.7128,
+        "lng": -74.0060,
+        "name": "New York, USA"
+      },
+      "comments": [
+        {
+          "id": "c20901",
+          "by": {
+            "_id": "u103",
+            "username": "sustain_struct",
+            "fullname": "Chen Lee, Sustainability Consultant",
+            "imgUrl": "https://randomuser.me/api/portraits/women/19.jpg"
+          },
+          "txt": "Exoskeletons could change construction labor forever.",
+          "likedBy": []
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u104",
+          "username": "modular_queen",
+          "fullname": "Elena Weiss, Modular Construction PM",
+          "imgUrl": "https://randomuser.me/api/portraits/women/21.jpg"
+        }
+      ],
+      "tags": [
+        "Exoskeleton",
+        "Safety",
+        "WearableTech"
+      ]
+    },
+    {
+      "_id": "s210",
+      "txt": "Live IoT sensors on cranes provide predictive maintenance data and reduce downtime by 30%. #IoT #SmartSite #PredictiveMaintenance",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727155/ea64ghbnmtoxqw1y9ew9.jpg",
+      "createdAt": 1702252800000,
+      "by": {
+        "_id": "u110",
+        "username": "bim_master",
+        "fullname": "Kate Brooks, BIM Coordinator",
+        "imgUrl": "https://randomuser.me/api/portraits/women/35.jpg"
+      },
+      "loc": {
+        "lat": 55.7558,
+        "lng": 37.6176,
+        "name": "Moscow, Russia"
+      },
+      "comments": [
+        {
+          "id": "c21001",
+          "by": {
+            "_id": "u105",
+            "username": "site_robotics",
+            "fullname": "Moshe Friedman, Robotics Lead",
+            "imgUrl": "https://randomuser.me/api/portraits/men/12.jpg"
+          },
+          "txt": "What sensor platform do you use?",
+          "likedBy": []
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u106",
+          "username": "drone_mapper",
+          "fullname": "Amanda Hall, Drone Mapping Specialist",
+          "imgUrl": "https://randomuser.me/api/portraits/women/65.jpg"
+        }
+      ],
+      "tags": [
+        "IoT",
+        "SmartSite",
+        "PredictiveMaintenance"
+      ]
+    },
+    {
+      "_id": "s211",
+      "txt": "Site-wide WiFi mesh using solar-powered repeaters. No more signal dead zones, even on large sites. #Connectivity #SmartSite #SolarTech",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727156/balr6ixiqk8tokvhrolp.jpg",
+      "createdAt": 1701043200000,
+      "by": {
+        "_id": "u102",
+        "username": "ai_builds",
+        "fullname": "Dror Cohen, AI Integration Lead",
+        "imgUrl": "https://randomuser.me/api/portraits/men/23.jpg"
+      },
+      "loc": {
+        "lat": 34.0522,
+        "lng": -118.2437,
+        "name": "Los Angeles, USA"
+      },
+      "comments": [
+        {
+          "id": "c21101",
+          "by": {
+            "_id": "u109",
+            "username": "urban_innovator",
+            "fullname": "Sara Stein, Smart City Planner",
+            "imgUrl": "https://randomuser.me/api/portraits/women/44.jpg"
+          },
+          "txt": "How robust is the mesh network during bad weather?",
+          "likedBy": []
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u105",
+          "username": "site_robotics",
+          "fullname": "Moshe Friedman, Robotics Lead",
+          "imgUrl": "https://randomuser.me/api/portraits/men/12.jpg"
+        }
+      ],
+      "tags": [
+        "Connectivity",
+        "SmartSite",
+        "SolarTech"
+      ]
+    },
+    {
+      "_id": "s212",
+      "txt": "BIM cloud collaboration across offices in 3 countries. Real-time changes, zero version conflicts. #BIM #Collaboration #DigitalTwins",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727157/qyqwkgf8piwkxuos3nq7.jpg",
+      "createdAt": 1699641600000,
+      "by": {
+        "_id": "u110",
+        "username": "bim_master",
+        "fullname": "Kate Brooks, BIM Coordinator",
+        "imgUrl": "https://randomuser.me/api/portraits/women/35.jpg"
+      },
+      "loc": {
+        "lat": 39.9042,
+        "lng": 116.4074,
+        "name": "Beijing, China"
+      },
+      "comments": [
+        {
+          "id": "c21201",
+          "by": {
+            "_id": "u107",
+            "username": "smartcitydev",
+            "fullname": "Omar Al-Farsi, Urban Innovation Strategist",
+            "imgUrl": "https://randomuser.me/api/portraits/men/54.jpg"
+          },
+          "txt": "How do you handle language barriers for BIM data?",
+          "likedBy": []
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u113",
+          "username": "ar_visuals",
+          "fullname": "David Kim, AR Specialist",
+          "imgUrl": "https://randomuser.me/api/portraits/men/45.jpg"
+        }
+      ],
+      "tags": [
+        "BIM",
+        "Collaboration",
+        "DigitalTwins"
+      ]
+    },
+    {
+      "_id": "s213",
+      "txt": "Using smart helmets with AR overlays for site safety and instant blueprint access. Fewer mistakes, more efficiency! #SmartHelmet #AR #SiteSafety",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727159/vf8ladwqkcoh3c0q8gno.jpg",
+      "createdAt": 1698460800000,
+      "by": {
+        "_id": "u107",
+        "username": "smartcitydev",
+        "fullname": "Omar Al-Farsi, Urban Innovation Strategist",
+        "imgUrl": "https://randomuser.me/api/portraits/men/54.jpg"
+      },
+      "loc": {
+        "lat": 25.276987,
+        "lng": 55.296249,
+        "name": "Dubai, UAE"
+      },
+      "comments": [
+        {
+          "id": "c21301",
+          "by": {
+            "_id": "u102",
+            "username": "ai_builds",
+            "fullname": "Dror Cohen, AI Integration Lead",
+            "imgUrl": "https://randomuser.me/api/portraits/men/23.jpg"
+          },
+          "txt": "Does the AR work well in bright sunlight?",
+          "likedBy": [
+            {
+              "_id": "u104",
+              "username": "modular_queen"
+            }
+          ]
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u106",
+          "username": "drone_mapper",
+          "fullname": "Amanda Hall, Drone Mapping Specialist",
+          "imgUrl": "https://randomuser.me/api/portraits/women/65.jpg"
+        }
+      ],
+      "tags": [
+        "SmartHelmet",
+        "AR",
+        "SiteSafety"
+      ]
+    },
+    {
+      "_id": "s214",
+      "txt": "Launching our digital twins system for new developments—test layouts and infrastructure virtually before building! #DigitalTwins #ConstructionTech #Planning",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727162/zzklays1fdigclrtbsuu.jpg",
+      "createdAt": 1697299200000,
+      "by": {
+        "_id": "u105",
+        "username": "site_robotics",
+        "fullname": "Moshe Friedman, Robotics Lead",
+        "imgUrl": "https://randomuser.me/api/portraits/men/12.jpg"
+      },
+      "loc": {
+        "lat": 31.2304,
+        "lng": 121.4737,
+        "name": "Shanghai, China"
+      },
+      "comments": [
+        {
+          "id": "c21401",
+          "by": {
+            "_id": "u101",
+            "username": "contech_guru",
+            "fullname": "Ariella Goldstein, BIM Specialist",
+            "imgUrl": "https://randomuser.me/api/portraits/women/42.jpg"
+          },
+          "txt": "Does your municipality support city-wide digital twin integration?",
+          "likedBy": []
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u103",
+          "username": "sustain_struct",
+          "fullname": "Chen Lee, Sustainability Consultant",
+          "imgUrl": "https://randomuser.me/api/portraits/women/19.jpg"
+        }
+      ],
+      "tags": [
+        "DigitalTwins",
+        "ConstructionTech",
+        "Planning"
+      ]
+    },
+    {
+      "_id": "s215",
+      "txt": "Installed AI-powered security cameras—24/7 monitoring with automated incident detection. No more blind spots! #AICameras #Security #ConstructionSite",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727164/tzfntz5i36z8t7dtbybp.jpg",
+      "createdAt": 1696118400000,
+      "by": {
+        "_id": "u103",
+        "username": "sustain_struct",
+        "fullname": "Chen Lee, Sustainability Consultant",
+        "imgUrl": "https://randomuser.me/api/portraits/women/19.jpg"
+      },
+      "loc": {
+        "lat": 37.5665,
+        "lng": 126.978,
+        "name": "Seoul, South Korea"
+      },
+      "comments": [
+        {
+          "id": "c21501",
+          "by": {
+            "_id": "u109",
+            "username": "urban_innovator",
+            "fullname": "Sara Stein, Smart City Planner",
+            "imgUrl": "https://randomuser.me/api/portraits/women/44.jpg"
+          },
+          "txt": "How do you handle privacy concerns?",
+          "likedBy": []
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u112",
+          "username": "carbon_counter",
+          "fullname": "Julia Nguyen, Carbon Analyst",
+          "imgUrl": "https://randomuser.me/api/portraits/women/52.jpg"
+        }
+      ],
+      "tags": [
+        "AICameras",
+        "Security",
+        "ConstructionSite"
+      ]
+    },
+    {
+      "_id": "s216",
+      "txt": "Mass timber construction rises—lower carbon footprint, fast assembly, and stunning natural aesthetics! #MassTimber #GreenBuilding #Sustainability",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727167/wmtqmyl6okry7smjql2d.jpg",
+      "createdAt": 1694841600000,
+      "by": {
+        "_id": "u103",
+        "username": "sustain_struct",
+        "fullname": "Chen Lee, Sustainability Consultant",
+        "imgUrl": "https://randomuser.me/api/portraits/women/19.jpg"
+      },
+      "loc": {
+        "lat": 49.2827,
+        "lng": -123.1207,
+        "name": "Vancouver, Canada"
+      },
+      "comments": [
+        {
+          "id": "c21601",
+          "by": {
+            "_id": "u112",
+            "username": "carbon_counter",
+            "fullname": "Julia Nguyen, Carbon Analyst",
+            "imgUrl": "https://randomuser.me/api/portraits/women/52.jpg"
+          },
+          "txt": "How do you ensure fire safety with timber?",
+          "likedBy": []
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u101",
+          "username": "contech_guru",
+          "fullname": "Ariella Goldstein, BIM Specialist",
+          "imgUrl": "https://randomuser.me/api/portraits/women/42.jpg"
+        }
+      ],
+      "tags": [
+        "MassTimber",
+        "GreenBuilding",
+        "Sustainability"
+      ]
+    },
+    {
+      "_id": "s217",
+      "txt": "Launched a mentorship program for women in construction tech. Diversity drives innovation! #WomenInConTech #Diversity #Innovation",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727168/pdpellfhfonadpuekwyt.jpg",
+      "createdAt": 1693564800000,
+      "by": {
+        "_id": "u112",
+        "username": "carbon_counter",
+        "fullname": "Julia Nguyen, Carbon Analyst",
+        "imgUrl": "https://randomuser.me/api/portraits/women/52.jpg"
+      },
+      "loc": {
+        "lat": 52.3676,
+        "lng": 4.9041,
+        "name": "Amsterdam, Netherlands"
+      },
+      "comments": [
+        {
+          "id": "c21701",
+          "by": {
+            "_id": "u101",
+            "username": "contech_guru",
+            "fullname": "Ariella Goldstein, BIM Specialist",
+            "imgUrl": "https://randomuser.me/api/portraits/women/42.jpg"
+          },
+          "txt": "Love this initiative! Count me in for mentorship.",
+          "likedBy": [
+            {
+              "_id": "u107",
+              "username": "smartcitydev"
+            }
+          ]
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u107",
+          "username": "smartcitydev",
+          "fullname": "Omar Al-Farsi, Urban Innovation Strategist",
+          "imgUrl": "https://randomuser.me/api/portraits/men/54.jpg"
+        }
+      ],
+      "tags": [
+        "WomenInConTech",
+        "Diversity",
+        "Innovation"
+      ]
+    },
+    {
+      "_id": "s218",
+      "txt": "Testing self-healing concrete on new parking decks—repairs microcracks automatically and extends lifespan by decades. #SelfHealing #Materials #Innovation",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727170/jqfn7uo1j0onc2hpu9wv.jpg",
+      "createdAt": 1692384000000,
+      "by": {
+        "_id": "u102",
+        "username": "ai_builds",
+        "fullname": "Dror Cohen, AI Integration Lead",
+        "imgUrl": "https://randomuser.me/api/portraits/men/23.jpg"
+      },
+      "loc": {
+        "lat": 53.3498,
+        "lng": -6.2603,
+        "name": "Dublin, Ireland"
+      },
+      "comments": [
+        {
+          "id": "c21801",
+          "by": {
+            "_id": "u106",
+            "username": "drone_mapper",
+            "fullname": "Amanda Hall, Drone Mapping Specialist",
+            "imgUrl": "https://randomuser.me/api/portraits/women/65.jpg"
+          },
+          "txt": "How do you verify the concrete is self-healing after damage?",
+          "likedBy": []
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u110",
+          "username": "bim_master",
+          "fullname": "Kate Brooks, BIM Coordinator",
+          "imgUrl": "https://randomuser.me/api/portraits/women/35.jpg"
+        }
+      ],
+      "tags": [
+        "SelfHealing",
+        "Materials",
+        "Innovation"
+      ]
+    },
+    {
+      "_id": "s219",
+      "txt": "Unveiling the region’s first smart glass curtain wall—adapts tinting to weather and boosts energy savings. #SmartGlass #Sustainability #Innovation",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727172/yfwatuwwpxnlhq3y2hfx.jpg",
+      "createdAt": 1691203200000,
+      "by": {
+        "_id": "u108",
+        "username": "energy_efficient",
+        "fullname": "Priya Kapoor, Renewable Energy Engineer",
+        "imgUrl": "https://randomuser.me/api/portraits/women/88.jpg"
+      },
+      "loc": {
+        "lat": 35.6762,
+        "lng": 139.6503,
+        "name": "Tokyo, Japan"
+      },
+      "comments": [
+        {
+          "id": "c21901",
+          "by": {
+            "_id": "u113",
+            "username": "ar_visuals",
+            "fullname": "David Kim, AR Specialist",
+            "imgUrl": "https://randomuser.me/api/portraits/men/45.jpg"
+          },
+          "txt": "How durable is the smart glass in typhoon season?",
+          "likedBy": []
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u104",
+          "username": "modular_queen",
+          "fullname": "Elena Weiss, Modular Construction PM",
+          "imgUrl": "https://randomuser.me/api/portraits/women/21.jpg"
+        }
+      ],
+      "tags": [
+        "SmartGlass",
+        "Sustainability",
+        "Innovation"
+      ]
+    },
+    {
+      "_id": "s220",
+      "txt": "Retrofit sensors now monitor building energy use minute-by-minute—allowing us to reduce consumption by 18%. #EnergyEfficiency #IoT #SmartBuildings",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727175/f2dq2od0mrqnqoibbuzk.jpg",
+      "createdAt": 1690022400000,
+      "by": {
+        "_id": "u112",
+        "username": "carbon_counter",
+        "fullname": "Julia Nguyen, Carbon Analyst",
+        "imgUrl": "https://randomuser.me/api/portraits/women/52.jpg"
+      },
+      "loc": {
+        "lat": 51.1657,
+        "lng": 10.4515,
+        "name": "Berlin, Germany"
+      },
+      "comments": [
+        {
+          "id": "c22001",
+          "by": {
+            "_id": "u108",
+            "username": "energy_efficient",
+            "fullname": "Priya Kapoor, Renewable Energy Engineer",
+            "imgUrl": "https://randomuser.me/api/portraits/women/88.jpg"
+          },
+          "txt": "Do you export data to a city-wide dashboard?",
+          "likedBy": [
+            {
+              "_id": "u102",
+              "username": "ai_builds"
+            }
+          ]
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u101",
+          "username": "contech_guru",
+          "fullname": "Ariella Goldstein, BIM Specialist",
+          "imgUrl": "https://randomuser.me/api/portraits/women/42.jpg"
+        }
+      ],
+      "tags": [
+        "EnergyEfficiency",
+        "IoT",
+        "SmartBuildings"
+      ]
+    },
+    {
+      "_id": "s221",
+      "txt": "Our team is trialing recycled plastic bricks—eco-friendly and surprisingly strong! Hope to scale up soon. #RecycledMaterials #Innovation #Sustainability",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727176/kgxduntxzshaud25dopy.jpg",
+      "createdAt": 1688841600000,
+      "by": {
+        "_id": "u103",
+        "username": "sustain_struct",
+        "fullname": "Chen Lee, Sustainability Consultant",
+        "imgUrl": "https://randomuser.me/api/portraits/women/19.jpg"
+      },
+      "loc": {
+        "lat": 51.5074,
+        "lng": -0.1278,
+        "name": "London, UK"
+      },
+      "comments": [
+        {
+          "id": "c22101",
+          "by": {
+            "_id": "u112",
+            "username": "carbon_counter",
+            "fullname": "Julia Nguyen, Carbon Analyst",
+            "imgUrl": "https://randomuser.me/api/portraits/women/52.jpg"
+          },
+          "txt": "What’s the estimated lifespan of recycled bricks?",
+          "likedBy": []
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u109",
+          "username": "urban_innovator",
+          "fullname": "Sara Stein, Smart City Planner",
+          "imgUrl": "https://randomuser.me/api/portraits/women/44.jpg"
+        }
+      ],
+      "tags": [
+        "RecycledMaterials",
+        "Innovation",
+        "Sustainability"
+      ]
+    },
+    {
+      "_id": "s222",
+      "txt": "Digital permitting slashes approval wait times by 60%—more time for building, less time for paperwork! #DigitalPermitting #ConstructionTech #Efficiency",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727178/fu91ynkulnxsuf7ipac0.jpg",
+      "createdAt": 1687660800000,
+      "by": {
+        "_id": "u109",
+        "username": "urban_innovator",
+        "fullname": "Sara Stein, Smart City Planner",
+        "imgUrl": "https://randomuser.me/api/portraits/women/44.jpg"
+      },
+      "loc": {
+        "lat": 55.9533,
+        "lng": -3.1883,
+        "name": "Edinburgh, Scotland"
+      },
+      "comments": [
+        {
+          "id": "c22201",
+          "by": {
+            "_id": "u103",
+            "username": "sustain_struct",
+            "fullname": "Chen Lee, Sustainability Consultant",
+            "imgUrl": "https://randomuser.me/api/portraits/women/19.jpg"
+          },
+          "txt": "Is there city-level resistance to e-permits?",
+          "likedBy": []
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u101",
+          "username": "contech_guru",
+          "fullname": "Ariella Goldstein, BIM Specialist",
+          "imgUrl": "https://randomuser.me/api/portraits/women/42.jpg"
+        }
+      ],
+      "tags": [
+        "DigitalPermitting",
+        "ConstructionTech",
+        "Efficiency"
+      ]
+    },
+    {
+      "_id": "s223",
+      "txt": "R&D project: developing spray-on insulation using aerogels—ultra-light, ultra-effective. Excited for pilot results! #Aerogel #Insulation #Innovation",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727180/dg0oyqzfjr25omf6wlz3.jpg",
+      "createdAt": 1686480000000,
+      "by": {
+        "_id": "u104",
+        "username": "modular_queen",
+        "fullname": "Elena Weiss, Modular Construction PM",
+        "imgUrl": "https://randomuser.me/api/portraits/women/21.jpg"
+      },
+      "loc": {
+        "lat": 59.3293,
+        "lng": 18.0686,
+        "name": "Stockholm, Sweden"
+      },
+      "comments": [
+        {
+          "id": "c22301",
+          "by": {
+            "_id": "u106",
+            "username": "drone_mapper",
+            "fullname": "Amanda Hall, Drone Mapping Specialist",
+            "imgUrl": "https://randomuser.me/api/portraits/women/65.jpg"
+          },
+          "txt": "How thin can you apply the aerogel insulation?",
+          "likedBy": []
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u110",
+          "username": "bim_master",
+          "fullname": "Kate Brooks, BIM Coordinator",
+          "imgUrl": "https://randomuser.me/api/portraits/women/35.jpg"
+        }
+      ],
+      "tags": [
+        "Aerogel",
+        "Insulation",
+        "Innovation"
+      ]
+    },
+    {
+      "_id": "s224",
+      "txt": "First test with recycled steel rebar—maintaining strength and cutting CO2. Supply chain looks promising! #RecycledSteel #Sustainability #Construction",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727182/fickpmg594yfpdreo0k2.jpg",
+      "createdAt": 1685299200000,
+      "by": {
+        "_id": "u105",
+        "username": "site_robotics",
+        "fullname": "Moshe Friedman, Robotics Lead",
+        "imgUrl": "https://randomuser.me/api/portraits/men/12.jpg"
+      },
+      "loc": {
+        "lat": 28.6139,
+        "lng": 77.209,
+        "name": "Delhi, India"
+      },
+      "comments": [
+        {
+          "id": "c22401",
+          "by": {
+            "_id": "u109",
+            "username": "urban_innovator",
+            "fullname": "Sara Stein, Smart City Planner",
+            "imgUrl": "https://randomuser.me/api/portraits/women/44.jpg"
+          },
+          "txt": "What’s the biggest challenge in sourcing recycled steel?",
+          "likedBy": [
+            {
+              "_id": "u104",
+              "username": "modular_queen"
+            }
+          ]
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u102",
+          "username": "ai_builds",
+          "fullname": "Dror Cohen, AI Integration Lead",
+          "imgUrl": "https://randomuser.me/api/portraits/men/23.jpg"
+        }
+      ],
+      "tags": [
+        "RecycledSteel",
+        "Sustainability",
+        "Construction"
+      ]
+    },
+    {
+      "_id": "s225",
+      "txt": "Site robots now handle bricklaying—delivering 800 bricks/hour and freeing skilled workers for complex jobs. #Robotics #Bricklaying #ConstructionAutomation",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727184/txzyxhtdskunyseh1hqj.jpg",
+      "createdAt": 1684118400000,
+      "by": {
+        "_id": "u105",
+        "username": "site_robotics",
+        "fullname": "Moshe Friedman, Robotics Lead",
+        "imgUrl": "https://randomuser.me/api/portraits/men/12.jpg"
+      },
+      "loc": {
+        "lat": 50.1109,
+        "lng": 8.6821,
+        "name": "Frankfurt, Germany"
+      },
+      "comments": [
+        {
+          "id": "c22501",
+          "by": {
+            "_id": "u110",
+            "username": "bim_master",
+            "fullname": "Kate Brooks, BIM Coordinator",
+            "imgUrl": "https://randomuser.me/api/portraits/women/35.jpg"
+          },
+          "txt": "How does the robot handle irregularly shaped bricks?",
+          "likedBy": []
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u106",
+          "username": "drone_mapper",
+          "fullname": "Amanda Hall, Drone Mapping Specialist",
+          "imgUrl": "https://randomuser.me/api/portraits/women/65.jpg"
+        }
+      ],
+      "tags": [
+        "Robotics",
+        "Bricklaying",
+        "ConstructionAutomation"
+      ]
+    },
+    {
+      "_id": "s226",
+      "txt": "Launching an open BIM data exchange platform—enables seamless sharing across all project stakeholders. #BIM #DataExchange #OpenStandards",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727185/xgxqehlxsxa9cjmbcrcb.jpg",
+      "createdAt": 1682937600000,
+      "by": {
+        "_id": "u110",
+        "username": "bim_master",
+        "fullname": "Kate Brooks, BIM Coordinator",
+        "imgUrl": "https://randomuser.me/api/portraits/women/35.jpg"
+      },
+      "loc": {
+        "lat": 59.9139,
+        "lng": 10.7522,
+        "name": "Oslo, Norway"
+      },
+      "comments": [
+        {
+          "id": "c22601",
+          "by": {
+            "_id": "u103",
+            "username": "sustain_struct",
+            "fullname": "Chen Lee, Sustainability Consultant",
+            "imgUrl": "https://randomuser.me/api/portraits/women/19.jpg"
+          },
+          "txt": "What file formats are supported?",
+          "likedBy": []
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u101",
+          "username": "contech_guru",
+          "fullname": "Ariella Goldstein, BIM Specialist",
+          "imgUrl": "https://randomuser.me/api/portraits/women/42.jpg"
+        }
+      ],
+      "tags": [
+        "BIM",
+        "DataExchange",
+        "OpenStandards"
+      ]
+    },
+    {
+      "_id": "s227",
+      "txt": "IoT water sensors cut site water waste by 25%—data-driven alerts for leaks and overuse. #WaterConservation #IoT #SmartSite",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727187/j4zx9ukqu4a5yswjnyiw.jpg",
+      "createdAt": 1681756800000,
+      "by": {
+        "_id": "u108",
+        "username": "energy_efficient",
+        "fullname": "Priya Kapoor, Renewable Energy Engineer",
+        "imgUrl": "https://randomuser.me/api/portraits/women/88.jpg"
+      },
+      "loc": {
+        "lat": 31.7683,
+        "lng": 35.2137,
+        "name": "Jerusalem, Israel"
+      },
+      "comments": [
+        {
+          "id": "c22701",
+          "by": {
+            "_id": "u109",
+            "username": "urban_innovator",
+            "fullname": "Sara Stein, Smart City Planner",
+            "imgUrl": "https://randomuser.me/api/portraits/women/44.jpg"
+          },
+          "txt": "Is the sensor system retrofit or built-in?",
+          "likedBy": []
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u105",
+          "username": "site_robotics",
+          "fullname": "Moshe Friedman, Robotics Lead",
+          "imgUrl": "https://randomuser.me/api/portraits/men/12.jpg"
+        }
+      ],
+      "tags": [
+        "WaterConservation",
+        "IoT",
+        "SmartSite"
+      ]
+    },
+    {
+      "_id": "s228",
+      "txt": "First 3D-printed concrete bridge in our region—opened today for pedestrian use! #3DPrintedBridge #Innovation #ConstructionTech",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727190/j1x8cacr0gkg2lovrxye.jpg",
+      "createdAt": 1680576000000,
+      "by": {
+        "_id": "u112",
+        "username": "carbon_counter",
+        "fullname": "Julia Nguyen, Carbon Analyst",
+        "imgUrl": "https://randomuser.me/api/portraits/women/52.jpg"
+      },
+      "loc": {
+        "lat": 48.2082,
+        "lng": 16.3738,
+        "name": "Vienna, Austria"
+      },
+      "comments": [
+        {
+          "id": "c22801",
+          "by": {
+            "_id": "u110",
+            "username": "bim_master",
+            "fullname": "Kate Brooks, BIM Coordinator",
+            "imgUrl": "https://randomuser.me/api/portraits/women/35.jpg"
+          },
+          "txt": "Was it a public or private sector initiative?",
+          "likedBy": []
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u104",
+          "username": "modular_queen",
+          "fullname": "Elena Weiss, Modular Construction PM",
+          "imgUrl": "https://randomuser.me/api/portraits/women/21.jpg"
+        }
+      ],
+      "tags": [
+        "3DPrintedBridge",
+        "Innovation",
+        "ConstructionTech"
+      ]
+    },
+    {
+      "_id": "s229",
+      "txt": "Advanced prefabrication cuts construction time by 60% on hospital projects—delivering care sooner. #Prefabrication #Healthcare #Efficiency",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727191/p2qfl7ypfbozmrmg0b8r.png",
+      "createdAt": 1679395200000,
+      "by": {
+        "_id": "u104",
+        "username": "modular_queen",
+        "fullname": "Elena Weiss, Modular Construction PM",
+        "imgUrl": "https://randomuser.me/api/portraits/women/21.jpg"
+      },
+      "loc": {
+        "lat": 45.4642,
+        "lng": 9.19,
+        "name": "Milan, Italy"
+      },
+      "comments": [
+        {
+          "id": "c22901",
+          "by": {
+            "_id": "u101",
+            "username": "contech_guru",
+            "fullname": "Ariella Goldstein, BIM Specialist",
+            "imgUrl": "https://randomuser.me/api/portraits/women/42.jpg"
+          },
+          "txt": "How do you handle MEP integration with prefab?",
+          "likedBy": []
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u112",
+          "username": "carbon_counter",
+          "fullname": "Julia Nguyen, Carbon Analyst",
+          "imgUrl": "https://randomuser.me/api/portraits/women/52.jpg"
+        }
+      ],
+      "tags": [
+        "Prefabrication",
+        "Healthcare",
+        "Efficiency"
+      ]
+    },
+    {
+      "_id": "s230",
+      "txt": "Smart scaffolding with weight sensors alerts workers to overload risks—preventing accidents and downtime. #SmartScaffold #Safety #IoT",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727193/i7lnn4ovftl2paxgozat.png",
+      "createdAt": 1678214400000,
+      "by": {
+        "_id": "u111",
+        "username": "smart_safety",
+        "fullname": "Lior Adler, Site Safety Manager",
+        "imgUrl": "https://randomuser.me/api/portraits/men/49.jpg"
+      },
+      "loc": {
+        "lat": 40.4168,
+        "lng": -3.7038,
+        "name": "Madrid, Spain"
+      },
+      "comments": [
+        {
+          "id": "c23001",
+          "by": {
+            "_id": "u113",
+            "username": "ar_visuals",
+            "fullname": "David Kim, AR Specialist",
+            "imgUrl": "https://randomuser.me/api/portraits/men/45.jpg"
+          },
+          "txt": "What is the sensor's accuracy for quick movements?",
+          "likedBy": []
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u110",
+          "username": "bim_master",
+          "fullname": "Kate Brooks, BIM Coordinator",
+          "imgUrl": "https://randomuser.me/api/portraits/women/35.jpg"
+        }
+      ],
+      "tags": [
+        "SmartScaffold",
+        "Safety",
+        "IoT"
+      ]
+    },
+    {
+      "_id": "s231",
+      "txt": "Piloting smart scaffolding—auto-adjusts for load and weather, improving safety for every worker! #SmartScaffolding #Safety #ConstructionTech",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727194/n3pnxzfergbgrqvvlgl4.jpg",
+      "createdAt": 1677033600000,
+      "by": {
+        "_id": "u109",
+        "username": "urban_innovator",
+        "fullname": "Sara Stein, Smart City Planner",
+        "imgUrl": "https://randomuser.me/api/portraits/women/44.jpg"
+      },
+      "loc": {
+        "lat": 41.9028,
+        "lng": 12.4964,
+        "name": "Rome, Italy"
+      },
+      "comments": [
+        {
+          "id": "c23101",
+          "by": {
+            "_id": "u106",
+            "username": "drone_mapper",
+            "fullname": "Amanda Hall, Drone Mapping Specialist",
+            "imgUrl": "https://randomuser.me/api/portraits/women/65.jpg"
+          },
+          "txt": "How does the scaffolding sense incoming storms?",
+          "likedBy": []
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u101",
+          "username": "contech_guru",
+          "fullname": "Ariella Goldstein, BIM Specialist",
+          "imgUrl": "https://randomuser.me/api/portraits/women/42.jpg"
+        }
+      ],
+      "tags": [
+        "SmartScaffolding",
+        "Safety",
+        "ConstructionTech"
+      ]
+    },
+    {
+      "_id": "s232",
+      "txt": "First time using robotic bricklayers on a city project—consistent quality, less fatigue for the team! #Robotics #Bricklaying #Innovation",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727196/kts0vfuie9klkvlabgfu.jpg",
+      "createdAt": 1675852800000,
+      "by": {
+        "_id": "u111",
+        "username": "smart_safety",
+        "fullname": "Lior Adler, Site Safety Manager",
+        "imgUrl": "https://randomuser.me/api/portraits/men/49.jpg"
+      },
+      "loc": {
+        "lat": 50.1109,
+        "lng": 8.6821,
+        "name": "Frankfurt, Germany"
+      },
+      "comments": [
+        {
+          "id": "c23201",
+          "by": {
+            "_id": "u101",
+            "username": "contech_guru",
+            "fullname": "Ariella Goldstein, BIM Specialist",
+            "imgUrl": "https://randomuser.me/api/portraits/women/42.jpg"
+          },
+          "txt": "Does the robot require a technician on site?",
+          "likedBy": []
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u103",
+          "username": "sustain_struct",
+          "fullname": "Chen Lee, Sustainability Consultant",
+          "imgUrl": "https://randomuser.me/api/portraits/women/19.jpg"
+        }
+      ],
+      "tags": [
+        "Robotics",
+        "Bricklaying",
+        "Innovation"
+      ]
+    },
+    {
+      "_id": "s233",
+      "txt": "Testing solar-powered tower cranes—silent operation, no emissions, and surprisingly powerful. #SolarCranes #CleanEnergy #ConstructionSite",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727197/ruwuqvo48bwzv9i3yr3v.jpg",
+      "createdAt": 1674672000000,
+      "by": {
+        "_id": "u108",
+        "username": "energy_efficient",
+        "fullname": "Priya Kapoor, Renewable Energy Engineer",
+        "imgUrl": "https://randomuser.me/api/portraits/women/88.jpg"
+      },
+      "loc": {
+        "lat": 40.4168,
+        "lng": -3.7038,
+        "name": "Madrid, Spain"
+      },
+      "comments": [
+        {
+          "id": "c23301",
+          "by": {
+            "_id": "u110",
+            "username": "bim_master",
+            "fullname": "Kate Brooks, BIM Coordinator",
+            "imgUrl": "https://randomuser.me/api/portraits/women/35.jpg"
+          },
+          "txt": "Does it use battery backup for cloudy days?",
+          "likedBy": []
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u112",
+          "username": "carbon_counter",
+          "fullname": "Julia Nguyen, Carbon Analyst",
+          "imgUrl": "https://randomuser.me/api/portraits/women/52.jpg"
+        }
+      ],
+      "tags": [
+        "SolarCranes",
+        "CleanEnergy",
+        "ConstructionSite"
+      ]
+    },
+    {
+      "_id": "s234",
+      "txt": "Completed digital laser scans for structural inspections—saves 3 days per floor, more accurate than ever! #LaserScanning #Inspection #DigitalTwin",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727198/q4xatkw7ogwhrcnus8bd.jpg",
+      "createdAt": 1673491200000,
+      "by": {
+        "_id": "u104",
+        "username": "modular_queen",
+        "fullname": "Elena Weiss, Modular Construction PM",
+        "imgUrl": "https://randomuser.me/api/portraits/women/21.jpg"
+      },
+      "loc": {
+        "lat": 60.1699,
+        "lng": 24.9384,
+        "name": "Helsinki, Finland"
+      },
+      "comments": [
+        {
+          "id": "c23401",
+          "by": {
+            "_id": "u110",
+            "username": "bim_master",
+            "fullname": "Kate Brooks, BIM Coordinator",
+            "imgUrl": "https://randomuser.me/api/portraits/women/35.jpg"
+          },
+          "txt": "Does the scan feed directly into your BIM model?",
+          "likedBy": []
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u107",
+          "username": "smartcitydev",
+          "fullname": "Omar Al-Farsi, Urban Innovation Strategist",
+          "imgUrl": "https://randomuser.me/api/portraits/men/54.jpg"
+        }
+      ],
+      "tags": [
+        "LaserScanning",
+        "Inspection",
+        "DigitalTwin"
+      ]
+    },
+    {
+      "_id": "s235",
+      "txt": "Smart water management system: IoT valves + sensors—leak detection, auto-shutoff, and real-time monitoring! #WaterManagement #IoT #SmartSite",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727199/wmamzuuugnlumvtm8lql.jpg",
+      "createdAt": 1672310400000,
+      "by": {
+        "_id": "u103",
+        "username": "sustain_struct",
+        "fullname": "Chen Lee, Sustainability Consultant",
+        "imgUrl": "https://randomuser.me/api/portraits/women/19.jpg"
+      },
+      "loc": {
+        "lat": -33.8688,
+        "lng": 151.2093,
+        "name": "Sydney, Australia"
+      },
+      "comments": [
+        {
+          "id": "c23501",
+          "by": {
+            "_id": "u105",
+            "username": "site_robotics",
+            "fullname": "Moshe Friedman, Robotics Lead",
+            "imgUrl": "https://randomuser.me/api/portraits/men/12.jpg"
+          },
+          "txt": "Any integration with city water systems planned?",
+          "likedBy": [
+            {
+              "_id": "u102",
+              "username": "ai_builds"
+            }
+          ]
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u104",
+          "username": "modular_queen",
+          "fullname": "Elena Weiss, Modular Construction PM",
+          "imgUrl": "https://randomuser.me/api/portraits/women/21.jpg"
+        }
+      ],
+      "tags": [
+        "WaterManagement",
+        "IoT",
+        "SmartSite"
+      ]
+    },
+    {
+      "_id": "s236",
+      "txt": "Modular bridges allow for rapid deployment over rivers—minimizing disruption and maximizing safety. #ModularBridge #RapidDeployment #Innovation",
+      "imgUrl": "https://res.cloudinary.com/dpwerroy4/image/upload/v1747727200/ksg9w62ipkxwbwfjqwm7.jpg",
+      "createdAt": 1671129600000,
+      "by": {
+        "_id": "u112",
+        "username": "carbon_counter",
+        "fullname": "Julia Nguyen, Carbon Analyst",
+        "imgUrl": "https://randomuser.me/api/portraits/women/52.jpg"
+      },
+      "loc": {
+        "lat": 55.8642,
+        "lng": -4.2518,
+        "name": "Glasgow, Scotland"
+      },
+      "comments": [
+        {
+          "id": "c23601",
+          "by": {
+            "_id": "u108",
+            "username": "energy_efficient",
+            "fullname": "Priya Kapoor, Renewable Energy Engineer",
+            "imgUrl": "https://randomuser.me/api/portraits/women/88.jpg"
+          },
+          "txt": "Do the bridges stay as permanent structures?",
+          "likedBy": []
+        }
+      ],
+      "likedBy": [
+        {
+          "_id": "u110",
+          "username": "bim_master",
+          "fullname": "Kate Brooks, BIM Coordinator",
+          "imgUrl": "https://randomuser.me/api/portraits/women/35.jpg"
+        }
+      ],
+      "tags": [
+        "ModularBridge",
+        "RapidDeployment",
+        "Innovation"
+      ]
+    }
+  ]
+]
+}

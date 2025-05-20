@@ -1,0 +1,202 @@
+[
+  {
+    "_id": "u101",
+    "username": "contech_guru",
+    "fullname": "Ariella Goldstein, BIM Specialist",
+    "imgUrl": "https://randomuser.me/api/portraits/women/42.jpg",
+    "bio": "Specialist in BIM and digital construction. Advancing efficiency in projects worldwide. #ConTech #BIM #DigitalTwin | Based in Tel Aviv.",
+    "following": ["u102", "u104", "u110", "u111", "u108"],
+    "followers": ["u105", "u103", "u109", "u110"],
+    "savedStoryIds": ["s201", "s209", "s218"]
+  },
+  {
+    "_id": "u102",
+    "username": "ai_builds",
+    "fullname": "Dror Cohen, AI Integration Lead",
+    "imgUrl": "https://randomuser.me/api/portraits/men/23.jpg",
+    "bio": "AI enthusiast bringing data-driven solutions to construction. #AIinConstruction #MachineLearning #DataScience | Based in Haifa.",
+    "following": ["u101", "u103", "u112"],
+    "followers": ["u104", "u110", "u101"],
+    "savedStoryIds": ["s212", "s217"]
+  },
+  {
+    "_id": "u103",
+    "username": "sustain_struct",
+    "fullname": "Chen Lee, Sustainability Consultant",
+    "imgUrl": "https://randomuser.me/api/portraits/women/19.jpg",
+    "bio": "Passionate about sustainable structures and green building certification. #Sustainability #GreenBuilding #LEED | Based in Singapore.",
+    "following": ["u104", "u112", "u105"],
+    "followers": ["u102", "u108", "u112"],
+    "savedStoryIds": ["s216", "s221", "s233"]
+  },
+  {
+    "_id": "u104",
+    "username": "modular_queen",
+    "fullname": "Elena Weiss, Modular Construction PM",
+    "imgUrl": "https://randomuser.me/api/portraits/women/21.jpg",
+    "bio": "PM for modular projects. Believer in offsite construction and rapid builds. #ModularConstruction #Prefab #Innovation | Based in Berlin.",
+    "following": ["u103", "u105", "u107", "u101", "u106"],
+    "followers": ["u101", "u109", "u112", "u110"],
+    "savedStoryIds": ["s211", "s220"]
+  },
+  {
+    "_id": "u105",
+    "username": "site_robotics",
+    "fullname": "Moshe Friedman, Robotics Lead",
+    "imgUrl": "https://randomuser.me/api/portraits/men/12.jpg",
+    "bio": "Leading site robotics and automation for large infrastructure. #ConstructionRobotics #Automation #FutureOfWork | Based in Jerusalem.",
+    "following": ["u104", "u108", "u107"],
+    "followers": ["u109", "u111", "u110"],
+    "savedStoryIds": ["s215", "s225"]
+  },
+  {
+    "_id": "u106",
+    "username": "drone_mapper",
+    "fullname": "Amanda Hall, Drone Mapping Specialist",
+    "imgUrl": "https://randomuser.me/api/portraits/women/65.jpg",
+    "bio": "Surveyor using drones for real-time mapping and site progress. #Drones #Mapping #Survey | Based in London.",
+    "following": ["u102", "u104", "u107"],
+    "followers": ["u105", "u108", "u101", "u107"],
+    "savedStoryIds": ["s219"]
+  },
+  {
+    "_id": "u107",
+    "username": "smartcitydev",
+    "fullname": "Omar Al-Farsi, Urban Innovation Strategist",
+    "imgUrl": "https://randomuser.me/api/portraits/men/54.jpg",
+    "bio": "Urban innovation, smart city tech, and future infrastructure advocate. #SmartCities #IoT #UrbanTech | Based in Dubai.",
+    "following": ["u101", "u105", "u106", "u113"],
+    "followers": ["u110", "u108", "u109", "u106"],
+    "savedStoryIds": ["s210", "s212", "s224"]
+  },
+  {
+    "_id": "u108",
+    "username": "energy_efficient",
+    "fullname": "Priya Kapoor, Renewable Energy Engineer",
+    "imgUrl": "https://randomuser.me/api/portraits/women/88.jpg",
+    "bio": "Engineer designing sustainable energy for buildings and cities. #Renewables #EnergyEfficiency #SmartGrid | Based in Mumbai.",
+    "following": ["u102", "u104", "u110"],
+    "followers": ["u106", "u107", "u109", "u101"],
+    "savedStoryIds": ["s230", "s214", "s232"]
+  },
+  {
+    "_id": "u109",
+    "username": "urban_innovator",
+    "fullname": "Sara Stein, Smart City Planner",
+    "imgUrl": "https://randomuser.me/api/portraits/women/44.jpg",
+    "bio": "Smart city planning and resilient design for the next generation. #UrbanPlanning #SmartCities #Resilience | Based in Amsterdam.",
+    "following": ["u110", "u101", "u105"],
+    "followers": ["u103", "u112", "u101"],
+    "savedStoryIds": ["s213", "s222", "s236"]
+  },
+  {
+    "_id": "u110",
+    "username": "bim_master",
+    "fullname": "Kate Brooks, BIM Coordinator",
+    "imgUrl": "https://randomuser.me/api/portraits/women/35.jpg",
+    "bio": "BIM coordination for large-scale projects. 3D modeling, clash detection, and digital twins. #BIM #DigitalTwin #3DModeling | Based in Manchester.",
+    "following": ["u101", "u102", "u107", "u113"],
+    "followers": ["u109", "u104", "u103", "u108"],
+    "savedStoryIds": ["s217", "s227", "s223"]
+  },
+  {
+    "_id": "u111",
+    "username": "smart_safety",
+    "fullname": "Lior Adler, Site Safety Manager",
+    "imgUrl": "https://randomuser.me/api/portraits/men/49.jpg",
+    "bio": "Site safety, IoT, and automation in hazardous environments. #SafetyFirst #ConstructionSafety #IoT | Based in Boston.",
+    "following": ["u106", "u104"],
+    "followers": ["u101", "u113", "u109"],
+    "savedStoryIds": ["s231"]
+  },
+  {
+    "_id": "u112",
+    "username": "carbon_counter",
+    "fullname": "Julia Nguyen, Carbon Analyst",
+    "imgUrl": "https://randomuser.me/api/portraits/women/52.jpg",
+    "bio": "Calculating carbon footprints for sustainable construction. #CarbonReduction #GreenBuilding #Sustainability | Based in San Francisco.",
+    "following": ["u101", "u110", "u113", "u103"],
+    "followers": ["u101", "u108", "u104", "u103"],
+    "savedStoryIds": ["s208", "s216", "s233"]
+  },
+  {
+    "_id": "u113",
+    "username": "ar_visuals",
+    "fullname": "David Kim, AR Specialist",
+    "imgUrl": "https://randomuser.me/api/portraits/men/45.jpg",
+    "bio": "Augmented reality for construction visualization. #AR #Visualization #ConstructionTech | Based in Seoul.",
+    "following": ["u101", "u104", "u107", "u108"],
+    "followers": ["u106", "u102", "u107", "u110"],
+    "savedStoryIds": ["s218", "s234"]
+  },
+  {
+    "_id": "u114",
+    "username": "prefab_pioneer",
+    "fullname": "Miriam Sadeh, Prefab Site Manager",
+    "imgUrl": "https://randomuser.me/api/portraits/women/70.jpg",
+    "bio": "Bringing prefab to urban housing. Fast, efficient, affordable. #Prefab #Housing #ConstructionTech | Based in Tel Aviv.",
+    "following": ["u104", "u105", "u109"],
+    "followers": ["u111", "u110", "u101"],
+    "savedStoryIds": ["s228"]
+  },
+  {
+    "_id": "u115",
+    "username": "city_green",
+    "fullname": "Noah Weber, Eco Project Leader",
+    "imgUrl": "https://randomuser.me/api/portraits/men/61.jpg",
+    "bio": "Eco-projects in city infrastructure. #UrbanEcology #Sustainability #GreenCity | Based in Munich.",
+    "following": ["u103", "u108"],
+    "followers": ["u101", "u104"],
+    "savedStoryIds": ["s206"]
+  },
+  {
+    "_id": "u116",
+    "username": "buildwise_ai",
+    "fullname": "Esther Kaplan, AI Site Optimizer",
+    "imgUrl": "https://randomuser.me/api/portraits/women/63.jpg",
+    "bio": "Optimizing builds with AI. Faster, safer, smarter. #AI #SmartBuilding #Automation | Based in Chicago.",
+    "following": ["u102", "u103", "u107"],
+    "followers": ["u101", "u110"],
+    "savedStoryIds": ["s226"]
+  },
+  {
+    "_id": "u117",
+    "username": "zero_carbon",
+    "fullname": "Lucas Schmidt, Net-Zero Advocate",
+    "imgUrl": "https://randomuser.me/api/portraits/men/81.jpg",
+    "bio": "Promoting net-zero design and green energy in new builds. #NetZero #GreenEnergy #Sustainability | Based in Zurich.",
+    "following": ["u104", "u115"],
+    "followers": ["u110", "u103"],
+    "savedStoryIds": ["s221", "s209"]
+  },
+  {
+    "_id": "u118",
+    "username": "offsite_ideas",
+    "fullname": "Daniella Ricci, Offsite Build PM",
+    "imgUrl": "https://randomuser.me/api/portraits/women/55.jpg",
+    "bio": "Offsite manufacturing for rapid, quality construction. #Offsite #Modular #ConstructionTech | Based in Rome.",
+    "following": ["u106", "u103", "u109"],
+    "followers": ["u101", "u104"],
+    "savedStoryIds": ["s229"]
+  },
+  {
+    "_id": "u119",
+    "username": "urbanconnect",
+    "fullname": "Gilad Levi, Urban Mobility Specialist",
+    "imgUrl": "https://randomuser.me/api/portraits/men/53.jpg",
+    "bio": "Connecting the city—mobility solutions and smart infrastructure. #Mobility #SmartCity #Infrastructure | Based in Barcelona.",
+    "following": ["u110", "u101", "u104"],
+    "followers": ["u103", "u108"],
+    "savedStoryIds": ["s219", "s210"]
+  },
+  {
+    "_id": "u120",
+    "username": "enviro_trends",
+    "fullname": "Maya Klein, Environmental Researcher",
+    "imgUrl": "https://randomuser.me/api/portraits/women/81.jpg",
+    "bio": "Researching the next wave of green materials for construction. #GreenMaterials #Research #Sustainability | Based in Copenhagen.",
+    "following": ["u101", "u109", "u113"],
+    "followers": ["u105", "u115"],
+    "savedStoryIds": ["s205", "s224", "s218"]
+  }
+]

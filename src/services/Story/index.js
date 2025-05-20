@@ -1,9 +1,11 @@
 const { DEV, VITE_LOCAL } = import.meta.env
+console.log(' VITE_LOCAL:', VITE_LOCAL)
+console.log(' DEV:', DEV)
 
 // import { getRandomIntInclusive, makeId } from '../util.service'
 
-import { storyservice as local } from './story.service.local'
-import { storyservice as remote } from './story.service.remote'
+import { storyservice as local } from './Story.service.local'
+import { storyservice as remote } from './Story.service.remote'
 
 function getDefaultFilter() {
     return {

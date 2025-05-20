@@ -15,6 +15,7 @@ export const userService = {
 }
 
 function getUsers() {
+	console.log('Getting users from remote service')
 	return httpService.get(`user`)
 }
 
@@ -37,13 +38,12 @@ async function update({ user }) {
 }
 
 async function login(userCred) {
+	console.log(' login userCred:', userCred)
 	const user = await httpService.post('auth/login', userCred)
 	if (user) return saveLoggedinUser(user)
 }
 
 async function signup(userCred) {
-	if (!userCred.imgUrl) userCred.imgUrl = 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png'
-
 	const user = await httpService.post('auth/signup', userCred)
 	return saveLoggedinUser(user)
 }
@@ -64,7 +64,7 @@ function saveLoggedinUser(user) {
 		password: user.password,
 		fullname: user.fullname,
 		bio: user.bio || '',
-		imgUrl: user.imgUrl || '',
+		imgUrl: user.imgUrl || 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png',
 		likedStoryIds: user.likedStoryIds || [],
 		savedStoryIds: user.savedStoryIds || [],
 		following: user.following || [],

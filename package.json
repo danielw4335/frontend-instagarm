@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev:remote": "vite",
+    "dev:remote": "set VITE_LOCAL=false&&vite",
     "dev:remote:mac": "vite",
     "dev:local": "set VITE_LOCAL=true&&vite",
     "dev:local:mac": "export VITE_LOCAL=true && vite",
@@ -23,6 +23,7 @@
     "animate.css": "^4.1.1",
     "axios": "^1.5.0",
     "body-scroll-lock": "^4.0.0-beta.0",
+    "cloudinary": "^2.6.1",
     "date-fns": "^4.1.0",
     "emoji-picker-react": "^3.6.5",
     "lodash": "^4.17.21",
