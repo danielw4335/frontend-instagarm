@@ -21,7 +21,7 @@ import { BottomNav } from './cmps/BottomNav.jsx'
 import { LoginSignup } from './pages/LoginSignup.jsx'
 import { Login } from './pages/Login.jsx'
 import { Signup } from './pages/Signup.jsx'
-import { loadUsers, login } from './store/actions/user.actions.js'
+import { loadUsers, login, signup } from './store/actions/user.actions.js'
 import { loadStories } from './store/actions/story.actions.js'
 import { StoriesBar } from './cmps/StoriesBar.jsx'
 import { useSelector } from 'react-redux'
@@ -31,9 +31,9 @@ export function RootCmp() {
 	const { modalState, close } = useModal()
 	const stories = useSelector(storeState => storeState.storyModule.stories)
 	const loggedinUser = {
-		_id: 'u101',
-		username: 'danielwallache',
-		password: 'pass1',
+		username: 'daniel_dw',
+		fullname: 'Daniel',
+		password: '1234',
 	}
 
 	useEffect(() => {
