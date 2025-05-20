@@ -15,6 +15,6 @@ async function remove(chatId) {
 	await httpService.delete(`chat/${chatId}`)
 }
 
-async function add({ txt, aboutUserId }) {
-	return await httpService.post(`chat`, { txt, aboutUserId })
+async function add({ txt, userId }) {
+	return await httpService.post(`chat`, { txt, userId })
 }

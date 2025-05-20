@@ -15,8 +15,8 @@ async function remove(chatId) {
 	await storageService.remove('chat', chatId)
 }
 
-async function add({ txt, aboutUserId }) {
-	const aboutUser = await userService.getById(aboutUserId)
+async function add({ txt, userId }) {
+	const aboutUser = await userService.getById(userId)
 	const chatToAdd = {
 		txt,
 		byUser: userService.getLoggedinUser(),
