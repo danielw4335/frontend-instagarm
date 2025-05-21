@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Routes, Route } from 'react-router'
 import { useModal } from './customHooks/ModalContext.jsx'
 import { BasicModal } from './cmps/BasicModal.jsx'
@@ -6,7 +6,7 @@ import { Explore } from './pages/Explore.jsx'
 import { Messenger } from './pages/Messenger'
 import { AboutUs, AboutTeam, AboutVision } from './pages/AboutUs'
 import { StoryIndex } from './pages/StoryIndex.jsx'
-import { ChatIndex } from './pages/ChatIndex.jsx'
+// import { ChatIndex } from './pages/ChatIndex.jsx'
 // import { AdminIndex } from './pages/AdminIndex.jsx'
 
 import { UserDetails } from './pages/UserDetails'
@@ -25,9 +25,13 @@ import { loadUsers, login, signup } from './store/actions/user.actions.js'
 import { loadStories } from './store/actions/story.actions.js'
 import { StoriesBar } from './cmps/StoriesBar.jsx'
 import { useSelector } from 'react-redux'
+import LoadingBar from 'react-top-loading-bar'
+import { LoaderInstagram } from './cmps/LoaderInstagram.jsx'
 
 
 export function RootCmp() {
+	const loadingBar = useRef(null);
+	const isLoading = useSelector(storeState => storeState.storyModule.isLoading)
 	const { modalState, close } = useModal()
 	const stories = useSelector(storeState => storeState.storyModule.stories)
 	const loggedinUser = {
@@ -35,6 +39,14 @@ export function RootCmp() {
 		fullname: 'daniel wallach',
 		password: '1234',
 	}
+
+
+
+	useEffect(() => {
+		if (!loadingBar.current) return
+		if (isLoading) loadingBar.current.continuousStart()
+		else loadingBar.current.complete()
+	}, [isLoading])
 
 
 	useEffect(() => {
@@ -50,6 +62,8 @@ export function RootCmp() {
 
 	return (
 		<section className="section-layout">
+			<LoadingBar ref={loadingBar}  style={{ background: 'linear-gradient(90deg,#fdc468,#fa7e1e,#e1306c,#c13584,#833ab4)' }} className="ig-top-bar" height={2.5} />
+			{isLoading && <LoaderInstagram />}
 			<AppHeader />
 			<UserMsg />
 			{/* <StoriesBar items={stories} /> */}
@@ -78,7 +92,7 @@ export function RootCmp() {
 				{/* <Route path="story" element={<StoryIndex />} /> */}
 				<Route path="/u/:userId" element={<UserDetails />} />
 				{/* <Route path="u/d/:id" element={<UserDetails />} /> */}
-				<Route path="chat" element={<ChatIndex />} />
+				{/* <Route path="chat" element={<ChatIndex />} /> */}
 				{/* <Route path="admin" element={<AdminIndex />} /> */}
 				{/* <Route path="/search" element={<AdminIndex />} /> */}
 				<Route path="/explore" element={<Explore />} />
@@ -87,8 +101,8 @@ export function RootCmp() {
 				{/* <Route path="/Notifications" element={<AdminIndex />} /> */}
 				{/* <Route path="/create" element={<UploadImg />} /> */}
 				{/* <Route path="/profile" element={<AdminIndex />} /> */}
-					<Route path="/login" element={<Login />} />
-					<Route path="/signup" element={<Signup />} />
+				<Route path="/login" element={<Login />} />
+				<Route path="/signup" element={<Signup />} />
 			</Routes>
 			{/* </main> */}
 			<BottomNav />

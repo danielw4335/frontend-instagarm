@@ -11,9 +11,11 @@ import {
 	SET_USERS,
 	UPDATE_USER,
 } from '../reducers/user.reducer'
+import { SET_IS_LOADING } from '../reducers/story.reducer'
 
 export async function loadUsers() {
 	try {
+		store.dispatch({ type: SET_IS_LOADING, isLoading: true })
 		store.dispatch({ type: LOADING_START })
 		const users = await userService.getUsers()
 		console.log('Actions loadUsers users:', users)
@@ -22,17 +24,23 @@ export async function loadUsers() {
 		console.log('UserActions: err in loadUsers', err)
 	} finally {
 		store.dispatch({ type: LOADING_DONE })
+		store.dispatch({ type: SET_IS_LOADING, isLoading: false })
 	}
 }
 
 export async function loadUser(userId) {
 	try {
+		store.dispatch({ type: SET_IS_LOADING, isLoading: true })
 		const user = await userService.getById(userId)
 		store.dispatch({ type: SET_USER, user })
 		return user
 	} catch (err) {
 		showErrorMsg('Cannot load user')
 		console.log('Cannot load user', err)
+	}
+	finally {
+		store.dispatch({ type: LOADING_DONE })
+		store.dispatch({ type: SET_IS_LOADING, isLoading: false })
 	}
 }
 

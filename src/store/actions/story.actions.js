@@ -9,7 +9,7 @@ export async function loadStories(filterBy) {
         store.dispatch({ type: SET_IS_LOADING, isLoading: true })
         const stories = await storyservice.query(filterBy)
         store.dispatch({ type: SET_STORIES, stories })
-		console.log('Actions loadStories stories:', stories)
+        console.log('Actions loadStories stories:', stories)
     } catch (err) {
         console.log('Cannot load stories', err)
         throw err
@@ -20,11 +20,15 @@ export async function loadStories(filterBy) {
 
 export async function loadStory(storyId) {
     try {
+        store.dispatch({ type: SET_IS_LOADING, isLoading: true })
         const story = await storyservice.getById(storyId)
         store.dispatch({ type: SET_STORY, story })
     } catch (err) {
         console.log('Cannot load story', err)
         throw err
+    }
+    finally {
+        store.dispatch({ type: SET_IS_LOADING, isLoading: false })
     }
 }
 
@@ -58,10 +62,10 @@ export async function removeStory(storyId) {
 }
 
 export async function addStory(newStory) {
-  const story = { 
-    ...storyservice.getEmptyStory(), 
-    ...newStory 
-  }
+    const story = {
+        ...storyservice.getEmptyStory(),
+        ...newStory
+    }
     try {
         const savedStory = await storyservice.save(story)
         store.dispatch({ type: ADD_STORY, story: savedStory })

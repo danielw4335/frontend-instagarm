@@ -5,6 +5,7 @@ import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service'
 import { updateUser, loadUser } from '../store/actions/user.actions'
 import { CommentBubble, CommentOutline, GridOutline, NotificationsActive, ReelsOutline, SaveOutline, SettingsOutline, TaggedOutline } from '../assets/SVG/icons'
 import { useModal } from '../customHooks/ModalContext'
+import { LoaderInstagram } from '../cmps/LoaderInstagram'
 // import {
 // 	socketService,
 // 	SOCKET_EVENT_USER_UPDATED,
@@ -17,6 +18,7 @@ export function UserDetails() {
 	const stories = useSelector((storeState) => storeState.storyModule.stories)
 	const users = useSelector((storeState) => storeState.userModule.users)
 	const loggedInUser = useSelector((storeState) => storeState.userModule.loggedInUser)
+	const isLoading = useSelector((storeState) => storeState.userModule.isLoading)
 	const [user, setUser] = useState(null)
 	const [userStories, setUserStories] = useState(null)
 	const isAdmin = user?._id === loggedInUser?._id
@@ -87,7 +89,7 @@ export function UserDetails() {
 		}
 	}
 
-	if (!user) return <div className="loading">Loading...</div>
+	if (!user || isLoading) return <LoaderInstagram />
 	console.log(' UserDetails isAdmin:', isAdmin)
 	return (
 		<main className="user-details">

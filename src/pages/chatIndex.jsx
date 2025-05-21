@@ -42,6 +42,7 @@ export function ChatIndex() {
 		}
 	}
 
+
 	return <div className="chat-index">
         <h2>Chats and Gossip</h2>
         {loggedInUser && <ChatEdit/>}

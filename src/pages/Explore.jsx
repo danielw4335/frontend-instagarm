@@ -11,6 +11,7 @@ const navigate = useNavigate()
         setIsDetails({ story: story, from: 'index'})
     }
 
+
   return (
     <div className="explore-grid">
       {stories.map((story) => {
