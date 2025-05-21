@@ -28,7 +28,7 @@ function remove(userId) {
 	return httpService.delete(`user/${userId}`)
 }
 
-async function update({ user }) {
+async function update(user) {
 	const updatedUser = await httpService.put(`user/${user._id}`, user)
 
 	const loggedinUser = getLoggedinUser()

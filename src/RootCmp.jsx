@@ -37,7 +37,7 @@ export function RootCmp() {
 	const loggedinUser = {
 		username: 'daniel_335',
 		fullname: 'daniel wallach',
-		password: '1234',
+		password: 'e%0YFxtl',
 	}
 
 

@@ -99,9 +99,6 @@ export async function addStoryComment(storyId, comment) {
 }
 
 export async function toggleLike(story, user, isLiked) {
-    // console.log(' toggleLike isLiked:', isLiked)
-    // console.log(' toggleLike user:', user)
-    // console.log(' toggleLike story:', story)
     try {
         // ! Update story
         const updatedStory = { ...story }

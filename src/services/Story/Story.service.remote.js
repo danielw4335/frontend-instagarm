@@ -23,8 +23,10 @@ async function remove(storyId) {
 async function save(story) {
     let savedStory
     if (story._id) {
+        console.log('put')
         savedStory = await httpService.put(`story/${story._id}`, story)
     } else {
+        console.log('post')
         savedStory = await httpService.post('story', story)
     }
     return savedStory

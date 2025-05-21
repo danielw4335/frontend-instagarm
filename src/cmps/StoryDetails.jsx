@@ -24,6 +24,8 @@ import {
 import {
     Close,
 } from '../assets/SVG/icons'
+import { store } from '../store/store.js'
+import { SET_IS_LOADING } from '../store/reducers/story.reducer.js'
 
 export function StoryDetails() {
 	const params = useParams()
@@ -40,8 +42,8 @@ export function StoryDetails() {
 	useEffect(() => {
 		const target = document.querySelector('body')
 		if (isModalOpen) {
-			disableBodyScroll(target)
-		} else {
+			disableBodyScroll(target)		
+	} else {
 			enableBodyScroll(target)
 		}
 
@@ -52,10 +54,10 @@ export function StoryDetails() {
 
 	useEffect(() => {
 		if (params) {
-			console.log(' StoryDetails params:', params)
 			loadStory(params.storyId)
+			store.dispatch({ type: SET_IS_LOADING, isLoading: false })
 			if (!params.userId) setIsFromIndex(true)
-		}
+			}
 		setIsModalOpen(true)
 	}, [params])
 
@@ -69,7 +71,6 @@ export function StoryDetails() {
 		navigate(-1)
 		// setSelectedStory(null)
 	}
-
 	if (!newStory) return null
 
 	const { _id, txt, imgUrl, by, comments, likedBy, createdAt } = newStory || {}
@@ -92,7 +93,6 @@ export function StoryDetails() {
 				</button>
 
 				<div className="story-modal-content">
-					{' '}
 					<div className="story-media">
 						{newStory?.imgUrl && (
 							<img src={newStory.imgUrl} alt="story" />
