@@ -12,15 +12,12 @@ export function chatReducer(state = initialState, action = {}) {
     case SET_CHATS:
       return { ...state, chats: action.chats }
     case ADD_CHAT:
-      return { ...state, chats: [...state.chats, action.chat] }
+      return { ...state, chats: [action.chat, ...state.chats] }
+    case UPDATE_CHAT:
+      const updatedChats = state.chats.filter(chat => chat._id !== action.chat._id)
+      return { ...state, chats: [action.chat, ...updatedChats] }
     case REMOVE_CHAT:
       return { ...state, chats: state.chats.filter(chat => chat._id !== action.chatId) }
-    case UPDATE_CHAT:
-      return {
-        ...state,
-        chats: state.chats.map(chat =>
-          chat._id === action.chat._id ? action.chat : chat
-        )}
     default:
       return state
   }

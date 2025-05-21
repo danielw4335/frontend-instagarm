@@ -27,6 +27,7 @@ import { StoriesBar } from './cmps/StoriesBar.jsx'
 import { useSelector } from 'react-redux'
 import LoadingBar from 'react-top-loading-bar'
 import { LoaderInstagram } from './cmps/LoaderInstagram.jsx'
+import { loadChats } from './store/actions/chat.actions.js'
 
 
 export function RootCmp() {
@@ -34,7 +35,8 @@ export function RootCmp() {
 	const isLoading = useSelector(storeState => storeState.storyModule.isLoading)
 	const { modalState, close } = useModal()
 	const stories = useSelector(storeState => storeState.storyModule.stories)
-	const loggedinUser = {
+	const user = useSelector(storeState => storeState.storyModule.loggedInUser)
+	const loggedInUser = {
 		username: 'daniel_335',
 		fullname: 'daniel wallach',
 		password: 'e%0YFxtl',
@@ -56,13 +58,15 @@ export function RootCmp() {
 	async function onLoad() {
 		await loadUsers()
 		await loadStories()
-		await login(loggedinUser)
-		// await signup(loggedinUser)
+		await login(loggedInUser)
+		// await loadChats(user._id)
+
+		// await signup(loggedInUser)
 	}
 
 	return (
 		<section className="section-layout">
-			<LoadingBar ref={loadingBar}  style={{ background: 'linear-gradient(90deg,#fdc468,#fa7e1e,#e1306c,#c13584,#833ab4)' }} className="ig-top-bar" height={2.5} />
+			<LoadingBar ref={loadingBar} style={{ background: 'linear-gradient(90deg,#fdc468,#fa7e1e,#e1306c,#c13584,#833ab4)' }} className="ig-top-bar" height={2.5} />
 			{isLoading && <LoaderInstagram />}
 			<AppHeader />
 			<UserMsg />

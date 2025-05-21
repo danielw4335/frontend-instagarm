@@ -8,27 +8,54 @@ export function Messenger() {
     const users = useSelector(storeState => storeState.userModule.users)
     const loggedInUser = useSelector(storeState => storeState.userModule.loggedInUser)
     const chats = useSelector(storeState => storeState.chatModule.chats)
+    console.log(' Messenger chats:', chats)
     const [selectedChatId, setSelectedChatId] = useState(null)
     const [selectedUser, setSelectedUser] = useState(null)
+    const [otherUser, setOtherUser] = useState(null)
     const [msgInput, setMsgInput] = useState('')
     const [isOpen, setIsOpen] = useState(false)
 
     useEffect(() => {
-        if (loggedInUser?._id) loadChats(loggedInUser._id)
-    }, [loggedInUser])
+        onLoad()
+    }, [])
+
+    async function onLoad() {
+
+        await loadChats(loggedInUser._id)
+    }
+
 
     function handleUserSelect(user) {
         setSelectedUser(user)
         setIsOpen(false)
     }
 
-    function handleChatClick(chat) {
+    function handleChatClick(chat, user) {
         setSelectedChatId(chat._id)
+        setOtherUser(user)
         setSelectedUser(null)
     }
 
     function getOtherUser(chat, myId) {
-        return chat.users.find(u => u._id !== myId)
+        if (chat) {
+            const otherUserId = chat.users.find(u => u !== myId)
+            return users.find(u => u._id === otherUserId)
+        }
+    }
+
+    function handleChange({ target }) {
+        let { value, name: field, type, checked } = target
+        switch (type) {
+            case 'number':
+            case 'range':
+                value = +value
+                break
+            case 'checkbox':
+                value = checked
+
+            default: break
+        }
+        setMsgInput((prevFields) => ({ ...prevFields, [field]: value }))
     }
 
     async function handleSendMsg() {
@@ -43,7 +70,6 @@ export function Messenger() {
             })
             chatId = chat._id
             console.log(' handleSendMsg chat:', chat)
-            console.log(' handleSendMsg chatId:', chatId)
             setSelectedChatId(chatId)
             setSelectedUser(null)
         }
@@ -63,12 +89,13 @@ export function Messenger() {
     }
 
     const selectedChat = chats.find(chat => chat._id === selectedChatId)
-    if (!loggedInUser) return null
+    if (!chats || !loggedInUser) return <div>not found</div>
     return (
-        <div>
-            <section className='chat-list'>
+        <main className="messenger-container">
+            <section className='chat-index'>
                 <div className='chat-header'>
-                    <button onClick={() => setIsOpen(true)}>Add</button>
+                    <h1>{loggedInUser.username}</h1>
+                    <button className='clear-button' onClick={() => setIsOpen(true)}>Add</button>
                     <UserSelectModal
                         isOpen={isOpen}
                         onClose={() => setIsOpen(false)}
@@ -76,35 +103,40 @@ export function Messenger() {
                         onSelect={handleUserSelect}
                     />
                 </div>
-                {chats.map(chat => {
-                    const otherUser = getOtherUser(chat, loggedInUser._id)
-                    return (
-                        <div key={chat._id} onClick={() => handleChatClick(chat)}>
-                            <p>{otherUser.fullname}</p>
-                            <img src={otherUser.imgUrl} />
-                        </div>
-                    )
-                })}
+                <div className='chat-list'>
+
+                    <div className='chat-list-header'>
+                        <span>Messages</span>
+                    </div>
+
+                    {chats ? chats.map(chat => {
+                        const otherUser = getOtherUser(chat, loggedInUser._id)
+                        return (
+                            otherUser ? (
+                                <div className='chat-preview' key={chat._id} onClick={() => handleChatClick(chat, otherUser)}>
+                                    <img src={otherUser.imgUrl} />
+                                    <p>{otherUser.fullname}</p>
+                                </div>
+                            ) : <div key={chat._id}>No user found</div>
+                        )
+                    }) : <p>No chats available</p>}
+                </div>
             </section>
 
             {selectedChat ? (
                 <section className="chat-details">
                     <div className='chat-header'>
-                        {(() => {
-                            const otherUser = getOtherUser(selectedChat, loggedInUser._id)
-                            console.log(' Messenger selectedChat:', selectedChat)
-                            return (
-                                <>
-                                    <div>
-                                        <img src={otherUser.imgUrl} />
-                                    </div>
-                                    <div>
-                                        <h4>{otherUser.fullname}</h4>
-                                        <p>{otherUser.username}</p>
-                                    </div>
-                                </>
-                            )
-                        })()}
+
+                        <>
+                            <div>
+                                <img src={otherUser.imgUrl} />
+                            </div>
+                            <div>
+                                <h4>{otherUser.fullname}</h4>
+                                <p>{otherUser.username}</p>
+                            </div>
+                        </>
+
                     </div>
                     {selectedChat.msgs.map(msg => {
                         let me = (msg.by._id === loggedInUser._id)
@@ -129,11 +161,11 @@ export function Messenger() {
                 </section>
             ) : selectedUser ? (
                 <section className="chat-details">
+                    <h2>selectedUser</h2>
                     <div className='chat-header'>
                         <img src={selectedUser.imgUrl} />
                         <div>
                             <h4>{selectedUser.fullname}</h4>
-                            <p>{selectedUser.username}</p>
                         </div>
                     </div>
                     <footer className='chat-footer'>
@@ -141,7 +173,7 @@ export function Messenger() {
                             <input
                                 type="text"
                                 value={msgInput}
-                                onChange={(e) => setMsgInput(e.target.value)}
+                                onChange={handleChange}
                                 placeholder="Message..."
                             />
                             <button onClick={handleSendMsg}>Send</button>
@@ -149,11 +181,12 @@ export function Messenger() {
                     </footer>
                 </section>
             ) : (
-                <>
+                <div className="empty-details">
+                    <img src="/img/messenger.png" alt="" />
                     <h2>Your messages</h2>
                     <h4>Send a message to start a chat</h4>
-                </>
+                </div>
             )}
-        </div>
+        </main>
     )
 }
