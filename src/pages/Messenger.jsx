@@ -1,112 +1,159 @@
 
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { addChat, addMsg, loadChats } from '../store/actions/chat.actions'
+import { UserSelectModal } from '../cmps/UserSelectModal'
 
-export function Messenger({ users, getChatWithUser }) {
-    const loggedinUser = useSelector(storeState => storeState.userModule.loggedinUser)
+export function Messenger() {
+    const users = useSelector(storeState => storeState.userModule.users)
+    const loggedInUser = useSelector(storeState => storeState.userModule.loggedInUser)
     const chats = useSelector(storeState => storeState.chatModule.chats)
-
-    // const [selectedUser, setSelectedUser] = useState(null)
-    const [selectedChat, setSelectedChat] = useState(null)
-    const [msgs, setMsgs] = useState([])
+    const [selectedChatId, setSelectedChatId] = useState(null)
+    const [selectedUser, setSelectedUser] = useState(null)
     const [msgInput, setMsgInput] = useState('')
+    const [isOpen, setIsOpen] = useState(false)
 
     useEffect(() => {
-        if (selectedChat) {
-            setMsgs(selectedChat?.msgs || [])
-        }
-    }, [selectedChat])
+        if (loggedInUser?._id) loadChats(loggedInUser._id)
+    }, [loggedInUser])
 
-
-    function handleChatClick(chat) {
-        setSelectedChat(chat)
-        setMsgs(chat?.msgs || [])
+    function handleUserSelect(user) {
+        setSelectedUser(user)
+        setIsOpen(false)
     }
 
-    // function handleUserClick(user) {
-    //     const chat = getChatById(user._id)
-    //     setSelectedUser(user)
-    //     setMsgs(chat?.msgs || [])
-    // }
+    function handleChatClick(chat) {
+        setSelectedChatId(chat._id)
+        setSelectedUser(null)
+    }
 
-    function handleSendMsg() {
+    function getOtherUser(chat, myId) {
+        return chat.users.find(u => u._id !== myId)
+    }
+
+    async function handleSendMsg() {
         if (!msgInput.trim()) return
-        const newMsg = {
-            //? id:
-            txt: msgInput,
-            createdAt: new Date().toISOString(),
-            by: {
-                id: loggedinUser._id,
-                fullname: loggedinUser.fullname,
-                username: loggedinUser.username,
-                imgUrl: loggedinUser.imgUrl,
-            }
+
+        let chatId = selectedChatId
+        let chat = chats.find(chat => chat._id === chatId)
+
+        if (!chatId && selectedUser) {
+            chat = await addChat({
+                userIds: [loggedInUser._id, selectedUser._id]
+            })
+            chatId = chat._id
+            console.log(' handleSendMsg chat:', chat)
+            console.log(' handleSendMsg chatId:', chatId)
+            setSelectedChatId(chatId)
+            setSelectedUser(null)
         }
-        setMsgs(prevMsgs => [...prevMsgs, newMsg])
+
+        const newMsg = {
+            txt: msgInput,
+            by: {
+                _id: loggedInUser._id,
+                fullname: loggedInUser.fullname,
+                imgUrl: loggedInUser.imgUrl
+            },
+            createdAt: Date.now()
+        }
+
+        await addMsg({ chatId, msg: newMsg })
         setMsgInput('')
     }
 
+    const selectedChat = chats.find(chat => chat._id === selectedChatId)
+    if (!loggedInUser) return null
     return (
-        <div >
-            {/* <div>
-                    {users.map(user => (
-                        <div key={user._id} onClick={() => handleUserClick(user)}>
-                            <p>{user.fullname}</p>
-                        </div>
-                    ))}
-                </div> */}
+        <div>
             <section className='chat-list'>
-                <div>
-                    {chats.map(chat => (
-                        <div key={chat._id} onClick={() => handleChatClick(chat)}>
-                            <p>{chat.to.fullname}</p>
-                            <img src={chat.to.imgUrl} />
-                        </div>
-                    ))}
+                <div className='chat-header'>
+                    <button onClick={() => setIsOpen(true)}>Add</button>
+                    <UserSelectModal
+                        isOpen={isOpen}
+                        onClose={() => setIsOpen(false)}
+                        users={users}
+                        onSelect={handleUserSelect}
+                    />
                 </div>
+                {chats.map(chat => {
+                    const otherUser = getOtherUser(chat, loggedInUser._id)
+                    return (
+                        <div key={chat._id} onClick={() => handleChatClick(chat)}>
+                            <p>{otherUser.fullname}</p>
+                            <img src={otherUser.imgUrl} />
+                        </div>
+                    )
+                })}
             </section>
 
-            <div>
-                {selectedChat ? (
-                    <section className="chat-details">
-                        <div>
-                            <img src={selectedChat.to.imgUrl} />
-                        </div>
-
-                        <div>
-                            <h4>{selectedChat.to.fullname}</h4>
-                            <p>{selectedChat.to.username}</p>
-                        </div>
-
-                        <div>
-                            {msgs.map(msg => (
-                                <div key={msg.id}>
-                                    <strong>{msg.by.fullname}: </strong>
-                                    <span>{msg.txt}</span>
-                                    <p> ({new Date(msg.createdAt).toLocaleString()})</p>
-                                </div>
-                            ))}
-                        </div>
-
-                        <footer className='chat-edit'>
-                            <div>
-                                <input
-                                    type="text"
-                                    value={msgInput}
-                                    onChange={(e) => setMsgInput(e.target.value)}
-                                    placeholder="Message..."
-                                />
-                                <button onClick={handleSendMsg}>Send</button>
+            {selectedChat ? (
+                <section className="chat-details">
+                    <div className='chat-header'>
+                        {(() => {
+                            const otherUser = getOtherUser(selectedChat, loggedInUser._id)
+                            console.log(' Messenger selectedChat:', selectedChat)
+                            return (
+                                <>
+                                    <div>
+                                        <img src={otherUser.imgUrl} />
+                                    </div>
+                                    <div>
+                                        <h4>{otherUser.fullname}</h4>
+                                        <p>{otherUser.username}</p>
+                                    </div>
+                                </>
+                            )
+                        })()}
+                    </div>
+                    {selectedChat.msgs.map(msg => {
+                        let me = (msg.by._id === loggedInUser._id)
+                        return (
+                            <div key={msg.id} className={me ? 'sent' : 'received'}>
+                                <img src={msg.by.imgUrl} alt={msg.by.fullname} />
+                                <p>{msg.txt}</p>
                             </div>
-                        </footer>
-                    </section>
-                ) : (
-                    <>
-                        <h2>Your messages</h2>
-                        <h4>Send a message to start a chat</h4>
-                    </>
-                )}
-            </div>
+                        )
+                    })}
+                    <footer className='chat-footer'>
+                        <div>
+                            <input
+                                type="text"
+                                value={msgInput}
+                                onChange={(e) => setMsgInput(e.target.value)}
+                                placeholder="Message..."
+                            />
+                            <button onClick={handleSendMsg}>Send</button>
+                        </div>
+                    </footer>
+                </section>
+            ) : selectedUser ? (
+                <section className="chat-details">
+                    <div className='chat-header'>
+                        <img src={selectedUser.imgUrl} />
+                        <div>
+                            <h4>{selectedUser.fullname}</h4>
+                            <p>{selectedUser.username}</p>
+                        </div>
+                    </div>
+                    <footer className='chat-footer'>
+                        <div>
+                            <input
+                                type="text"
+                                value={msgInput}
+                                onChange={(e) => setMsgInput(e.target.value)}
+                                placeholder="Message..."
+                            />
+                            <button onClick={handleSendMsg}>Send</button>
+                        </div>
+                    </footer>
+                </section>
+            ) : (
+                <>
+                    <h2>Your messages</h2>
+                    <h4>Send a message to start a chat</h4>
+                </>
+            )}
         </div>
     )
 }

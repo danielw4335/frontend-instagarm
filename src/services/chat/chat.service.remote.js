@@ -1,20 +1,32 @@
 import { httpService } from '../http.service'
 
 export const chatService = {
-	add,
 	query,
+	createChat,
+	addMsg,
 	remove,
 }
 
-function query(filterBy) {
-	var queryStr = !filterBy ? '' : `?name=${filterBy.name}&sort=anaAref`
-	return httpService.get(`chat${queryStr}`)
+function query(userId) {
+	return httpService.get(`chat?userId=${userId}`)
+}
+
+async function createChat({ userIds }) {
+	console.log(' createChat userIds:', userIds)
+	return await httpService.post('chat', { userIds })
+}
+
+async function addMsg({ chatId, msg}) {
+	return await httpService.post(`chat/${chatId}/msg`, { msg })
+	// {
+	// 	id,
+	// 	txt,
+	// 	by,
+	// 	createdAt,
+	// }
+
 }
 
 async function remove(chatId) {
 	await httpService.delete(`chat/${chatId}`)
-}
-
-async function add({ txt, userId }) {
-	return await httpService.post(`chat`, { txt, userId })
 }
