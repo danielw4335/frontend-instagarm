@@ -14,7 +14,7 @@ export function PostMainText({ story }) {
           <strong>{by.username}</strong> {txt}
         </p>
         <div className="comment-meta">
-          <span>5h</span>
+          <span>{timeAgo}</span>
         </div>
       </div>
     </div>

@@ -10,9 +10,9 @@ import {
 } from '@fortawesome/free-regular-svg-icons'
 import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons'
 import { useClickOutsideClose } from '../customHooks/useClickOutsideClose'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, NavLink } from 'react-router-dom'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
-
+import { getTimeFormat } from '../services/util.service'
 import { StoryComments } from './StoryComments.jsx'
 import { StoryHeader } from './storyHeader.jsx'
 import { PostMainText } from './PostMainText.jsx'
@@ -22,7 +22,7 @@ import {
 	toggleLike,
 } from '../store/actions/story.actions'
 import {
-    Close,
+	Close,
 } from '../assets/SVG/icons'
 import { store } from '../store/store.js'
 import { SET_IS_LOADING } from '../store/reducers/story.reducer.js'
@@ -42,8 +42,8 @@ export function StoryDetails() {
 	useEffect(() => {
 		const target = document.querySelector('body')
 		if (isModalOpen) {
-			disableBodyScroll(target)		
-	} else {
+			disableBodyScroll(target)
+		} else {
 			enableBodyScroll(target)
 		}
 
@@ -57,7 +57,7 @@ export function StoryDetails() {
 			loadStory(params.storyId)
 			store.dispatch({ type: SET_IS_LOADING, isLoading: false })
 			if (!params.userId) setIsFromIndex(true)
-			}
+		}
 		setIsModalOpen(true)
 	}, [params])
 
@@ -113,23 +113,27 @@ export function StoryDetails() {
 							<PostMainText story={newStory} />
 							{comments?.map((comment, idx) => (
 								<div key={idx} className="comment-preview">
-									<img
-										className="user-img"
-										src={comment.by.imgUrl}
-										alt="user"
-									/>
+									<NavLink to={`/u/${comment.by._id}`}>
+										<img
+											className="user-img"
+											src={comment.by.imgUrl}
+											alt="user"
+										/>
+									</NavLink>
 									<div className="comment-content">
 										<p>
-											<strong>
-												{comment.by.username}
-											</strong>{' '}
+											<NavLink to={`/u/${comment.by._id}`}>
+												<strong>
+													{comment.by.username}
+												</strong>{' '}
+											</NavLink>
 											{comment.txt}
 										</p>
 										<div className="comment-meta">
-											<span>{comment.createdAt} 5h </span>
+											<span>{getTimeFormat(createdAt)}</span>
 											{comment.likedBy?.length > 0 && (
 												<span>
-													{comment.likedBy.length} likedBy
+													{comment.likedBy.length} likes
 												</span>
 											)}
 										</div>

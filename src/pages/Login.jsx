@@ -9,24 +9,37 @@ import { NavLink } from 'react-router-dom'
 export function Login() {
 	const navigate = useNavigate()
 	const users = useSelector((storeState) => storeState.userModule.users)
-	const [credentials, setCredentials] = useState({
-		username: '',
-		password: '',
-	})
-
+	const [credentials, setCredentials] = useState({})
+	
 	async function onLogin(ev = null) {
-		if (ev) ev.preventDefault()
-
+		// if (ev) ev.preventDefault()
+		
+		console.log(' Login credentials:', credentials)
 		if (!credentials.username) return
 		await login(credentials)
 		navigate('/')
 	}
 
-	function handleChange(ev) {
-		const field = ev.target.name
-		const value = ev.target.value
-		setCredentials({ ...credentials, [field]: value })
-	}
+	// function handleChange(ev) {
+	// 	const field = ev.target.name
+	// 	const value = ev.target.value
+	// 	setCredentials({ ...credentials, [field]: value })
+	// }
+
+	 function handleChange({ target }) {
+        let { value, name: field, type, checked } = target
+        switch (type) {
+            case 'number':
+            case 'range':
+                value = +value
+                break
+            case 'checkbox':
+                value = checked
+
+            default: break
+        }
+        setCredentials((prevCred) => ({ ...prevCred, [field]: value }))
+    }
 
 	return (
 		<section className='login-page full'>

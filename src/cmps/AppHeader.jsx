@@ -24,21 +24,24 @@ export function AppHeader() {
 	// }
 
 	return (
-		<header className="app-header full">
-			<div className="logo-text">
-				<LogoInstagramWordmark className="nav-label logo-wordmark" />
-			</div>
+		<>
+			<div className="app-header-placeholder full"></div>
+			<header className="app-header full">
+				<div className="logo-text">
+					<LogoInstagramWordmark className="nav-label logo-wordmark" />
+				</div>
 
-			<section className='nav-section'>
-				<NavLink to="/notifications" className="nav-item">
-					<NotificationsOutline className="nav-icon" />
-				</NavLink>
+				<section className='nav-section'>
+					<NavLink to="/notifications" className="nav-item">
+						<NotificationsOutline className="nav-icon" />
+					</NavLink>
 
-				<NavLink to="/messages" className="nav-item">
-					<MessengerOutline className="nav-icon" />
-				</NavLink>
-			</section>
+					<NavLink to="/messages" className="nav-item">
+						<MessengerOutline className="nav-icon" />
+					</NavLink>
+				</section>
 
-		</header>
+			</header>
+		</>
 	)
 }

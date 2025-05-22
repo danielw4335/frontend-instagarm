@@ -80,9 +80,6 @@ export const StoryComments = ({ story, from }) => {
                                 expanded={false}
                                 truncatedEndingComponent="…"
                             >
-
-
-
                                 <NavLink to={`/u/${by._id}`} className="nav-item user-name-span" key={by._id}>
                                     {by.username}
                                 </NavLink>

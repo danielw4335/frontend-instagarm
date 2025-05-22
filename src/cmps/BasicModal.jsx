@@ -104,7 +104,7 @@ export function BasicModal({ type, storyId, onClose }) {
               <div className='header-modal'>
                 <button className="btn-back clear-button" onClick={() => safetyClose}><Back /></button>
                 <span className="modal-title crop">Crop</span>
-                <button className="btn-next clear-button" onClick={() => setType('editStory')}>Next</button>
+                <button className="btn-next clear-button" onClick={() => setType('createStory')}>Next</button>
               </div>
               <img src={newStory.imgUrl} className="crop-preview" />
             </div>
@@ -124,7 +124,7 @@ export function BasicModal({ type, storyId, onClose }) {
           {type === 'createStory' && (
             <div className="modal-create-post">
               <div className='header-modal'>
-                <button className="btn-post clear-button" onClick={() => setType('editStory')}><Back /></button>
+                <button className="btn-post clear-button" onClick={() => setType('cropStory')}><Back /></button>
                 <span className="modal-title create">Create new post</span>
                 <button className="btn-Share btn-next clear-button" onClick={() => createStory()}>Share</button>
               </div>

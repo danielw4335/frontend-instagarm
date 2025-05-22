@@ -6,6 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .story-modal {
@@ -18,6 +19,15 @@
     overflow: hidden;
     padding: 0px;
     border-radius: 4px;
+
+    a,
+    .nav-link,
+    .active,
+    .navlink,
+    .navLink {
+        color: inherit ;
+        text-decoration: none ;
+    }
 
     &-close {
         position: absolute;
@@ -35,6 +45,10 @@
         display: flex;
         width: 100%;
         height: 100%;
+
+        @include for-mobile-layout {
+            flex-direction: column;
+        }
     }
 }
 
@@ -105,8 +119,9 @@
                     margin-top: 4px;
                 }
             }
-            
+
         }
+
         .emoji-btn {
             color: #000000;
         }

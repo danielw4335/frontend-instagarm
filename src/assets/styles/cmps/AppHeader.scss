@@ -3,11 +3,15 @@
     display: none;
     @include for-mobile-layout {
         display: flex;
-        height: em(53px);
-        border-bottom: 1px solid black;
+        height: 53px;
+        position: fixed;
         align-items: center;
         justify-content: space-between;
         padding: 0 1em;
+        background-color: #fff;
+border-bottom: 1px solid #dbdbdb;
+        width: 100%;
+        z-index: 1000;
 
         .logo-text {
             margin-top: em(8px);
@@ -19,9 +23,18 @@
             align-items: center;
             gap: em(19px);
         }
+
     }
 }
 
+.app-header-placeholder {
+    display: none;
+    @include for-mobile-layout {
+    height: 53px;
+    width: 100%;
+    display: block;
+}
+}
 
 // @media (min-width: 760px) {
 .app-header {}

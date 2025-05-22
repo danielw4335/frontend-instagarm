@@ -44,18 +44,7 @@ export function Messenger() {
     }
 
     function handleChange({ target }) {
-        let { value, name: field, type, checked } = target
-        switch (type) {
-            case 'number':
-            case 'range':
-                value = +value
-                break
-            case 'checkbox':
-                value = checked
-
-            default: break
-        }
-        setMsgInput((prevFields) => ({ ...prevFields, [field]: value }))
+        setMsgInput(target.value)
     }
 
     async function handleSendMsg() {
@@ -138,21 +127,47 @@ export function Messenger() {
                         </>
 
                     </div>
-                    {selectedChat.msgs.map(msg => {
-                        let me = (msg.by._id === loggedInUser._id)
-                        return (
-                            <div key={msg.id} className={me ? 'sent' : 'received'}>
-                                <img src={msg.by.imgUrl} alt={msg.by.fullname} />
-                                <p>{msg.txt}</p>
-                            </div>
-                        )
-                    })}
+                    <section className='messages-area'>
+                        {selectedChat.msgs.map(msg => {
+                            let me = (msg.by._id === loggedInUser._id)
+                            return (
+                                <div key={msg.id} className={me ? 'sent' : 'received'}>
+                                    <p>
+                                        {
+
+                                            new Date().toLocaleString('en-US', {
+                                                month: 'numeric',
+                                                day: 'numeric',
+                                                year: '2-digit',
+                                                hour: '2-digit',
+                                                minute: '2-digit',
+                                                hour12: true
+                                            })}
+
+                                        {/* function _fomatTime(time) {
+       let gormatTime = time.toLocaleString('en-US', {
+            month: 'numeric',
+            day: 'numeric',
+            year: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: true
+        })
+        console.log('time:', gormatTime);
+    } */}
+                                    </p>
+                                    {!me && <img src={msg.by.imgUrl} alt={msg.by.fullname} />}
+                                    <p>{msg.txt}</p>
+                                </div>
+                            )
+                        })}
+                    </section>
                     <footer className='chat-footer'>
                         <div>
                             <input
                                 type="text"
                                 value={msgInput}
-                                onChange={(e) => setMsgInput(e.target.value)}
+                                onChange={handleChange}
                                 placeholder="Message..."
                             />
                             <button onClick={handleSendMsg}>Send</button>

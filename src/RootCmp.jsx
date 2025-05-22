@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react'
-import { Routes, Route } from 'react-router'
+import { Routes, Route, useLocation } from 'react-router'
 import { useModal } from './customHooks/ModalContext.jsx'
 import { BasicModal } from './cmps/BasicModal.jsx'
 import { Explore } from './pages/Explore.jsx'
@@ -31,6 +31,8 @@ import { loadChats } from './store/actions/chat.actions.js'
 
 
 export function RootCmp() {
+	const location = useLocation()
+	const path = location.pathname
 	const loadingBar = useRef(null);
 	const isLoading = useSelector(storeState => storeState.storyModule.isLoading)
 	const { modalState, close } = useModal()
@@ -60,7 +62,6 @@ export function RootCmp() {
 		await loadStories()
 		await login(loggedInUser)
 		// await loadChats(user._id)
-
 		// await signup(loggedInUser)
 	}
 
@@ -68,10 +69,10 @@ export function RootCmp() {
 		<section className="section-layout">
 			<LoadingBar ref={loadingBar} style={{ background: 'linear-gradient(90deg,#fdc468,#fa7e1e,#e1306c,#c13584,#833ab4)' }} className="ig-top-bar" height={2.5} />
 			{isLoading && <LoaderInstagram />}
-			<AppHeader />
+			{path !== '/login' && <AppHeader />}
 			<UserMsg />
 			{/* <StoriesBar items={stories} /> */}
-			<SideNav />
+			{path !== '/login' && <SideNav />}
 			{/* <main> */}
 			{modalState.isOpen && (
 				<BasicModal
@@ -109,7 +110,9 @@ export function RootCmp() {
 				<Route path="/signup" element={<Signup />} />
 			</Routes>
 			{/* </main> */}
-			<BottomNav />
+
+			{path !== '/login' && <BottomNav />}
+
 		</section>
 	)
 }
