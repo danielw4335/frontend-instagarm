@@ -52,17 +52,23 @@ export function RootCmp() {
 		else loadingBar.current.complete()
 	}, [isLoading])
 
+	useEffect(() => {
+		if (user && user._id) {
+			loadChats(user._id)
+		}
+	}, [user])
 
 	useEffect(() => {
 		onLoad()
 	}, [])
 
 	async function onLoad() {
-		await loadUsers()
-		await loadStories()
-		await login(loggedInUser)
-		// await loadChats(user._id)
-		// await signup(loggedInUser)
+		const loggedUser = await login(loggedInUser)
+		await Promise.all([
+			loadUsers(),
+			loadStories()
+		])
+		await loadChats(loggedUser._id)
 	}
 
 	return (

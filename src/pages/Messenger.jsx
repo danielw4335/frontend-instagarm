@@ -1,47 +1,40 @@
-
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { addChat, addMsg, loadChats } from '../store/actions/chat.actions'
 import { UserSelectModal } from '../cmps/UserSelectModal'
 import { NavLink } from 'react-router-dom'
+import { loadUsers } from '../store/actions/user.actions'
 
 export function Messenger() {
     const users = useSelector(storeState => storeState.userModule.users)
     const loggedInUser = useSelector(storeState => storeState.userModule.loggedInUser)
     const chats = useSelector(storeState => storeState.chatModule.chats)
-    console.log(' Messenger chats:', chats)
     const [selectedChatId, setSelectedChatId] = useState(null)
     const [selectedUser, setSelectedUser] = useState(null)
-    const [otherUser, setOtherUser] = useState(null)
     const [msgInput, setMsgInput] = useState('')
     const [isOpen, setIsOpen] = useState(false)
+    const [isCreatingChat, setIsCreatingChat] = useState(false)
 
     useEffect(() => {
-        onLoad()
-    }, [])
-
-    async function onLoad() {
-
-        await loadChats(loggedInUser._id)
-    }
-
+        if (loggedInUser && loggedInUser._id) loadChats(loggedInUser._id)
+        if (!users || !users.length) loadUsers()
+    }, [loggedInUser])
 
     function handleUserSelect(user) {
         setSelectedUser(user)
         setIsOpen(false)
+        setSelectedChatId(null)
     }
 
-    function handleChatClick(chat, user) {
+    function handleChatClick(chat) {
         setSelectedChatId(chat._id)
-        setOtherUser(user)
         setSelectedUser(null)
     }
 
-    function getOtherUser(chat, myId) {
-        if (chat) {
-            const otherUserId = chat.users.find(u => u !== myId)
-            return users.find(u => u._id === otherUserId)
-        }
+    function getOtherUser(chat) {
+        if (!chat) return null
+        const otherUserId = chat.users.find(u => u !== loggedInUser._id)
+        return users.find(u => u._id === otherUserId)
     }
 
     function handleChange({ target }) {
@@ -55,13 +48,12 @@ export function Messenger() {
         let chat = chats.find(chat => chat._id === chatId)
 
         if (!chatId && selectedUser) {
+            setIsCreatingChat(true)
             chat = await addChat({
                 userIds: [loggedInUser._id, selectedUser._id]
             })
             chatId = chat._id
-            console.log(' handleSendMsg chat:', chat)
             setSelectedChatId(chatId)
-            setSelectedUser(null)
         }
 
         const newMsg = {
@@ -71,15 +63,40 @@ export function Messenger() {
                 fullname: loggedInUser.fullname,
                 imgUrl: loggedInUser.imgUrl
             },
-            createdAt: Date.now()
+            createdAt: new Date(),
+            id: Date.now().toString() + Math.random().toString(36).substr(2, 6)
         }
 
         await addMsg({ chatId, msg: newMsg })
         setMsgInput('')
     }
 
+    useEffect(() => {
+        if (isCreatingChat && selectedChatId) {
+            const chatExists = chats.some(chat => chat._id === selectedChatId)
+            if (chatExists) {
+                setIsCreatingChat(false)
+                setSelectedUser(null)
+            }
+        }
+    }, [chats, selectedChatId, isCreatingChat])
+
+    function _formatTime(time) {
+        return new Date(time).toLocaleString('en-US', {
+            month: 'numeric',
+            day: 'numeric',
+            year: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: true
+        })
+    }
+
+    if (!chats || !loggedInUser || !users) return <div>Loading...</div>
+
     const selectedChat = chats.find(chat => chat._id === selectedChatId)
-    if (!chats || !loggedInUser) return <div>not found</div>
+    const otherUser = selectedChat ? getOtherUser(selectedChat) : null
+
     return (
         <main className="messenger-container">
             <section className='chat-index'>
@@ -94,71 +111,46 @@ export function Messenger() {
                     />
                 </div>
                 <div className='chat-list'>
-
                     <div className='chat-list-header'>
                         <span>Messages</span>
                     </div>
-
                     {chats ? chats.map(chat => {
-                        const otherUser = getOtherUser(chat, loggedInUser._id)
+                        let otherUser = getOtherUser(chat)
                         return (
                             otherUser ? (
-                                <div className='chat-preview' key={chat._id} onClick={() => handleChatClick(chat, otherUser)}>
-                                    <img src={otherUser.imgUrl} />
-                                    <p>{otherUser.fullname}</p>
+                                <div className='chat-preview' key={chat._id} onClick={() => handleChatClick(chat)}>
+                                    <img src={otherUser?.imgUrl} />
+                                    <p>{otherUser?.fullname}</p>
                                 </div>
-                            ) : <div key={chat._id}>No user found</div>
+                            ) : <div key={chat._id + '-nouser'}></div>
                         )
                     }) : <p>No chats available</p>}
                 </div>
             </section>
 
-            {selectedChat ? (
+            {(isCreatingChat && !selectedChat) ? (
+                <div className="chat-details loading">
+                    <h2>Creating chat...</h2>
+                </div>
+            ) : selectedChat ? (
                 <section className="chat-details">
                     <div className='chat-header'>
-
-                        <>
-                              <NavLink to={`/u/${otherUser?._id}`}>
+                        <NavLink to={`/u/${otherUser?._id}`}>
                             <div>
-                                <img src={otherUser.imgUrl} />
+                                <img src={otherUser?.imgUrl} />
                             </div>
                             <div>
-                                <h4>{otherUser.fullname}</h4>
-                                <p>{otherUser.username}</p>
+                                <h4>{otherUser?.fullname}</h4>
+                                <p>{otherUser?.username}</p>
                             </div>
-                              </NavLink>
-                        </>
-
+                        </NavLink>
                     </div>
                     <section className='messages-area'>
-                        {selectedChat.msgs.map(msg => {
+                        {selectedChat.msgs.map((msg, idx) => {
                             let me = (msg.by._id === loggedInUser._id)
                             return (
                                 <div key={msg.id} className={me ? 'sent' : 'received'}>
-                                    <p>
-                                        {
-
-                                            new Date().toLocaleString('en-US', {
-                                                month: 'numeric',
-                                                day: 'numeric',
-                                                year: '2-digit',
-                                                hour: '2-digit',
-                                                minute: '2-digit',
-                                                hour12: true
-                                            })}
-
-                                        {/* function _fomatTime(time) {
-       let gormatTime = time.toLocaleString('en-US', {
-            month: 'numeric',
-            day: 'numeric',
-            year: '2-digit',
-            hour: '2-digit',
-            minute: '2-digit',
-            hour12: true
-        })
-        console.log('time:', gormatTime);
-    } */}
-                                    </p>
+                                        <span className='timestamp'>{_formatTime(msg.createdAt)}</span>
                                     {!me && <img src={msg.by.imgUrl} alt={msg.by.fullname} />}
                                     <p>{msg.txt}</p>
                                 </div>

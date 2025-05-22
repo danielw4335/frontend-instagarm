@@ -1,0 +1,102 @@
+.modal-content.user-modal {
+    background: #fff;
+    border-radius: 18px;
+    width: 460px;
+    max-width: 96vw;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.user-modal p {
+    font-weight: 700;
+    font-size: 14px;
+    padding: 18px 0 8px 0;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 0.2px;
+}
+
+.user-modal .search-row {
+    display: flex;
+    align-items: center;
+    padding: 0 24px 12px 24px;
+    font-size: 16px;
+    gap: 10px;
+}
+.user-modal .search-row input {
+    flex: 1;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.user-list {
+    overflow-y: auto;
+    max-height: 310px;
+    min-height: 64px;
+    padding: 0 0 8px 0;
+}
+.user-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 24px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+
+.user-item:hover, .user-item:active {
+    background: #f6f6f6;
+}
+
+.user-item img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #eee;
+    border: 1.5px solid #eee;
+}
+.user-item .fullname {
+    font-weight: 500;
+    font-size: 16px;
+    color: #111;
+}
+.user-item .username {
+    color: #999;
+    font-size: 13px;
+    margin-right: 6px;
+}
+
+.user-modal .close-btn {
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #111;
+    cursor: pointer;
+    opacity: 0.8;
+}
+.user-modal .close-btn:hover {
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .modal-content.user-modal {
+        width: 97vw;
+        min-width: unset;
+    }
+    .user-modal .search-row,
+    .user-item {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+}
