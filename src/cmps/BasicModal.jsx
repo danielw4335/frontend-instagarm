@@ -23,8 +23,8 @@ export function BasicModal({ type, storyId, onClose }) {
   })
 
   function isMyStoryId(storyId, user) {
-    //!dev! return user?.posts?.includes(storyId)
-    user?.posts?.includes(storyId)
+    //! return user?.posts?.includes(storyId)
+    // user?.posts?.includes(storyId)
     return true
   }
 
@@ -56,21 +56,24 @@ export function BasicModal({ type, storyId, onClose }) {
   }
 
   if (type === 'options') {
-    <div className="modal-backdrop" onClick={onClose}>
-      <div className="modal-basic" onClick={ev => ev.stopPropagation()}>
-        {isMyStoryId(storyId, user) && (
-          <button className="modal-btn delete" onClick={onDelete}>Delete</button>
-        )}
-        <button className="modal-btn" >Unfollow</button>
-        <button className="modal-btn" >Add to favorites</button>
-        <button className="modal-btn" >Go to post</button>
-        <button className="modal-btn" >Share to…</button>
-        <button className="modal-btn" >Copy link</button>
-        <button className="modal-btn" >Embed</button>
-        <button className="modal-btn" >About this account</button>
-        <button className="modal-btn cancel" onClick={onClose}>Cancel</button>
+    return (
+      <div className="modal-backdrop" onClick={onClose}>
+        <div className="modal-basic" onClick={ev => ev.stopPropagation()}>
+          {isMyStoryId(storyId, user) && (
+            <button className="modal-btn delete" onClick={onDelete}>Delete</button>
+          )}
+          {/* {console.log(' BasicModal modal-basic:', isMyStoryId(storyId, user))} */}
+          <button className="modal-btn" >Unfollow</button>
+          <button className="modal-btn" >Add to favorites</button>
+          <button className="modal-btn" >Go to post</button>
+          <button className="modal-btn" >Share to…</button>
+          <button className="modal-btn" >Copy link</button>
+          <button className="modal-btn" >Embed</button>
+          <button className="modal-btn" >About this account</button>
+          <button className="modal-btn cancel" onClick={onClose}>Cancel</button>
+        </div>
       </div>
-    </div>
+    )
   }
   if (type !== 'options') {
     return (

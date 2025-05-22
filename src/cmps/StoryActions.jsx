@@ -2,11 +2,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faComment, faPaperPlane, faBookmark } from '@fortawesome/free-regular-svg-icons'
 import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons'
 import { useLikeWithControl } from '../customHooks/useLikeWithControl'
-import { NavLink } from 'react-router-dom'
-
+import { NavLink, useNavigate } from 'react-router-dom'
+import { setIsDetails } from '../store/actions/story.actions.js'
 
 export function StoryActions({ from, loggedInUser, story }) {
   const { isLiked, ref, onMouseLeave, onLikeClick } = useLikeWithControl(loggedInUser, story)
+      const navigate = useNavigate()
+
+  function onOpenModal() {
+    navigate(`/${story._id}`)
+    setIsDetails({ story: story, from: 'index' })
+    }
 
   return (
     <div className="story-actions">
@@ -20,9 +26,10 @@ export function StoryActions({ from, loggedInUser, story }) {
           />
         </button>
         
-                  <NavLink className='button' to={`/u/${story.by._id}`}>
+        <button onClick={onOpenModal}>
           <FontAwesomeIcon icon={faComment} />
-        </NavLink>
+        </button>
+
         <button><FontAwesomeIcon icon={faPaperPlane} /></button>
       </div>
       <button className="save-btn"><FontAwesomeIcon icon={faBookmark} /></button>

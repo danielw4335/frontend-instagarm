@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import { getTimeFormat } from '../services/util.service'
 
 export function PostMainText({ story }) {
@@ -8,11 +9,15 @@ export function PostMainText({ story }) {
 
   return (
     <div className="comment-preview post-main-text">
-      <img className="user-img" src={by.imgUrl} alt={by.username} />
+      <NavLink to={`/u/${by._id}`}>
+        <img className="user-img" src={by.imgUrl} alt={by.username} />
+      </NavLink>
       <div className="comment-content">
-        <p>
-          <strong>{by.username}</strong> {txt}
-        </p>
+        <NavLink to={`/u/${by._id}`}>
+          <p>
+            <strong>{by.username}</strong> {txt}
+          </p>
+        </NavLink>
         <div className="comment-meta">
           <span>{timeAgo}</span>
         </div>

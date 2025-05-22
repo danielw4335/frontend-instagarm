@@ -19,7 +19,7 @@ export function StoryHeader({ from, _id, user, createdAt }) {
                 {from === 'index' && (
                     <div className="storyHeader-index">
                         <NavLink to={`/u/${user._id}`} className="nav-item" key={user._id}>
-                        <img className="user-img" src={imgUrl} alt="user" />
+                            <img className="user-img" src={imgUrl} alt="user" />
                             <span className="username">{user.username}</span>
                         </NavLink>
 
@@ -30,14 +30,18 @@ export function StoryHeader({ from, _id, user, createdAt }) {
                 )}
                 {from === 'details' && (
                     <div className="storyHeader-details">
-                        <img className="user-img" src={imgUrl} alt="user" />
-                        <span className="username">{user.username}</span>
+                        <NavLink to={`/u/${user._id}`}>
+                            <img className="user-img" src={imgUrl} alt="user" />
+                            <span className="username">{user.username}</span>
+                        </NavLink>
                     </div>
                 )}
                 {from === 'modalCreat' && (
                     <div className="storyHeader-modal-creat">
-                        <img className="user-img" src={imgUrl} alt="user" />
-                        <span className="username">{user.username}</span>
+                        <NavLink to={`/u/${user._id}`}>
+                            <img className="user-img" src={imgUrl} alt="user" />
+                            <span className="username">{user.username}</span>
+                        </NavLink>
                     </div>
                 )}
             </div>

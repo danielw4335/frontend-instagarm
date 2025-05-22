@@ -96,6 +96,12 @@
                gap: 18px;
                background-color: #fff;
 
+               a {
+                   display: flex;
+                   gap: 18px;
+                   cursor: pointer;
+               }
+
 
                img {
                    width: 56px;
@@ -125,7 +131,7 @@
                min-height: 0;
 
                p {
-                padding: 10px;
+                   padding: 10px;
                }
 
                .sent,

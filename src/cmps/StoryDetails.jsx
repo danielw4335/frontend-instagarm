@@ -14,7 +14,7 @@ import { useParams, useNavigate, NavLink } from 'react-router-dom'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 import { getTimeFormat } from '../services/util.service'
 import { StoryComments } from './StoryComments.jsx'
-import { StoryHeader } from './storyHeader.jsx'
+import { StoryHeader } from './StoryHeader.jsx'
 import { PostMainText } from './PostMainText.jsx'
 import {
 	loadStories,

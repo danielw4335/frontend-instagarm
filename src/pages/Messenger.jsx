@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { addChat, addMsg, loadChats } from '../store/actions/chat.actions'
 import { UserSelectModal } from '../cmps/UserSelectModal'
+import { NavLink } from 'react-router-dom'
 
 export function Messenger() {
     const users = useSelector(storeState => storeState.userModule.users)
@@ -117,6 +118,7 @@ export function Messenger() {
                     <div className='chat-header'>
 
                         <>
+                              <NavLink to={`/u/${otherUser?._id}`}>
                             <div>
                                 <img src={otherUser.imgUrl} />
                             </div>
@@ -124,6 +126,7 @@ export function Messenger() {
                                 <h4>{otherUser.fullname}</h4>
                                 <p>{otherUser.username}</p>
                             </div>
+                              </NavLink>
                         </>
 
                     </div>
