@@ -34,12 +34,14 @@ import ImportedBack from './icon-back.svg?react';
 import ImportedLocation from './icon-location.svg?react';
 import ImportedAddCollaborators from './icon-add-collaborators.svg?react';
 import ImportedChevronDown from './icon-chevron-down.svg?react';
+import ImportedNewMsg from './icon-new-message.svg?react';
 
 export {
   ImportedAddCollaborators as AddCollaborators,
   ImportedChevronDown as ChevronDown,
   ImportedCamera as Camera,
   ImportedBack as Back,
+  ImportedNewMsg as NewMsg,
   ImportedLocation as Location,
   ImportedCommentBubble as CommentBubble,
   ImportedTreeDots as TreeDots,

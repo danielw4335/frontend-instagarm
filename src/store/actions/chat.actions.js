@@ -2,7 +2,6 @@ import { chatService } from '../../services/chat'
 import { store } from '../store'
 import { ADD_CHAT, UPDATE_CHAT, REMOVE_CHAT, SET_CHATS } from '../reducers/chat.reducer'
 
-
 export async function loadChats(userId) {
 	try {
 		const chats = await chatService.query(userId)
@@ -26,8 +25,22 @@ export async function addChat(chat) {
 
 export async function addMsg({ chatId, msg }) {
     try {
+        const chats = store.getState().chatModule.chats
+        const chat = chats.find(chat => chat._id === chatId)
+        
+        if (chat) {
+            const optimisticChat = { ...chat }
+            if (!optimisticChat.msgs) optimisticChat.msgs = []
+            optimisticChat.msgs.push(msg)
+            store.dispatch({ type: UPDATE_CHAT, chat: optimisticChat })
+        }
+        
         const updatedChat = await chatService.addMsg({ chatId, msg })
-        store.dispatch({ type: UPDATE_CHAT, chat: updatedChat })
+        if (JSON.stringify(updatedChat) !== JSON.stringify(chat)) {
+            store.dispatch({ type: UPDATE_CHAT, chat: updatedChat })
+        }
+        
+        return updatedChat
     } catch (err) {
         console.log('ChatActions: err in addMsg', err)
         throw err
@@ -42,5 +55,31 @@ export async function removeChat(chatId) {
 		console.log('ChatActions: err in removeChat', err)
 		throw err
 	}
+}
+    
+
+export function addMsgThunk({ chatId, msg }) {
+    return async (dispatch) => {
+        try {
+            const updatedChat = await chatService.addMsg({ chatId, msg })
+            dispatch({ type: UPDATE_CHAT, chat: updatedChat })
+            return updatedChat
+        } catch (err) {
+            console.log('ChatActions: err in addMsgThunk', err)
+            throw err
+        }
+    }
+}
+
+export function removeChatThunk(chatId) {
+    return async (dispatch) => {
+        try {
+            await chatService.remove(chatId)
+            dispatch({ type: REMOVE_CHAT, chatId })
+        } catch (err) {
+            console.log('ChatActions: err in removeChatThunk', err)
+            throw err
+        }
+    }
 }
 

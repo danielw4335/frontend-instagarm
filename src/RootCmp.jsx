@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react'
-import { Routes, Route, useLocation } from 'react-router'
+import { Routes, Route, useLocation, Navigate, useNavigate } from 'react-router'
 import { useModal } from './customHooks/ModalContext.jsx'
 import { BasicModal } from './cmps/BasicModal.jsx'
 import { Explore } from './pages/Explore.jsx'
@@ -37,20 +37,36 @@ export function RootCmp() {
 	const isLoading = useSelector(storeState => storeState.storyModule.isLoading)
 	const { modalState, close } = useModal()
 	const stories = useSelector(storeState => storeState.storyModule.stories)
-	const user = useSelector(storeState => storeState.storyModule.loggedInUser)
+	const user = useSelector(storeState => storeState.userModule.loggedInUser)
+
+	const navigate = useNavigate()
 	const loggedInUser = {
 		username: 'daniel_335',
 		fullname: 'daniel wallach',
 		password: 'e%0YFxtl',
 	}
 
+	// useEffect(() => {
 
+	// 	console.log(' useEffect user:', user)
+	//     if (!user && path !== '/login' && path !== '/signup') {
+	//         navigate('/login')
+	//     }
+	// }, [user, path])
 
 	useEffect(() => {
 		if (!loadingBar.current) return
 		if (isLoading) loadingBar.current.continuousStart()
 		else loadingBar.current.complete()
 	}, [isLoading])
+
+	// useEffect(() => {
+	//     if (user && user._id) {
+	//         loadUsers()
+	//         loadStories()
+	//         loadChats(user._id)
+	//     }
+	// }, [user])
 
 	useEffect(() => {
 		if (user && user._id) {
@@ -75,7 +91,7 @@ export function RootCmp() {
 		<section className="section-layout">
 			<LoadingBar ref={loadingBar} style={{ background: 'linear-gradient(90deg,#fdc468,#fa7e1e,#e1306c,#c13584,#833ab4)' }} className="ig-top-bar" height={2.5} />
 			{isLoading && <LoaderInstagram />}
-			{path !== '/login' && <AppHeader />}
+			{(!['/login', '/messenger'].includes(path)) && <AppHeader />}
 			<UserMsg />
 			{/* <StoriesBar items={stories} /> */}
 			{path !== '/login' && <SideNav />}
@@ -117,7 +133,7 @@ export function RootCmp() {
 			</Routes>
 			{/* </main> */}
 
-			{path !== '/login' && <BottomNav />}
+			{(!['/login', '/messenger'].includes(path)) && <BottomNav />}
 
 		</section>
 	)

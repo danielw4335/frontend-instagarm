@@ -9,12 +9,11 @@ import { NavLink } from 'react-router-dom'
 export function Login() {
 	const navigate = useNavigate()
 	const users = useSelector((storeState) => storeState.userModule.users)
-	const [credentials, setCredentials] = useState({})
-	
+	const [credentials, setCredentials] = useState({ username: '', password: '' })
+
 	async function onLogin(ev = null) {
-		// if (ev) ev.preventDefault()
-		
-		console.log(' Login credentials:', credentials)
+		if (ev) ev.preventDefault()
+			
 		if (!credentials.username) return
 		await login(credentials)
 		navigate('/')
@@ -26,26 +25,27 @@ export function Login() {
 	// 	setCredentials({ ...credentials, [field]: value })
 	// }
 
-	 function handleChange({ target }) {
-        let { value, name: field, type, checked } = target
-        switch (type) {
-            case 'number':
-            case 'range':
-                value = +value
-                break
-            case 'checkbox':
-                value = checked
+	function handleChange({ target }) {
+		let { value, name: field, type, checked } = target
+		switch (type) {
+			case 'number':
+			case 'range':
+				value = +value
+				break
+			case 'checkbox':
+				value = checked
 
-            default: break
-        }
-        setCredentials((prevCred) => ({ ...prevCred, [field]: value }))
-    }
+			default: break
+		}
+		setCredentials((prevCred) => ({ ...prevCred, [field]: value }))
+	}
 
 	return (
 		<section className='login-page full'>
 			<div className="login-left">
 				<img src={homeImg} alt="home" className="home-img" />
 			</div>
+
 			{/* <form className="login-form" onSubmit={onLogin}> */}
 			{/* <select
 				name="username"
@@ -59,9 +59,11 @@ export function Login() {
 					</option>
 					))}
 					</select> */}
+
 			<div className="login-right">
 				<form className="login-form" onSubmit={onLogin}>
 					<input
+					 name="username"
 						type="text"
 						placeholder="Phone number, username, or email"
 						className="login-input"
@@ -70,6 +72,7 @@ export function Login() {
 						onChange={handleChange}
 					/>
 					<input
+					 name="password"
 						type="password"
 						placeholder="Password"
 						className="login-input"

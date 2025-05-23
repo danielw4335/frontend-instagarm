@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router'
+import { useNavigate, useLocation } from 'react-router'
 import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { useScreenBreakpoint } from '../customHooks/useScreenBreakpoint'
@@ -22,13 +22,18 @@ import {
 export function SideNav() {
     const breakpoint = useScreenBreakpoint()
     const navigate = useNavigate()
+    const location = useLocation()
     const { open } = useModal()
     const loggedInUser = useSelector(storeState => storeState.userModule.loggedInUser)
 
 
+    const isMessenger = location.pathname === '/messenger'
+    const messengerBreakpoint = isMessenger ? 'medium' : breakpoint
+
+
 
     return (
-        <nav className={`side-nav breakpoint-${breakpoint}`}>
+        <nav className={`side-nav breakpoint-${messengerBreakpoint}`}>
             <div className="logo-text" onClick={() => navigate('/login')}>
                 <LogoInstagramWordmark className="nav-label logo-wordmark" />
             </div>
@@ -75,8 +80,8 @@ export function SideNav() {
                 </NavLink>
 
                 <div className="nav-item" onClick={() => open(null, 'upload')}>
-                {/* <div className="nav-item" onClick={() => open(null, 'createStory')}> */}
-                    <CreateOutline className="icon-outline"/>
+                    {/* <div className="nav-item" onClick={() => open(null, 'createStory')}> */}
+                    <CreateOutline className="icon-outline" />
                     <span className="nav-label">Create</span>
                 </div>
 

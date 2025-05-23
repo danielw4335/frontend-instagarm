@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useSelector } from 'react-redux'
 import { addChat, addMsg, loadChats } from '../store/actions/chat.actions'
 import { UserSelectModal } from '../cmps/UserSelectModal'
 import { NavLink } from 'react-router-dom'
 import { loadUsers } from '../store/actions/user.actions'
+import { Back, NewMsg } from '../assets/SVG/icons'
 
 export function Messenger() {
     const users = useSelector(storeState => storeState.userModule.users)
@@ -14,21 +15,40 @@ export function Messenger() {
     const [msgInput, setMsgInput] = useState('')
     const [isOpen, setIsOpen] = useState(false)
     const [isCreatingChat, setIsCreatingChat] = useState(false)
+    const [forMobile, setForMobile] = useState(false)
+    const messagesAreaRef = useRef(null)
+
+    const scrollToBottom = () => {
+        if (messagesAreaRef.current) {
+            messagesAreaRef.current.scrollTop = messagesAreaRef.current.scrollHeight
+        }
+    }
 
     useEffect(() => {
         if (loggedInUser && loggedInUser._id) loadChats(loggedInUser._id)
         if (!users || !users.length) loadUsers()
     }, [loggedInUser])
 
+    const selectedChat = chats && selectedChatId ? chats.find(chat => chat._id === selectedChatId) : null
+    const otherUser = selectedChat ? getOtherUser(selectedChat) : null
+
+    useEffect(() => {
+        if (messagesAreaRef.current) {
+            scrollToBottom()
+        }
+    }, [selectedChat?.msgs])
+
     function handleUserSelect(user) {
         setSelectedUser(user)
         setIsOpen(false)
         setSelectedChatId(null)
+        setForMobile(true)
     }
 
-    function handleChatClick(chat) {
-        setSelectedChatId(chat._id)
+    function handleChatClick(chat, bool = true) {
+        setSelectedChatId(bool ? chat._id : null)
         setSelectedUser(null)
+        setForMobile(bool)
     }
 
     function getOtherUser(chat) {
@@ -39,9 +59,7 @@ export function Messenger() {
 
     function handleChange({ target }) {
         setMsgInput(target.value)
-    }
-
-    async function handleSendMsg() {
+    } async function handleSendMsg() {
         if (!msgInput.trim()) return
 
         let chatId = selectedChatId
@@ -66,9 +84,13 @@ export function Messenger() {
             createdAt: new Date(),
             id: Date.now().toString() + Math.random().toString(36).substr(2, 6)
         }
-
-        await addMsg({ chatId, msg: newMsg })
         setMsgInput('')
+        try {
+            await addMsg({ chatId, msg: newMsg })
+            setTimeout(scrollToBottom, 100)
+        } catch (err) {
+            console.error('Failed to send message:', err)
+        }
     }
 
     useEffect(() => {
@@ -94,15 +116,13 @@ export function Messenger() {
 
     if (!chats || !loggedInUser || !users) return <div>Loading...</div>
 
-    const selectedChat = chats.find(chat => chat._id === selectedChatId)
-    const otherUser = selectedChat ? getOtherUser(selectedChat) : null
-
     return (
-        <main className="messenger-container">
+        <main className={`messenger-container ${forMobile ? 'forMobile' : ''}`}>
             <section className='chat-index'>
                 <div className='chat-header'>
+                    <NavLink to="/" onClick={() => handleChatClick(null, null)}><Back /></NavLink>
                     <h1>{loggedInUser.username}</h1>
-                    <button className='clear-button' onClick={() => setIsOpen(true)}>Add</button>
+                    <button className='clear-button' onClick={() => setIsOpen(true)}><NewMsg /></button>
                     <UserSelectModal
                         isOpen={isOpen}
                         onClose={() => setIsOpen(false)}
@@ -135,6 +155,8 @@ export function Messenger() {
             ) : selectedChat ? (
                 <section className="chat-details">
                     <div className='chat-header'>
+
+                        <button className='clear-button back' onClick={() => handleChatClick(null, null)}><Back /></button>
                         <NavLink to={`/u/${otherUser?._id}`}>
                             <div>
                                 <img src={otherUser?.imgUrl} />
@@ -145,15 +167,17 @@ export function Messenger() {
                             </div>
                         </NavLink>
                     </div>
-                    <section className='messages-area'>
+                    <section className='messages-area' ref={messagesAreaRef}>
                         {selectedChat.msgs.map((msg, idx) => {
                             let me = (msg.by._id === loggedInUser._id)
                             return (
-                                <div key={msg.id} className={me ? 'sent' : 'received'}>
-                                        <span className='timestamp'>{_formatTime(msg.createdAt)}</span>
-                                    {!me && <img src={msg.by.imgUrl} alt={msg.by.fullname} />}
-                                    <p>{msg.txt}</p>
-                                </div>
+                                <>
+                                    <span className='timestamp'>{_formatTime(msg.createdAt)}</span>
+                                    <div key={msg.id} className={me ? 'sent' : 'received'}>
+                                        {!me && <img src={msg.by.imgUrl} alt={msg.by.fullname} />}
+                                        <p>{msg.txt}</p>
+                                    </div>
+                                </>
                             )
                         })}
                     </section>
