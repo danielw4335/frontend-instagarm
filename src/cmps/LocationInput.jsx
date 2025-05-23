@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { Location } from '../assets/SVG/icons'
 
 export function LocationInput({ value, onChange, onPlaceSelected }) {
