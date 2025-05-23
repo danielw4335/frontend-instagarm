@@ -6,6 +6,8 @@ import { NavLink } from 'react-router-dom'
 import { loadUsers } from '../store/actions/user.actions'
 import { Back, NewMsg } from '../assets/SVG/icons'
 
+import { socketService, SOCKET_EVENT_ADD_MSG, SOCKET_EMIT_SET_TOPIC, SOCKET_EVENT_CHAT_ADDED } from '../services/socket.service'
+
 export function Messenger() {
     const users = useSelector(storeState => storeState.userModule.users)
     const loggedInUser = useSelector(storeState => storeState.userModule.loggedInUser)
@@ -17,6 +19,24 @@ export function Messenger() {
     const [isCreatingChat, setIsCreatingChat] = useState(false)
     const [forMobile, setForMobile] = useState(false)
     const messagesAreaRef = useRef(null)
+
+    useEffect(() => {
+        function handleIncomingMsg(msg) {
+            loadChats(loggedInUser._id)
+        }
+        socketService.on(SOCKET_EVENT_ADD_MSG, handleIncomingMsg)
+        socketService.on(SOCKET_EVENT_CHAT_ADDED, handleIncomingMsg)
+        return () => {
+            socketService.off(SOCKET_EVENT_ADD_MSG, handleIncomingMsg)
+            socketService.off(SOCKET_EVENT_CHAT_ADDED, handleIncomingMsg)
+        }
+    }, [loggedInUser])
+
+    useEffect(() => {
+        if (selectedChatId) {
+            socketService.emit(SOCKET_EMIT_SET_TOPIC, selectedChatId)
+        }
+    }, [selectedChatId])
 
     const scrollToBottom = () => {
         if (messagesAreaRef.current) {
@@ -75,6 +95,7 @@ export function Messenger() {
         }
 
         const newMsg = {
+            chatId: chat.id,
             txt: msgInput,
             by: {
                 _id: loggedInUser._id,

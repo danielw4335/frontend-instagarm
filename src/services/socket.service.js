@@ -16,7 +16,7 @@ const SOCKET_EMIT_LOGOUT = 'unset-user-socket'
 
 
 const baseUrl = (process.env.NODE_ENV === 'production') ? '' : '//localhost:3030'
-
+console.log('socketService connecting to:', baseUrl)
 export const socketService = (VITE_LOCAL === 'true')? createDummySocketService() : createSocketService()
 
 // for debugging from console
@@ -86,6 +86,7 @@ function createDummySocketService() {
       var listeners = listenersMap[eventName]
       if (eventName === SOCKET_EMIT_SEND_MSG) {
         listeners = listenersMap[SOCKET_EVENT_ADD_MSG]
+        console.log(' emit listeners:', listeners)
       }
 
       if (!listeners) return
