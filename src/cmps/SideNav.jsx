@@ -26,11 +26,11 @@ export function SideNav() {
     const { open } = useModal()
     const loggedInUser = useSelector(storeState => storeState.userModule.loggedInUser)
 
-
     const isMessenger = location.pathname === '/messenger'
-    const messengerBreakpoint = isMessenger ? 'medium' : breakpoint
-
-
+    let messengerBreakpoint = isMessenger ? 'medium' : breakpoint
+    if (breakpoint === 'mobile') {
+        messengerBreakpoint = 'mobile'
+    }
 
     return (
         <nav className={`side-nav breakpoint-${messengerBreakpoint}`}>

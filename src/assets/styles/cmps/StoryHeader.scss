@@ -1,6 +1,6 @@
-.storyHeader {
-  .storyHeader-index {
+.storyHeader {  .storyHeader-index {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 5px;
     padding: 0.4rem 0;
@@ -58,10 +58,31 @@
     font-size: 11px;
     color: #262626;
   }
-
   .created-time {
     font-size: 11px;
     color: #8e8e8e;
   }
 
+  .location-container {
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+    width: 100%;
+    
+    .location-icon {
+      width: 12px;
+      height: 12px;
+      margin-right: 4px;
+      color: #8e8e8e;
+      flex-shrink: 0;
+    }
+    
+    .location {
+      font-size: 11px;
+      color: #262626;
+      text-decoration: none;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
 }

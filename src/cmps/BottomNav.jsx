@@ -8,8 +8,12 @@ import {
     Clapperboard,
     PlusSquare,
 } from 'lucide-react'
+import { ReelsOutline } from '../assets/SVG/icons';
+import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export function BottomNav() {
+        const user = useSelector(storeState => storeState.userModule.loggedInUser)
     const breakpoint = useScreenBreakpoint()
     const navigate = useNavigate()
 const { open } = useModal()
@@ -17,25 +21,25 @@ const { open } = useModal()
     return (
         <section className={`bottom-nav breakpoint-${breakpoint}`}>
 
-                <div className="nav-item" onClick={() => navigate('/')}>
+                <NavLink className="nav-item" to="/">
                     <Home />
-                </div>
+                </NavLink>
 
-                <div className="nav-item" onClick={() => navigate('/search')}>
+                <NavLink className="nav-item" to="/search">
                     <Search />
-                </div>
+                </NavLink>
 
                 <div className="nav-item" onClick={() => open( null, 'upload' )}>
                     <PlusSquare />
                 </div>
 
-                <div className="nav-item" onClick={() => navigate('/reels')}>
-                    <Clapperboard />
-                </div>
+                <NavLink className="nav-item" to="/reels">
+                    <ReelsOutline />
+                </NavLink>
 
-                <div className="nav-item" onClick={() => navigate('/profile')}>
-                    <img src={defaultUser} alt="Profile" className="profile-img" />
-                </div>
+                <NavLink className="nav-item" to={`/u/${user?._id}`}>
+                    <img src={user?.imgUrl || defaultUser} alt="Profile" className="profile-img" />
+                </NavLink>
         </section>
     )
 }

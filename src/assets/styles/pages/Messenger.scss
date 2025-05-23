@@ -5,16 +5,20 @@
     grid-template-columns: auto 1fr;
     background-color: #fff;
 
-    .chat-index,
-    .chat-details {
-        .chat-header {
 
-            a,
-            .back {
-                display: none;
+    @mixin for-narrow-layout {
+        .chat-index,
+        .chat-details {
+            .chat-header {
+
+                a,
+                .back {
+                    display: none;
+                }
             }
         }
     }
+
 
     .chat-index {
         width: 100%;
@@ -359,6 +363,10 @@
                     overflow-y: auto;
                     width: 100%;
                     height: calc(100vh - 65px);
+
+                    p {
+                        font-size: 15px;
+                    }
                 }
 
                 .chat-footer {

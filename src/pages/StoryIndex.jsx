@@ -10,14 +10,16 @@ import { StoriesBar } from '../cmps/StoriesBar'
 import { LoaderInstagram } from '../cmps/LoaderInstagram'
 
 
+
 export function StoryIndex() {
   const isLoading = useSelector(storeState => storeState.userModule.isLoading)
   const stories = useSelector(storeState => storeState.storyModule.stories)
+  const users = useSelector(storeState => storeState.userModule.users)
 
-  if (!stories || isLoading) return <LoaderInstagram />
+  if (!stories || !users || isLoading) return <LoaderInstagram />
   return (
     <main className="main-story-layout">
-      <StoriesBar items={stories} />
+      <StoriesBar items={users} />
       <StoryList stories={stories} from="index" />
     </main>
   )

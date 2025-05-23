@@ -3,6 +3,10 @@
     margin: 0 auto;
     max-width: 935px;
 
+    @include for-mobile-layout {
+        padding: 20px 10px 0 10px;
+    }
+
     &>* {
         grid-column: 2;
     }
@@ -11,8 +15,13 @@
         width: 100%;
         display: grid;
         grid-template-columns: 1fr 2.02fr;
-        margin-bottom: em(251px);
+        margin-bottom: em(100px);
 
+        @include for-mobile-layout {
+            grid-template-columns: 1fr;
+            margin-bottom: em(50px);
+            text-align: center;
+        }
 
         .icon {
             background-color: aqua;
@@ -29,6 +38,14 @@
             border: 1.5px solid #efefef;
             margin: em(36px) 0 0 em(74px);
             display: block;
+
+            @include for-mobile-layout {
+                margin: 0 auto;
+                grid-row: 1;
+                margin-bottom: 20px;
+                width: 120px;
+                height: 120px;
+            }
         }
 
         .user-details-main {
@@ -36,6 +53,10 @@
             flex-direction: column;
             justify-content: flex-start;
             color: rgb(0, 0, 0);
+
+            @include for-mobile-layout {
+                padding: 0 10px;
+            }
 
             .icon-settings {
                 width: 25px;
@@ -51,9 +72,23 @@
                 margin-bottom: em(20.5px);
                 gap: em(17px);
 
+                @include for-mobile-layout {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: em(10px);
+                    margin-bottom: em(15px);
+                }
+
                 .user-details-username {
                     font-size: 20px;
                     font-weight: 400;
+
+                    @include for-mobile-layout {
+                        font-size: 18px;
+                        width: 100%;
+                        text-align: center;
+                        margin-bottom: 10px;
+                    }
                 }
 
                 .btn-user-header {
@@ -63,23 +98,37 @@
                     color: rgb(0, 0, 0);
                     border-radius: 8px;
                     font-weight: 600;
-
                     height: em(36px);
                     padding: em(6px) em(16px);
                     font-family: 'Segoe UI';
+
+                    @include for-mobile-layout {
+                        height: em(32px);
+                        padding: em(4px) em(12px);
+                        font-size: 14px;
+                        min-width: 80px;
+                        justify-content: center;
+                    }
+
                 }
 
                 .archive {
                     margin-left: -12px;
+
+                    @include for-mobile-layout {
+                        margin-left: 0;
+                    }
                 }
 
                 .user-details-settings {
                     background: none;
                     border: none;
-
                     margin-left: -20px;
                     cursor: pointer;
 
+                    @include for-mobile-layout {
+                        margin-left: 0;
+                    }
                 }
             }
 
@@ -91,8 +140,21 @@
                 margin-bottom: em(30px);
                 color: rgb(115, 115, 115);
 
+                @include for-mobile-layout {
+                    justify-content: space-around;
+                    gap: em(15px);
+                    font-size: 14px;
+                    margin-bottom: em(20px);
+                }
+
                 span {
                     font-weight: 400;
+
+                    @include for-mobile-layout {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
 
                     b {
                         font-weight: 600;
@@ -101,6 +163,11 @@
             }
 
             .user-details-bio {
+                @include for-mobile-layout {
+                    text-align: center;
+                    margin-bottom: 15px;
+                    padding: 0 10px;
+                }
 
                 p {
                     margin: 0;
@@ -115,9 +182,7 @@
         }
     }
 
-
     .user-details-btn-area {
-        // margin-left: em(18.5px);
         display: flex;
         justify-content: center;
         text-transform: uppercase;
@@ -130,6 +195,13 @@
         padding-top: em(9.8px);
         padding-bottom: em(14px);
 
+        @include for-mobile-layout {
+            gap: 20px;
+            padding: 0.5em 21px;
+            overflow-x: auto;
+            justify-content: space-between;
+        }
+
         a {
             display: flex;
             align-items: center;
@@ -138,6 +210,17 @@
             text-decoration: none;
             gap: 5px;
             position: relative;
+
+            @include for-mobile-layout {
+                padding: 6px 8px;
+                // white-space: nowrap;
+                font-size: 24px;
+
+                span {
+                    display: none;
+                }
+            }
+
 
             &.active {
                 color: #000;
@@ -167,6 +250,11 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 4px;
 
+        @include for-mobile-layout {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+        }
+
         .story-preview {
             position: relative;
             aspect-ratio: 4 / 5;
@@ -175,6 +263,10 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
+
+            @include for-mobile-layout {
+                aspect-ratio: 1 / 1;
+            }
 
             img {
                 width: 100%;
@@ -197,8 +289,24 @@
                 z-index: 2;
             }
 
-            &:hover::after {
-                opacity: 1;
+            @include hover-supported {
+                &:hover::after {
+                    opacity: 1;
+                }
+
+                &:hover .hover-icons {
+                    opacity: 1;
+                }
+            }
+
+            @media (pointer: coarse) {
+                &:active::after {
+                    opacity: 1;
+                }
+
+                &:active .hover-icons {
+                    opacity: 1;
+                }
             }
 
             .hover-icons {
@@ -213,12 +321,13 @@
                 z-index: 3;
                 opacity: 0;
                 transition: opacity 0.2s;
-            }
 
-            &:hover .hover-icons {
-                opacity: 1;
-            }
+                @include for-mobile-layout {
+                    gap: 15px;
+                }
 
+
+            }
 
             .icon-with-count {
                 display: flex;
@@ -227,6 +336,12 @@
                 color: #fff;
                 font-size: 1.15rem;
                 font-weight: 500;
+
+                @include for-mobile-layout {
+                    font-size: 1rem;
+                    gap: 4px;
+                }
+
             }
 
             .icon.comment {
@@ -235,5 +350,31 @@
                 stroke: #fff !important;
             }
         }
+
+        .no-stories-message {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            color: #777;
+            text-align: center;
+
+            @include for-mobile-layout {
+                height: 150px;
+                padding: 0 20px;
+            }
+
+            p {
+                font-size: 16px;
+                font-weight: 500;
+
+                @include for-mobile-layout {
+                    font-size: 14px;
+                }
+            }
+        }
     }
+
+
 }

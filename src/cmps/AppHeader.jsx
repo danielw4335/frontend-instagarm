@@ -36,7 +36,7 @@ export function AppHeader() {
 						<NotificationsOutline className="nav-icon" />
 					</NavLink>
 
-					<NavLink to="/messages" className="nav-item">
+					<NavLink to="/messenger" className="nav-item">
 						<MessengerOutline className="nav-icon" />
 					</NavLink>
 				</section>
