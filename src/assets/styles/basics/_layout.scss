@@ -13,6 +13,11 @@
     .main-story-layout {
         display: grid;
         grid-template-columns: minmax(20px, 1fr) minmax(auto, 630px) minmax(20px, 1fr);
+
+        @media (min-width: 1160px) {
+            grid-template-columns: minmax(20px, 1fr) minmax(auto, 630px) minmax(20px, 40px) minmax(auto, 255px) minmax(20px, 1fr);
+        }
+
         
         @include for-mobile-layout {
             grid-template-columns: minmax(1fr, 65px) minmax(auto, 470px) minmax(1fr, 65px);

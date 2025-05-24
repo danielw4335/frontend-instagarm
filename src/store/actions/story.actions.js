@@ -67,7 +67,9 @@ export async function addStory(newStory) {
         ...newStory
     }
     try {
+        console.log(' addStory savedStory:', story)
         const savedStory = await storyservice.save(story)
+        console.log(' addStory savedStory:', savedStory)
         store.dispatch({ type: ADD_STORY, story: savedStory })
         return savedStory
     } catch (err) {

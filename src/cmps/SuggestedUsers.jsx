@@ -54,7 +54,8 @@ export function SuggestedUsers({ users }) {
       <div className="suggested-users-header">
         <span>Suggested for you</span>
         <button className="see-all-btn">See All</button>
-      </div>      <ul>
+      </div>  
+          <ul>
         {limitedUsers.length > 0 ? (
           limitedUsers.map(user => (
             <li key={user._id} className="suggested-user">

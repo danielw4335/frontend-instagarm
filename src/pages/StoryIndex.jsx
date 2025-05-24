@@ -6,8 +6,9 @@ import { loadStories } from '../store/actions/story.actions'
 import { StoryList } from '../cmps/StoryList'
 import { StoryDetails } from '../cmps/StoryDetails'
 import { loadUser, loadUsers, login } from '../store/actions/user.actions'
-import { StoriesBar } from '../cmps/StoriesBar'
+
 import { LoaderInstagram } from '../cmps/LoaderInstagram'
+import { SuggestedUsers } from '../cmps/SuggestedUsers'
 
 
 
@@ -19,7 +20,9 @@ export function StoryIndex() {
   if (!stories || !users || isLoading) return <LoaderInstagram />
   return (
     <main className="main-story-layout">
-      <StoriesBar items={users} />
+      <div className={"suggested-users-container"}>
+        <SuggestedUsers users={users} />
+      </div>
       <StoryList stories={stories} from="index" />
     </main>
   )
