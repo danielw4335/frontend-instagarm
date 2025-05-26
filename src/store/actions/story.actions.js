@@ -62,8 +62,18 @@ export async function removeStory(storyId) {
 }
 
 export async function addStory(newStory) {
+
+const emptyStory = {
+        txt: '',
+        imgUrl: '',
+        createdAt: Date.now(),
+        by: userService.getLoggedinUser(),
+        comments: [],
+        likedBy: [],
+    }
+
     const story = {
-        ...storyservice.getEmptyStory(),
+        ...emptyStory,
         ...newStory
     }
     try {

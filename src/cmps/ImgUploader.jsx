@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react'
 import { useDropzone } from 'react-dropzone'
 import { uploadService } from '../services/upload.service'
+import { UploadMedia } from '../assets/SVG/icons'
 
 export function ImgUploader({ onUploaded = null }) {
   const [imgData, setImgData] = useState(null)
@@ -32,7 +33,7 @@ export function ImgUploader({ onUploaded = null }) {
       <input {...getInputProps()} />
 
       {imgData?.url && <img src={imgData.url} alt="Uploaded" style={{ maxWidth: '200px' }} />}
-      <img src="/src/assets/SVG/uploadMedia.svg" className='upload-media-svg' />
+      <UploadMedia className='upload-media-svg' />
       <span>{isUploading ? 'Uploading...' : 'Drag photos and videos here'}</span>
 
       <button className='upload-img-btn' type="button" onClick={open} disabled={isUploading}>

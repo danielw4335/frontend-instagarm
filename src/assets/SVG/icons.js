@@ -10,6 +10,7 @@ import ImportedHomeActive from './icon-home-active.svg?react';
 import ImportedHomeOutline from './icon-home-outline.svg?react';
 import ImportedLogoInstagram from './icon-logo-instagram.svg?react';
 import ImportedLogoInstagramWordmark from './icon-logo-instagram-wordmark.svg?react';
+import ImportedInstaBuild from './icon-InstaBuild.svg?react';
 import ImportedMessengerActive from './icon-messenger-active.svg?react';
 import ImportedMessengerOutline from './icon-messenger-outline.svg?react';
 import ImportedMoreOptionsOutline from './icon-more-options.svg?react';
@@ -35,8 +36,10 @@ import ImportedLocation from './icon-location.svg?react';
 import ImportedAddCollaborators from './icon-add-collaborators.svg?react';
 import ImportedChevronDown from './icon-chevron-down.svg?react';
 import ImportedNewMsg from './icon-new-message.svg?react';
+import ImportedUploadMedia from './UploadMedia.svg?react';
 
 export {
+  ImportedUploadMedia as UploadMedia,
   ImportedAddCollaborators as AddCollaborators,
   ImportedChevronDown as ChevronDown,
   ImportedCamera as Camera,
@@ -56,6 +59,7 @@ export {
   ImportedHomeOutline as HomeOutline,
   ImportedLogoInstagram as LogoInstagram,
   ImportedLogoInstagramWordmark as LogoInstagramWordmark,
+  ImportedInstaBuild as InstaBuild,
   ImportedMessengerActive as MessengerActive,
   ImportedMessengerOutline as MessengerOutline,
   ImportedMoreOptionsOutline as MoreOptionsOutline,

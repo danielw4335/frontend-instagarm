@@ -7,6 +7,7 @@ import {
 	MessengerOutline,
 	NotificationsOutline,
 	LogoInstagramWordmark,
+	InstaBuild,
 } from '../assets/SVG/icons'
 
 export function AppHeader() {
@@ -28,7 +29,7 @@ export function AppHeader() {
 			<div className="app-header-placeholder full"></div>
 			<header className="app-header full">
 				<div className="logo-text">
-					<LogoInstagramWordmark className="nav-label logo-wordmark" />
+					<InstaBuild className="nav-label logo-wordmark" />
 				</div>
 
 				<section className='nav-section'>

@@ -17,6 +17,7 @@ import {
     LogoInstagram,
     MoreOptionsOutline,
     MoreOptionsActive,
+    InstaBuild,
 } from '../assets/SVG/icons'
 
 export function SideNav() {
@@ -35,7 +36,7 @@ export function SideNav() {
     return (
         <nav className={`side-nav breakpoint-${messengerBreakpoint}`}>
             <div className="logo-text" onClick={() => navigate('/login')}>
-                <LogoInstagramWordmark className="nav-label logo-wordmark" />
+                <InstaBuild className="nav-label logo-wordmark" />
             </div>
             <div className="logo-icon" onClick={() => navigate('/')}>
                 <LogoInstagram className="logo-icon-svg" />
